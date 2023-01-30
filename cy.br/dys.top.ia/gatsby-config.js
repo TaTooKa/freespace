@@ -3,7 +3,7 @@
  */
 module.exports = {
   siteMetadata: {
-    siteUrl: `https://www.yourdomain.tld`,
+    siteUrl: `https://tatooka.github.io/`,
     pathPrefix: '/cy.br/dys.top.ia',
   },
   plugins: [],
