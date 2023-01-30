@@ -31,7 +31,7 @@ export default function GlobalStyle() {
             font-display: swap;
             font-style: normal;
             font-named-instance: 'Bold';
-            src: url(/fonts/EuroStileBold.woff2) format("woff2");
+            src: url(/fonts/EurostileBold.woff2) format("woff2");
         }
 
         @font-face {
@@ -40,7 +40,7 @@ export default function GlobalStyle() {
             font-display: swap;
             font-style: italic;
             font-named-instance: 'Italic';
-            src: url(/fonts/EuroStile-Oblique.woff2) format("woff2");
+            src: url(/fonts/Eurostile-Oblique.woff2) format("woff2");
             size-adjust: 90%;
         }
 

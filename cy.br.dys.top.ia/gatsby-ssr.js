@@ -12,7 +12,7 @@ export const onRenderBody = ({ setHeadComponents }) => {
     />,
     <link
       rel="preload"
-      href="./fonts/EuroStileBold.woff2"
+      href="./fonts/EurostileBold.woff2"
       as="font"
       type="font/woff2"
       crossOrigin="anonymous"
@@ -20,7 +20,7 @@ export const onRenderBody = ({ setHeadComponents }) => {
     />,
     <link
       rel="preload"
-      href="./fonts/EuroStile-Oblique.woff2"
+      href="./fonts/Eurostile-Oblique.woff2"
       as="font"
       type="font/woff2"
       crossOrigin="anonymous"
