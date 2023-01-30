@@ -1,24 +1,56 @@
 # Sidebar navigation
 
-- label: 'Introduction'
-  link: '/'
-- label: 'Getting started'
-  link: '/getting-started'
-- label: Usage
+- label: 'Character Stats'
+  link: '/character-stats'
+- label: 'Character Traits'
+  link: '/character-traits'
+- label: 'Challenges'
+  link: '/challenges'
+- label: Prompts
   items:
-    - label: 'Creating docs'
-      link: '/usage/creating-docs'
-    - label: 'Navigation'
-      link: '/usage/navigation'
-    - label: 'Shadowing'
-      link: '/usage/shadowing'
-    - label: 'Using YAML files'
-      link: '/usage/using-yaml-files'
-    - label: 'Remark Plugins'
-      link: '/usage/remark-plugins'
-- label: More
+    - label: 'General Prompts'
+      link: '/prompts/general-prompts'
+    - label: 'Challenge Prompts'
+      link: '/prompts/challenge-prompts'
+    - label: 'Suffer Prompts'
+      link: '/prompts/suffer-prompts'
+    - label: 'Recovery Prompts'
+      link: '/prompts/recovery-prompts'
+    - label: 'Fate Prompts'
+      link: '/prompts/fate-prompts'
+- label: Oracles
   items:
-    - label: FAQ
-      link: /faq
-    - label: 'Github'
-      link: https://github.com/jpedroschmitz/rocketdocs
+    - label: 'Core Oracles'
+      link: '/oracles/core-oracles'
+- label: Rules Reference
+  items:
+    - label: 'General Rules'
+      link: '/rules/general-rules'
+    - label: 'How To Play'
+      link: '/rules/how-to-play'
+- label: Meta
+  items:
+    - label: 'Introduction'
+      link: '/'
+    - label: 'Import/Export'
+      link: '/meta/import-export'
+    - label: 'About'
+      link: '/meta/about'
+# - label: Usage
+#   items:
+#     - label: 'Creating docs'
+#       link: '/usage/creating-docs'
+#     - label: 'Navigation'
+#       link: '/usage/navigation'
+#     - label: 'Shadowing'
+#       link: '/usage/shadowing'
+#     - label: 'Using YAML files'
+#       link: '/usage/using-yaml-files'
+#     - label: 'Remark Plugins'
+#       link: '/usage/remark-plugins'
+# - label: More
+#   items:
+#     - label: FAQ
+#       link: /faq
+#     - label: 'Github'
+#       link: https://github.com/jpedroschmitz/rocketdocs
