@@ -94,10 +94,12 @@ export default function GlobalStyle() {
         
         .turquoise {
             color: ${theme.colors.turquoise};
+            -webkit-text-stroke: 1px #008978;
         }
 
         .fuchsia {
             color: ${theme.colors.fuchsia};
+            -webkit-text-stroke: 1px #9b005b;
         }
 
         .bold {
