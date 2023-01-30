@@ -10,7 +10,6 @@ module.exports = {
     siteLanguage: `en`,
     themeColor: `#8257E6`,
     basePath: `/`,
-    pathPrefix: '/',
   },
   plugins: [
     {
