@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    siteTitle: `Rocket Docs`,
-    defaultTitle: `Rocket Docs`,
-    siteTitleShort: `Rocket Docs`,
+    siteTitle: `cy.br/dys.top.ia`,
+    defaultTitle: `cy.br/dys.top.ia`,
+    siteTitleShort: `cy.br/dys.top.ia`,
     siteDescription: `Out of the box Gatsby Theme for creating documentation websites easily and quickly`,
     siteUrl: `https://tatooka.github.io`,
     siteAuthor: `@jpedroschmitz`,
@@ -26,8 +26,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Rocket Docs`,
-        short_name: `Rocket Docs`,
+        name: `cy.br/dys.top.ia`,
+        short_name: `cy.br/dys.top.ia`,
         start_url: `/`,
         background_color: `#ffffff`,
         display: `standalone`,
