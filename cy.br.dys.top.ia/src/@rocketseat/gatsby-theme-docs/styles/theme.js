@@ -5,6 +5,8 @@ export default {
     shape: `#F2F2FA`,
     title: `#3D3D4D`,
     text: `#6C6C80`,
+    turquoise: `#0cffe1ff`,
+    fuchsia: `#ff0096ff`, 
     components: {
       blockquote: {
         background: `#feebc8`,

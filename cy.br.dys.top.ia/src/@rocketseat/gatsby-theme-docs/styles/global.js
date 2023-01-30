@@ -91,6 +91,18 @@ export default function GlobalStyle() {
           margin-bottom: 16px;
           font-weight: 400;
         }
+        
+        .turquoise {
+            color: ${theme.colors.turquoise};
+        }
+
+        .fuchsia {
+            color: ${theme.colors.fuchsia};
+        }
+
+        .bold {
+            font-weight: bold;
+        }
 
         code.inline-code {
           display: inline-block;
@@ -115,10 +127,10 @@ export default function GlobalStyle() {
         a {
           color: ${theme.colors.text};
           font-weight: bold;
-          text-decoration: none;
+          text-decoration-style: dotted;
 
           &:hover {
-            text-decoration: underline;
+            text-decoration-style: dashed;
           }
         }
 
