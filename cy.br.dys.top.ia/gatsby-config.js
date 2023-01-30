@@ -4,12 +4,12 @@ module.exports = {
     defaultTitle: `Rocket Docs`,
     siteTitleShort: `Rocket Docs`,
     siteDescription: `Out of the box Gatsby Theme for creating documentation websites easily and quickly`,
-    siteUrl: `https://rocketdocs.netlify.app`,
+    siteUrl: `https://tatooka.github.io`,
     siteAuthor: `@jpedroschmitz`,
     siteImage: `/banner.png`,
     siteLanguage: `en`,
     themeColor: `#8257E6`,
-    basePath: `/`,
+    basePath: `/cy.br.dys.top.ia`,
     pathPrefix: '/cy.br.dys.top.ia',
   },
   plugins: [
@@ -46,7 +46,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-canonical-urls`,
       options: {
-        siteUrl: `https://rocketdocs.netlify.app`,
+        siteUrl: `https://tatooka.github.io`,
       },
     },
     `gatsby-plugin-offline`,
