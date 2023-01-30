@@ -4,7 +4,7 @@ export const onRenderBody = ({ setHeadComponents }) => {
   setHeadComponents([
     <link
       rel="preload"
-      href="/fonts/EuroStyleNormal.woff2"
+      href="./fonts/EuroStyleNormal.woff2"
       as="font"
       type="font/woff2"
       crossOrigin="anonymous"
@@ -12,7 +12,7 @@ export const onRenderBody = ({ setHeadComponents }) => {
     />,
     <link
       rel="preload"
-      href="/fonts/EuroStileBold.woff2"
+      href="./fonts/EuroStileBold.woff2"
       as="font"
       type="font/woff2"
       crossOrigin="anonymous"
@@ -20,11 +20,19 @@ export const onRenderBody = ({ setHeadComponents }) => {
     />,
     <link
       rel="preload"
-      href="/fonts/EuroStile-Oblique.woff2"
+      href="./fonts/EuroStile-Oblique.woff2"
       as="font"
       type="font/woff2"
       crossOrigin="anonymous"
       key="EuroStyleOblique"
+    />,
+    <link
+      rel="preload"
+      href="./fonts/Android101.woff2"
+      as="font"
+      type="font/woff2"
+      crossOrigin="anonymous"
+      key="Android101"
     />,
   ])
 }

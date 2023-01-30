@@ -44,6 +44,16 @@ export default function GlobalStyle() {
             size-adjust: 90%;
         }
 
+        @font-face {
+            font-family: 'Android101';
+            font-weight: normal;
+            font-display: swap;
+            font-style: normal;
+            font-named-instance: 'Regular';
+            src: url(/fonts/Android101.woff2) format("woff2");
+            size-adjust: 100%;
+        }
+
         body {
           font-size: 22px;
           font-family: ${theme.fonts.body};
@@ -104,6 +114,10 @@ export default function GlobalStyle() {
 
         .bold {
             font-weight: bold;
+        }
+
+        .stat {
+            font-family: 'Android101';
         }
 
         code.inline-code {
