@@ -10,6 +10,7 @@ module.exports = {
     siteLanguage: `en`,
     themeColor: `#8257E6`,
     basePath: `/`,
+    pathPrefix: '/cy.br.dys.top.ia',
   },
   plugins: [
     {
