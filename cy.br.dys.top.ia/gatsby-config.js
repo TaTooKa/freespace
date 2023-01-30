@@ -9,8 +9,8 @@ module.exports = {
     siteImage: `/banner.png`,
     siteLanguage: `en`,
     themeColor: `#8257E6`,
-    basePath: `/cy.br.dys.top.ia`,
-    pathPrefix: '/cy.br.dys.top.ia',
+    basePath: `/`,
+    pathPrefix: '/',
   },
   plugins: [
     {
