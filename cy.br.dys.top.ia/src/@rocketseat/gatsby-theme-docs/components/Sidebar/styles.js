@@ -14,6 +14,12 @@ export const Container = styled.aside`
   padding-top: 36px;
   transition: transform 0.5s;
   height: calc(100vh - 1px);
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
 
   nav {
     width: 100%;
