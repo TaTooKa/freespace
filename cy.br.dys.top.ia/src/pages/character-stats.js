@@ -8,7 +8,12 @@ function CharacterStats() {
   const [inputs, setInputs] = useState(() => {
     const savedCharacterStr = windowGlobal ? windowGlobal.localStorage.getItem("character") : "{}"
     const savedCharacter = JSON.parse(savedCharacterStr)
-    return savedCharacter || {}
+    return savedCharacter || {
+      name: "",
+      xp: "0",
+      state: "inControl",
+      grit: "5",
+    }
   })
 
   const handleChange = (event) => {
@@ -16,9 +21,6 @@ function CharacterStats() {
     const name = event.target.name;
     const value = event.target.value;
     setInputs(values => ({...values, [name]: value}))
-    if (event.target.type == "radio") {
-      //event.target.checked == "true"
-    }
   }
 
   useEffect(() => {
@@ -55,10 +57,73 @@ function CharacterStats() {
         </label>
         <fieldset>
           <label>IN CONTROL
-            <input type="radio" name="state" value={inputs.inControl || "inControl"} onChange={handleChange} checked={inputs.inControl ? "yes" : "no"}/>
+            <input type="radio" name="state" value={inputs.inControl || "inControl"} onChange={handleChange} checked={inputs.state==="inControl"}/>
           </label>
           <label>IN A BAD SPOT
-            <input type="radio" name="state" value={inputs.inABadSpot || "inABadSpot"} onChange={handleChange} checked={inputs.inABadSpot ? "yes": "no"}/>
+            <input type="radio" name="state" value={inputs.inABadSpot || "inABadSpot"} onChange={handleChange} checked={inputs.state==="inABadSpot"}/>
+          </label>
+        </fieldset>
+
+        <label>BRAIN:
+        <input 
+          type="number" 
+          name="brain" 
+          value={inputs.brain || ""} 
+          onChange={handleChange}
+        />
+        </label>
+        <label>CHROME:
+        <input 
+          type="number" 
+          name="chrome" 
+          value={inputs.chrome || ""} 
+          onChange={handleChange}
+        />
+        </label>
+        <label>EDGE:
+        <input 
+          type="number" 
+          name="edge" 
+          value={inputs.edge || ""} 
+          onChange={handleChange}
+        />
+        </label>
+        <label>FLASH:
+        <input 
+          type="number" 
+          name="flash" 
+          value={inputs.flash || ""} 
+          onChange={handleChange}
+        />
+        </label>
+        <label>SHADE:
+        <input 
+          type="number" 
+          name="shade" 
+          value={inputs.shade || ""} 
+          onChange={handleChange}
+        />
+        </label>
+
+        <fieldset>
+          <label>GRIT</label>
+          <label>0
+            <input type="radio" name="grit" value={inputs.grit0 || "0"} onChange={handleChange} checked={inputs.grit==="0"}/>
+          </label>
+          <label>1
+            <input type="radio" name="grit" value={inputs.grit1 || "1"} onChange={handleChange} checked={inputs.grit==="1"}/>
+          </label>
+          <label>2
+            <input type="radio" name="grit" value={inputs.grit2 || "2"} onChange={handleChange} checked={inputs.grit==="2"}/>
+          </label>
+          <label>3
+            <input type="radio" name="grit" value={inputs.grit3 || "3"} onChange={handleChange} checked={inputs.grit==="3"}/>
+          </label>
+          <label>4
+            <input type="radio" name="grit" value={inputs.grit4 || "4"} onChange={handleChange} checked={inputs.grit==="4"}/>
+          </label>
+          <label>5
+            <input type="radio" name="grit" value={inputs.grit5 || "5"} onChange={handleChange} checked={inputs.grit==="5"}/>
           </label>
         </fieldset>
         
