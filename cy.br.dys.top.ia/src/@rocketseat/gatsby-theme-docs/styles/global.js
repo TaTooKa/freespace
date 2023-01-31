@@ -422,6 +422,7 @@ export default function GlobalStyle() {
 
         form.character-stats {
             overflow: hidden;
+            max-width: 400px;
 
             label, span {
                 font-size: 0.8em;
@@ -440,15 +441,20 @@ export default function GlobalStyle() {
                 .right-col {
                     margin: 0 0 0 10px;
                     width: 40%;
+                    text-align: center;
                     .xp-title {
+                        white-space: nowrap;
+                    }
+                    .curtot {
+                        font-size: 0.5em;
                         white-space: nowrap;
                     }
                     .input-container {
                         display: flex;
+                        text-align: center;
                         input {
                             width: 40%;
-                            margin: 5px;
-                            max-width: 90px;
+                            margin: 5px auto;
                         }
                     }
                 }
@@ -469,43 +475,51 @@ export default function GlobalStyle() {
             }
 
             .stats-container {
-                margin: 20px 0 30px 30px;
+                margin: 20px 0 30px 0;
                 .stat-container {
-                    margin: 10px 0 0 0;
-                    white-space: nowrap;
-                    label.stat {
-                        font-size: 1.2em;
-                        display: inline-block;
-                        width: 200px;
-                        text-align: right;
+                    margin: 10px auto;
+                    display: flex;
+                    .left-col {
+                        label.stat {
+                            font-size: 1.2em;
+                            display: inline-block;
+                            width: 200px;
+                            text-align: right;
+                        }
+                        input {
+                            height: 30px;
+                            width: 45px;
+                        }
                     }
-                    input {
-                        height: 30px;
-                        width: 45px;
-                    }
-                    span.stat-desc {
+                    .right-col {
                         margin: 0 0 0 15px;
-                        font-size: 0.7em;
-                        font-style: italic;
-                        color: #777;
+                        span.stat-desc {
+                            font-size: 0.6em;
+                            font-style: italic;
+                            color: #777;
+                        }
                     }
+
                 }
             }
 
             .stat-bar {
                 margin: 10px 0 10px 0;
                 display: flex;
+                width: 100%;
+                max-width: 400px;
                 .title {
                     font-size: 0.9em;
-                    width: 80px;
                     display: block;
                     margin: 0 10px 0 0;
                 }
                 label {
-                    margin: 0 5px 0 5px;
+                    margin: 0 3px 0 3px;
                     border: 1px solid white;
-                    padding: 2px 10px 0 10px;
+                    padding: 2px 0;
                     color: #555;
+                    width: 15%;
+                    text-align: center;
                 }
                 input:checked+label {
                     color: #fff;
@@ -523,14 +537,17 @@ export default function GlobalStyle() {
                         display: block;
                         width: 30%;
                         font-size: 1.3em;
+                        float: left;
                     }
                     .angle-progress {
-                        width: 50%;
-                        display: inline-block;
+                        display: flex;
+                        width: 60%;
+                        float: right;
                         font-size: 1em;
+                        margin: 3px 0 0 auto;
                         input {
-                            display: inline-block;
-                            margin: 0 0 0 5px;
+                            display: block;
+                            margin: -3px 0 0 10px;
                             height: 30px;
                             width: 45px;
                         }

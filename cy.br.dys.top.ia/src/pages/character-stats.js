@@ -49,7 +49,7 @@ function CharacterStats() {
             <label>NAME / ALIAS <input type="text" name="name" value={inputs.name || ""} onChange={handleChange}/></label>
           </div>
           <div class="right-col">
-              <span class="xp-title">XP current / total</span>
+              <span class="xp-title">XP </span><span class="curtot">current / total</span>
               <div class="input-container">
                 <input type="number" name="xpCurrent" value={inputs.xpCurrent || ""} onChange={handleChange} />
                 <input type="number" name="xpTotal" value={inputs.xpTotal || ""} onChange={handleChange} />
@@ -66,23 +66,48 @@ function CharacterStats() {
 
         <div class="stats-container">
           <div class="stat-container">
-            <label class="stat">BRAIN <input type="number" name="brain" value={inputs.brain || ""} onChange={handleChange}/></label><span class="stat-desc">cunning and knowledge</span>
+            <div class="left-col">
+              <label class="stat">BRAIN <input type="number" name="brain" value={inputs.brain || ""} onChange={handleChange}/></label>
+            </div>
+            <div class="right-col">
+              <span class="stat-desc">cunning and knowledge</span>
+            </div>
           </div>
 
           <div class="stat-container">
-            <label class="stat">CHROME <input type="number" name="chrome" value={inputs.chrome || ""} onChange={handleChange}/></label><span class="stat-desc">strength and endurance</span>
+            <div class="left-col">
+              <label class="stat">CHROME <input type="number" name="chrome" value={inputs.chrome || ""} onChange={handleChange}/></label>
+            </div>
+            <div class="right-col">
+              <span class="stat-desc">strength and endurance</span>
+            </div>
           </div>
 
           <div class="stat-container">
-            <label class="stat">EDGE <input type="number" name="edge" value={inputs.edge || ""} onChange={handleChange} /></label><span class="stat-desc">speed and precision</span>
+            <div class="left-col">
+              <label class="stat">EDGE <input type="number" name="edge" value={inputs.edge || ""} onChange={handleChange} /></label>
+            </div>
+            <div class="right-col">
+              <span class="stat-desc">speed and precision</span>
+            </div>
           </div>
 
           <div class="stat-container">
-            <label class="stat">FLASH <input type="number" name="flash" value={inputs.flash || ""} onChange={handleChange} /></label><span class="stat-desc">personality and empathy</span>
+            <div class="left-col">
+              <label class="stat">FLASH <input type="number" name="flash" value={inputs.flash || ""} onChange={handleChange} /></label>
+            </div>
+            <div class="right-col">
+              <span class="stat-desc">personality and empathy</span>
+            </div>
           </div>
 
           <div class="stat-container">
-            <label class="stat">SHADE <input type="number" name="shade" value={inputs.shade || ""} onChange={handleChange} /></label><span class="stat-desc">deception and stealth</span>
+            <div class="left-col">
+              <label class="stat">SHADE <input type="number" name="shade" value={inputs.shade || ""} onChange={handleChange} /></label>
+            </div>
+            <div class="right-col">
+              <span class="stat-desc">deception and stealth</span>
+            </div>
           </div>
         </div>
 
