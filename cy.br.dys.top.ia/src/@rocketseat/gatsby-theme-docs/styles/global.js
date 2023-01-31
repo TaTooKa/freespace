@@ -429,13 +429,38 @@ export default function GlobalStyle() {
                 font-weight: bold;
             }
 
+            input {
+                text-align: center;
+                background-color: ${theme.colors.turquoise};
+                font-family: 'EuroStyle';
+                font-weight: bold;
+                border: none;
+                border-radius: 0 20px 0 3px;
+            }
+            input:focus, textarea:focus {
+                box-shadow: 0 0 15px ${theme.colors.turquoise};
+                transition: 0.5s;
+            }
+            textarea {
+                background-color: ${theme.colors.turquoise};
+                font-family: 'EuroStyle';
+                font-weight: bold;
+                font-size: 0.8em;
+                padding: 3px 5px;
+                border: none;
+                border-radius: 0 10px 0 3px;
+            }
+
             .first-row {
                 display: flex;
                 .left-col {
                     width: 55%;
                     input {
                         width: 100%;
+                        height: 25px;
                         margin: 5px;
+                        padding: 0 5px 0 5px;
+                        text-align: left;
                     }
                 }
                 .right-col {
@@ -454,6 +479,7 @@ export default function GlobalStyle() {
                         text-align: center;
                         input {
                             width: 40%;
+                            height: 25px;
                             margin: 5px auto;
                         }
                     }
@@ -468,6 +494,16 @@ export default function GlobalStyle() {
                     margin: auto;
                     white-space: nowrap;
                     text-align: center;
+                    #inControlInput:checked+label {
+                        color: ${theme.colors.turquoise};
+                        text-shadow: 0 0 15px ${theme.colors.turquoise};
+                        transition: 0.5s;
+                    }
+                    #inABadSpotInput:checked+label {
+                        color: ${theme.colors.fuchsia};
+                        text-shadow: 0 0 15px ${theme.colors.fuchsia};
+                        transition: 0.5s;
+                    }
                 }
                 label {
                     margin: 0 30px 0 0;
@@ -485,6 +521,7 @@ export default function GlobalStyle() {
                             display: inline-block;
                             width: 200px;
                             text-align: right;
+                            text-shadow: 0 0 5px #aaa;
                         }
                         input {
                             height: 30px;
@@ -516,13 +553,18 @@ export default function GlobalStyle() {
                 label {
                     margin: 0 3px 0 3px;
                     border: 1px solid white;
+                    border-radius: 0 10px 10px 0;
                     padding: 2px 0;
                     color: #555;
                     width: 15%;
                     text-align: center;
+                    transition: 0.5s;
                 }
                 input:checked+label {
                     color: #fff;
+                    border: 1px solid ${theme.colors.turquoise};
+                    box-shadow: inset 0 0 5px ${theme.colors.turquoise};
+                    text-shadow: 0 0 10px ${theme.colors.turquoise};
                 }
                 input {
                     display: none;
@@ -559,10 +601,25 @@ export default function GlobalStyle() {
                         display: flex;
                         margin: 5px 0 0 0;
                     }
+                    .col input {
+                        display: none;
+                    }
                     .col label {
+                        font-size: 0.7em;
+                        text-align: center;
                         display: inline-block;
-                        width: 100%;
-                        padding: 5px 0 5px 0;
+                        width: 95%;
+                        padding: 6px 0 6px 0;
+                        border: 1px solid #444;
+                        border-radius: 15px;
+                        margin: 2px;
+                    }
+                    .col input:checked+label {
+                        color: ${theme.colors.turquoise};
+                        text-shadow: 0 0 10px ${theme.colors.turquoise};
+                        box-shadow: inset 0 0 5px ${theme.colors.turquoise};
+                        border: 1px solid ${theme.colors.turquoise};
+                        border-radius: 15px;
                     }
                 }
             }
