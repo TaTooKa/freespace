@@ -78,14 +78,14 @@ export default function Sidebar({ isMenuOpen }) {
           })}
         </List>
       </nav>
-      <ThemeContext.Consumer>
+      {/* <ThemeContext.Consumer>
         {theme => (
 
               <button className="dark-switcher" onClick={theme.toggleDark}>
                 {theme.dark ? <span>Light mode ☀</span> : <span>Dark mode ☾</span>}
               </button>
           )}
-        </ThemeContext.Consumer>
+        </ThemeContext.Consumer> */}
     </Container>
   );
 }

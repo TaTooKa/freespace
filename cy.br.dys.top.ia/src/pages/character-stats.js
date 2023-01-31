@@ -20,27 +20,27 @@ function CharacterStats() {
   }, [inputs]);
 
   const saveCharacter = () => {
-    console.log(inputs);
+    // console.log(inputs);
     localStorage.setItem("character", JSON.stringify(inputs))
   }
 
   return (
-    <Layout title="Character Stats">
+    <Layout title="CHARACTER STATS">
       <Seo title="Character Stats" />
       <form>
-        <label>Enter your name:
+        <label>Name:
         <input 
           type="text" 
-          name="username" 
-          value={inputs.username || ""} 
+          name="name" 
+          value={inputs.name || ""} 
           onChange={handleChange}
         />
         </label>
-        <label>Enter your age:
+        <label>XP:
           <input 
             type="number" 
-            name="age" 
-            value={inputs.age || ""} 
+            name="xp" 
+            value={inputs.xp || ""} 
             onChange={handleChange}
           />
           </label>

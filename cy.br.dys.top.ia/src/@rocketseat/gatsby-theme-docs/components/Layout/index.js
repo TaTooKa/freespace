@@ -29,9 +29,10 @@ export default function Layout({
 
   return (
     <Fragment>
-      <ThemeContext.Consumer>
+      {/* <ThemeContext.Consumer>
       {theme => (
-        <div className={theme.dark ? 'dark' : 'light'}>
+        <div className={theme.dark ? 'dark' : 'light'}> */}
+        <div className='dark'>
             <Overlay isMenuOpen={isMenuOpen} onClick={handleMenuOpen} />
             <Container>
                 <Sidebar isMenuOpen={isMenuOpen} />
@@ -72,8 +73,8 @@ export default function Layout({
                 </Main>
             </Container>
           </div>
-        )}
-        </ThemeContext.Consumer>
+        {/* )}
+        </ThemeContext.Consumer> */}
     </Fragment>
   );
 }
