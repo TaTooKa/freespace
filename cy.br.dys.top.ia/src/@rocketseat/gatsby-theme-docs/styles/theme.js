@@ -16,7 +16,7 @@ export default {
   },
   darkcolors: {
     primary: '#ff0096ff',
-    background: '#000000',
+    background: '#181d24',
     shape: `#131313`,
     title: `#bfbfbf`,
     text: `#ffffff`,
