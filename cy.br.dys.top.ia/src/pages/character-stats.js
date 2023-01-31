@@ -6,16 +6,19 @@ function CharacterStats() {
   const windowGlobal = typeof window !== 'undefined' && window
 
   const [inputs, setInputs] = useState(() => {
-    // console.log(windowGlobal)
     const savedCharacterStr = windowGlobal ? windowGlobal.localStorage.getItem("character") : "{}"
     const savedCharacter = JSON.parse(savedCharacterStr)
     return savedCharacter || {}
   })
 
   const handleChange = (event) => {
+    console.log(event.target.name, event.target.value, event.target.checked, event.target.type)
     const name = event.target.name;
     const value = event.target.value;
     setInputs(values => ({...values, [name]: value}))
+    if (event.target.type == "radio") {
+      //event.target.checked == "true"
+    }
   }
 
   useEffect(() => {
@@ -49,7 +52,16 @@ function CharacterStats() {
             value={inputs.xp || ""} 
             onChange={handleChange}
           />
+        </label>
+        <fieldset>
+          <label>IN CONTROL
+            <input type="radio" name="state" value={inputs.inControl || "inControl"} onChange={handleChange} checked={inputs.inControl ? "yes" : "no"}/>
           </label>
+          <label>IN A BAD SPOT
+            <input type="radio" name="state" value={inputs.inABadSpot || "inABadSpot"} onChange={handleChange} checked={inputs.inABadSpot ? "yes": "no"}/>
+          </label>
+        </fieldset>
+        
       </form>
     </Layout>
   )
