@@ -419,6 +419,153 @@ export default function GlobalStyle() {
           content: 'flow';
           background: #e8bd36;
         }
+
+        form.character-stats {
+            overflow: hidden;
+
+            label, span {
+                font-size: 0.8em;
+                font-weight: bold;
+            }
+
+            .first-row {
+                display: flex;
+                .left-col {
+                    width: 55%;
+                    input {
+                        width: 100%;
+                        margin: 5px;
+                    }
+                }
+                .right-col {
+                    margin: 0 0 0 10px;
+                    width: 40%;
+                    .xp-title {
+                        white-space: nowrap;
+                    }
+                    .input-container {
+                        display: flex;
+                        input {
+                            width: 40%;
+                            margin: 5px;
+                            max-width: 90px;
+                        }
+                    }
+                }
+            }
+
+            .state-container {
+                margin: 10px 0 10px 0;
+                width: 100%;
+                .input-container {
+                    width: 100%;
+                    margin: auto;
+                    white-space: nowrap;
+                    text-align: center;
+                }
+                label {
+                    margin: 0 30px 0 0;
+                }
+            }
+
+            .stats-container {
+                margin: 20px 0 30px 30px;
+                .stat-container {
+                    margin: 10px 0 0 0;
+                    white-space: nowrap;
+                    label.stat {
+                        font-size: 1.2em;
+                        display: inline-block;
+                        width: 200px;
+                        text-align: right;
+                    }
+                    input {
+                        height: 30px;
+                        width: 45px;
+                    }
+                    span.stat-desc {
+                        margin: 0 0 0 15px;
+                        font-size: 0.7em;
+                        font-style: italic;
+                        color: #777;
+                    }
+                }
+            }
+
+            .stat-bar {
+                margin: 10px 0 10px 0;
+                display: flex;
+                .title {
+                    font-size: 0.9em;
+                    width: 80px;
+                    display: block;
+                    margin: 0 10px 0 0;
+                }
+                label {
+                    margin: 0 5px 0 5px;
+                    border: 1px solid white;
+                    padding: 2px 10px 0 10px;
+                    color: #555;
+                }
+                input:checked+label {
+                    color: #fff;
+                }
+                input {
+                    display: none;
+                }
+            }
+
+            .angle-container {
+                margin: 30px 0 20px 0;
+                .angle-header {
+                    display: flex;
+                    .angle-title {
+                        display: block;
+                        width: 30%;
+                        font-size: 1.3em;
+                    }
+                    .angle-progress {
+                        width: 50%;
+                        display: inline-block;
+                        font-size: 1em;
+                        input {
+                            display: inline-block;
+                            margin: 0 0 0 5px;
+                            height: 30px;
+                            width: 45px;
+                        }
+                    }
+                }
+                .angle-options {
+                    margin: 10px 0 0 0;
+                    .columns {
+                        display: flex;
+                        margin: 5px 0 0 0;
+                    }
+                    .col label {
+                        display: inline-block;
+                        width: 100%;
+                        padding: 5px 0 5px 0;
+                    }
+                }
+            }
+            
+            .notes-container {
+                margin: 5px 0 60px 0;
+                label {
+                    display: block;
+                    font-size: 1.1em;
+                    textarea {
+                        display: block;
+                        margin: 10px 0 0 0;
+                        width: 100%;
+                        min-height: 100px;
+                        min-width: 100%;
+                    }
+                }
+
+            }
+        }
       `}
     />
   );
