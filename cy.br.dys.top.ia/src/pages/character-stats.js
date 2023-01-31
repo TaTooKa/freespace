@@ -3,8 +3,10 @@ import Layout from '@rocketseat/gatsby-theme-docs/src/components/Layout';
 import Seo from '@rocketseat/gatsby-theme-docs/src/components/SEO';
 
 function CharacterStats() {
+  const windowGlobal = typeof window !== 'undefined' && window
+
   const [inputs, setInputs] = useState(() => {
-    const savedCharacter = JSON.parse(localStorage.getItem("character"))
+    const savedCharacter = JSON.parse(windowGlobal.localStorage.getItem("character"))
     return savedCharacter || {}
   })
 
@@ -21,7 +23,7 @@ function CharacterStats() {
 
   const saveCharacter = () => {
     // console.log(inputs);
-    localStorage.setItem("character", JSON.stringify(inputs))
+    windowGlobal.localStorage.setItem("character", JSON.stringify(inputs))
   }
 
   return (
