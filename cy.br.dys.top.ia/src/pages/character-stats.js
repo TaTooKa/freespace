@@ -6,7 +6,9 @@ function CharacterStats() {
   const windowGlobal = typeof window !== 'undefined' && window
 
   const [inputs, setInputs] = useState(() => {
-    const savedCharacter = JSON.parse(windowGlobal.localStorage.getItem("character"))
+    // console.log(windowGlobal)
+    const savedCharacterStr = windowGlobal ? windowGlobal.localStorage.getItem("character") : "{}"
+    const savedCharacter = JSON.parse(savedCharacterStr)
     return savedCharacter || {}
   })
 
@@ -23,7 +25,9 @@ function CharacterStats() {
 
   const saveCharacter = () => {
     // console.log(inputs);
-    windowGlobal.localStorage.setItem("character", JSON.stringify(inputs))
+    if ( windowGlobal ) {
+      windowGlobal.localStorage.setItem("character", JSON.stringify(inputs))
+    }
   }
 
   return (
