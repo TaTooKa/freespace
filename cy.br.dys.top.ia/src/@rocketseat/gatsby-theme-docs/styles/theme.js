@@ -1,16 +1,31 @@
 export default {
   colors: {
-    primary: '#8257E6',
+    primary: '#ff0096ff',
     background: '#FFFFFF',
     shape: `#F2F2FA`,
-    title: `#3D3D4D`,
-    text: `#6C6C80`,
+    title: `#5c5c70`,
+    text: `#26282c`,
     turquoise: `#0cffe1ff`,
     fuchsia: `#ff0096ff`, 
     components: {
       blockquote: {
-        background: `#feebc8`,
+        background: `#939dae`,
         text: `#2d3748`,
+      },
+    },
+  },
+  darkcolors: {
+    primary: '#ff0096ff',
+    background: '#000000',
+    shape: `#131313`,
+    title: `#bfbfbf`,
+    text: `#ffffff`,
+    turquoise: `#0cffe1ff`,
+    fuchsia: `#ff0096ff`, 
+    components: {
+      blockquote: {
+        background: `#2d3748`,
+        text: `#eeeeee`,
       },
     },
   },
@@ -19,7 +34,6 @@ export default {
       family: 'EuroStyle',
       file: '/fonts/EuroStyleNormal',
     },
-    // body: `-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif`,
     body: `EuroStyle, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif`,
   },
 };

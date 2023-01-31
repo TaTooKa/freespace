@@ -64,11 +64,20 @@ export default function GlobalStyle() {
           letter-spacing: 0.05em;
         }
 
+        body .dark {
+          background-color: ${theme.darkcolors.background};
+          color: ${theme.darkcolors.text};
+        }
+
         h1 {
           font-size: 1.6em;
           color: ${theme.colors.title};
           font-weight: bold;
           margin-bottom: 24px;
+        }
+
+        .dark h1 {
+          color: ${theme.darkcolors.title};
         }
 
         h2 {
@@ -93,6 +102,14 @@ export default function GlobalStyle() {
           margin: 24px 0 16px 0;
           font-weight: bold;
         }
+        
+        .dark h2,
+        .dark h3,
+        .dark h4,
+        .dark h5,
+        .dark h6 {
+          color: ${theme.darkcolors.title};
+        }
 
         p {
           color: ${theme.colors.text};
@@ -100,6 +117,10 @@ export default function GlobalStyle() {
           line-height: 28px;
           margin-bottom: 16px;
           font-weight: 400;
+        }
+
+        .dark p {
+          color: ${theme.darkcolors.text};
         }
         
         .turquoise {
@@ -151,6 +172,10 @@ export default function GlobalStyle() {
           }
         }
 
+        .dark a {
+            color: ${theme.darkcolors.text};
+        }
+
         blockquote {
           margin-bottom: 16px;
           width: 100%;
@@ -166,6 +191,17 @@ export default function GlobalStyle() {
               color: ${theme.colors.components.blockquote.text};
             }
           }
+        }
+
+        .dark blockquote {
+            p {
+                color: ${theme.darkcolors.components.blockquote.text};
+                background: ${theme.darkcolors.components.blockquote.background};
+
+                a {
+                color: ${theme.darkcolors.components.blockquote.text};
+                }
+            }
         }
 
         hr {
@@ -213,6 +249,21 @@ export default function GlobalStyle() {
           }
         }
 
+        .dark table {
+            th, 
+            td {
+                color: ${theme.darkcolors.text};
+                background-color: ${theme.darkcolors.shape};
+                border: solid 1px ${theme.darkcolors.shape};
+            }
+
+            tr {
+                th {
+                    color: ${theme.darkcolors.title};
+                }
+            }
+        }
+
         iframe {
           margin-bottom: 16px;
         }
@@ -230,6 +281,11 @@ export default function GlobalStyle() {
           li {
             line-height: 28px;
           }
+        }
+        
+        .dark ul,
+        .dark ol {
+          color: ${theme.darkcolors.text};
         }
 
         li ul,
