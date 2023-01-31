@@ -431,27 +431,30 @@ export default function GlobalStyle() {
 
             input {
                 text-align: center;
-                background-color: ${theme.colors.turquoise};
+                background-color: ${theme.darkcolors.components.input.background};
                 font-family: 'EuroStyle';
                 font-weight: bold;
-                border: none;
+                border: 1px solid ${theme.colors.turquoise};
                 border-radius: 0 20px 0 3px;
-                color: #000;
+                color: ${theme.darkcolors.components.input.text};
                 transition: 3s;
+            }
+            input[type="radio"]::before {
+                outline: 1px solid red;
             }
             input:focus, textarea:focus {
                 box-shadow: 0 0 15px ${theme.colors.turquoise};
                 transition: 0.5s;
             }
             textarea {
-                background-color: ${theme.colors.turquoise};
+                background-color: ${theme.darkcolors.components.input.background};
+                color: ${theme.darkcolors.components.input.text};
                 font-family: 'EuroStyle';
                 font-weight: bold;
                 font-size: 0.8em;
                 padding: 3px 5px;
-                border: none;
+                border: 1px solid ${theme.colors.turquoise};
                 border-radius: 0 10px 0 3px;
-                color: #000;
                 transition: 1s;
             }
 
@@ -468,7 +471,7 @@ export default function GlobalStyle() {
                     }
                 }
                 .right-col {
-                    margin: 0 0 0 10px;
+                    margin: 0 0 0 20px;
                     width: 40%;
                     text-align: center;
                     .xp-title {
@@ -486,6 +489,12 @@ export default function GlobalStyle() {
                             height: 25px;
                             margin: 5px auto;
                         }
+                        input#xpCurrent {
+                            border-radius: 20px 3px 3px 20px;
+                        }
+                        input#xpTotal {
+                            border-radius: 3px 20px 20px 3px;
+                        }
                     }
                 }
             }
@@ -498,20 +507,29 @@ export default function GlobalStyle() {
                     margin: auto;
                     white-space: nowrap;
                     text-align: center;
+                    input {
+                        display: none;
+                    }
                     #inControlInput:checked+label {
                         color: ${theme.colors.turquoise};
                         text-shadow: 0 0 15px ${theme.colors.turquoise};
                         transition: 0.5s;
+                        box-shadow: inset 0 0 5px ${theme.colors.turquoise};
                     }
                     #inABadSpotInput:checked+label {
                         color: ${theme.colors.fuchsia};
                         text-shadow: 0 0 15px ${theme.colors.fuchsia};
                         transition: 0.5s;
+                        box-shadow: inset 0 0 5px ${theme.colors.fuchsia};
                     }
                 }
                 label {
-                    margin: 0 30px 0 0;
+                    margin: 0 20px 0 0;
                     transition: 3s;
+                    border: 1px solid #444;
+                    padding: 2px 10px;
+                    border-radius: 6px;
+                    box-shadow: inset 0 0 5px #000;
                 }
             }
 
@@ -557,7 +575,8 @@ export default function GlobalStyle() {
                 }
                 label {
                     margin: 0 3px 0 3px;
-                    border: 1px solid white;
+                    border: 1px solid #444;
+                    box-shadow: inset 0 0 5px #000;
                     border-radius: 0 10px 10px 0;
                     padding: 2px 0;
                     color: #555;
@@ -619,6 +638,7 @@ export default function GlobalStyle() {
                         border-radius: 15px;
                         margin: 2px;
                         transition: 0.5s;
+                        box-shadow: inset 0 0 5px #000;
                     }
                     .col input:checked+label {
                         color: ${theme.colors.turquoise};

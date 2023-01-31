@@ -27,6 +27,10 @@ export default {
         background: `#2d3748`,
         text: `#eeeeee`,
       },
+      input: {
+        background: `#060b15`,
+        text: `#ffffff`,
+      }
     },
   },
   fonts: {

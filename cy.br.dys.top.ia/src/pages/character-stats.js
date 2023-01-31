@@ -51,8 +51,8 @@ function CharacterStats() {
           <div class="right-col">
               <span class="xp-title">XP </span><span class="curtot">current / total</span>
               <div class="input-container">
-                <input type="number" name="xpCurrent" value={inputs.xpCurrent || ""} onChange={handleChange} />
-                <input type="number" name="xpTotal" value={inputs.xpTotal || ""} onChange={handleChange} />
+                <input type="number" id="xpCurrent" name="xpCurrent" value={inputs.xpCurrent || ""} onChange={handleChange} />
+                <input type="number" id="xpTotal" name="xpTotal" value={inputs.xpTotal || ""} onChange={handleChange} />
               </div>
           </div>
         </div>
