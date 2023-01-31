@@ -436,6 +436,8 @@ export default function GlobalStyle() {
                 font-weight: bold;
                 border: none;
                 border-radius: 0 20px 0 3px;
+                color: #000;
+                transition: 3s;
             }
             input:focus, textarea:focus {
                 box-shadow: 0 0 15px ${theme.colors.turquoise};
@@ -449,6 +451,8 @@ export default function GlobalStyle() {
                 padding: 3px 5px;
                 border: none;
                 border-radius: 0 10px 0 3px;
+                color: #000;
+                transition: 1s;
             }
 
             .first-row {
@@ -507,6 +511,7 @@ export default function GlobalStyle() {
                 }
                 label {
                     margin: 0 30px 0 0;
+                    transition: 3s;
                 }
             }
 
@@ -613,6 +618,7 @@ export default function GlobalStyle() {
                         border: 1px solid #444;
                         border-radius: 15px;
                         margin: 2px;
+                        transition: 0.5s;
                     }
                     .col input:checked+label {
                         color: ${theme.colors.turquoise};
@@ -620,6 +626,7 @@ export default function GlobalStyle() {
                         box-shadow: inset 0 0 5px ${theme.colors.turquoise};
                         border: 1px solid ${theme.colors.turquoise};
                         border-radius: 15px;
+                        transition: 0.5s;
                     }
                 }
             }
