@@ -433,8 +433,19 @@ export default function GlobalStyle() {
         }
 
         form.character-stats {
-            overflow: hidden;
             max-width: 400px;
+
+            ${'' /* .left-side {
+              float: left;
+              max-width: 350px;
+              padding: 0 20px 0 0;
+              margin: 0;
+            }
+            .right-side {
+              float: left;
+              max-width: 350px;
+              padding: 0 20px 0 0;
+            } */}
 
             label, span {
                 font-size: 0.8em;
@@ -566,6 +577,9 @@ export default function GlobalStyle() {
                     .right-col {
                         margin: 0 0 0 15px;
                         span.stat-desc {
+                            margin: 5px 0 0 0;
+                            display: inline-block;
+                            line-height: 1.2em;
                             font-size: 0.6em;
                             font-style: italic;
                             color: #777;

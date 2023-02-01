@@ -21,7 +21,6 @@ export default function Layout({
   const [isMenuOpen, setMenuOpen] = useState(false);
   const disableTOC =
     disableTableOfContents === true || !headings || headings.length === 0;
-  const foo = "bar";
 
   const handleMenuOpen = () => {
     setMenuOpen(!isMenuOpen);
