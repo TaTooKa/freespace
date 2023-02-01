@@ -765,7 +765,7 @@ export default function GlobalStyle() {
           }
 
           .challenge-container {
-            margin: 10px 0 20px 0;
+            margin: 30px 0 30px 0;
             .challenge-inputs {
               .description-container {
                 display: inline-block;

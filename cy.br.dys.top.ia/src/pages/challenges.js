@@ -112,6 +112,216 @@ function Challenges() {
           </div>
         </div>
 
+        <div class="challenge-container">
+          <div class="challenge-inputs">
+            <div class="description-container">
+              <label for="chDesc3">CHALLENGE DESCRIPTION</label>
+              <input id="chDesc3" type="text" name="chDesc3" class="description" value={inputs.chDesc3} onChange={handleChange}/>
+            </div>
+            <div class="progress-container">
+              <label for="chProgress3">PROGRESS</label>
+              <input id="chProgress3" type="number" name="chProgress3" class="progress" value={inputs.chProgress3} onChange={handleChange}/>
+            </div>
+          </div>
+          <div class="ranks-container">
+            <div class="rank-button">
+              <input type="radio" name="chRank3" id="chRank3_1" value={inputs.chRank3_1 || "1"} onChange={handleChange} checked={inputs.chRank3==="1"}/>
+              <label for="chRank3_1"><span class="rank-type">SHORT:</span> +30%; 2XP</label>
+            </div>
+            <div class="rank-button">
+              <input type="radio" name="chRank3" id="chRank3_2" value={inputs.chRank3_2 || "2"} onChange={handleChange} checked={inputs.chRank3==="2"}/>
+              <label for="chRank3_2"><span class="rank-type">MEDIUM:</span> +20%; 5XP</label>
+            </div>
+            <div class="rank-button">
+              <input type="radio" name="chRank3" id="chRank3_3" value={inputs.chRank3_3 || "3"} onChange={handleChange} checked={inputs.chRank3==="3"}/>
+              <label for="chRank3_3"><span class="rank-type">LONG:</span> +10%; 10XP</label>
+            </div>
+            <div class="rank-button">
+              <input type="radio" name="chRank3" id="chRank3_4" value={inputs.chRank3_4 || "4"} onChange={handleChange} checked={inputs.chRank3==="4"}/>
+              <label for="chRank3_4"><span class="rank-type">EXTREME:</span> +5%; 20XP</label>
+            </div>
+            <div class="rank-button">
+              <input type="radio" name="chRank3" id="chRank3_5" value={inputs.chRank3_5 || "5"} onChange={handleChange} checked={inputs.chRank3==="5"}/>
+              <label for="chRank3_5"><span class="rank-type">EPIC:</span> +2%; 50XP</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="challenge-container">
+          <div class="challenge-inputs">
+            <div class="description-container">
+              <label for="chDesc4">CHALLENGE DESCRIPTION</label>
+              <input id="chDesc4" type="text" name="chDesc4" class="description" value={inputs.chDesc4} onChange={handleChange}/>
+            </div>
+            <div class="progress-container">
+              <label for="chProgress4">PROGRESS</label>
+              <input id="chProgress4" type="number" name="chProgress4" class="progress" value={inputs.chProgress4} onChange={handleChange}/>
+            </div>
+          </div>
+          <div class="ranks-container">
+            <div class="rank-button">
+              <input type="radio" name="chRank4" id="chRank4_1" value={inputs.chRank4_1 || "1"} onChange={handleChange} checked={inputs.chRank4==="1"}/>
+              <label for="chRank4_1"><span class="rank-type">SHORT:</span> +30%; 2XP</label>
+            </div>
+            <div class="rank-button">
+              <input type="radio" name="chRank4" id="chRank4_2" value={inputs.chRank4_2 || "2"} onChange={handleChange} checked={inputs.chRank4==="2"}/>
+              <label for="chRank4_2"><span class="rank-type">MEDIUM:</span> +20%; 5XP</label>
+            </div>
+            <div class="rank-button">
+              <input type="radio" name="chRank4" id="chRank4_3" value={inputs.chRank4_3 || "3"} onChange={handleChange} checked={inputs.chRank4==="3"}/>
+              <label for="chRank4_3"><span class="rank-type">LONG:</span> +10%; 10XP</label>
+            </div>
+            <div class="rank-button">
+              <input type="radio" name="chRank4" id="chRank4_4" value={inputs.chRank4_4 || "4"} onChange={handleChange} checked={inputs.chRank4==="4"}/>
+              <label for="chRank4_4"><span class="rank-type">EXTREME:</span> +5%; 20XP</label>
+            </div>
+            <div class="rank-button">
+              <input type="radio" name="chRank4" id="chRank4_5" value={inputs.chRank4_5 || "5"} onChange={handleChange} checked={inputs.chRank4==="5"}/>
+              <label for="chRank4_5"><span class="rank-type">EPIC:</span> +2%; 50XP</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="challenge-container">
+          <div class="challenge-inputs">
+            <div class="description-container">
+              <label for="chDesc5">CHALLENGE DESCRIPTION</label>
+              <input id="chDesc5" type="text" name="chDesc5" class="description" value={inputs.chDesc5} onChange={handleChange}/>
+            </div>
+            <div class="progress-container">
+              <label for="chProgress5">PROGRESS</label>
+              <input id="chProgress5" type="number" name="chProgress5" class="progress" value={inputs.chProgress5} onChange={handleChange}/>
+            </div>
+          </div>
+          <div class="ranks-container">
+            <div class="rank-button">
+              <input type="radio" name="chRank5" id="chRank5_1" value={inputs.chRank5_1 || "1"} onChange={handleChange} checked={inputs.chRank5==="1"}/>
+              <label for="chRank5_1"><span class="rank-type">SHORT:</span> +30%; 2XP</label>
+            </div>
+            <div class="rank-button">
+              <input type="radio" name="chRank5" id="chRank5_2" value={inputs.chRank5_2 || "2"} onChange={handleChange} checked={inputs.chRank5==="2"}/>
+              <label for="chRank5_2"><span class="rank-type">MEDIUM:</span> +20%; 5XP</label>
+            </div>
+            <div class="rank-button">
+              <input type="radio" name="chRank5" id="chRank5_3" value={inputs.chRank5_3 || "3"} onChange={handleChange} checked={inputs.chRank5==="3"}/>
+              <label for="chRank5_3"><span class="rank-type">LONG:</span> +10%; 10XP</label>
+            </div>
+            <div class="rank-button">
+              <input type="radio" name="chRank5" id="chRank5_4" value={inputs.chRank5_4 || "4"} onChange={handleChange} checked={inputs.chRank5==="4"}/>
+              <label for="chRank5_4"><span class="rank-type">EXTREME:</span> +5%; 20XP</label>
+            </div>
+            <div class="rank-button">
+              <input type="radio" name="chRank5" id="chRank5_5" value={inputs.chRank5_5 || "5"} onChange={handleChange} checked={inputs.chRank5==="5"}/>
+              <label for="chRank5_5"><span class="rank-type">EPIC:</span> +2%; 50XP</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="challenge-container">
+          <div class="challenge-inputs">
+            <div class="description-container">
+              <label for="chDesc6">CHALLENGE DESCRIPTION</label>
+              <input id="chDesc6" type="text" name="chDesc6" class="description" value={inputs.chDesc6} onChange={handleChange}/>
+            </div>
+            <div class="progress-container">
+              <label for="chProgress6">PROGRESS</label>
+              <input id="chProgress6" type="number" name="chProgress6" class="progress" value={inputs.chProgress6} onChange={handleChange}/>
+            </div>
+          </div>
+          <div class="ranks-container">
+            <div class="rank-button">
+              <input type="radio" name="chRank6" id="chRank6_1" value={inputs.chRank6_1 || "1"} onChange={handleChange} checked={inputs.chRank6==="1"}/>
+              <label for="chRank6_1"><span class="rank-type">SHORT:</span> +30%; 2XP</label>
+            </div>
+            <div class="rank-button">
+              <input type="radio" name="chRank6" id="chRank6_2" value={inputs.chRank6_2 || "2"} onChange={handleChange} checked={inputs.chRank6==="2"}/>
+              <label for="chRank6_2"><span class="rank-type">MEDIUM:</span> +20%; 5XP</label>
+            </div>
+            <div class="rank-button">
+              <input type="radio" name="chRank6" id="chRank6_3" value={inputs.chRank6_3 || "3"} onChange={handleChange} checked={inputs.chRank6==="3"}/>
+              <label for="chRank6_3"><span class="rank-type">LONG:</span> +10%; 10XP</label>
+            </div>
+            <div class="rank-button">
+              <input type="radio" name="chRank6" id="chRank6_4" value={inputs.chRank6_4 || "4"} onChange={handleChange} checked={inputs.chRank6==="4"}/>
+              <label for="chRank6_4"><span class="rank-type">EXTREME:</span> +5%; 20XP</label>
+            </div>
+            <div class="rank-button">
+              <input type="radio" name="chRank6" id="chRank6_5" value={inputs.chRank6_5 || "5"} onChange={handleChange} checked={inputs.chRank6==="5"}/>
+              <label for="chRank6_5"><span class="rank-type">EPIC:</span> +2%; 50XP</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="challenge-container">
+          <div class="challenge-inputs">
+            <div class="description-container">
+              <label for="chDesc7">CHALLENGE DESCRIPTION</label>
+              <input id="chDesc7" type="text" name="chDesc7" class="description" value={inputs.chDesc7} onChange={handleChange}/>
+            </div>
+            <div class="progress-container">
+              <label for="chProgress7">PROGRESS</label>
+              <input id="chProgress7" type="number" name="chProgress7" class="progress" value={inputs.chProgress7} onChange={handleChange}/>
+            </div>
+          </div>
+          <div class="ranks-container">
+            <div class="rank-button">
+              <input type="radio" name="chRank7" id="chRank7_1" value={inputs.chRank7_1 || "1"} onChange={handleChange} checked={inputs.chRank7==="1"}/>
+              <label for="chRank7_1"><span class="rank-type">SHORT:</span> +30%; 2XP</label>
+            </div>
+            <div class="rank-button">
+              <input type="radio" name="chRank7" id="chRank7_2" value={inputs.chRank7_2 || "2"} onChange={handleChange} checked={inputs.chRank7==="2"}/>
+              <label for="chRank7_2"><span class="rank-type">MEDIUM:</span> +20%; 5XP</label>
+            </div>
+            <div class="rank-button">
+              <input type="radio" name="chRank7" id="chRank7_3" value={inputs.chRank7_3 || "3"} onChange={handleChange} checked={inputs.chRank7==="3"}/>
+              <label for="chRank7_3"><span class="rank-type">LONG:</span> +10%; 10XP</label>
+            </div>
+            <div class="rank-button">
+              <input type="radio" name="chRank7" id="chRank7_4" value={inputs.chRank7_4 || "4"} onChange={handleChange} checked={inputs.chRank7==="4"}/>
+              <label for="chRank7_4"><span class="rank-type">EXTREME:</span> +5%; 20XP</label>
+            </div>
+            <div class="rank-button">
+              <input type="radio" name="chRank7" id="chRank7_5" value={inputs.chRank7_5 || "5"} onChange={handleChange} checked={inputs.chRank7==="5"}/>
+              <label for="chRank7_5"><span class="rank-type">EPIC:</span> +2%; 50XP</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="challenge-container">
+          <div class="challenge-inputs">
+            <div class="description-container">
+              <label for="chDesc8">CHALLENGE DESCRIPTION</label>
+              <input id="chDesc8" type="text" name="chDesc8" class="description" value={inputs.chDesc8} onChange={handleChange}/>
+            </div>
+            <div class="progress-container">
+              <label for="chProgress8">PROGRESS</label>
+              <input id="chProgress8" type="number" name="chProgress8" class="progress" value={inputs.chProgress8} onChange={handleChange}/>
+            </div>
+          </div>
+          <div class="ranks-container">
+            <div class="rank-button">
+              <input type="radio" name="chRank8" id="chRank8_1" value={inputs.chRank8_1 || "1"} onChange={handleChange} checked={inputs.chRank8==="1"}/>
+              <label for="chRank8_1"><span class="rank-type">SHORT:</span> +30%; 2XP</label>
+            </div>
+            <div class="rank-button">
+              <input type="radio" name="chRank8" id="chRank8_2" value={inputs.chRank8_2 || "2"} onChange={handleChange} checked={inputs.chRank8==="2"}/>
+              <label for="chRank8_2"><span class="rank-type">MEDIUM:</span> +20%; 5XP</label>
+            </div>
+            <div class="rank-button">
+              <input type="radio" name="chRank8" id="chRank8_3" value={inputs.chRank8_3 || "3"} onChange={handleChange} checked={inputs.chRank8==="3"}/>
+              <label for="chRank8_3"><span class="rank-type">LONG:</span> +10%; 10XP</label>
+            </div>
+            <div class="rank-button">
+              <input type="radio" name="chRank8" id="chRank8_4" value={inputs.chRank8_4 || "4"} onChange={handleChange} checked={inputs.chRank8==="4"}/>
+              <label for="chRank8_4"><span class="rank-type">EXTREME:</span> +5%; 20XP</label>
+            </div>
+            <div class="rank-button">
+              <input type="radio" name="chRank8" id="chRank8_5" value={inputs.chRank8_5 || "5"} onChange={handleChange} checked={inputs.chRank8==="5"}/>
+              <label for="chRank8_5"><span class="rank-type">EPIC:</span> +2%; 50XP</label>
+            </div>
+          </div>
+        </div>
+
       </form>
     </Layout>
 
