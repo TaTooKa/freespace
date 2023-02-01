@@ -76,10 +76,6 @@ export default function GlobalStyle() {
           margin-bottom: 24px;
         }
 
-        .dark h1 {
-          color: ${theme.darkcolors.title};
-        }
-
         h2 {
           font-size: 1.2em;
         }
@@ -109,6 +105,16 @@ export default function GlobalStyle() {
         .dark h5,
         .dark h6 {
           color: ${theme.darkcolors.title};
+        }
+        .dark h1 {
+          color: ${theme.darkcolors.text};
+          text-shadow: 0 1px 0 #999, 0 2px 0 #666, 0 3px 0 #333, 3px 3px 3px #000;
+        }
+        .dark h2 {
+          font-size: 1.2em;
+          color: ${theme.darkcolors.text};
+          -webkit-text-stroke: 1px #000;
+          text-shadow: 0 0 10px ${theme.colors.turquoise}, 2px 2px 5px #000;
         }
 
         p {
