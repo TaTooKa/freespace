@@ -747,6 +747,111 @@ export default function GlobalStyle() {
             }
           }
         }
+
+        form.challenges {
+          input {
+            text-align: center;
+            background-color: ${theme.darkcolors.components.input.background};
+            font-family: 'EuroStyle';
+            font-weight: bold;
+            font-size: 1em;
+            border: 1px solid ${theme.colors.turquoise};
+            color: ${theme.darkcolors.components.input.text};
+            transition: 3s;
+          }
+          input:focus {
+            box-shadow: 0 0 15px ${theme.colors.turquoise};
+            transition: 0.5s;
+          }
+
+          .challenge-container {
+            margin: 10px 0 20px 0;
+            .challenge-inputs {
+              .description-container {
+                display: inline-block;
+                width: 78%;
+                label {
+                  display: block;
+                  font-size: 0.8em;
+                  font-weight: bold;
+                  height: 20px;
+                  margin: 0 0 5px 15px;
+                  @media screen and (max-width: 700px) {
+                    font-size: 0.7em;
+                    margin: 0 0 5px 0;
+                    white-space: nowrap;
+                  }
+                }
+                input.description {
+                  width: 100%;
+                  height: 35px;
+                  border-radius: 20px 0 0 3px;
+                  text-align: left;
+                  padding: 0 0 0 15px;
+                  @media screen and (max-width: 700px) {
+                    font-size: 0.8em;
+                  }
+                }
+              }
+              .progress-container {
+                width: 20%;
+                display: inline-block;
+                float: right;
+                label {
+                  font-size: 0.6em;
+                  height: 20px;
+                  display: block;
+                  margin: 5px 0 0 0;
+                }
+                input.progress {
+                  width: 100%;
+                  height: 35px;
+                  border-radius: 0 20px 3px 0;
+                }
+              }
+            }
+            .ranks-container {
+              display: flex;
+              margin: 5px 0 0 0;
+              @media screen and (max-width: 700px) {
+                display: block;
+                label {
+                  width: 100px;
+                  float: left;
+                  margin: 5px;
+                }
+              }
+              .rank-button {
+                margin: 0 auto;
+                input {
+                  display: none;
+                }
+                label {
+                  display: block;
+                  margin: 5px;
+                  font-size: 0.4em;
+                  padding: 6px 6px 6px 8px;
+                  border-radius: 10px;
+                  border: 1px solid #666;
+                  color: #666;
+                  transition: 0.5s;
+                  word-break: break-word;
+                  box-shadow: inset 0 0 5px #000;
+                  .rank-type {
+                    font-weight: bold;
+                  font-size: 1.4em;
+                  }
+                }
+                input:checked+label {
+                  border: 1px solid ${theme.colors.turquoise};
+                  color: ${theme.colors.turquoise};
+                  box-shadow: 0 0 5px ${theme.colors.turquoise};
+                }
+
+              }
+            }
+          }
+        }
       `}
     />
   );
