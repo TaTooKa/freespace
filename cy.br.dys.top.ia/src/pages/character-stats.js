@@ -21,9 +21,15 @@ function CharacterStats() {
   })
 
   const handleChange = (event) => {
-    const name = event.target.name;
-    const value = event.target.value;
-    setInputs(values => ({...values, [name]: value}))
+    if ( event.target.type == "number" ) {
+      const name = event.target.name;
+      const value = Math.max(event.target.min, Math.min(event.target.max, Number(event.target.value)));
+      setInputs(values => ({...values, [name]: value}))
+    } else {
+      const name = event.target.name;
+      const value = event.target.value;
+      setInputs(values => ({...values, [name]: value}))
+    }
   }
 
   useEffect(() => {
@@ -67,7 +73,7 @@ function CharacterStats() {
           <div class="stats-container">
             <div class="stat-container">
               <div class="left-col">
-                <label class="stat">BRAIN <input type="number" name="brain" value={inputs.brain || ""} onChange={handleChange}/></label>
+                <label class="stat">BRAIN <input type="number" name="brain" value={inputs.brain || ""} onChange={handleChange} min="1" max="99"/></label>
               </div>
               <div class="right-col">
                 <span class="stat-desc">cunning and knowledge</span>
@@ -76,7 +82,7 @@ function CharacterStats() {
 
             <div class="stat-container">
               <div class="left-col">
-                <label class="stat">CHROME <input type="number" name="chrome" value={inputs.chrome || ""} onChange={handleChange}/></label>
+                <label class="stat">CHROME <input type="number" name="chrome" value={inputs.chrome || ""} onChange={handleChange} min="1" max="99"/></label>
               </div>
               <div class="right-col">
                 <span class="stat-desc">strength and endurance</span>
@@ -85,7 +91,7 @@ function CharacterStats() {
 
             <div class="stat-container">
               <div class="left-col">
-                <label class="stat">EDGE <input type="number" name="edge" value={inputs.edge || ""} onChange={handleChange} /></label>
+                <label class="stat">EDGE <input type="number" name="edge" value={inputs.edge || ""} onChange={handleChange} min="1" max="99"/></label>
               </div>
               <div class="right-col">
                 <span class="stat-desc">speed and precision</span>
@@ -94,7 +100,7 @@ function CharacterStats() {
 
             <div class="stat-container">
               <div class="left-col">
-                <label class="stat">FLASH <input type="number" name="flash" value={inputs.flash || ""} onChange={handleChange} /></label>
+                <label class="stat">FLASH <input type="number" name="flash" value={inputs.flash || ""} onChange={handleChange} min="1" max="99"/></label>
               </div>
               <div class="right-col">
                 <span class="stat-desc">personality and empathy</span>
@@ -103,7 +109,7 @@ function CharacterStats() {
 
             <div class="stat-container">
               <div class="left-col">
-                <label class="stat">SHADE <input type="number" name="shade" value={inputs.shade || ""} onChange={handleChange} /></label>
+                <label class="stat">SHADE <input type="number" name="shade" value={inputs.shade || ""} onChange={handleChange} min="1" max="99"/></label>
               </div>
               <div class="right-col">
                 <span class="stat-desc">deception and stealth</span>
@@ -148,7 +154,7 @@ function CharacterStats() {
           <div class="angle-container">
             <div class="angle-header">
               <span class="angle-title">ANGLE</span>
-              <label class="angle-progress">PROGRESS <input type="number" name="angleProgress" value={inputs.angleProgress || ""} onChange={handleChange} /></label>
+              <label class="angle-progress">PROGRESS <input type="number" name="angleProgress" value={inputs.angleProgress || ""} onChange={handleChange} min="1" max="99"/></label>
             </div>
             <div class="angle-options">
               <span>Choose One:</span>
