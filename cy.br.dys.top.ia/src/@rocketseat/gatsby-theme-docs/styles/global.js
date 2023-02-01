@@ -693,6 +693,60 @@ export default function GlobalStyle() {
 
             }
         }
+
+        form.character-traits {
+          .trait {
+            margin: 10px 0 15px 0;
+            input[type="checkbox"] {
+              appearance: none;
+              width: 16px;
+              height: 16px;
+              border: 1px solid #666;
+              box-shadow: inset 0 0 6px #000;
+              transform: translateY(-2px) rotate(90deg);
+              transition: 0.5s;
+
+              ::before {
+                content: "⋗";
+                font-family: "EuroStyle";
+                font-size: 14px;
+                color: #666;
+                transition: 0.5s ease-in-out;
+                box-shadow: inset 1em 1em var(--form-control-color);
+              }
+
+              :checked {
+                border: 1px solid ${theme.colors.turquoise};
+                box-shadow: inset 0 0 4px ${theme.colors.turquoise}, 0 0 12px ${theme.colors.turquoise};
+                transform: translate(-8px, -2px);
+              }
+              :checked::before {
+                color: ${theme.colors.turquoise};
+                text-shadow: 0 0 3px ${theme.colors.turquoise};
+              }
+            }
+            label {
+              line-height: 1.32em;
+              .stat {
+                font-size: 0.9em;
+              }
+              .trait-name {
+                margin: 0 0 0 5px;
+                font-weight: bold;
+                letter-spacing: 0.1em;
+                transition: 0.5s;
+                color: #000;
+                text-shadow: 0 0 8px ${theme.colors.turquoise};
+              }
+            }
+            input:checked+label .trait-name {
+              margin: 0 0 0 -5px;
+              letter-spacing: 0.15em;
+              text-shadow: 0 0 10px ${theme.colors.turquoise};
+              color: ${theme.colors.turquoise};
+            }
+          }
+        }
       `}
     />
   );
