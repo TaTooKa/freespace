@@ -703,11 +703,11 @@ export default function GlobalStyle() {
               height: 16px;
               border: 1px solid #666;
               box-shadow: inset 0 0 6px #000;
-              transform: translateY(-2px) rotate(90deg);
+              transform: translateY(0px) rotate(90deg);
               transition: 0.5s;
 
               ::before {
-                content: "⋗";
+                content: "";
                 font-family: "EuroStyle";
                 font-size: 14px;
                 color: #666;
@@ -717,8 +717,8 @@ export default function GlobalStyle() {
 
               :checked {
                 border: 1px solid ${theme.colors.turquoise};
-                box-shadow: inset 0 0 4px ${theme.colors.turquoise}, 0 0 12px ${theme.colors.turquoise};
-                transform: translate(-8px, -2px);
+                box-shadow: inset 0 0 6px ${theme.colors.turquoise}, inset 0 0 20px ${theme.colors.fuchsia}, 0 0 12px ${theme.colors.turquoise};
+                transform: translate(-8px, 0px);
               }
               :checked::before {
                 color: ${theme.colors.turquoise};
