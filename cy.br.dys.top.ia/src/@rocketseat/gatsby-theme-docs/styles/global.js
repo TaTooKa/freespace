@@ -178,9 +178,12 @@ export default function GlobalStyle() {
           font-weight: bold;
           text-decoration-style: dotted;
           text-decoration-color: ${theme.colors.fuchsia};
+          transition: 0.5s;
 
           &:hover {
             text-decoration-style: dashed;
+            text-decoration-color: ${theme.colors.turquoise};
+            text-shadow: 0 0 3px ${theme.colors.turquoise};
           }
         }
 
@@ -548,7 +551,7 @@ export default function GlobalStyle() {
                 }
                 label {
                     margin: 0 20px 0 0;
-                    transition: 3s;
+                    transition: 2s;
                     border: 1px solid #444;
                     padding: 2px 10px;
                     border-radius: 6px;

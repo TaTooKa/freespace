@@ -13,7 +13,6 @@ function Challenges() {
   })
 
   const handleChange = (event) => {
-    // console.log(event, event.target.name, event.target.value, event.target.checked)
     if ( event.target.type == "checkbox" ) {
         const name = event.target.name;
         const value = event.target.checked;
@@ -54,7 +53,7 @@ function Challenges() {
             </div>
             <div class="progress-container">
               <label for="chProgress1">PROGRESS</label>
-              <input id="chProgress1" type="number" name="chProgress1" class="progress" value={inputs.chProgress1} onChange={handleChange} min="1" max="99"/>
+              <input id="chProgress1" type="number" name="chProgress1" class="progress" value={inputs.chProgress1} onChange={handleChange} min="0" max="99"/>
             </div>
           </div>
           <div class="ranks-container">
@@ -89,7 +88,7 @@ function Challenges() {
             </div>
             <div class="progress-container">
               <label for="chProgress2">PROGRESS</label>
-              <input id="chProgress2" type="number" name="chProgress2" class="progress" value={inputs.chProgress2} onChange={handleChange} min="1" max="99"/>
+              <input id="chProgress2" type="number" name="chProgress2" class="progress" value={inputs.chProgress2} onChange={handleChange} min="0" max="99"/>
             </div>
           </div>
           <div class="ranks-container">
@@ -124,7 +123,7 @@ function Challenges() {
             </div>
             <div class="progress-container">
               <label for="chProgress3">PROGRESS</label>
-              <input id="chProgress3" type="number" name="chProgress3" class="progress" value={inputs.chProgress3} onChange={handleChange} min="1" max="99"/>
+              <input id="chProgress3" type="number" name="chProgress3" class="progress" value={inputs.chProgress3} onChange={handleChange} min="0" max="99"/>
             </div>
           </div>
           <div class="ranks-container">
@@ -159,7 +158,7 @@ function Challenges() {
             </div>
             <div class="progress-container">
               <label for="chProgress4">PROGRESS</label>
-              <input id="chProgress4" type="number" name="chProgress4" class="progress" value={inputs.chProgress4} onChange={handleChange} min="1" max="99"/>
+              <input id="chProgress4" type="number" name="chProgress4" class="progress" value={inputs.chProgress4} onChange={handleChange} min="0" max="99"/>
             </div>
           </div>
           <div class="ranks-container">
@@ -194,7 +193,7 @@ function Challenges() {
             </div>
             <div class="progress-container">
               <label for="chProgress5">PROGRESS</label>
-              <input id="chProgress5" type="number" name="chProgress5" class="progress" value={inputs.chProgress5} onChange={handleChange} min="1" max="99"/>
+              <input id="chProgress5" type="number" name="chProgress5" class="progress" value={inputs.chProgress5} onChange={handleChange} min="0" max="99"/>
             </div>
           </div>
           <div class="ranks-container">
@@ -229,7 +228,7 @@ function Challenges() {
             </div>
             <div class="progress-container">
               <label for="chProgress6">PROGRESS</label>
-              <input id="chProgress6" type="number" name="chProgress6" class="progress" value={inputs.chProgress6} onChange={handleChange} min="1" max="99"/>
+              <input id="chProgress6" type="number" name="chProgress6" class="progress" value={inputs.chProgress6} onChange={handleChange} min="0" max="99"/>
             </div>
           </div>
           <div class="ranks-container">
@@ -264,7 +263,7 @@ function Challenges() {
             </div>
             <div class="progress-container">
               <label for="chProgress7">PROGRESS</label>
-              <input id="chProgress7" type="number" name="chProgress7" class="progress" value={inputs.chProgress7} onChange={handleChange} min="1" max="99"/>
+              <input id="chProgress7" type="number" name="chProgress7" class="progress" value={inputs.chProgress7} onChange={handleChange} min="0" max="99"/>
             </div>
           </div>
           <div class="ranks-container">
@@ -299,7 +298,7 @@ function Challenges() {
             </div>
             <div class="progress-container">
               <label for="chProgress8">PROGRESS</label>
-              <input id="chProgress8" type="number" name="chProgress8" class="progress" value={inputs.chProgress8} onChange={handleChange} min="1" max="99"/>
+              <input id="chProgress8" type="number" name="chProgress8" class="progress" value={inputs.chProgress8} onChange={handleChange} min="0" max="99"/>
             </div>
           </div>
           <div class="ranks-container">
