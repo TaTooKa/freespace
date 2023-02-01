@@ -115,6 +115,12 @@ export default function GlobalStyle() {
           color: ${theme.darkcolors.text};
           -webkit-text-stroke: 1px #000;
           text-shadow: 0 0 10px ${theme.colors.turquoise}, 2px 2px 5px #000;
+
+          .anchor svg {
+            box-shadow: inset 0 0 10px ${theme.colors.turquoise};
+            border-radius: 6px;
+            padding: 2px;
+          }
         }
 
         p {
