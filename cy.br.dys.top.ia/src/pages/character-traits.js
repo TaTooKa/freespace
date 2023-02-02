@@ -99,9 +99,13 @@ function CharacterStats() {
         
         <div class="traits-container" id="gear-container">
             <h2 id="gear-and-cyberware">GEAR AND CYBERWARE</h2>
-            <div class="trait skill">
+            <div class="trait gear">
                 <input id="gearArmored" type="checkbox" name="gearArmored" value={inputs.gearArmored} onChange={handleChange} defaultChecked={inputs.gearArmored}/>
                 <label for="gearArmored"> <span class="trait-name">ARMORED</span>: <i>Shiny and Chrome</i>. gain a <b>BOOST</b> when you <a href="/prompts/general-prompts#act-under-pressure">ACT UNDER PRESSURE</a> or <a href="/prompts/general-prompts#clash">CLASH</a> against physical attacks or impact damage.</label>
+            </div>
+            <div class="trait gear">
+                <input id="gearCyberClaws" type="checkbox" name="gearCyberClaws" value={inputs.gearCyberClaws} onChange={handleChange} defaultChecked={inputs.gearCyberClaws}/>
+                <label for="gearCyberClaws"> <span class="trait-name">CYBERCLAWS</span>: Retracting Mollies or Logans. Gain a BOOST when you ACCEPT A CHALLENGE of violence, when you CLASH or when you COMPEL with CHROME.</label>
             </div>
         </div>
 
@@ -109,6 +113,14 @@ function CharacterStats() {
         
         <div class="traits-container" id="contacts-container">
             <h2 id="contacts">CONTACTS</h2>
+            <div class="trait contact">
+                <input id="contactInfoBroker" type="checkbox" name="contactInfoBroker" value={inputs.contactInfoBroker} onChange={handleChange} defaultChecked={inputs.contactInfoBroker}/>
+                <label for="contactInfoBroker"> <span class="trait-name">INFOBROKER</span>: gain a BOOST when you resort to this contact to GATHER INFORMATION, or gain an automatic SUCCESS if you SACRIFICE RESOURCES.</label>
+                <div class="name-container">
+                    <label for="contactInfoBrokerName">NAME / ALIAS:</label>
+                    <input id="contactInfoBrokerName" type="text" name="contactInfoBrokerName" value={inputs.contactInfoBrokerName} onChange={handleChange}/>
+                </div>
+            </div>
         </div>
 
         <br/>
