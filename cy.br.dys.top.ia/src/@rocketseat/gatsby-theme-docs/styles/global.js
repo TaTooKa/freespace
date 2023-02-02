@@ -1143,20 +1143,24 @@ export default function GlobalStyle() {
           display: inline-block;
           font-size: 1em;
           font-weight: bold;
-          background-image: -webkit-linear-gradient(
+          background-image: linear-gradient(
             -40deg, 
-            transparent 0%, 
-            transparent 40%, 
+            rgba(255,255,255,0) 0%, 
+            rgba(255,255,255,0) 40%, 
             #fff 50%, 
-            transparent 60%, 
-            transparent 100%
+            rgba(255,255,255,0) 60%, 
+            rgba(255,255,255,0) 100%
           );
-          -webkit-background-size: 50px;
           color: rgba(255, 255, 255, 0.1);
+          -webkit-background-size: 50px;
           -webkit-background-clip: text;
           -webkit-animation-name: shine;
           -webkit-animation-duration: 15s;
           -webkit-animation-iteration-count: infinite;
+          background-size: 50px;
+          animation-name: shine;
+          animation-duration: 15s;
+          animation-iteration-count: infinite;
           text-shadow: 0 0 0 #0cffe166;
           ${'' /* -webkit-text-stroke: 2px #ffffff11; */}
         }
