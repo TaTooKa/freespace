@@ -13,6 +13,11 @@ export default {
         text: `#2d3748`,
       },
     },
+    boost: {
+      dark: `#0f0c3d`,
+      mid: `#3737a5`,
+      light: `#5aafee`,
+    }
   },
   darkcolors: {
     primary: '#ff0096ff',
