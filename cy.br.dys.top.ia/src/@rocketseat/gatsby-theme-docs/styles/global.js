@@ -751,6 +751,7 @@ export default function GlobalStyle() {
             }
           }
           .trait.contact {
+            margin: 40px 0 10px 0;
             .name-container {
               margin: 10px 0 0 0;
               label {

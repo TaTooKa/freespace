@@ -104,8 +104,44 @@ function CharacterStats() {
                 <label for="gearArmored"> <span class="trait-name">ARMORED</span>: <i>Shiny and Chrome</i>. gain a <b>BOOST</b> when you <a href="/prompts/general-prompts#act-under-pressure">ACT UNDER PRESSURE</a> or <a href="/prompts/general-prompts#clash">CLASH</a> against physical attacks or impact damage.</label>
             </div>
             <div class="trait gear">
+                <input id="gearBrainbox" type="checkbox" name="gearBrainbox" value={inputs.gearBrainbox} onChange={handleChange} defaultChecked={inputs.gearBrainbox}/>
+                <label for="gearBrainbox"> <span class="trait-name">BRAINBOX</span>: <i>A blackbox for your brain</i>. Ignore a <span class="fuchsia">FAILURE</span> when you <a href="/prompts/suffer-prompts#face-death">FACE DEATH</a>, but then <a href="/prompts/fate-prompts#pay-the-consequences">PAY THE CONSEQUENCES</a> of having your <i>mind-backup</i> reinserted in a new body, and lose the BRAINBOX.</label>
+            </div>
+            <div class="trait gear">
                 <input id="gearCyberClaws" type="checkbox" name="gearCyberClaws" value={inputs.gearCyberClaws} onChange={handleChange} defaultChecked={inputs.gearCyberClaws}/>
                 <label for="gearCyberClaws"> <span class="trait-name">CYBERCLAWS</span>: Retracting Mollies or Logans. Gain a BOOST when you ACCEPT A CHALLENGE of violence, when you CLASH or when you COMPEL with CHROME.</label>
+            </div>
+            <div class="trait gear">
+                <input id="gearCyberdeck" type="checkbox" name="gearCyberdeck" value={inputs.gearCyberdeck} onChange={handleChange} defaultChecked={inputs.gearCyberdeck}/>
+                <label for="gearCyberdeck"> <span class="trait-name">CYBERDECK</span>: Tool of the netrunner’s trade. gain a BOOST for any test involving hacking or surfing the NET.</label>
+            </div>
+            <div class="trait gear">
+                <input id="gearMirrorShades" type="checkbox" name="gearMirrorShades" value={inputs.gearMirrorShades} onChange={handleChange} defaultChecked={inputs.gearMirrorShades}/>
+                <label for="gearMirrorShades"> <span class="trait-name">MIRRORSHADES</span>: excessively cool. Gain a BOOST whenever you test your FLASH.</label>
+            </div>
+            <div class="trait gear">
+                <input id="gearNeuralink" type="checkbox" name="gearNeuralink" value={inputs.gearNeuralink} onChange={handleChange} defaultChecked={inputs.gearNeuralink}/>
+                <label for="gearNeuralink"> <span class="trait-name">NEURALINK</span>: Jack me in. gain a BOOST when netrunning in deep mode (full sensory immersion).</label>
+            </div>
+            <div class="trait gear">
+                <input id="gearSmartCosmetics" type="checkbox" name="gearSmartCosmetics" value={inputs.gearSmartCosmetics} onChange={handleChange} defaultChecked={inputs.gearSmartCosmetics}/>
+                <label for="gearSmartCosmetics"> <span class="trait-name">SMART COSMETICS</span>: Change hairstyle, makeup or facial features at will. Gain a BOOST when you take advantage of this to COMPEL, GATHER INFORMATION or RESUPPLY by awing or seducing others with FLASH.</label>
+            </div>
+            <div class="trait gear">
+                <input id="gearSubdermalShockers" type="checkbox" name="gearSubdermalShockers" value={inputs.gearSubdermalShockers} onChange={handleChange} defaultChecked={inputs.gearSubdermalShockers}/>
+                <label for="gearSubdermalShockers"> <span class="trait-name">SUBDERMAL SHOCKERS</span>: no touching! gain a BOOST when you test CHROME to defend yourself while you ACT UNDER PRESSURE or CLASH.</label>
+            </div>
+            <div class="trait gear">
+                <input id="gearSynapseChip" type="checkbox" name="gearSynapseChip" value={inputs.gearSynapseChip} onChange={handleChange} defaultChecked={inputs.gearSynapseChip}/>
+                <label for="gearSynapseChip"> <span class="trait-name">SYNAPSE CHIP</span>: smarter on demand. gain a BOOST whenever you test your BRAIN.</label>
+            </div>
+            <div class="trait gear">
+                <input id="gearThermopticCamo" type="checkbox" name="gearThermopticCamo" value={inputs.gearThermopticCamo} onChange={handleChange} defaultChecked={inputs.gearThermopticCamo}/>
+                <label for="gearThermopticCamo"> <span class="trait-name">THERMOPTIC CAMO</span>: now you see me… gain a BOOST whenever you test your SHADE by going almost invisible.</label>
+            </div>
+            <div class="trait gear">
+                <input id="gearWiredReflexes" type="checkbox" name="gearWiredReflexes" value={inputs.gearWiredReflexes} onChange={handleChange} defaultChecked={inputs.gearWiredReflexes}/>
+                <label for="gearWiredReflexes"> <span class="trait-name">WIRED REFLEXES</span>: Sandevistan! gain a BOOST when you test your EDGE to ACT UNDER PRESSURE, SECURE AN ADVANTAGE or CLASH.</label>
             </div>
         </div>
 
@@ -114,6 +150,22 @@ function CharacterStats() {
         <div class="traits-container" id="contacts-container">
             <h2 id="contacts">CONTACTS</h2>
             <div class="trait contact">
+                <input id="contactDealer" type="checkbox" name="contactDealer" value={inputs.contactDealer} onChange={handleChange} defaultChecked={inputs.contactDealer}/>
+                <label for="contactDealer"> <span class="trait-name">DEALER</span>: gain a BOOST when you resort to this contact to RELAX by using addictive substances or simchips, or gain an automatic SUCCESS if you SACRIFICE RESOURCES.</label>
+                <div class="name-container">
+                    <label for="contactDealerName">NAME / ALIAS:</label>
+                    <input id="contactDealerName" type="text" name="contactDealerName" value={inputs.contactDealerName} onChange={handleChange}/>
+                </div>
+            </div>
+            <div class="trait contact">
+                <input id="contactFixer" type="checkbox" name="contactFixer" value={inputs.contactFixer} onChange={handleChange} defaultChecked={inputs.contactFixer}/>
+                <label for="contactFixer"> <span class="trait-name">FIXER</span>: gain a BOOST when you resort to this contact to RESUPPLY or when you FULFILL A CHALLENGE for a contract or mission that they facilitated.</label>
+                <div class="name-container">
+                    <label for="contactFixerName">NAME / ALIAS:</label>
+                    <input id="contactFixerName" type="text" name="contactFixerName" value={inputs.contactFixerName} onChange={handleChange}/>
+                </div>
+            </div>
+            <div class="trait contact">
                 <input id="contactInfoBroker" type="checkbox" name="contactInfoBroker" value={inputs.contactInfoBroker} onChange={handleChange} defaultChecked={inputs.contactInfoBroker}/>
                 <label for="contactInfoBroker"> <span class="trait-name">INFOBROKER</span>: gain a BOOST when you resort to this contact to GATHER INFORMATION, or gain an automatic SUCCESS if you SACRIFICE RESOURCES.</label>
                 <div class="name-container">
@@ -121,8 +173,17 @@ function CharacterStats() {
                     <input id="contactInfoBrokerName" type="text" name="contactInfoBrokerName" value={inputs.contactInfoBrokerName} onChange={handleChange}/>
                 </div>
             </div>
+            <div class="trait contact">
+                <input id="contactStreetDoc" type="checkbox" name="contactStreetDoc" value={inputs.contactStreetDoc} onChange={handleChange} defaultChecked={inputs.contactStreetDoc}/>
+                <label for="contactStreetDoc"> <span class="trait-name">STREET DOC</span>: gain a BOOST when you resort to this contact to HEAL, or gain an automatic SUCCESS if you SACRIFICE RESOURCES (X).</label>
+                <div class="name-container">
+                    <label for="contactStreetDocName">NAME / ALIAS:</label>
+                    <input id="contactStreetDocName" type="text" name="contactStreetDocName" value={inputs.contactStreetDocName} onChange={handleChange}/>
+                </div>
+            </div>
         </div>
 
+        <br/>
         <br/>
 
       </form>
