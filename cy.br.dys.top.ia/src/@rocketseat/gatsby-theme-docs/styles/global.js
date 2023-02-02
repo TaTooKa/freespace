@@ -1140,69 +1140,42 @@ export default function GlobalStyle() {
         ${'' /* BOOST EFFECT */}
         span.boost {
           display: inline-block;
+          font-size: 1em;
           font-weight: bold;
-          color: ${theme.colors.turquoise};
-
-          animation: 4s Blazing infinite alternate linear;
+          background-image: -webkit-linear-gradient(
+            -40deg, 
+            transparent 0%, 
+            transparent 40%, 
+            #fff 50%, 
+            transparent 60%, 
+            transparent 100%
+          );
+          -webkit-background-size: 50px;
+          color: rgba(255, 255, 255, 0.1);
+          -webkit-background-clip: text;
+          -webkit-animation-name: shine;
+          -webkit-animation-duration: 15s;
+          -webkit-animation-iteration-count: infinite;
+          text-shadow: 0 0 0 #0cffe166;
+          ${'' /* -webkit-text-stroke: 2px #ffffff11; */}
         }
 
-        @keyframes Blazing {
-          0%   { 
-            text-shadow: 
-              0 1px 10px ${theme.colors.boost.dark}, 
-              0 0 10px ${theme.colors.boost.dark},
-              0 0 5px ${theme.colors.boost.mid},
-              0 0 0 ${theme.colors.boost.mid},
-              0 0 3px ${theme.colors.boost.mid},
-              -2px -3px 3px ${theme.colors.boost.light},
-              4px -5px 5px ${theme.colors.boost.light}; 
-            filter: blur(0px);
+        @-webkit-keyframes shine {
+          0%, 10% {
+            background-position: 200px;
+            text-shadow: 0 0 0 #0cffe166;
           }
-          25%   { 
-            text-shadow: 
-              0 1px 10px ${theme.colors.boost.dark}, 
-              0 0 15px ${theme.colors.boost.dark},
-              0 0 10px ${theme.colors.boost.mid},
-              0 0 3px ${theme.colors.boost.mid},
-              -2px -3px 3px ${theme.colors.boost.mid},
-              1px -5px 5px ${theme.colors.boost.light},
-              -4px -7px 10px ${theme.colors.boost.light}; 
-            filter: blur(0px);
-            }
-          50%   { 
-            text-shadow: 
-              0 1px 10px ${theme.colors.boost.dark}, 
-              0 0 10px ${theme.colors.boost.dark},
-              0 -3px 5px ${theme.colors.boost.mid},
-              -2px -3px 3px ${theme.colors.boost.mid},
-              1px -5px 5px ${theme.colors.boost.mid},
-              -4px -7px 10px ${theme.colors.boost.light},
-              2px -10px 15px ${theme.colors.boost.light}; 
-            filter: blur(1px);
-            }
-          75%   { 
-            text-shadow: 
-              0 1px 10px ${theme.colors.boost.dark}, 
-              0 0 10px ${theme.colors.boost.dark},
-              0 -3px 5px ${theme.colors.boost.mid},
-              1px -3px 3px ${theme.colors.boost.mid},
-              -4px -5px 5px ${theme.colors.boost.light},
-              2px -10px 15px ${theme.colors.boost.light},
-              0px -13px 20px #76f7ec00;
-            filter: blur(0px);
-            }
-          100%   { 
-            text-shadow: 
-              0 1px 10px ${theme.colors.boost.dark}, 
-              0 0 10px ${theme.colors.boost.dark},
-              0 0 5px ${theme.colors.boost.mid},
-              0 0 0 ${theme.colors.boost.mid},
-              0 0 3px ${theme.colors.boost.mid},
-              -2px -3px 3px ${theme.colors.boost.light},
-              4px -5px 5px ${theme.colors.boost.light}; 
-            filter: blur(1px);
-            }
+          50% {
+            text-shadow: 0 0 0 #0cffe188;
+          }
+          75% {
+            text-shadow: 0 0 0 #0cffe166;
+          }
+          100% {
+            background-position: -200px;
+          }
         }
+
         ${'' /* END BOOST EFFECT */}
         
       `}
