@@ -1162,22 +1162,26 @@ export default function GlobalStyle() {
           animation-duration: 15s;
           animation-iteration-count: infinite;
           text-shadow: 0 0 0 #0cffe166;
-          ${'' /* -webkit-text-stroke: 2px #ffffff11; */}
+          ${'' /* -webkit-text-stroke: 1px #ffffff11; */}
         }
 
         @-webkit-keyframes shine {
           0%, 10% {
             background-position: 200px;
             text-shadow: 0 0 0 #0cffe166;
+            transform: skew(0deg);
           }
           50% {
             text-shadow: 0 0 0 #0cffe188;
+            transform: skew(-10deg);
           }
           75% {
             text-shadow: 0 0 0 #0cffe166;
+            transform: skew(-5deg);
           }
           100% {
             background-position: -200px;
+            transform: skew(0deg);
           }
         }
 
