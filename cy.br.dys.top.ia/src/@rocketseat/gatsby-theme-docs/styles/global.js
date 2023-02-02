@@ -897,6 +897,7 @@ export default function GlobalStyle() {
 
         ${'' /* GLITCH EFFECT */}
         span.glitch {
+          display: inline-block;
           position: relative;
           color: white;
           font-size: 1em;
