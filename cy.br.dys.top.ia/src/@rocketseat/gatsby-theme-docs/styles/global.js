@@ -819,10 +819,12 @@ export default function GlobalStyle() {
               margin: 5px 0 0 0;
               @media screen and (max-width: 700px) {
                 display: block;
+                height: 100px;
                 label {
-                  width: 100px;
+                  width: 25%;
+                  height: 35px;
                   float: left;
-                  margin: 5px;
+                  margin: 5px auto;
                 }
               }
               .rank-button {
