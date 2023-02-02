@@ -750,6 +750,40 @@ export default function GlobalStyle() {
               color: ${theme.colors.turquoise};
             }
           }
+          .trait.contact {
+            .name-container {
+              margin: 10px 0 0 0;
+              label {
+                border: 1px solid #666;
+                padding: 6px 5px 5px 10px;
+                font-size: 0.8em;
+                font-weight: bold;
+                color: #888;
+                margin: 0 0 0 0;
+                border-radius: 10px 0 0 10px;
+                box-shadow: inset 1px 1px 8px #000;
+                text-shadow: 2px 2px 4px #000;
+                width: 25%;
+              }
+              input {
+                  background-color: ${theme.darkcolors.components.input.background};
+                  height: 32px; 
+                  width: 50%;
+                  font-family: 'EuroStyle';
+                  font-weight: bold;
+                  font-size: 0.9em;
+                  padding: 2px 3px 2px 10px;
+                  border: 1px solid ${theme.colors.turquoise};
+                  border-radius: 0 10px 10px 0;
+                  color: ${theme.darkcolors.components.input.text};
+                  transition: 3s;
+              }
+              input:focus {
+                  box-shadow: 0 0 15px ${theme.colors.turquoise};
+                  transition: 0.5s;
+              }
+            }
+          }
         }
 
         form.challenges {
