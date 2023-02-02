@@ -232,6 +232,7 @@ export default function GlobalStyle() {
           margin-top: -4px;
           margin-bottom: 16px;
           width: 100%;
+          font-size: 0.8em;
 
           th,
           td {
