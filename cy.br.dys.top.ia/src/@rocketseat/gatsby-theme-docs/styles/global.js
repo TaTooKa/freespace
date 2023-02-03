@@ -57,7 +57,8 @@ export default function GlobalStyle() {
         body {
           font-size: 22px;
           font-family: ${theme.fonts.body};
-          background-color: ${theme.colors.background};
+          ${'' /* background-color: ${theme.colors.background}; */}
+          background-color: ${theme.darkcolors.background};
           text-rendering: optimizelegibility;
           -webkit-font-smoothing: antialiased;
           overflow-y: scroll;
