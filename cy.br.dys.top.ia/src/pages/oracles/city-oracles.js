@@ -38,9 +38,9 @@ export default function CoreOracles() {
 
       if ( inputResult.textContent.length <= 26 ) {
         inputResult.style.fontSize = "1em";
-      } else if ( inputResult.textContent.length <= 60 ) {
-        inputResult.style.fontSize = "0.9em";
       } else if ( inputResult.textContent.length <= 80 ) {
+        inputResult.style.fontSize = "0.9em";
+      } else if ( inputResult.textContent.length <= 100 ) {
         inputResult.style.fontSize = "0.7em";
       } else {
         inputResult.style.fontSize = "0.6em";
@@ -86,22 +86,22 @@ export default function CoreOracles() {
           <button type="button" id="oracle-building-feature-button" class="randomize-button" onClick={handleOnClick}></button>
         </div>
         <h3 id="building-interior">BUILDING INTERIOR</h3>
-        <h4 id="building-interior-style">↳ INTERIOR STYLE</h4>
+        <h4 id="building-interior-style">⤷ INTERIOR STYLE</h4>
         <div class="oracle-container">
           <span role="textbox" id="oracle-building-interior-style-result" class="oracle-result"></span>
           <button type="button" id="oracle-building-interior-style-button" class="randomize-button" onClick={handleOnClick}></button>
         </div>
-        <h4 id="building-interior-state">↳ INTERIOR STATE</h4>
+        <h4 id="building-interior-state">⤷ INTERIOR STATE</h4>
         <div class="oracle-container">
           <span role="textbox" id="oracle-building-interior-state-result" class="oracle-result"></span>
           <button type="button" id="oracle-building-interior-state-button" class="randomize-button" onClick={handleOnClick}></button>
         </div>
-        <h4 id="building-interior-feature">↳ INTERIOR FEATURE</h4>
+        <h4 id="building-interior-feature">⤷ INTERIOR FEATURE</h4>
         <div class="oracle-container">
           <span role="textbox" id="oracle-building-interior-feature-result" class="oracle-result"></span>
           <button type="button" id="oracle-building-interior-feature-button" class="randomize-button" onClick={handleOnClick}></button>
         </div>
-        <h4 id="building-interior-secret">↳ INTERIOR SECRET</h4>
+        <h4 id="building-interior-secret">⤷ INTERIOR SECRET</h4>
         <div class="oracle-container">
           <span role="textbox" id="oracle-building-interior-secret-result" class="oracle-result"></span>
           <button type="button" id="oracle-building-interior-secret-button" class="randomize-button" onClick={handleOnClick}></button>
@@ -126,17 +126,17 @@ export default function CoreOracles() {
           <span role="textbox" id="oracle-bar-club-name-result" class="oracle-result"></span>
           <button type="button" id="oracle-bar-club-name-button" class="randomize-button" onClick={handleOnClick}></button>
         </div>
-        <h4 id="bar-club-status">↳ BAR / CLUB STATUS</h4>
+        <h4 id="bar-club-status">⤷ BAR / CLUB STATUS</h4>
         <div class="oracle-container">
           <span role="textbox" id="oracle-bar-club-status-result" class="oracle-result"></span>
           <button type="button" id="oracle-bar-club-status-button" class="randomize-button" onClick={handleOnClick}></button>
         </div>
-        <h4 id="bar-club-security">↳ BAR / CLUB SECURITY</h4>
+        <h4 id="bar-club-security">⤷ BAR / CLUB SECURITY</h4>
         <div class="oracle-container">
           <span role="textbox" id="oracle-bar-club-security-result" class="oracle-result"></span>
           <button type="button" id="oracle-bar-club-security-button" class="randomize-button" onClick={handleOnClick}></button>
         </div>
-        <h4 id="bar-club-vibe">↳ BAR / CLUB VIBE</h4>
+        <h4 id="bar-club-vibe">⤷ BAR / CLUB VIBE</h4>
         <div class="oracle-container">
           <span role="textbox" id="oracle-bar-club-vibe-result" class="oracle-result"></span>
           <button type="button" id="oracle-bar-club-vibe-button" class="randomize-button" onClick={handleOnClick}></button>
@@ -149,22 +149,22 @@ export default function CoreOracles() {
           <button type="button" id="oracle-screen-content-button" class="randomize-button" onClick={handleOnClick}></button>
         </div>
         <h3 id="advertainment">ADVERTAINMENT</h3>
-        <h4 id="advertainment-brand">↳ BRAND</h4>
+        <h4 id="advertainment-brand">⤷ BRAND</h4>
         <div class="oracle-container">
           <span role="textbox" id="oracle-advertainment-brand-result" class="oracle-result"></span>
           <button type="button" id="oracle-advertainment-brand-button" class="randomize-button" onClick={handleOnClick}></button>
         </div>
-        <h4 id="advertainment-product-name">↳ PRODUCT NAME</h4>
+        <h4 id="advertainment-product-name">⤷ PRODUCT NAME</h4>
         <div class="oracle-container">
           <span role="textbox" id="oracle-advertainment-product-name-result" class="oracle-result"></span>
           <button type="button" id="oracle-advertainment-product-name-button" class="randomize-button" onClick={handleOnClick}></button>
         </div>
-        <h4 id="advertainment-product-line">↳ PRODUCT LINE</h4>
+        <h4 id="advertainment-product-line">⤷ PRODUCT LINE</h4>
         <div class="oracle-container">
           <span role="textbox" id="oracle-advertainment-product-line-result" class="oracle-result"></span>
           <button type="button" id="oracle-advertainment-product-line-button" class="randomize-button" onClick={handleOnClick}></button>
         </div>
-        <h4 id="advertainment-marketing-style">↳ MARKETING STYLE</h4>
+        <h4 id="advertainment-marketing-style">⤷ MARKETING STYLE</h4>
         <div class="oracle-container">
           <span role="textbox" id="oracle-advertainment-marketing-style-result" class="oracle-result"></span>
           <button type="button" id="oracle-advertainment-marketing-style-button" class="randomize-button" onClick={handleOnClick}></button>
@@ -173,9 +173,32 @@ export default function CoreOracles() {
         <br/>
 
         <h2 id="ominous-occurrences">OMINOUS OCCURRENCES</h2>
+        <blockquote><p>Use these oracles to generate things that are background color now, but might mean trouble later.</p></blockquote>
         <h3 id="strange-sickness">STRANGE SICKNESS</h3>
+        <h4 id="strange-sickness-symptoms">⤷ SYMPTOMS</h4>
+        <div class="oracle-container">
+          <span role="textbox" id="oracle-strange-sickness-symptoms-result" class="oracle-result"></span>
+          <button type="button" id="oracle-strange-sickness-symptoms-button" class="randomize-button" onClick={handleOnClick}></button>
+        </div>
+        <h4 id="strange-sickness-cause">⤷ CAUSE</h4>
+        <div class="oracle-container">
+          <span role="textbox" id="oracle-strange-sickness-cause-result" class="oracle-result"></span>
+          <button type="button" id="oracle-strange-sickness-cause-button" class="randomize-button" onClick={handleOnClick}></button>
+        </div>
+        <br/>
         <h3 id="local-conflict">LOCAL CONFLICT</h3>
-        <h4 id="conflict-group">CONFLICT GROUP</h4>
+        <h4 id="conflict-group">⤷ CONFLICT GROUP</h4>
+        <div class="oracle-container">
+          <span role="textbox" id="oracle-conflict-group-result" class="oracle-result"></span>
+          <button type="button" id="oracle-conflict-group-button" class="randomize-button" onClick={handleOnClick}></button>
+        </div>
+        <h4 id="conflict-source">⤷ CONFLICT SOURCE</h4>
+        <div class="oracle-container">
+          <span role="textbox" id="oracle-conflict-source-result" class="oracle-result"></span>
+          <button type="button" id="oracle-conflict-source-button" class="randomize-button" onClick={handleOnClick}></button>
+        </div>
+        <br/>
+        <br/>
         <br/>
 
       </div>

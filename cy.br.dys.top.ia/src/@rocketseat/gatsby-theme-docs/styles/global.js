@@ -1226,7 +1226,7 @@ export default function GlobalStyle() {
             .oracle-result {
               width: 75%;
               background-color: ${theme.darkcolors.components.input.background};
-              padding: 4px 3px 4px 7px;
+              padding: 5px 6px 4px 9px;
               font-family: 'EuroStyle';
               font-weight: bold;
               border: 1px solid ${theme.colors.turquoise};
