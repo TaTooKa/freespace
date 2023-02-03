@@ -21,6 +21,10 @@ export default function CoreOracles() {
     {depth: 3, value: "NIGHTLIFE"},
     {depth: 3, value: "SCREEN CONTENT"},
     {depth: 3, value: "ADVERTAINMENT"},
+    {depth: 2, value: "VEHICLES"},
+    {depth: 3, value: "TERRESTRIAL VEHICLE"},
+    {depth: 3, value: "AERIAL VEHICLE"},
+    {depth: 3, value: "AQUATIC VEHICLE"},
     {depth: 2, value: "OMINOUS OCCURRENCES"},
     {depth: 3, value: "STRANGE SICKNESS"},
     {depth: 3, value: "LOCAL CONFLICT"},
@@ -172,6 +176,47 @@ export default function CoreOracles() {
 
         <br/>
 
+        <h2 id="vehicles">VEHICLES</h2>
+        <blockquote><p>Use these oracles to generate vehicles with varying levels of detail.</p></blockquote>
+        <h3 id="terrestrial-vehicle">TERRESTRIAL VEHICLE</h3>
+        <h4 id="terrestrial-vehicle-type">⤷ TYPE</h4>
+        <div class="oracle-container">
+          <span role="textbox" id="oracle-terrestrial-vehicle-type-result" class="oracle-result"></span>
+          <button type="button" id="oracle-terrestrial-vehicle-type-button" class="randomize-button" onClick={handleOnClick}></button>
+        </div>
+        <h4 id="terrestrial-vehicle-activity">⤷ ACTIVITY</h4>
+        <div class="oracle-container">
+          <span role="textbox" id="oracle-terrestrial-vehicle-activity-result" class="oracle-result"></span>
+          <button type="button" id="oracle-terrestrial-vehicle-activity-button" class="randomize-button" onClick={handleOnClick}></button>
+        </div>
+        <h4 id="terrestrial-vehicle-feature">⤷ FEATURE</h4>
+        <div class="oracle-container">
+          <span role="textbox" id="oracle-terrestrial-vehicle-feature-result" class="oracle-result"></span>
+          <button type="button" id="oracle-terrestrial-vehicle-feature-button" class="randomize-button" onClick={handleOnClick}></button>
+        </div>
+        <h4 id="terrestrial-vehicle-condition">⤷ CONDITION</h4>
+        <div class="oracle-container">
+          <span role="textbox" id="oracle-terrestrial-vehicle-condition-result" class="oracle-result"></span>
+          <button type="button" id="oracle-terrestrial-vehicle-condition-button" class="randomize-button" onClick={handleOnClick}></button>
+        </div>
+        <h3 id="aerial-vehicle">AERIAL VEHICLE</h3>
+        <h4 id="aerial-vehicle-type">⤷ TYPE</h4>
+        <div class="oracle-container">
+          <span role="textbox" id="oracle-aerial-vehicle-type-result" class="oracle-result"></span>
+          <button type="button" id="oracle-aerial-vehicle-type-button" class="randomize-button" onClick={handleOnClick}></button>
+        </div>
+        <h4 id="aerial-vehicle-activity">⤷ ACTIVITY</h4>
+        <div class="oracle-container">
+          <span role="textbox" id="oracle-aerial-vehicle-activity-result" class="oracle-result"></span>
+          <button type="button" id="oracle-aerial-vehicle-activity-button" class="randomize-button" onClick={handleOnClick}></button>
+        </div>
+        <h3 id="aquatic-vehicle">AQUATIC VEHICLE</h3>
+        <div class="oracle-container">
+          <span role="textbox" id="oracle-aquatic-vehicle-result" class="oracle-result"></span>
+          <button type="button" id="oracle-aquatic-vehicle-button" class="randomize-button" onClick={handleOnClick}></button>
+        </div>
+        <br/>
+
         <h2 id="ominous-occurrences">OMINOUS OCCURRENCES</h2>
         <blockquote><p>Use these oracles to generate things that are background color now, but might mean trouble later.</p></blockquote>
         <h3 id="strange-sickness">STRANGE SICKNESS</h3>
@@ -197,6 +242,7 @@ export default function CoreOracles() {
           <span role="textbox" id="oracle-conflict-source-result" class="oracle-result"></span>
           <button type="button" id="oracle-conflict-source-button" class="randomize-button" onClick={handleOnClick}></button>
         </div>
+
         <br/>
         <br/>
         <br/>
