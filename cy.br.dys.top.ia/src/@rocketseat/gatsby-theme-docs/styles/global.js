@@ -1216,6 +1216,7 @@ export default function GlobalStyle() {
 
         ${'' /* ORACLE PAGES  */}
         .oracles-container {
+          min-height: 850px;
           .oracle-container {
             display: flex;
             margin: 0 auto;
@@ -1227,7 +1228,7 @@ export default function GlobalStyle() {
               font-weight: bold;
               border: 1px solid ${theme.colors.turquoise};
               border-radius: 3px 0 0 3px;
-              ${'' /* height: 35px; */}
+              min-height: 35px;
               font-size: 1em;
               color: ${theme.darkcolors.components.input.text};
               transition: 1s;
@@ -1241,7 +1242,7 @@ export default function GlobalStyle() {
               border: 2px solid ${theme.colors.fuchsia};
               overflow: hidden;
               background-color: #000;
-              ${'' /* height: 35px; */}
+              min-height: 35px;
               width: 25%;
               padding: 5px 10px;
               color: ${theme.colors.fuchsia};
