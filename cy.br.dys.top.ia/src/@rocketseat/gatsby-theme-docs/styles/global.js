@@ -86,6 +86,8 @@ export default function GlobalStyle() {
 
         h4 {
           font-size: 1em;
+          font-style: italic;
+          letter-spacing: 0.1em;
         }
 
         h2,

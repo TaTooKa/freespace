@@ -12,6 +12,10 @@ export const Wrapper = styled.div`
   width: 100%;
   max-width: 200px;
 
+  @media screen and (max-width: 1200px) {
+    max-height: calc(40vh - 5px);
+  }
+
   @media (max-width: 1200px) {
     position: relative;
     top: auto;

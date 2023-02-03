@@ -13,17 +13,8 @@ export default function CoreOracles() {
     // {depth: 2, value: "FOCUS"},
   ]
 
-
   const handleOnClick = (event) => {
-    if ( event.target.id == "oracle-action-button") {
-      var desiredElementId = "oracle-action-result";
-    } else if ( event.target.id == "oracle-theme-button") {
-      var desiredElementId = "oracle-theme-result";
-    } else if ( event.target.id == "oracle-descriptor-button") {
-      var desiredElementId = "oracle-descriptor-result";
-    } else if ( event.target.id == "oracle-focus-button") {
-      var desiredElementId = "oracle-focus-result";
-    }
+    var desiredElementId = event.target.id.split("-").slice(0, -1).join("-").concat("-result"); // get button id and infer input result id
     const inputResult = document.getElementById(desiredElementId);
     const oracleResult = coreOracleResults[desiredElementId][Math.floor(Math.random()*coreOracleResults[desiredElementId].length)];
     inputResult.classList.add("toggled");
@@ -32,17 +23,16 @@ export default function CoreOracles() {
       inputResult.classList.remove("toggled");
       inputResult.innerHTML = oracleResult;
 
-      if ( oracleResult.length <= 26 ) {
+      if ( inputResult.textContent.length <= 26 ) {
         inputResult.style.fontSize = "1em";
-      } else if ( oracleResult.length <= 60 ) {
+      } else if ( inputResult.textContent.length <= 60 ) {
         inputResult.style.fontSize = "0.9em";
-      } else if ( oracleResult.length <= 80 ) {
+      } else if ( inputResult.textContent.length <= 80 ) {
         inputResult.style.fontSize = "0.7em";
       } else {
         inputResult.style.fontSize = "0.6em";
       }
     }, 500);
-
 
   }
 

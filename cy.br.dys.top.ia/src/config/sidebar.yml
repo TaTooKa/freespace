@@ -22,6 +22,8 @@
   items:
     - label: 'Core Oracles'
       link: '/oracles/core-oracles'
+    - label: 'City Oracles'
+      link: '/oracles/city-oracles'
 - label: Rules Reference
   items:
     - label: 'General Rules'
