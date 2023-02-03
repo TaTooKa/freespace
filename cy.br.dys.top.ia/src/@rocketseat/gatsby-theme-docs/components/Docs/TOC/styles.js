@@ -6,7 +6,7 @@ export const Wrapper = styled.div`
   order: 2;
 
   padding-top: 72px;
-  max-height: calc(100vh - 72px);
+  ${'' /* max-height: calc(100vh - 72px); */}
   overflow-y: auto;
   overflow-x: hidden;
   width: 100%;
