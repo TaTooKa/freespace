@@ -86,22 +86,22 @@ export default function CoreOracles() {
           <button type="button" id="oracle-building-feature-button" class="randomize-button" onClick={handleOnClick}></button>
         </div>
         <h3 id="building-interior">BUILDING INTERIOR</h3>
-        <h4 id="building-interior-style">INTERIOR STYLE</h4>
+        <h4 id="building-interior-style">↳ INTERIOR STYLE</h4>
         <div class="oracle-container">
           <span role="textbox" id="oracle-building-interior-style-result" class="oracle-result"></span>
           <button type="button" id="oracle-building-interior-style-button" class="randomize-button" onClick={handleOnClick}></button>
         </div>
-        <h4 id="building-interior-state">INTERIOR STATE</h4>
+        <h4 id="building-interior-state">↳ INTERIOR STATE</h4>
         <div class="oracle-container">
           <span role="textbox" id="oracle-building-interior-state-result" class="oracle-result"></span>
           <button type="button" id="oracle-building-interior-state-button" class="randomize-button" onClick={handleOnClick}></button>
         </div>
-        <h4 id="building-interior-feature">INTERIOR FEATURE</h4>
+        <h4 id="building-interior-feature">↳ INTERIOR FEATURE</h4>
         <div class="oracle-container">
           <span role="textbox" id="oracle-building-interior-feature-result" class="oracle-result"></span>
           <button type="button" id="oracle-building-interior-feature-button" class="randomize-button" onClick={handleOnClick}></button>
         </div>
-        <h4 id="building-interior-secret">INTERIOR SECRET</h4>
+        <h4 id="building-interior-secret">↳ INTERIOR SECRET</h4>
         <div class="oracle-container">
           <span role="textbox" id="oracle-building-interior-secret-result" class="oracle-result"></span>
           <button type="button" id="oracle-building-interior-secret-button" class="randomize-button" onClick={handleOnClick}></button>
@@ -121,49 +121,50 @@ export default function CoreOracles() {
           <button type="button" id="oracle-legacy-infrastructure-button" class="randomize-button" onClick={handleOnClick}></button>
         </div>
         <h3 id="nightlife">NIGHTLIFE</h3>
-        <h4 id="bar-club-name">BAR / CLUB NAME</h4>
+        <h4 id="bar-club-name">⤷ BAR / CLUB NAME</h4>
         <div class="oracle-container">
           <span role="textbox" id="oracle-bar-club-name-result" class="oracle-result"></span>
           <button type="button" id="oracle-bar-club-name-button" class="randomize-button" onClick={handleOnClick}></button>
         </div>
-        <h4 id="bar-club-status">BAR / CLUB STATUS</h4>
+        <h4 id="bar-club-status">↳ BAR / CLUB STATUS</h4>
         <div class="oracle-container">
           <span role="textbox" id="oracle-bar-club-status-result" class="oracle-result"></span>
           <button type="button" id="oracle-bar-club-status-button" class="randomize-button" onClick={handleOnClick}></button>
         </div>
-        <h4 id="bar-club-security">BAR / CLUB SECURITY</h4>
+        <h4 id="bar-club-security">↳ BAR / CLUB SECURITY</h4>
         <div class="oracle-container">
           <span role="textbox" id="oracle-bar-club-security-result" class="oracle-result"></span>
           <button type="button" id="oracle-bar-club-security-button" class="randomize-button" onClick={handleOnClick}></button>
         </div>
-        <h4 id="bar-club-vibe">BAR / CLUB VIBE</h4>
+        <h4 id="bar-club-vibe">↳ BAR / CLUB VIBE</h4>
         <div class="oracle-container">
           <span role="textbox" id="oracle-bar-club-vibe-result" class="oracle-result"></span>
           <button type="button" id="oracle-bar-club-vibe-button" class="randomize-button" onClick={handleOnClick}></button>
         </div>
+        <br/>
         <h3 id="screen-content">SCREEN CONTENT</h3>
-        <blockquote><p>Use the following oracles to generate what's on the always present screens, holos and AR displays everywhere.</p></blockquote>
+        <blockquote><p>Use the following oracles to generate what's on the always-present screens, holos and AR displays everywhere.</p></blockquote>
         <div class="oracle-container">
           <span role="textbox" id="oracle-screen-content-result" class="oracle-result"></span>
           <button type="button" id="oracle-screen-content-button" class="randomize-button" onClick={handleOnClick}></button>
         </div>
         <h3 id="advertainment">ADVERTAINMENT</h3>
-        <h4 id="advertainment-brand">BRAND</h4>
+        <h4 id="advertainment-brand">↳ BRAND</h4>
         <div class="oracle-container">
           <span role="textbox" id="oracle-advertainment-brand-result" class="oracle-result"></span>
           <button type="button" id="oracle-advertainment-brand-button" class="randomize-button" onClick={handleOnClick}></button>
         </div>
-        <h4 id="advertainment-product-name">PRODUCT NAME</h4>
+        <h4 id="advertainment-product-name">↳ PRODUCT NAME</h4>
         <div class="oracle-container">
           <span role="textbox" id="oracle-advertainment-product-name-result" class="oracle-result"></span>
           <button type="button" id="oracle-advertainment-product-name-button" class="randomize-button" onClick={handleOnClick}></button>
         </div>
-        <h4 id="advertainment-product-line">PRODUCT LINE</h4>
+        <h4 id="advertainment-product-line">↳ PRODUCT LINE</h4>
         <div class="oracle-container">
           <span role="textbox" id="oracle-advertainment-product-line-result" class="oracle-result"></span>
           <button type="button" id="oracle-advertainment-product-line-button" class="randomize-button" onClick={handleOnClick}></button>
         </div>
-        <h4 id="advertainment-marketing-style">MARKETING STYLE</h4>
+        <h4 id="advertainment-marketing-style">↳ MARKETING STYLE</h4>
         <div class="oracle-container">
           <span role="textbox" id="oracle-advertainment-marketing-style-result" class="oracle-result"></span>
           <button type="button" id="oracle-advertainment-marketing-style-button" class="randomize-button" onClick={handleOnClick}></button>
