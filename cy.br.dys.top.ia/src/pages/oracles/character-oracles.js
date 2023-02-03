@@ -7,7 +7,7 @@ import characterOracleResults from '/src/datatables/character-oracles'
 
 export default function CoreOracles() {
   const headings = [
-    {depth: 2, value: "GENERAL CHARACTER ORACLES"},
+    {depth: 2, value: "GENERAL CHARACTERS"},
     {depth: 3, value: "NAME"},
     {depth: 3, value: "LOOK"},
     {depth: 3, value: "DISPOSITION"},
@@ -19,6 +19,15 @@ export default function CoreOracles() {
     {depth: 3, value: "TATTOO"},
     {depth: 3, value: "SEXUAL ORIENTATION"},
     {depth: 3, value: "GENDER"},
+    {depth: 2, value: "SPECIFIC CHARACTERS"},
+    {depth: 3, value: "CORPORATE ARISTOCRAT"},
+    {depth: 3, value: "GANGBANGER"},
+    {depth: 3, value: "LAW ENFORCEMENT"},
+    {depth: 3, value: "FIXER"},
+    {depth: 3, value: "MERC"},
+    {depth: 3, value: "HACKER"},
+    {depth: 3, value: "STREET WALKER"},
+    {depth: 3, value: "CABBIE"},
   ]
 
   const handleOnClick = (event) => {
@@ -49,7 +58,7 @@ export default function CoreOracles() {
       <Seo title="Character Oracles" />
       <div class="oracles-container">
 
-        <h2 id="general-character-oracles">GENERAL CHARACTER ORACLES</h2>
+        <h2 id="general-characters">GENERAL CHARACTERS</h2>
         <blockquote><p>Use these general oracles for any type of character.</p></blockquote>
         <h3 id="name">NAME</h3>
         <h4 id="character-name-male">⤷ MALE-SOUNDING</h4>
@@ -140,22 +149,42 @@ export default function CoreOracles() {
           <button type="button" id="oracle-character-gender-button" class="randomize-button" onClick={handleOnClick}></button>
         </div>
         <br/>
+        <br/>
 
-        <h2 id="corporate-aristocrat">CORPORATE ARISTOCRAT</h2>
+        <h2 id="specific-characters">SPECIFIC CHARACTERS</h2>
+        <blockquote><p>Use these oracles to generate a character of a more specific category.</p></blockquote>
 
-        <h2 id="gangbanger">GANGBANGER</h2>
+        <h3 id="corporate-aristocrat">CORPORATE ARISTOCRAT</h3>
+        <h4 id="corporate-aristocrat-personality-quirk">⤷ PERSONALITY QUIRK</h4>
+        <div class="oracle-container">
+          <span role="textbox" id="oracle-character-corporate-aristocrat-personality-quirk-result" class="oracle-result"></span>
+          <button type="button" id="oracle-character-corporate-aristocrat-personality-quirk-button" class="randomize-button" onClick={handleOnClick}></button>
+        </div>
+        <h4 id="corporate-aristocrat-position-assets">⤷ POSITION AND ASSETS</h4>
+        <div class="oracle-container">
+          <span role="textbox" id="oracle-character-corporate-aristocrat-position-assets-result" class="oracle-result"></span>
+          <button type="button" id="oracle-character-corporate-aristocrat-position-assets-button" class="randomize-button" onClick={handleOnClick}></button>
+        </div>
+        <h4 id="corporate-aristocrat-mannerisms-looks">⤷ MANNERISMS AND LOOKS</h4>
+        <div class="oracle-container">
+          <span role="textbox" id="oracle-character-corporate-aristocrat-mannerisms-looks-result" class="oracle-result"></span>
+          <button type="button" id="oracle-character-corporate-aristocrat-mannerisms-looks-button" class="randomize-button" onClick={handleOnClick}></button>
+        </div>
+        <br/>
+
+        <h3 id="gangbanger">GANGBANGER</h3>
         
-        <h2 id="law-enforcement">LAW ENFORCEMENT</h2>
+        <h3 id="law-enforcement">LAW ENFORCEMENT</h3>
 
-        <h2 id="fixer">FIXER</h2>
+        <h3 id="fixer">FIXER</h3>
 
-        <h2 id="merc">MERC</h2>
+        <h3 id="merc">MERC</h3>
 
-        <h2 id="hacker">HACKER</h2>
+        <h3 id="hacker">HACKER</h3>
 
-        <h2 id="street-walker">STREET WALKER</h2>
+        <h3 id="street-walker">STREET WALKER</h3>
 
-        <h2 id="cabbie">CABBIE</h2>
+        <h3 id="cabbie">CABBIE</h3>
 
         <br/>
         <br/>
