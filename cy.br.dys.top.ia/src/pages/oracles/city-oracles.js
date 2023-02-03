@@ -142,7 +142,33 @@ export default function CoreOracles() {
           <button type="button" id="oracle-bar-club-vibe-button" class="randomize-button" onClick={handleOnClick}></button>
         </div>
         <h3 id="screen-content">SCREEN CONTENT</h3>
+        <blockquote><p>Use the following oracles to generate what's on the always present screens, holos and AR displays everywhere.</p></blockquote>
+        <div class="oracle-container">
+          <span role="textbox" id="oracle-screen-content-result" class="oracle-result"></span>
+          <button type="button" id="oracle-screen-content-button" class="randomize-button" onClick={handleOnClick}></button>
+        </div>
         <h3 id="advertainment">ADVERTAINMENT</h3>
+        <h4 id="advertainment-brand">BRAND</h4>
+        <div class="oracle-container">
+          <span role="textbox" id="oracle-advertainment-brand-result" class="oracle-result"></span>
+          <button type="button" id="oracle-advertainment-brand-button" class="randomize-button" onClick={handleOnClick}></button>
+        </div>
+        <h4 id="advertainment-product-name">PRODUCT NAME</h4>
+        <div class="oracle-container">
+          <span role="textbox" id="oracle-advertainment-product-name-result" class="oracle-result"></span>
+          <button type="button" id="oracle-advertainment-product-name-button" class="randomize-button" onClick={handleOnClick}></button>
+        </div>
+        <h4 id="advertainment-product-line">PRODUCT LINE</h4>
+        <div class="oracle-container">
+          <span role="textbox" id="oracle-advertainment-product-line-result" class="oracle-result"></span>
+          <button type="button" id="oracle-advertainment-product-line-button" class="randomize-button" onClick={handleOnClick}></button>
+        </div>
+        <h4 id="advertainment-marketing-style">MARKETING STYLE</h4>
+        <div class="oracle-container">
+          <span role="textbox" id="oracle-advertainment-marketing-style-result" class="oracle-result"></span>
+          <button type="button" id="oracle-advertainment-marketing-style-button" class="randomize-button" onClick={handleOnClick}></button>
+        </div>
+
         <br/>
 
         <h2 id="ominous-occurrences">OMINOUS OCCURRENCES</h2>
