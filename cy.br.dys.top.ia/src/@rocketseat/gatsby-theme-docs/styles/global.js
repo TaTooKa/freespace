@@ -1213,6 +1213,69 @@ export default function GlobalStyle() {
           }
         }
         ${'' /* END ORACLE TABLES  */}
+
+        ${'' /* ORACLE PAGES  */}
+        .oracles-container {
+          .oracle-container {
+            display: flex;
+            margin: 0 auto;
+            .oracle-result {
+              width: 75%;
+              background-color: ${theme.darkcolors.components.input.background};
+              padding: 4px 3px 4px 7px;
+              font-family: 'EuroStyle';
+              font-weight: bold;
+              border: 1px solid ${theme.colors.turquoise};
+              border-radius: 3px 0 0 3px;
+              ${'' /* height: 35px; */}
+              font-size: 1em;
+              color: ${theme.darkcolors.components.input.text};
+              transition: 1s;
+            }
+            .oracle-result.toggled {
+              box-shadow: inset 0 0 15px ${theme.colors.turquoise};
+              text-shadow: 0 0 15px ${theme.colors.fuchsia};
+              color: ${theme.colors.fuchsia};
+            }
+            button.randomize-button {
+              border: 2px solid ${theme.colors.fuchsia};
+              overflow: hidden;
+              background-color: #000;
+              ${'' /* height: 35px; */}
+              width: 25%;
+              padding: 5px 10px;
+              color: ${theme.colors.fuchsia};
+              font-family: 'EuroStyle';
+              font-weight: bold;
+              font-size: 0.6em;
+              letter-spacing: 0.1em;
+              box-shadow: inset 0 0 10px ${theme.colors.fuchsia};
+              border-radius: 0 10px 10px 0;
+              transition: 0.2s;
+              :before {
+                content: "RANDOMIZE";
+              }
+              @media screen and (max-width: 800px) {
+                font-size: 0.5em;
+              }
+              @media screen and (max-width: 450px) {
+                font-size: 0.6em;
+                :before {
+                  content: "GET";
+                }
+              }
+              :active {
+                box-shadow: inset 0 0 20px ${theme.colors.fuchsia}, 5px 0 15px ${theme.colors.fuchsia};
+                color: #fff;
+                text-shadow: 0 0 5px ${theme.colors.fuchsia};
+              }
+
+            }
+          }
+
+        } 
+
+        ${'' /* END ORACLE PAGES  */}
         
       `}
     />
