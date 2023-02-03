@@ -58,7 +58,7 @@ export default function CoreOracles() {
       <Seo title="City Oracles" />
       <div class="oracles-container">
 
-        <h2 id="action">SENSES</h2>
+        <h2 id="senses">SENSES</h2>
         <blockquote><p>Use these oracles for first impressions or sensory details.</p></blockquote>
         <h3 id="smell">SMELL</h3>
         <div class="oracle-container">
