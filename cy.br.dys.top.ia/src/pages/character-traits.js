@@ -109,39 +109,39 @@ function CharacterStats() {
             </div>
             <div class="trait gear">
                 <input id="gearCyberClaws" type="checkbox" name="gearCyberClaws" value={inputs.gearCyberClaws} onChange={handleChange} defaultChecked={inputs.gearCyberClaws}/>
-                <label for="gearCyberClaws"> <span class="trait-name">CYBERCLAWS</span>: Retracting Mollies or Logans. Gain a <span class="boost">BOOST</span> when you ACCEPT A CHALLENGE of violence, when you CLASH or when you COMPEL with CHROME.</label>
+                <label for="gearCyberClaws"> <span class="trait-name">CYBERCLAWS</span>: <i>Retracting Mollies or Logans</i>. Gain a <span class="boost">BOOST</span> when you <a href="/prompts/challenge-prompts#accept-a-challenge">ACCEPT A CHALLENGE</a> of violence, when you <a href="/prompts/general-prompts#clash">CLASH</a> or when you <a href="/prompts/general-prompts#compel">COMPEL</a> with <span class="stat">CHROME</span>.</label>
             </div>
             <div class="trait gear">
                 <input id="gearCyberdeck" type="checkbox" name="gearCyberdeck" value={inputs.gearCyberdeck} onChange={handleChange} defaultChecked={inputs.gearCyberdeck}/>
-                <label for="gearCyberdeck"> <span class="trait-name">CYBERDECK</span>: Tool of the netrunner’s trade. gain a <span class="boost">BOOST</span> for any test involving hacking or surfing the NET.</label>
+                <label for="gearCyberdeck"> <span class="trait-name">CYBERDECK</span>: <i>Tool of the netrunner’s trade</i>. gain a <span class="boost">BOOST</span> for any test involving hacking or surfing the NET.</label>
             </div>
             <div class="trait gear">
                 <input id="gearMirrorShades" type="checkbox" name="gearMirrorShades" value={inputs.gearMirrorShades} onChange={handleChange} defaultChecked={inputs.gearMirrorShades}/>
-                <label for="gearMirrorShades"> <span class="trait-name">MIRRORSHADES</span>: excessively cool. Gain a <span class="boost">BOOST</span> whenever you test your FLASH.</label>
+                <label for="gearMirrorShades"> <span class="trait-name">MIRRORSHADES</span>: <i>excessively cool</i>. Gain a <span class="boost">BOOST</span> whenever you test your <span class="stat">FLASH</span>.</label>
             </div>
             <div class="trait gear">
                 <input id="gearNeuralink" type="checkbox" name="gearNeuralink" value={inputs.gearNeuralink} onChange={handleChange} defaultChecked={inputs.gearNeuralink}/>
-                <label for="gearNeuralink"> <span class="trait-name">NEURALINK</span>: Jack me in. gain a <span class="boost">BOOST</span> when netrunning in deep mode (full sensory immersion).</label>
+                <label for="gearNeuralink"> <span class="trait-name">NEURALINK</span>: <i>Jack me in</i>. gain a <span class="boost">BOOST</span> when netrunning in <i>deep mode</i> (full sensory immersion).</label>
             </div>
             <div class="trait gear">
                 <input id="gearSmartCosmetics" type="checkbox" name="gearSmartCosmetics" value={inputs.gearSmartCosmetics} onChange={handleChange} defaultChecked={inputs.gearSmartCosmetics}/>
-                <label for="gearSmartCosmetics"> <span class="trait-name">SMART COSMETICS</span>: Change hairstyle, makeup or facial features at will. Gain a <span class="boost">BOOST</span> when you take advantage of this to COMPEL, GATHER INFORMATION or RESUPPLY by awing or seducing others with FLASH.</label>
+                <label for="gearSmartCosmetics"> <span class="trait-name">SMART COSMETICS</span>: Change hairstyle, makeup or facial features <i>at will</i>. Gain a <span class="boost">BOOST</span> when you take advantage of this to <a href="/prompts/general-prompts#compel">COMPEL</a>, <a href="/prompts/general-prompts#gather-information">GATHER INFORMATION</a> or <a href="/prompts/recovery-prompts#resupply">RESUPPLY</a> by awing or seducing others with <span class="stat">FLASH</span>.</label>
             </div>
             <div class="trait gear">
                 <input id="gearSubdermalShockers" type="checkbox" name="gearSubdermalShockers" value={inputs.gearSubdermalShockers} onChange={handleChange} defaultChecked={inputs.gearSubdermalShockers}/>
-                <label for="gearSubdermalShockers"> <span class="trait-name">SUBDERMAL SHOCKERS</span>: no touching! gain a <span class="boost">BOOST</span> when you test CHROME to defend yourself while you ACT UNDER PRESSURE or CLASH.</label>
+                <label for="gearSubdermalShockers"> <span class="trait-name">SUBDERMAL SHOCKERS</span>: no touching! gain a <span class="boost">BOOST</span> when you test <span class="stat">CHROME</span> to defend yourself while you <a href="/prompts/general-prompts#act-under-pressure">ACT UNDER PRESSURE</a> or <a href="/prompts/general-prompts#clash">CLASH</a>.</label>
             </div>
             <div class="trait gear">
                 <input id="gearSynapseChip" type="checkbox" name="gearSynapseChip" value={inputs.gearSynapseChip} onChange={handleChange} defaultChecked={inputs.gearSynapseChip}/>
-                <label for="gearSynapseChip"> <span class="trait-name">SYNAPSE CHIP</span>: smarter on demand. gain a <span class="boost">BOOST</span> whenever you test your BRAIN.</label>
+                <label for="gearSynapseChip"> <span class="trait-name">SYNAPSE CHIP</span>: <i>smarter on demand</i>. gain a <span class="boost">BOOST</span> whenever you test your <span class="stat">BRAIN</span>.</label>
             </div>
             <div class="trait gear">
                 <input id="gearThermopticCamo" type="checkbox" name="gearThermopticCamo" value={inputs.gearThermopticCamo} onChange={handleChange} defaultChecked={inputs.gearThermopticCamo}/>
-                <label for="gearThermopticCamo"> <span class="trait-name">THERMOPTIC CAMO</span>: now you see me… gain a <span class="boost">BOOST</span> whenever you test your SHADE by going almost invisible.</label>
+                <label for="gearThermopticCamo"> <span class="trait-name">THERMOPTIC CAMO</span>: <i>now you see me</i>... gain a <span class="boost">BOOST</span> whenever you test your <span class="stat">SHADE</span> by going almost invisible.</label>
             </div>
             <div class="trait gear">
                 <input id="gearWiredReflexes" type="checkbox" name="gearWiredReflexes" value={inputs.gearWiredReflexes} onChange={handleChange} defaultChecked={inputs.gearWiredReflexes}/>
-                <label for="gearWiredReflexes"> <span class="trait-name">WIRED REFLEXES</span>: Sandevistan! gain a <span class="boost">BOOST</span> when you test your EDGE to ACT UNDER PRESSURE, SECURE AN ADVANTAGE or CLASH.</label>
+                <label for="gearWiredReflexes"> <span class="trait-name">WIRED REFLEXES</span>: <i>Sandevistan!</i> gain a <span class="boost">BOOST</span> when you test your <span class="stat">EDGE</span> to <a href="/prompts/general-prompts#act-under-pressure">ACT UNDER PRESSURE</a>, <a href="/prompts/general-prompts#secure-an-advantage">SECURE AN ADVANTAGE</a> or <a href="/prompts/general-prompts#clash">CLASH</a>.</label>
             </div>
         </div>
 
@@ -151,7 +151,7 @@ function CharacterStats() {
             <h2 id="contacts">CONTACTS</h2>
             <div class="trait contact">
                 <input id="contactDealer" type="checkbox" name="contactDealer" value={inputs.contactDealer} onChange={handleChange} defaultChecked={inputs.contactDealer}/>
-                <label for="contactDealer"> <span class="trait-name">DEALER</span>: gain a <span class="boost">BOOST</span> when you resort to this contact to RELAX by using addictive substances or simchips, or gain an automatic SUCCESS if you SACRIFICE RESOURCES.</label>
+                <label for="contactDealer"> <span class="trait-name">DEALER</span>: gain a <span class="boost">BOOST</span> when you resort to this contact to <a href="/prompts/recovery-prompts#relax">RELAX</a> by using addictive substances or simchips, or gain an automatic <span class="turquoise">SUCCESS</span> if you <a href="/prompts/suffer-prompts#sacrifice-resources">SACRIFICE RESOURCES</a>.</label>
                 <div class="name-container">
                     <label for="contactDealerName">NAME / ALIAS:</label>
                     <input id="contactDealerName" type="text" name="contactDealerName" value={inputs.contactDealerName} onChange={handleChange}/>
@@ -159,7 +159,7 @@ function CharacterStats() {
             </div>
             <div class="trait contact">
                 <input id="contactFixer" type="checkbox" name="contactFixer" value={inputs.contactFixer} onChange={handleChange} defaultChecked={inputs.contactFixer}/>
-                <label for="contactFixer"> <span class="trait-name">FIXER</span>: gain a <span class="boost">BOOST</span> when you resort to this contact to RESUPPLY or when you FULFILL A CHALLENGE for a contract or mission that they facilitated.</label>
+                <label for="contactFixer"> <span class="trait-name">FIXER</span>: gain a <span class="boost">BOOST</span> when you resort to this contact to <a href="/prompts/recovery-prompts#resupply">RESUPPLY</a> or when you <a href="/prompts/challenge-prompts#fulfill-a-challenge">FULFILL A CHALLENGE</a> for a contract or mission that they facilitated.</label>
                 <div class="name-container">
                     <label for="contactFixerName">NAME / ALIAS:</label>
                     <input id="contactFixerName" type="text" name="contactFixerName" value={inputs.contactFixerName} onChange={handleChange}/>
@@ -167,7 +167,7 @@ function CharacterStats() {
             </div>
             <div class="trait contact">
                 <input id="contactInfoBroker" type="checkbox" name="contactInfoBroker" value={inputs.contactInfoBroker} onChange={handleChange} defaultChecked={inputs.contactInfoBroker}/>
-                <label for="contactInfoBroker"> <span class="trait-name">INFOBROKER</span>: gain a <span class="boost">BOOST</span> when you resort to this contact to GATHER INFORMATION, or gain an automatic SUCCESS if you SACRIFICE RESOURCES.</label>
+                <label for="contactInfoBroker"> <span class="trait-name">INFOBROKER</span>: gain a <span class="boost">BOOST</span> when you resort to this contact to <a href="/prompts/general-prompts#gather-information">GATHER INFORMATION</a>, or gain an automatic <span class="turquoise">SUCCESS</span> if you <a href="/prompts/suffer-prompts#sacrifice-resources">SACRIFICE RESOURCES</a>.</label>
                 <div class="name-container">
                     <label for="contactInfoBrokerName">NAME / ALIAS:</label>
                     <input id="contactInfoBrokerName" type="text" name="contactInfoBrokerName" value={inputs.contactInfoBrokerName} onChange={handleChange}/>
@@ -175,7 +175,7 @@ function CharacterStats() {
             </div>
             <div class="trait contact">
                 <input id="contactStreetDoc" type="checkbox" name="contactStreetDoc" value={inputs.contactStreetDoc} onChange={handleChange} defaultChecked={inputs.contactStreetDoc}/>
-                <label for="contactStreetDoc"> <span class="trait-name">STREET DOC</span>: gain a <span class="boost">BOOST</span> when you resort to this contact to HEAL, or gain an automatic SUCCESS if you SACRIFICE RESOURCES (X).</label>
+                <label for="contactStreetDoc"> <span class="trait-name">STREET DOC</span>: gain a <span class="boost">BOOST</span> when you resort to this contact to <a href="/prompts/recovery-prompts#heal">HEAL</a>, or gain an automatic SUCCESS if you <a href="/prompts/suffer-prompts#sacrifice-resources">SACRIFICE RESOURCES (X)</a>.</label>
                 <div class="name-container">
                     <label for="contactStreetDocName">NAME / ALIAS:</label>
                     <input id="contactStreetDocName" type="text" name="contactStreetDocName" value={inputs.contactStreetDocName} onChange={handleChange}/>
