@@ -7,8 +7,8 @@ import factionOracleResults from '/src/datatables/faction-oracles'
 
 export default function factionOracles() {
   const headings = [
-    {depth: 2, value: "GENERAL CHARACTERS"},
-    {depth: 3, value: "NAME"},
+    {depth: 2, value: "MEGACORPS"},
+    {depth: 2, value: "STREET GANGS"},
 
   ]
 
@@ -54,8 +54,24 @@ export default function factionOracles() {
       <div class="oracles-container">
 
         <h2 id="megacorps">MEGACORPS</h2>
-        <blockquote><p>Use these general oracles for any type of character.</p></blockquote>
-        <h4 id="character-name-male">⤷ MALE-SOUNDING</h4>
+        <h3 id="megacorp-name">MEGACORP NAME</h3>
+        <div class="oracle-container">
+          <span role="textbox" id="oracle-megacorp-name-result" class="oracle-result combined"></span>
+          <button type="button" id="oracle-megacorp-name-button" class="randomize-button" onClick={handleOnClick}></button>
+        </div>
+        <h3 id="megacorp-maneuvers">BOARDROOM MANEUVERS</h3>
+        <blockquote><p>Use this oracle for whatever the corp might be planning or currently doing.</p></blockquote>
+        <div class="oracle-container">
+          <span role="textbox" id="oracle-megacorp-maneuvers-result" class="oracle-result"></span>
+          <button type="button" id="oracle-megacorp-maneuvers-button" class="randomize-button" onClick={handleOnClick}></button>
+        </div>
+        <br/>
+        <h3 id="megacorp-assets">DENIABLE ASSETS</h3>
+        <blockquote><p>Use this oracle for resources or unconventional tools a corporate aristocrat can bring to the table to get the job done.</p></blockquote>
+        <div class="oracle-container">
+          <span role="textbox" id="oracle-megacorp-assets-result" class="oracle-result"></span>
+          <button type="button" id="oracle-megacorp-assets-button" class="randomize-button" onClick={handleOnClick}></button>
+        </div>
         <br/>
 
 
