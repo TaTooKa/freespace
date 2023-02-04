@@ -5,7 +5,7 @@ import Seo from '@rocketseat/gatsby-theme-docs/src/components/SEO';
 
 import characterOracleResults from '/src/datatables/character-oracles'
 
-export default function CoreOracles() {
+export default function characterOracles() {
   const headings = [
     {depth: 2, value: "GENERAL CHARACTERS"},
     {depth: 3, value: "NAME"},

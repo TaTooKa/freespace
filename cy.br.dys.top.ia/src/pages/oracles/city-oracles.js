@@ -5,7 +5,7 @@ import Seo from '@rocketseat/gatsby-theme-docs/src/components/SEO';
 
 import cityOracleResults from '/src/datatables/city-oracles'
 
-export default function CoreOracles() {
+export default function cityOracles() {
   const headings = [
     {depth: 2, value: "SENSES"},
     {depth: 3, value: "SMELL"},
