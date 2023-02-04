@@ -180,17 +180,111 @@ export default function CoreOracles() {
         <br/>
         
         <h3 id="law-enforcement">LAW ENFORCEMENT</h3>
+        <h4 id="law-enforcement-type">⤷ TYPE</h4>
+        <div class="oracle-container">
+          <span role="textbox" id="oracle-character-law-enforcement-type-result" class="oracle-result"></span>
+          <button type="button" id="oracle-character-law-enforcement-type-button" class="randomize-button" onClick={handleOnClick}></button>
+        </div>
+        <h4 id="law-enforcement-activity">⤷ ACTIVITY</h4>
+        <div class="oracle-container">
+          <span role="textbox" id="oracle-character-law-enforcement-activity-result" class="oracle-result"></span>
+          <button type="button" id="oracle-character-law-enforcement-activity-button" class="randomize-button" onClick={handleOnClick}></button>
+        </div>
+        <h4 id="law-enforcement-backup">⤷ BACKUP</h4>
+        <div class="oracle-container">
+          <span role="textbox" id="oracle-character-law-enforcement-backup-result" class="oracle-result"></span>
+          <button type="button" id="oracle-character-law-enforcement-backup-button" class="randomize-button" onClick={handleOnClick}></button>
+        </div>
+        <br/>
 
         <h3 id="fixer">FIXER</h3>
+        <h4 id="fixer-known-callsign">⤷ KNOWN CALLSIGN</h4>
+        <div class="oracle-container">
+          <span role="textbox" id="oracle-character-fixer-known-callsign-result" class="oracle-result"></span>
+          <button type="button" id="oracle-character-fixer-known-callsign-button" class="randomize-button" onClick={handleOnClick}></button>
+        </div>
+        <h4 id="fixer-personality-quirk">⤷ PERSONALITY QUIRK</h4>
+        <div class="oracle-container">
+          <span role="textbox" id="oracle-character-fixer-personality-quirk-result" class="oracle-result"></span>
+          <button type="button" id="oracle-character-fixer-personality-quirk-button" class="randomize-button" onClick={handleOnClick}></button>
+        </div>
+        <h4 id="fixer-profession">⤷ MAIN TRADE</h4>
+        <div class="oracle-container">
+          <span role="textbox" id="oracle-character-fixer-profession-result" class="oracle-result"></span>
+          <button type="button" id="oracle-character-fixer-profession-button" class="randomize-button" onClick={handleOnClick}></button>
+        </div>
+        <h4 id="fixer-mannerisms-looks">⤷ MANNERISMS AND LOOKS</h4>
+        <div class="oracle-container">
+          <span role="textbox" id="oracle-character-fixer-mannerisms-looks-result" class="oracle-result"></span>
+          <button type="button" id="oracle-character-fixer-mannerisms-looks-button" class="randomize-button" onClick={handleOnClick}></button>
+        </div>
+        <br/>
 
         <h3 id="merc">MERC</h3>
+        <h4 id="merc-personality-quirk">⤷ PERSONALITY QUIRK</h4>
+        <div class="oracle-container">
+          <span role="textbox" id="oracle-character-merc-personality-quirk-result" class="oracle-result"></span>
+          <button type="button" id="oracle-character-merc-personality-quirk-button" class="randomize-button" onClick={handleOnClick}></button>
+        </div>
+        <h4 id="merc-tools">⤷ TOOLS OF THE TRADE</h4>
+        <div class="oracle-container">
+          <span role="textbox" id="oracle-character-merc-tools-result" class="oracle-result"></span>
+          <button type="button" id="oracle-character-merc-tools-button" class="randomize-button" onClick={handleOnClick}></button>
+        </div>
+        <h4 id="merc-mannerisms-looks">⤷ MANNERISMS AND LOOKS</h4>
+        <div class="oracle-container">
+          <span role="textbox" id="oracle-character-merc-mannerisms-looks-result" class="oracle-result"></span>
+          <button type="button" id="oracle-character-merc-mannerisms-looks-button" class="randomize-button" onClick={handleOnClick}></button>
+        </div>
+        <br/>
 
         <h3 id="hacker">HACKER</h3>
+        <h4 id="hacker-callsign">⤷ CALLSIGN</h4>
+        <div class="oracle-container">
+          <span role="textbox" id="oracle-character-hacker-callsign-result" class="oracle-result"></span>
+          <button type="button" id="oracle-character-hacker-callsign-button" class="randomize-button" onClick={handleOnClick}></button>
+        </div>
+        <h4 id="hacker-personality-quirk">⤷ PERSONALITY QUIRK</h4>
+        <div class="oracle-container">
+          <span role="textbox" id="oracle-character-hacker-personality-quirk-result" class="oracle-result"></span>
+          <button type="button" id="oracle-character-hacker-personality-quirk-button" class="randomize-button" onClick={handleOnClick}></button>
+        </div>
+        <h4 id="hacker-obscure-fact">⤷ OBSCURE FACT</h4>
+        <div class="oracle-container">
+          <span role="textbox" id="oracle-character-hacker-obscure-fact-result" class="oracle-result"></span>
+          <button type="button" id="oracle-character-hacker-obscure-fact-button" class="randomize-button" onClick={handleOnClick}></button>
+        </div>
+        <h4 id="hacker-mannerisms-looks">⤷ MANNERISMS AND LOOKS</h4>
+        <div class="oracle-container">
+          <span role="textbox" id="oracle-character-hacker-mannerisms-looks-result" class="oracle-result"></span>
+          <button type="button" id="oracle-character-hacker-mannerisms-looks-button" class="randomize-button" onClick={handleOnClick}></button>
+        </div>
+
+        <br/>
 
         <h3 id="street-walker">STREET WALKER</h3>
+        <div class="oracle-container">
+          <span role="textbox" id="oracle-character-street-walker-result" class="oracle-result"></span>
+          <button type="button" id="oracle-character-street-walker-button" class="randomize-button" onClick={handleOnClick}></button>
+        </div>
+        <br/>
 
         <h3 id="cabbie">CABBIE</h3>
-
+        <h4 id="cabbie-appearance">⤷ APPEARANCE</h4>
+        <div class="oracle-container">
+          <span role="textbox" id="oracle-character-cabbie-appearance-result" class="oracle-result"></span>
+          <button type="button" id="oracle-character-cabbie-appearance-button" class="randomize-button" onClick={handleOnClick}></button>
+        </div>
+        <h4 id="cabbie-nationality">⤷ NATIONALITY</h4>
+        <div class="oracle-container">
+          <span role="textbox" id="oracle-character-cabbie-nationality-result" class="oracle-result"></span>
+          <button type="button" id="oracle-character-cabbie-nationality-button" class="randomize-button" onClick={handleOnClick}></button>
+        </div>
+        <h4 id="cabbie-conversation-topic">⤷ CONVERSATION TOPIC</h4>
+        <div class="oracle-container">
+          <span role="textbox" id="oracle-character-cabbie-conversation-topic-result" class="oracle-result"></span>
+          <button type="button" id="oracle-character-cabbie-conversation-topic-button" class="randomize-button" onClick={handleOnClick}></button>
+        </div>
         <br/>
         <br/>
         <br/>
