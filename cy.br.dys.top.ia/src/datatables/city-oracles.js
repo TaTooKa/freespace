@@ -619,7 +619,7 @@ const cityOracleResults = {
     ],
     "oracle-conflict-group-result": [
         "Street <a href=\"/oracles/faction-oracles#gang\">Gang</a>",
-        "Corporate <a href=\"/oracles/character-oracles#corp-aristocrat\">Aristocrat(s)</a>",
+        "Corporate <a href=\"/oracles/character-oracles#corporate-aristocrat\">Aristocrat(s)</a>",
         "<a href=\"/oracles/character-oracles#fixer\">Fixer</a> Network",
         "<a href=\"/oracles/character-oracles#netrunner\">Netrunner</a> Collective",
         "<a href=\"/oracles/character-oracles#merc\">Solo Condotta/PMC</a>",
@@ -641,6 +641,18 @@ const cityOracleResults = {
         "Paranoia",
         "rivalry",
         "Vengeance",
+    ],
+    "oracle-conflict-adversary-group-result": [
+        "Street <a href=\"/oracles/faction-oracles#gang\">Gang</a>",
+        "Corporate <a href=\"/oracles/character-oracles#corporate-aristocrat\">Aristocrat(s)</a>",
+        "<a href=\"/oracles/character-oracles#fixer\">Fixer</a> Network",
+        "<a href=\"/oracles/character-oracles#netrunner\">Netrunner</a> Collective",
+        "<a href=\"/oracles/character-oracles#merc\">Solo Condotta/PMC</a>",
+        "Criminal Syndicate",
+        "Drug Dealers",
+        "Transient Clan",
+        "Indentured Workers",
+        "Media Web",
     ],
     "oracle-terrestrial-vehicle-type-result": [
         "Armoured Intercity Bus",

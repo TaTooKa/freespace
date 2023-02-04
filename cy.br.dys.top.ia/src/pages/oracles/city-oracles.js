@@ -242,6 +242,11 @@ export default function CoreOracles() {
           <span role="textbox" id="oracle-conflict-source-result" class="oracle-result"></span>
           <button type="button" id="oracle-conflict-source-button" class="randomize-button" onClick={handleOnClick}></button>
         </div>
+        <h4 id="conflict-adversary-group">⤷ ADVERSARY GROUP</h4>
+        <div class="oracle-container">
+          <span role="textbox" id="oracle-conflict-adversary-group-result" class="oracle-result"></span>
+          <button type="button" id="oracle-conflict-adversary-group-button" class="randomize-button" onClick={handleOnClick}></button>
+        </div>
 
         <br/>
         <br/>

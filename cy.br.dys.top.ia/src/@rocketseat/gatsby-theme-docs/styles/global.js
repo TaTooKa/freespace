@@ -1220,6 +1220,14 @@ export default function GlobalStyle() {
         ${'' /* ORACLE PAGES  */}
         .oracles-container {
           min-height: 850px;
+          h4 {
+            color: #666;
+            text-shadow: 0 0 6px #444;
+          }
+          a {
+            text-shadow: 0 0 5px ${theme.colors.turquoise};
+            color: ${theme.colors.turquoise};
+          }
           .oracle-container {
             display: flex;
             margin: 0 auto;

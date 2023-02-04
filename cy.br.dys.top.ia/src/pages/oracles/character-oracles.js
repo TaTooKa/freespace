@@ -173,6 +173,11 @@ export default function CoreOracles() {
         <br/>
 
         <h3 id="gangbanger">GANGBANGER</h3>
+        <div class="oracle-container">
+          <span role="textbox" id="oracle-character-gangbanger-result" class="oracle-result"></span>
+          <button type="button" id="oracle-character-gangbanger-button" class="randomize-button" onClick={handleOnClick}></button>
+        </div>
+        <br/>
         
         <h3 id="law-enforcement">LAW ENFORCEMENT</h3>
 
