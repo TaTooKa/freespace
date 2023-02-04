@@ -39,16 +39,6 @@ export default function characterOracles() {
     setTimeout(()=> {
       inputResult.classList.remove("toggled");
       inputResult.innerHTML = oracleResult;
-
-      if ( inputResult.textContent.length <= 26 ) {
-        inputResult.style.fontSize = "1em";
-      } else if ( inputResult.textContent.length <= 80 ) {
-        inputResult.style.fontSize = "0.9em";
-      } else if ( inputResult.textContent.length <= 100 ) {
-        inputResult.style.fontSize = "0.7em";
-      } else {
-        inputResult.style.fontSize = "0.6em";
-      }
     }, 500);
 
   }

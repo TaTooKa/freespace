@@ -39,16 +39,6 @@ export default function cityOracles() {
     setTimeout(()=> {
       inputResult.classList.remove("toggled");
       inputResult.innerHTML = oracleResult;
-
-      if ( inputResult.textContent.length <= 26 ) {
-        inputResult.style.fontSize = "1em";
-      } else if ( inputResult.textContent.length <= 80 ) {
-        inputResult.style.fontSize = "0.9em";
-      } else if ( inputResult.textContent.length <= 100 ) {
-        inputResult.style.fontSize = "0.7em";
-      } else {
-        inputResult.style.fontSize = "0.6em";
-      }
     }, 500);
 
   }
@@ -152,6 +142,7 @@ export default function cityOracles() {
           <span role="textbox" id="oracle-screen-content-result" class="oracle-result"></span>
           <button type="button" id="oracle-screen-content-button" class="randomize-button" onClick={handleOnClick}></button>
         </div>
+        <br/>
         <h3 id="advertainment">ADVERTAINMENT</h3>
         <h4 id="advertainment-brand">⤷ BRAND</h4>
         <div class="oracle-container">

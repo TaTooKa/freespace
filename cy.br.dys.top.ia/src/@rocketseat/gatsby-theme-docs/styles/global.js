@@ -1190,33 +1190,6 @@ export default function GlobalStyle() {
 
         ${'' /* END BOOST EFFECT */}
 
-        ${'' /* ORACLE TABLES  */}
-        table span.oracle-table-number {
-          display: block;
-          font-weight: bold;
-          color: ${theme.colors.turquoise};
-          letter-spacing: 0.1em;
-          margin: 0 0 5px 0;
-        }
-        h2#test-4-columns+div table {
-          font-size: 0.5em;
-          thead {
-            display: none;
-          }
-        }
-        h2#test-3-columns+div table {
-          font-size: 1em;
-          thead {
-            display: none;
-          }
-        }
-        h2#action+div table {
-          thead {
-            display: none;
-          }
-        }
-        ${'' /* END ORACLE TABLES  */}
-
         ${'' /* ORACLE PAGES  */}
         .oracles-container {
           min-height: 850px;
@@ -1227,6 +1200,12 @@ export default function GlobalStyle() {
           a {
             text-shadow: 0 0 5px ${theme.colors.turquoise};
             color: ${theme.colors.turquoise};
+          }
+          blockquote {
+            font-size: 0.8em;
+            p {
+              padding: 0.5em 0.8em;
+            }
           }
           .oracle-container {
             display: flex;
