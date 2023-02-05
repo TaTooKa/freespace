@@ -66,13 +66,7 @@ export default function missionOracles() {
         <br/>
         <blockquote><p>Use this oracle when you need to generate chatter or get a job offer in a different way.</p></blockquote>
 
-        <h3 id="nightclub-encounters">NIGHTCLUB ENCOUNTER</h3>
-        <div class="oracle-container">
-          <span role="textbox" id="oracle-nightclub-encounter-result" class="oracle-result"></span>
-          <button type="button" id="oracle-nightclub-encounter-button" class="randomize-button" onClick={handleOnClick}></button>
-        </div>
-        <br/>
-        <blockquote><p>Use this oracle when on a nightclub and want to generate a complication, plot hook, or both.</p></blockquote>
+
  
         <br/>
         <br/>

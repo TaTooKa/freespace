@@ -135,7 +135,15 @@ export default function cityOracles() {
           <span role="textbox" id="oracle-bar-club-vibe-result" class="oracle-result"></span>
           <button type="button" id="oracle-bar-club-vibe-button" class="randomize-button" onClick={handleOnClick}></button>
         </div>
+        <h3 id="nightclub-encounters">NIGHTCLUB ENCOUNTER</h3>
+        <div class="oracle-container">
+          <span role="textbox" id="oracle-nightclub-encounter-result" class="oracle-result"></span>
+          <button type="button" id="oracle-nightclub-encounter-button" class="randomize-button" onClick={handleOnClick}></button>
+        </div>
         <br/>
+        <blockquote><p>Use this oracle when on a nightclub and want to generate a complication, plot hook, or both.</p></blockquote>
+        <br/>
+
         <h3 id="screen-content">SCREEN CONTENT</h3>
         <blockquote><p>Use the following oracles to generate what's on the always-present screens, holos and AR displays everywhere.</p></blockquote>
         <div class="oracle-container">
