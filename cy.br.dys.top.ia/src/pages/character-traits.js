@@ -95,7 +95,10 @@ function CharacterStats() {
             </div>
         </div>
 
+        <br/>
         <hr/>
+        <br/>
+        <br/>
         
         <div class="traits-container" id="gear-container">
             <h2 id="gear-and-cyberware">GEAR AND CYBERWARE</h2>
@@ -145,7 +148,10 @@ function CharacterStats() {
             </div>
         </div>
 
+        <br/>
         <hr/>
+        <br/>
+        <br/>
         
         <div class="traits-container" id="contacts-container">
             <h2 id="contacts">CONTACTS</h2>
