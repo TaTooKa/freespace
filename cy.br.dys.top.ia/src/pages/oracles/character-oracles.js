@@ -19,6 +19,7 @@ export default function characterOracles() {
     {depth: 3, value: "TATTOO"},
     {depth: 3, value: "SEXUAL ORIENTATION"},
     {depth: 3, value: "GENDER"},
+    {depth: 3, value: "FLASHY CYBERWARE"},
     {depth: 2, value: "SPECIFIC CHARACTERS"},
     {depth: 3, value: "CORPORATE ARISTOCRAT"},
     {depth: 3, value: "GANGBANGER"},
@@ -139,6 +140,38 @@ export default function characterOracles() {
           <button type="button" id="oracle-character-gender-button" class="randomize-button" onClick={handleOnClick}></button>
         </div>
         <br/>
+        <h2 id="flashy-cyberware">FLASHY CYBERWARE</h2>
+        <blockquote><p>If the character sports cyberware, these oracles will give them some aesthetic flavor.</p></blockquote>
+        <h4 id="flashy-cyberware-type">⤷ TYPE OF UPGRADES</h4>
+        <div class="oracle-container">
+          <span role="textbox" id="oracle-flashy-cyberware-type-result" class="oracle-result"></span>
+          <button type="button" id="oracle-flashy-cyberware-type-button" class="randomize-button" onClick={handleOnClick}></button>
+        </div>
+        <h4 id="flashy-cyberware-cybereyes">⤷ CYBEREYES</h4>
+        <div class="oracle-container">
+          <span role="textbox" id="oracle-flashy-cyberware-cybereyes-result" class="oracle-result"></span>
+          <button type="button" id="oracle-flashy-cyberware-cybereyes-button" class="randomize-button" onClick={handleOnClick}></button>
+        </div>
+        <h4 id="flashy-cyberware-cyberarms">⤷ CYBERARMS</h4>
+        <div class="oracle-container">
+          <span role="textbox" id="oracle-flashy-cyberware-cyberarms-result" class="oracle-result"></span>
+          <button type="button" id="oracle-flashy-cyberware-cyberarms-button" class="randomize-button" onClick={handleOnClick}></button>
+        </div>
+        <h4 id="flashy-cyberware-cyberlegs">⤷ CYBERLEGS</h4>
+        <div class="oracle-container">
+          <span role="textbox" id="oracle-flashy-cyberware-cyberlegs-result" class="oracle-result"></span>
+          <button type="button" id="oracle-flashy-cyberware-cyberlegs-button" class="randomize-button" onClick={handleOnClick}></button>
+        </div>
+        <h4 id="flashy-cyberware-blades">⤷ BLADES (MOLLIES OR LOGANS)</h4>
+        <div class="oracle-container">
+          <span role="textbox" id="oracle-flashy-cyberware-blades-result" class="oracle-result"></span>
+          <button type="button" id="oracle-flashy-cyberware-blades-button" class="randomize-button" onClick={handleOnClick}></button>
+        </div>
+        <h4 id="flashy-cyberware-plugs">⤷ PLUGS (DATA JACK)</h4>
+        <div class="oracle-container">
+          <span role="textbox" id="oracle-flashy-cyberware-plugs-result" class="oracle-result"></span>
+          <button type="button" id="oracle-flashy-cyberware-plugs-button" class="randomize-button" onClick={handleOnClick}></button>
+        </div>
         <br/>
 
         <h2 id="specific-characters">SPECIFIC CHARACTERS</h2>

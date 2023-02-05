@@ -28,6 +28,7 @@ export default function cityOracles() {
     {depth: 2, value: "OMINOUS OCCURRENCES"},
     {depth: 3, value: "STRANGE SICKNESS"},
     {depth: 3, value: "LOCAL CONFLICT"},
+    {depth: 3, value: "ATYPICAL WEATHER"},
   ]
 
   const handleOnClick = (event) => {
@@ -141,7 +142,7 @@ export default function cityOracles() {
           <button type="button" id="oracle-nightclub-encounter-button" class="randomize-button" onClick={handleOnClick}></button>
         </div>
         <br/>
-        <blockquote><p>Use this oracle when on a nightclub and want to generate a complication, plot hook, or both.</p></blockquote>
+        <blockquote><p>Use this oracle when on a nightclub and you want to generate a complication, plot hook, or both.</p></blockquote>
         <br/>
 
         <h3 id="screen-content">SCREEN CONTENT</h3>
@@ -246,7 +247,15 @@ export default function cityOracles() {
           <span role="textbox" id="oracle-conflict-adversary-group-result" class="oracle-result"></span>
           <button type="button" id="oracle-conflict-adversary-group-button" class="randomize-button" onClick={handleOnClick}></button>
         </div>
-
+        <br/>
+        
+        <h3 id="atypical-weather">ATYPICAL WEATHER</h3>
+        <div class="oracle-container">
+          <span role="textbox" id="oracle-atypical-weather-result" class="oracle-result"></span>
+          <button type="button" id="oracle-atypical-weather-button" class="randomize-button" onClick={handleOnClick}></button>
+        </div>
+        <br/>
+        <br/>
         <br/>
         <br/>
         <br/>

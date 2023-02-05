@@ -44,6 +44,7 @@ export default function missionOracles() {
       <div class="oracles-container">
 
         <h2 id="missions">MISSIONS</h2>
+        <blockquote><p>Usually, runners are contacted by a <a href="/oracles/character-oracles#fixer">Fixer</a> (for jobs of all kinds) or a <i>Mr. Johnson</i> (missions for Megacorps or other big players).</p></blockquote>
         <h3 id="mission-people">TARGET IS: A PERSON</h3>
         <div class="oracle-container">
           <span role="textbox" id="oracle-mission-people-result" class="oracle-result combined"></span>

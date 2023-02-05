@@ -916,7 +916,7 @@ const factionOracleResults = {
         "hormone-farm captive young males to sell online",
         "Blackmail and harass prominent civil servants and create fake news",
         "Carjacking and auto theft, as well as elaborate respraying",
-        "Do a roaring trade in illegally downloaded, DRM-free music",
+        "Do a roaring trade in illegally downloaded, DRM-free <a href=\"/oracles/misc-oracles#music-genre--subculture-style\">music</a>",
     ],
     "oracle-gang-current-activity-result": [
         "Picking a fight with someone they don’t like - store owner, passer by, hab resident",
