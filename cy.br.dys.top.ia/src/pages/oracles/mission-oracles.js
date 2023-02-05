@@ -10,8 +10,6 @@ export default function missionOracles() {
     {depth: 2, value: "MISSIONS"},
     {depth: 2, value: "PLOT HOOKS"},
     {depth: 3, value: "RUMORS ON THE STREET"},
-    {depth: 3, value: "NIGHTCLUB ENCOUNTERS"},
-
   ]
 
   const handleOnClick = (event) => {
