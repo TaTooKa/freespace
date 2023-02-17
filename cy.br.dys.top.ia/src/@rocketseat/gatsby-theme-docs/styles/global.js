@@ -1267,6 +1267,39 @@ export default function GlobalStyle() {
         } 
 
         ${'' /* END ORACLE PAGES  */}
+
+        ${'' /* IMPORT/EXPORT PAGE  */}
+        div.import-export-container {
+          button#export, input#import {
+            width: 100%;
+            margin: 10px 0 20px 0;
+            border: 2px solid ${theme.colors.fuchsia};
+            overflow: hidden;
+            background-color: #000;
+            min-height: 35px;
+            padding: 5px 10px;
+            color: ${theme.colors.fuchsia};
+            font-family: 'EuroStyle';
+            font-weight: bold;
+            font-size: 0.6em;
+            letter-spacing: 0.1em;
+            box-shadow: inset 0 0 10px ${theme.colors.fuchsia};
+            border-radius: 5px;
+            transition: 0.2s;
+            :active {
+              box-shadow: inset 0 0 20px ${theme.colors.fuchsia}, 5px 0 15px ${theme.colors.fuchsia};
+              color: #fff;
+              text-shadow: 0 0 5px ${theme.colors.fuchsia};
+            }
+          }
+          blockquote {
+            font-size: 0.8em;
+            p {
+              padding: 0.5em 0.8em;
+            }
+          }
+        }
+        ${'' /* END IMPORT/EXPORT PAGE  */}
         
       `}
     />
