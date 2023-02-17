@@ -1300,6 +1300,37 @@ export default function GlobalStyle() {
           }
         }
         ${'' /* END IMPORT/EXPORT PAGE  */}
+
+        ${'' /* HOW TO PLAY PAGE  */}
+
+        div.gatsby-highlight {
+          button {
+            visibility: hidden;
+            top: 7px;
+          }
+          button:after {
+            visibility: visible;
+            content: 'EXAMPLE';
+            color: ${theme.colors.turquoise};
+            font-style: italic;
+            font-family: 'EuroStyle';
+            letter-spacing: 0.2em;
+            opacity: 0.5;
+            background: #000;
+            padding: 3px 5px;
+            border-radius: 3px;
+          }
+          pre {
+            overflow: hidden;
+            word-wrap: break-word;
+            white-space : pre-wrap !important;
+          }
+          code .token-line {
+            margin: 5px 0 0 0;
+          }
+        }        
+
+        ${'' /* END HOW TO PLAY PAGE  */}
         
       `}
     />
