@@ -34,7 +34,20 @@ export default function cityOracles() {
   const handleOnClick = (event) => {
     var desiredElementId = event.target.id.split("-").slice(0, -1).join("-").concat("-result"); // get button id and infer input result id
     const inputResult = document.getElementById(desiredElementId);
-    const oracleResult = cityOracleResults[desiredElementId][Math.floor(Math.random()*cityOracleResults[desiredElementId].length)];
+    var oracleResult  = "";
+
+    if ( inputResult.classList.contains("combined") ) {
+      // Result is built from multiple subtables
+      var result = [];
+      cityOracleResults[desiredElementId].forEach((subTable) => {
+        result.push(subTable[Math.floor(Math.random()*subTable.length)]);
+      });
+      oracleResult = result.join(" ");
+    } else {
+      // Result is built from a single table
+      oracleResult = cityOracleResults[desiredElementId][Math.floor(Math.random()*cityOracleResults[desiredElementId].length)];
+    }
+
     inputResult.classList.add("toggled");
 
     setTimeout(()=> {
@@ -179,10 +192,15 @@ export default function cityOracles() {
         <h2 id="vehicles">VEHICLES</h2>
         <blockquote><p>Use these oracles to generate vehicles with varying levels of detail.</p></blockquote>
         <h3 id="terrestrial-vehicle">TERRESTRIAL VEHICLE</h3>
-        <h4 id="terrestrial-vehicle-type">⤷ TYPE</h4>
+        <h4 id="terrestrial-vehicle-type">⤷ GENERAL TYPE</h4>
         <div class="oracle-container">
           <span role="textbox" id="oracle-terrestrial-vehicle-type-result" class="oracle-result"></span>
           <button type="button" id="oracle-terrestrial-vehicle-type-button" class="randomize-button" onClick={handleOnClick}></button>
+        </div>
+        <h4 id="terrestrial-vehicle-car">⤷ CAR BRAND, TYPE AND PAINTJOB</h4>
+        <div class="oracle-container">
+          <span role="textbox" id="oracle-terrestrial-vehicle-car-result" class="oracle-result combined"></span>
+          <button type="button" id="oracle-terrestrial-vehicle-car-button" class="randomize-button" onClick={handleOnClick}></button>
         </div>
         <h4 id="terrestrial-vehicle-activity">⤷ ACTIVITY</h4>
         <div class="oracle-container">

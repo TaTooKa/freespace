@@ -55,6 +55,11 @@ export default function missionOracles() {
           <span role="textbox" id="oracle-mission-thing-result" class="oracle-result combined"></span>
           <button type="button" id="oracle-mission-thing-button" class="randomize-button" onClick={handleOnClick}></button>
         </div>
+        <h4 id="mission-problem">MISSION PROBLEM (OR WITHHELD INFORMATION)</h4>
+        <div class="oracle-container">
+          <span role="textbox" id="oracle-mission-problem-result" class="oracle-result"></span>
+          <button type="button" id="oracle-mission-problem-button" class="randomize-button" onClick={handleOnClick}></button>
+        </div>
         <br/>
         <h2 id="plot-hooks-and-twists">PLOT HOOKS AND TWISTS</h2>
         <h3 id="rumors-on-the-street">RUMORS ON THE STREET</h3>
