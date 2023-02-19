@@ -44,6 +44,17 @@ export default function characterOracles() {
 
   }
 
+  function openAIGeneratedPortrait(e) {
+    e.preventDefault();
+    const gender = document.getElementById('oracle-character-gender-result').innerText;
+    const look = document.getElementById('oracle-character-look-result').innerText;
+    const profession = document.getElementById('oracle-character-profession-background-result').innerText;
+    const impressions = document.getElementById('oracle-character-first-impressions-result').innerText;
+
+    const url = "https://perchance.org/cyberpunk-portrait?gender="+gender+"&look="+look+"&profession="+profession+"&impressions="+impressions;
+    window.open(url, '_blank');
+  }
+
   return (
     <Layout title="CHARACTER ORACLES" headings={headings}>
       <Seo title="Character Oracles" />
@@ -89,6 +100,11 @@ export default function characterOracles() {
           <span role="textbox" id="oracle-character-profession-background-result" class="oracle-result"></span>
           <button type="button" id="oracle-character-profession-background-button" class="randomize-button" onClick={handleOnClick}></button>
         </div>
+        <br/>
+        <div id="portrait-container">
+          <span><a href="" target="_blank" onClick={openAIGeneratedPortrait}>Get AI generated portrait for these results</a></span>
+        </div>
+        <br/>
         <h3 id="revealed-aspect">REVEALED ASPECT</h3>
         <div class="oracle-container">
           <span role="textbox" id="oracle-character-revealed-aspect-result" class="oracle-result"></span>

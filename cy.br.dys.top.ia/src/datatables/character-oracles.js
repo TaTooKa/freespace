@@ -1771,7 +1771,7 @@ const characterOracleResults = {
         "highly strung, with overly long fingers",
         "Pushed for time, bulky backpack",
         "Poorly groomed, with a raspy voice",
-        "Focussed on Ar, poor listener",
+        "Focused on AR, poor listener",
         "Workwear under overcoat, nods sagely",
         "Thick foreign accent, glowing optics",
     ],
