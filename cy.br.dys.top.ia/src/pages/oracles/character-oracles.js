@@ -102,7 +102,7 @@ export default function characterOracles() {
         </div>
         <br/>
         <div id="portrait-container">
-          <span><a href="" target="_blank" onClick={openAIGeneratedPortrait}>Get AI generated portrait for these results</a></span>
+          <span><a href="" target="_blank" onClick={openAIGeneratedPortrait}>⤷ Get AI generated portrait for these results</a></span>
         </div>
         <br/>
         <h3 id="revealed-aspect">REVEALED ASPECT</h3>

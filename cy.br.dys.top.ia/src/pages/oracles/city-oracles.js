@@ -61,18 +61,20 @@ export default function cityOracles() {
     e.preventDefault();
     const type = document.getElementById('oracle-building-type-result').innerText;
     const feature = document.getElementById('oracle-building-feature-result').innerText;
+    const architecture = document.getElementById('oracle-building-architecture-result').innerText;
 
-    const url = "https://perchance.org/cyberpunk-city-exterior?type="+type+"&feature="+feature;
+    const url = "https://perchance.org/cyberpunk-city-exterior?type="+type+"&feature="+feature+"&architecture="+architecture;
     window.open(url, '_blank');
   }
   
   function openAIGeneratedInterior(e) {
     e.preventDefault();
+    const type = document.getElementById('oracle-building-type-result').innerText;
     const style = document.getElementById('oracle-building-interior-style-result').innerText;
     const state = document.getElementById('oracle-building-interior-state-result').innerText;
     const feature = document.getElementById('oracle-building-interior-feature-result').innerText;
 
-    const url = "https://perchance.org/cyberpunk-city-interior?style="+style+"&state="+state+"&feature="+feature;
+    const url = "https://perchance.org/cyberpunk-city-interior?type="+type+"&style="+style+"&state="+state+"&feature="+feature;
     window.open(url, '_blank');
   }
 
@@ -112,9 +114,14 @@ export default function cityOracles() {
           <span role="textbox" id="oracle-building-feature-result" class="oracle-result"></span>
           <button type="button" id="oracle-building-feature-button" class="randomize-button" onClick={handleOnClick}></button>
         </div>
+        <h3 id="building-architecture">BUILDING ARCHITECTURAL STLYE</h3>
+        <div class="oracle-container">
+          <span role="textbox" id="oracle-building-architecture-result" class="oracle-result"></span>
+          <button type="button" id="oracle-building-architecture-button" class="randomize-button" onClick={handleOnClick}></button>
+        </div>
         <br/>
         <div id="city-exterior-container">
-          <span><a href="" target="_blank" onClick={openAIGeneratedExterior}>Get AI generated exterior image for these results</a></span>
+          <span><a href="" target="_blank" onClick={openAIGeneratedExterior}>⤷ Get AI generated exterior image for these results</a></span>
         </div>
         <br/>
         <h3 id="building-interior">BUILDING INTERIOR</h3>
@@ -140,7 +147,7 @@ export default function cityOracles() {
         </div>
         <br/>
         <div id="city-interior-container">
-          <span><a href="" target="_blank" onClick={openAIGeneratedInterior}>Get AI generated interior image for these results</a></span>
+          <span><a href="" target="_blank" onClick={openAIGeneratedInterior}>⤷ Get AI generated interior image for these results</a></span>
         </div>
         <br/>
         <br/>
