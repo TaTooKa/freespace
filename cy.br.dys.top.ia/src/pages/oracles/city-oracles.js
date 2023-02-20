@@ -78,6 +78,17 @@ export default function cityOracles() {
     window.open(url, '_blank');
   }
 
+  function openAIGeneratedNightclub(e) {
+    e.preventDefault();
+    const type = document.getElementById('oracle-bar-club-vibe-result').innerText + " nightclub";
+    const style = "modern";
+    const state = "security: "+ encodeURIComponent(document.getElementById('oracle-bar-club-security-result').innerText);
+    const feature = "patrons and bystanders. "+encodeURIComponent(document.getElementById('oracle-bar-club-status-result').innerText);
+
+    const url = "https://perchance.org/cyberpunk-city-interior?type="+type+"&style="+style+"&state="+state+"&feature="+feature;
+    window.open(url, '_blank');
+  }
+
   return (
     <Layout title="CITY ORACLES" headings={headings}>
       <Seo title="City Oracles" />
@@ -185,6 +196,11 @@ export default function cityOracles() {
           <span role="textbox" id="oracle-bar-club-vibe-result" class="oracle-result"></span>
           <button type="button" id="oracle-bar-club-vibe-button" class="randomize-button" onClick={handleOnClick}></button>
         </div>
+        <br/>
+        <div id="nightclub-image-container">
+          <span><a href="" target="_blank" onClick={openAIGeneratedNightclub}>⤷ Get AI generated nightclub image for these results</a></span>
+        </div>
+        <br/>
         <h3 id="nightclub-encounters">NIGHTCLUB ENCOUNTER</h3>
         <div class="oracle-container">
           <span role="textbox" id="oracle-nightclub-encounter-result" class="oracle-result"></span>

@@ -55,6 +55,73 @@ export default function characterOracles() {
     window.open(url, '_blank');
   }
 
+  function openAIGeneratedCorporatePortrait(e) {
+    e.preventDefault();
+    const gender = document.getElementById('oracle-character-gender-result').innerText;
+    const profession = "Corporate Aristocrat"
+    const look = "wealthy"
+    const impressions = document.getElementById('oracle-character-corporate-aristocrat-mannerisms-looks-result').innerText;
+
+    const url = "https://perchance.org/cyberpunk-portrait?gender="+gender+"&look="+look+"&profession="+profession+"&impressions="+impressions;
+    window.open(url, '_blank');
+  }
+
+  function openAIGeneratedFixerPortrait(e) {
+    e.preventDefault();
+    const gender = document.getElementById('oracle-character-gender-result').innerText;
+    const trade = document.getElementById('oracle-character-fixer-profession-result').innerText;
+    const profession = "Fixer ("+trade+")";
+    const look = "smart"
+    const impressions = encodeURIComponent(document.getElementById('oracle-character-fixer-mannerisms-looks-result').innerText);
+
+    const url = "https://perchance.org/cyberpunk-portrait?gender="+gender+"&look="+look+"&profession="+profession+"&impressions="+impressions;
+    window.open(url, '_blank');
+  }
+
+  function openAIGeneratedMercPortrait(e) {
+    e.preventDefault();
+    const gender = document.getElementById('oracle-character-gender-result').innerText;
+    const profession = "Mercenary";
+    const look = "tough"
+    const impressions = encodeURIComponent(document.getElementById('oracle-character-merc-mannerisms-looks-result').innerText);
+
+    const url = "https://perchance.org/cyberpunk-portrait?gender="+gender+"&look="+look+"&profession="+profession+"&impressions="+impressions;
+    window.open(url, '_blank');
+  }
+
+  function openAIGeneratedHackerPortrait(e) {
+    e.preventDefault();
+    const gender = document.getElementById('oracle-character-gender-result').innerText;
+    const profession = "Hacker";
+    const look = "wired"
+    const impressions = encodeURIComponent(document.getElementById('oracle-character-hacker-mannerisms-looks-result').innerText);
+
+    const url = "https://perchance.org/cyberpunk-portrait?gender="+gender+"&look="+look+"&profession="+profession+"&impressions="+impressions;
+    window.open(url, '_blank');
+  }
+  
+  function openAIGeneratedProstitutePortrait(e) {
+    e.preventDefault();
+    const gender = document.getElementById('oracle-character-gender-result').innerText;
+    const profession = "Prostitute";
+    const look = "sexy"
+    const impressions = encodeURIComponent(document.getElementById('oracle-character-street-walker-result').innerText);
+
+    const url = "https://perchance.org/cyberpunk-portrait?gender="+gender+"&look="+look+"&profession="+profession+"&impressions="+impressions;
+    window.open(url, '_blank');
+  }
+
+  function openAIGeneratedCabbiePortrait(e) {
+    e.preventDefault();
+    const gender = document.getElementById('oracle-character-gender-result').innerText;
+    const profession = "Cabbie";
+    const look = document.getElementById('oracle-character-cabbie-nationality-result').innerText;
+    const impressions = encodeURIComponent(document.getElementById('oracle-character-cabbie-appearance-result').innerText);
+
+    const url = "https://perchance.org/cyberpunk-portrait?gender="+gender+"&look="+look+"&profession="+profession+"&impressions="+impressions;
+    window.open(url, '_blank');
+  }  
+
   return (
     <Layout title="CHARACTER ORACLES" headings={headings}>
       <Seo title="Character Oracles" />
@@ -210,6 +277,10 @@ export default function characterOracles() {
           <button type="button" id="oracle-character-corporate-aristocrat-mannerisms-looks-button" class="randomize-button" onClick={handleOnClick}></button>
         </div>
         <br/>
+        <div id="corporate-portrait-container">
+          <span><a href="" target="_blank" onClick={openAIGeneratedCorporatePortrait}>⤷ Get AI generated portrait for these results</a></span>
+        </div>
+        <br/>
 
         <h3 id="gangbanger">GANGBANGER</h3>
         <div class="oracle-container">
@@ -258,6 +329,10 @@ export default function characterOracles() {
           <button type="button" id="oracle-character-fixer-mannerisms-looks-button" class="randomize-button" onClick={handleOnClick}></button>
         </div>
         <br/>
+        <div id="fixer-portrait-container">
+          <span><a href="" target="_blank" onClick={openAIGeneratedFixerPortrait}>⤷ Get AI generated portrait for these results</a></span>
+        </div>
+        <br/>
 
         <h3 id="merc">MERC</h3>
         <h4 id="merc-personality-quirk">⤷ PERSONALITY QUIRK</h4>
@@ -274,6 +349,10 @@ export default function characterOracles() {
         <div class="oracle-container">
           <span role="textbox" id="oracle-character-merc-mannerisms-looks-result" class="oracle-result"></span>
           <button type="button" id="oracle-character-merc-mannerisms-looks-button" class="randomize-button" onClick={handleOnClick}></button>
+        </div>
+        <br/>
+        <div id="merc-portrait-container">
+          <span><a href="" target="_blank" onClick={openAIGeneratedMercPortrait}>⤷ Get AI generated portrait for these results</a></span>
         </div>
         <br/>
 
@@ -298,13 +377,20 @@ export default function characterOracles() {
           <span role="textbox" id="oracle-character-hacker-mannerisms-looks-result" class="oracle-result"></span>
           <button type="button" id="oracle-character-hacker-mannerisms-looks-button" class="randomize-button" onClick={handleOnClick}></button>
         </div>
-
+        <br/>
+        <div id="hacker-portrait-container">
+          <span><a href="" target="_blank" onClick={openAIGeneratedHackerPortrait}>⤷ Get AI generated portrait for these results</a></span>
+        </div>
         <br/>
 
         <h3 id="street-walker">STREET WALKER</h3>
         <div class="oracle-container">
           <span role="textbox" id="oracle-character-street-walker-result" class="oracle-result"></span>
           <button type="button" id="oracle-character-street-walker-button" class="randomize-button" onClick={handleOnClick}></button>
+        </div>
+        <br/>
+        <div id="street-walker-portrait-container">
+          <span><a href="" target="_blank" onClick={openAIGeneratedProstitutePortrait}>⤷ Get AI generated portrait for these results</a></span>
         </div>
         <br/>
 
@@ -323,6 +409,10 @@ export default function characterOracles() {
         <div class="oracle-container">
           <span role="textbox" id="oracle-character-cabbie-conversation-topic-result" class="oracle-result"></span>
           <button type="button" id="oracle-character-cabbie-conversation-topic-button" class="randomize-button" onClick={handleOnClick}></button>
+        </div>
+        <br/>
+        <div id="cabbie-portrait-container">
+          <span><a href="" target="_blank" onClick={openAIGeneratedCabbiePortrait}>⤷ Get AI generated portrait for these results</a></span>
         </div>
         <br/>
         <br/>
