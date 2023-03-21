@@ -8,6 +8,8 @@
   link: '/challenges'
 - label: Prompts
   items:
+    - label: 'Prompt List'
+      link: '/prompts/prompt-list'
     - label: 'General Prompts'
       link: '/prompts/general-prompts'
     - label: 'Challenge Prompts'
