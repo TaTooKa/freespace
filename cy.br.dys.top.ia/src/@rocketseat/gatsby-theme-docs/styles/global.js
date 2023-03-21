@@ -294,7 +294,7 @@ export default function GlobalStyle() {
         img.art {
           border: 1px solid #0a6d61;
           border-radius: 0 15px 0 15px;
-          margin: 10px auto 5px auto;
+          margin: 15px auto 5px auto;
           width: 100%;
           transition: 0.5s;
           filter: brightness(0.8) saturate(0.7) hue-rotate(-5deg);
@@ -711,14 +711,32 @@ export default function GlobalStyle() {
             }
         }
 
+        div.active-traits {
+          border: 1px solid #0a6d61;
+          padding: 10px 20px;
+          border-radius: 0 15px 0 15px;
+          span#active-traits-title {
+            color: #0a6d61;
+            font-size: 0.9em;
+            font-weight: bold;
+          }
+          span#active-traits-text {
+            font-weight: bold;
+          }
+        }
+
         form.character-traits {
           .trait {
+            border: 1px solid #0a6d6166;
             margin: 10px 0 25px 0;
-            padding: 10px 0;
+            ${'' /* padding: 10px 0; */}
+            padding: 20px;
             transition: 0.5s;
             opacity: 0.9;
             :has(input:checked) {
               opacity: 1;
+              border: 1px solid #0a6d61ff;
+              box-shadow: inset 0 0 100px #0a6d61ff;
             }
             input[type="checkbox"] {
               appearance: none;
@@ -770,8 +788,8 @@ export default function GlobalStyle() {
             }
 
             input:checked+label +img.art {
-              border: 1px solid ${theme.colors.turquoise};
-              box-shadow: 0 0 10px ${theme.colors.fuchsia}; 
+              border: 1px solid ${theme.colors.fuchsia};
+              box-shadow: 0 0 5px ${theme.colors.fuchsia}; 
               filter: brightness(1);
             }
           }

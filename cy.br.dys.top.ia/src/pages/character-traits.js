@@ -8,6 +8,7 @@ import brawler_art from '/src/images/brawler.jpg';
 import diplomat_art from '/src/images/diplomat.jpg';
 import driver_art from '/src/images/driver.jpg';
 import face_art from '/src/images/face.jpg';
+import infiltrator_art from '/src/images/infiltrator.jpg';
 
 function CharacterStats() {
   const windowGlobal = typeof window !== 'undefined' && window
@@ -26,7 +27,7 @@ function CharacterStats() {
   })
 
   const handleChange = (event) => {
-    console.log(event, event.target.name, event.target.value, event.target.checked)
+    // console.log(event, event.target.name, event.target.value, event.target.checked)
     if ( event.target.type == "checkbox" ) {
         const name = event.target.name;
         const value = event.target.checked;
@@ -47,11 +48,39 @@ function CharacterStats() {
     if ( windowGlobal ) {
       windowGlobal.localStorage.setItem("traits", JSON.stringify(inputs))
     }
+
+    // Update current traits textbox
+    var active_traits_el = document.getElementById('active-traits-text');
+    var all_traits_names_and_links = [];
+    Object.keys(inputs).map((key, index) => {
+        var element = document.getElementById(key);
+        if ( element.type == "checkbox" ) {
+            var trait_label = element.nextElementSibling;
+            var trait_name = trait_label.querySelector('.trait-name').innerHTML;
+            if ( element.checked == true ) {
+                all_traits_names_and_links.push({'name': trait_name, 'id': key});
+            }
+        }
+    })
+    var all_traits_anchors = [];
+    if ( all_traits_names_and_links.length > 0 ) {
+        all_traits_names_and_links.forEach((element) => {
+            all_traits_anchors.push('<a href="/character-traits#'+element.id+'">'+element.name+'</a>');
+        })
+        active_traits_el.innerHTML = all_traits_anchors.join(", ");
+    } else {
+        active_traits_el.textContent = "NONE YET. Pick 3 TRAITS to start."
+    }
   }
 
   return (
     <Layout title="CHARACTER TRAITS" headings={headings}>
       <Seo title="Character Traits" />
+      <div class="active-traits">
+        <span id="active-traits-title">Your current TRAITS: </span>
+        <span id="active-traits-text"></span>
+      </div>
+
       <form class="character-traits">
 
         <div class="traits-container" id="skills-container">
@@ -89,6 +118,7 @@ function CharacterStats() {
             <div class="trait skill">
                 <input id="skillInfiltrator" type="checkbox" name="skillInfiltrator" value={inputs.skillInfiltrator} onChange={handleChange} defaultChecked={inputs.skillInfiltrator}/>
                 <label for="skillInfiltrator"> <span class="trait-name">INFILTRATOR</span>: gain a <span class="boost">BOOST</span> for any test involving breaking into a secure site, deceiving someone through social engineering or impersonating someone with higher access or hierarchy.</label>
+                <img src={infiltrator_art} class="art"/>
             </div>
             <div class="trait skill">
                 <input id="skillMedic" type="checkbox" name="skillMedic" value={inputs.skillMedic} onChange={handleChange} defaultChecked={inputs.skillMedic}/>
