@@ -2,6 +2,13 @@ import React, { useState, useEffect, Component } from "react"
 import Layout from '@rocketseat/gatsby-theme-docs/src/components/Layout';
 import Seo from '@rocketseat/gatsby-theme-docs/src/components/SEO';
 
+import blademaster_art from '/src/images/blademaster.jpg';
+import bountyhunter_art from '/src/images/bountyhunter.jpg';
+import brawler_art from '/src/images/brawler.jpg';
+import diplomat_art from '/src/images/diplomat.jpg';
+import driver_art from '/src/images/driver.jpg';
+import face_art from '/src/images/face.jpg';
+
 function CharacterStats() {
   const windowGlobal = typeof window !== 'undefined' && window
 
@@ -52,26 +59,32 @@ function CharacterStats() {
             <div class="trait skill">
                 <input id="skillBlademaster" type="checkbox" name="skillBlademaster" value={inputs.skillBlademaster} onChange={handleChange} defaultChecked={inputs.skillBlademaster}/>
                 <label for="skillBlademaster"> <span class="trait-name">BLADEMASTER</span>: when wielding a long blade, gain a <span class="boost">BOOST</span> when you test <span class="stat">CHROME</span> to <a href="/prompts/general-prompts#clash">CLASH</a> or when you <a href="/prompts/general-prompts#act-under-pressure">ACT UNDER PRESSURE</a> to defend.</label>
+                <img src={blademaster_art} class="art"/>
             </div>
             <div class="trait skill">
                 <input id="skillBountyHunter" type="checkbox" name="skillBountyHunter" value={inputs.skillBountyHunter} onChange={handleChange} defaultChecked={inputs.skillBountyHunter}/>
                 <label for="skillBountyHunter"> <span class="trait-name">BOUNTY HUNTER</span>: gain a <span class="boost">BOOST</span> whenever you <a href="/prompts/general-prompts#gather-information">GATHER INFORMATION</a>, <a href="/prompts/challenge-prompts#accept-a-challenge">ACCEPT A CHALLENGE</a> or <a href="/prompts/challenge-prompts#fulfill-a-challenge">FULFILL A CHALLENGE</a> related to a bounty.</label>
+                <img src={bountyhunter_art} class="art"/>
             </div>
             <div class="trait skill">
                 <input id="skillBrawler" type="checkbox" name="skillBrawler" value={inputs.skillBrawler} onChange={handleChange} defaultChecked={inputs.skillBrawler}/>
                 <label for="skillBrawler"> <span class="trait-name">BRAWLER</span>: gain a <span class="boost">BOOST</span> when you <a href="/prompts/general-prompts#act-under-pressure">ACT UNDER PRESSURE</a>, <a href="/prompts/general-prompts#secure-an-advantage">SECURE AN ADVANTAGE</a> or <a href="/prompts/general-prompts#clash">CLASH</a> as long as you are leveraging your unarmed fighting prowess.</label>
+                <img src={brawler_art} class="art"/>
             </div>
             <div class="trait skill">
                 <input id="skillDiplomat" type="checkbox" name="skillDiplomat" value={inputs.skillDiplomat} onChange={handleChange} defaultChecked={inputs.skillDiplomat}/>
                 <label for="skillDiplomat"> <span class="trait-name">DIPLOMAT</span>: gain a <span class="boost">BOOST</span> for any test involving defusing a charged situation, resolving a dispute or negotiating an agreement.</label>
+                <img src={diplomat_art} class="art"/>
             </div>
             <div class="trait skill">
                 <input id="skillDriver" type="checkbox" name="skillDriver" value={inputs.skillDriver} onChange={handleChange} defaultChecked={inputs.skillDriver}/>
                 <label for="skillDriver"> <span class="trait-name">DRIVER</span>: gain a <span class="boost">BOOST</span> whenever you <a href="/prompts/general-prompts#act-under-pressure">ACT UNDER PRESSURE</a>, <a href="/prompts/general-prompts#secure-an-advantage">SECURE AN ADVANTAGE</a> or <a href="/prompts/general-prompts#clash">CLASH</a> while piloting a vehicle.</label>
+                <img src={driver_art} class="art"/>
             </div>
             <div class="trait skill">
                 <input id="skillFace" type="checkbox" name="skillFace" value={inputs.skillFace} onChange={handleChange} defaultChecked={inputs.skillFace}/>
                 <label for="skillFace"> <span class="trait-name">FACE</span>: gain a <span class="boost">BOOST</span> when attempting to <a href="/prompts/general-prompts#secure-an-advantage">SECURE AN ADVANTAGE</a> with leadership, coordination or planning; or when you <a href="/prompts/challenge-prompts#accept-a-challenge">ACCEPT A CHALLENGE</a> by testing your <span class="stat">FLASH</span>.</label>
+                <img src={face_art} class="art"/>
             </div>
             <div class="trait skill">
                 <input id="skillInfiltrator" type="checkbox" name="skillInfiltrator" value={inputs.skillInfiltrator} onChange={handleChange} defaultChecked={inputs.skillInfiltrator}/>

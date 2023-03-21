@@ -291,6 +291,15 @@ export default function GlobalStyle() {
           max-width: 100%;
         }
 
+        img.art {
+          border: 1px solid #0a6d61;
+          border-radius: 0 15px 0 15px;
+          margin: 10px auto 5px auto;
+          width: 100%;
+          transition: 0.5s;
+          filter: brightness(0.8) saturate(0.7) hue-rotate(-5deg);
+        }
+
         ul,
         ol {
           color: ${theme.colors.text};
@@ -704,7 +713,13 @@ export default function GlobalStyle() {
 
         form.character-traits {
           .trait {
-            margin: 10px 0 15px 0;
+            margin: 10px 0 25px 0;
+            padding: 10px 0;
+            transition: 0.5s;
+            opacity: 0.9;
+            :has(input:checked) {
+              opacity: 1;
+            }
             input[type="checkbox"] {
               appearance: none;
               width: 16px;
@@ -752,6 +767,12 @@ export default function GlobalStyle() {
               letter-spacing: 0.15em;
               text-shadow: 0 0 10px ${theme.colors.turquoise};
               color: ${theme.colors.turquoise};
+            }
+
+            input:checked+label +img.art {
+              border: 1px solid ${theme.colors.turquoise};
+              box-shadow: 0 0 10px ${theme.colors.fuchsia}; 
+              filter: brightness(1);
             }
           }
           .trait.contact {
