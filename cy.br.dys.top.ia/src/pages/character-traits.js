@@ -17,6 +17,13 @@ import armored_art from '/src/images/armored.jpg';
 import brainbox_art from '/src/images/brainbox.jpg';
 import cyberclaws_art from '/src/images/cyberclaws.jpg';
 import cyberdeck_art from '/src/images/cyberdeck.jpg';
+import mirrorshades_art from '/src/images/mirrorshades.jpg';
+import neuralink_art from '/src/images/neuralink.jpg';
+import smartcosmetics_art from '/src/images/smartcosmetics.jpg';
+import subdermalshockers_art from '/src/images/subdermalshockers.jpg';
+import synapsechip_art from '/src/images/synapsechip.jpg';
+import thermopticcamo_art from '/src/images/thermopticcamo.jpg';
+import wiredreflexes_art from '/src/images/wiredreflexes.jpg';
 
 function CharacterStats() {
   const windowGlobal = typeof window !== 'undefined' && window
@@ -180,30 +187,37 @@ function CharacterStats() {
             <div class="trait gear">
                 <input id="gearMirrorShades" type="checkbox" name="gearMirrorShades" value={inputs.gearMirrorShades} onChange={handleChange} defaultChecked={inputs.gearMirrorShades}/>
                 <label for="gearMirrorShades"> <span class="trait-name">MIRRORSHADES</span>: <i>excessively cool</i>. Gain a <span class="boost">BOOST</span> whenever you test your <span class="stat">FLASH</span>.</label>
+                <img src={mirrorshades_art} class="art"/>
             </div>
             <div class="trait gear">
                 <input id="gearNeuralink" type="checkbox" name="gearNeuralink" value={inputs.gearNeuralink} onChange={handleChange} defaultChecked={inputs.gearNeuralink}/>
                 <label for="gearNeuralink"> <span class="trait-name">NEURALINK</span>: <i>Jack me in</i>. gain a <span class="boost">BOOST</span> when netrunning in <i>deep mode</i> (full sensory immersion).</label>
+                <img src={neuralink_art} class="art"/>
             </div>
             <div class="trait gear">
                 <input id="gearSmartCosmetics" type="checkbox" name="gearSmartCosmetics" value={inputs.gearSmartCosmetics} onChange={handleChange} defaultChecked={inputs.gearSmartCosmetics}/>
                 <label for="gearSmartCosmetics"> <span class="trait-name">SMART COSMETICS</span>: Change hairstyle, makeup or facial features <i>at will</i>. Gain a <span class="boost">BOOST</span> when you take advantage of this to <a href="/prompts/general-prompts#compel">COMPEL</a>, <a href="/prompts/general-prompts#gather-information">GATHER INFORMATION</a> or <a href="/prompts/recovery-prompts#resupply">RESUPPLY</a> by awing or seducing others with <span class="stat">FLASH</span>.</label>
+                <img src={smartcosmetics_art} class="art"/>
             </div>
             <div class="trait gear">
                 <input id="gearSubdermalShockers" type="checkbox" name="gearSubdermalShockers" value={inputs.gearSubdermalShockers} onChange={handleChange} defaultChecked={inputs.gearSubdermalShockers}/>
                 <label for="gearSubdermalShockers"> <span class="trait-name">SUBDERMAL SHOCKERS</span>: <i>no touching!</i> gain a <span class="boost">BOOST</span> when you test <span class="stat">CHROME</span> to defend yourself while you <a href="/prompts/general-prompts#act-under-pressure">ACT UNDER PRESSURE</a> or <a href="/prompts/general-prompts#clash">CLASH</a>.</label>
+                <img src={subdermalshockers_art} class="art"/>
             </div>
             <div class="trait gear">
                 <input id="gearSynapseChip" type="checkbox" name="gearSynapseChip" value={inputs.gearSynapseChip} onChange={handleChange} defaultChecked={inputs.gearSynapseChip}/>
                 <label for="gearSynapseChip"> <span class="trait-name">SYNAPSE CHIP</span>: <i>smarter on demand</i>. gain a <span class="boost">BOOST</span> whenever you test your <span class="stat">BRAIN</span>.</label>
+                <img src={synapsechip_art} class="art"/>
             </div>
             <div class="trait gear">
                 <input id="gearThermopticCamo" type="checkbox" name="gearThermopticCamo" value={inputs.gearThermopticCamo} onChange={handleChange} defaultChecked={inputs.gearThermopticCamo}/>
                 <label for="gearThermopticCamo"> <span class="trait-name">THERMOPTIC CAMO</span>: <i>now you see me</i>... gain a <span class="boost">BOOST</span> whenever you test your <span class="stat">SHADE</span> by going almost invisible.</label>
+                <img src={thermopticcamo_art} class="art"/>
             </div>
             <div class="trait gear">
                 <input id="gearWiredReflexes" type="checkbox" name="gearWiredReflexes" value={inputs.gearWiredReflexes} onChange={handleChange} defaultChecked={inputs.gearWiredReflexes}/>
                 <label for="gearWiredReflexes"> <span class="trait-name">WIRED REFLEXES</span>: <i>Sandevistan!</i> gain a <span class="boost">BOOST</span> when you test your <span class="stat">EDGE</span> to <a href="/prompts/general-prompts#act-under-pressure">ACT UNDER PRESSURE</a>, <a href="/prompts/general-prompts#secure-an-advantage">SECURE AN ADVANTAGE</a> or <a href="/prompts/general-prompts#clash">CLASH</a>.</label>
+                <img src={wiredreflexes_art} class="art"/>
             </div>
         </div>
 
