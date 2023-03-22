@@ -808,11 +808,14 @@ export default function GlobalStyle() {
                 box-shadow: inset 1px 1px 8px #000;
                 text-shadow: 2px 2px 4px #000;
                 width: 25%;
+                @media screen and (max-width: 700px) {
+                  font-size: 0.7em;
+                }
               }
               input {
                   background-color: ${theme.darkcolors.components.input.background};
                   height: 32px; 
-                  width: 50%;
+                  width: 74%;
                   font-family: 'EuroStyle';
                   font-weight: bold;
                   font-size: 0.9em;
@@ -821,6 +824,12 @@ export default function GlobalStyle() {
                   border-radius: 0 10px 10px 0;
                   color: ${theme.darkcolors.components.input.text};
                   transition: 3s;
+                  @media screen and (max-width: 1350px) {
+                    width: 65%;
+                  }
+                  @media screen and (max-width: 900px) {
+                    width: 50%;
+                  }
               }
               input:focus {
                   box-shadow: 0 0 15px ${theme.colors.turquoise};

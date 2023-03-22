@@ -24,6 +24,10 @@ import subdermalshockers_art from '/src/images/subdermalshockers.jpg';
 import synapsechip_art from '/src/images/synapsechip.jpg';
 import thermopticcamo_art from '/src/images/thermopticcamo.jpg';
 import wiredreflexes_art from '/src/images/wiredreflexes.jpg';
+import dealer_art from '/src/images/dealer.jpg';
+import fixer_art from '/src/images/fixer.jpg';
+import infobroker_art from '/src/images/infobroker.jpg';
+import streetdoc_art from '/src/images/streetdoc.jpg';
 
 function CharacterStats() {
   const windowGlobal = typeof window !== 'undefined' && window
@@ -231,6 +235,7 @@ function CharacterStats() {
             <div class="trait contact">
                 <input id="contactDealer" type="checkbox" name="contactDealer" value={inputs.contactDealer} onChange={handleChange} defaultChecked={inputs.contactDealer}/>
                 <label for="contactDealer"> <span class="trait-name">DEALER</span>: gain a <span class="boost">BOOST</span> when you resort to this contact to <a href="/prompts/recovery-prompts#relax">RELAX</a> by using addictive substances or simchips, or gain an automatic <span class="turquoise">SUCCESS</span> if you <a href="/prompts/suffer-prompts#sacrifice-resources">SACRIFICE RESOURCES</a>.</label>
+                <img src={dealer_art} class="art"/>
                 <div class="name-container">
                     <label for="contactDealerName">NAME / ALIAS:</label>
                     <input id="contactDealerName" type="text" name="contactDealerName" value={inputs.contactDealerName} onChange={handleChange}/>
@@ -239,6 +244,7 @@ function CharacterStats() {
             <div class="trait contact">
                 <input id="contactFixer" type="checkbox" name="contactFixer" value={inputs.contactFixer} onChange={handleChange} defaultChecked={inputs.contactFixer}/>
                 <label for="contactFixer"> <span class="trait-name">FIXER</span>: gain a <span class="boost">BOOST</span> when you resort to this contact to <a href="/prompts/recovery-prompts#resupply">RESUPPLY</a> or when you <a href="/prompts/challenge-prompts#fulfill-a-challenge">FULFILL A CHALLENGE</a> for a contract or mission that they facilitated.</label>
+                <img src={fixer_art} class="art"/>
                 <div class="name-container">
                     <label for="contactFixerName">NAME / ALIAS:</label>
                     <input id="contactFixerName" type="text" name="contactFixerName" value={inputs.contactFixerName} onChange={handleChange}/>
@@ -247,6 +253,7 @@ function CharacterStats() {
             <div class="trait contact">
                 <input id="contactInfoBroker" type="checkbox" name="contactInfoBroker" value={inputs.contactInfoBroker} onChange={handleChange} defaultChecked={inputs.contactInfoBroker}/>
                 <label for="contactInfoBroker"> <span class="trait-name">INFOBROKER</span>: gain a <span class="boost">BOOST</span> when you resort to this contact to <a href="/prompts/general-prompts#gather-information">GATHER INFORMATION</a>, or gain an automatic <span class="turquoise">SUCCESS</span> if you <a href="/prompts/suffer-prompts#sacrifice-resources">SACRIFICE RESOURCES</a>.</label>
+                <img src={infobroker_art} class="art"/>
                 <div class="name-container">
                     <label for="contactInfoBrokerName">NAME / ALIAS:</label>
                     <input id="contactInfoBrokerName" type="text" name="contactInfoBrokerName" value={inputs.contactInfoBrokerName} onChange={handleChange}/>
@@ -255,6 +262,7 @@ function CharacterStats() {
             <div class="trait contact">
                 <input id="contactStreetDoc" type="checkbox" name="contactStreetDoc" value={inputs.contactStreetDoc} onChange={handleChange} defaultChecked={inputs.contactStreetDoc}/>
                 <label for="contactStreetDoc"> <span class="trait-name">STREET DOC</span>: gain a <span class="boost">BOOST</span> when you resort to this contact to <a href="/prompts/recovery-prompts#heal">HEAL</a>, or gain an automatic SUCCESS if you <a href="/prompts/suffer-prompts#sacrifice-resources">SACRIFICE RESOURCES (X)</a>.</label>
+                <img src={streetdoc_art} class="art"/>
                 <div class="name-container">
                     <label for="contactStreetDocName">NAME / ALIAS:</label>
                     <input id="contactStreetDocName" type="text" name="contactStreetDocName" value={inputs.contactStreetDocName} onChange={handleChange}/>
