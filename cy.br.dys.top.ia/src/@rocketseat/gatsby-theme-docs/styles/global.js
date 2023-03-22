@@ -787,7 +787,7 @@ export default function GlobalStyle() {
               color: ${theme.colors.turquoise};
             }
 
-            input:checked+label +img.art {
+            input:checked+label +img.art, img.art:hover {
               border: 1px solid ${theme.colors.fuchsia};
               box-shadow: 0 0 5px ${theme.colors.fuchsia}; 
               filter: brightness(1);
