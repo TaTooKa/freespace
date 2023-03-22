@@ -857,7 +857,12 @@ export default function GlobalStyle() {
 
           .challenge-container {
             margin: 30px 0 30px 0;
+            border: 1px solid #0a6d6199;
+            border-radius: 5px 15px 5px 5px;
+            padding: 15px 5px;
             .challenge-inputs {
+              width: 98%;
+              margin: 0 5px 0 5px;
               .description-container {
                 display: inline-block;
                 width: 78%;
@@ -942,6 +947,50 @@ export default function GlobalStyle() {
                 }
 
               }
+            }
+            .state-buttons-container {
+              display: flex;
+              margin: 5px 0 0 0;
+              .state-button {
+                margin: 0 auto;
+                width: 100%;
+                input {
+                  display: none;
+                }
+                label {
+                  display: block;
+                  text-align: center;
+                  margin: 5px;
+                  font-size: 0.7em;
+                  font-weight: bold;
+                  padding: 6px 6px 6px 8px;
+                  border-radius: 10px;
+                  border: 1px solid #666;
+                  color: #666;
+                  transition: 1s;
+                  word-break: break-word;
+                  box-shadow: inset 0 0 5px #000;
+                  @media screen and (max-width: 700px) {
+                    font-size: 0.6em;
+                  }
+                }
+              }
+              .state-button.state-button-active input:checked+label {
+                  border: 1px solid white;
+                  color: white;
+                  box-shadow: 0 0 5px white;
+              }
+              .state-button.state-button-fulfilled input:checked+label {
+                  border: 1px solid ${theme.colors.turquoise};
+                  color: ${theme.colors.turquoise};
+                  box-shadow: 0 0 5px ${theme.colors.turquoise};
+              }
+              .state-button.state-button-failed input:checked+label {
+                  border: 1px solid ${theme.colors.fuchsia};
+                  color: ${theme.colors.fuchsia};
+                  box-shadow: 0 0 5px ${theme.colors.fuchsia};
+              }
+
             }
           }
         }

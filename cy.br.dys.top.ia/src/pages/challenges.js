@@ -79,6 +79,20 @@ function Challenges() {
               <label for="chRank1_5"><span class="rank-type">EPIC:</span> +2%; 50XP</label>
             </div>
           </div>
+          <div class="state-buttons-container">
+            <div class="state-button state-button-active">
+              <input type="radio" name="chState1" id="chState1_1" value={inputs.chState1_1 || "1"} onChange={handleChange} checked={inputs.chState1==="1"}/>
+              <label for="chState1_1"><span class="rank-state-active">ACTIVE</span></label>
+            </div>
+            <div class="state-button state-button-fulfilled">
+              <input type="radio" name="chState1" id="chState1_2" value={inputs.chState1_2 || "2"} onChange={handleChange} checked={inputs.chState1==="2"}/>
+              <label for="chState1_2"><span class="rank-state-fulfilled">FULFILLED</span></label>
+            </div>
+            <div class="state-button state-button-failed">
+              <input type="radio" name="chState1" id="chState1_3" value={inputs.chState1_3 || "3"} onChange={handleChange} checked={inputs.chState1==="3"}/>
+              <label for="chState1_3"><span class="rank-state-failed">FAILED</span></label>
+            </div>
+          </div>
         </div>
 
         <div class="challenge-container">
@@ -112,6 +126,20 @@ function Challenges() {
             <div class="rank-button">
               <input type="radio" name="chRank2" id="chRank2_5" value={inputs.chRank2_5 || "5"} onChange={handleChange} checked={inputs.chRank2==="5"}/>
               <label for="chRank2_5"><span class="rank-type">EPIC:</span> +2%; 50XP</label>
+            </div>
+          </div>
+          <div class="state-buttons-container">
+            <div class="state-button state-button-active">
+              <input type="radio" name="chState2" id="chState2_1" value={inputs.chState2_1 || "1"} onChange={handleChange} checked={inputs.chState2==="1"}/>
+              <label for="chState2_1"><span class="rank-state-active">ACTIVE</span></label>
+            </div>
+            <div class="state-button state-button-fulfilled">
+              <input type="radio" name="chState2" id="chState2_2" value={inputs.chState2_2 || "2"} onChange={handleChange} checked={inputs.chState2==="2"}/>
+              <label for="chState2_2"><span class="rank-state-fulfilled">FULFILLED</span></label>
+            </div>
+            <div class="state-button state-button-failed">
+              <input type="radio" name="chState2" id="chState2_3" value={inputs.chState2_3 || "3"} onChange={handleChange} checked={inputs.chState2==="3"}/>
+              <label for="chState2_3"><span class="rank-state-failed">FAILED</span></label>
             </div>
           </div>
         </div>
@@ -149,6 +177,20 @@ function Challenges() {
               <label for="chRank3_5"><span class="rank-type">EPIC:</span> +2%; 50XP</label>
             </div>
           </div>
+          <div class="state-buttons-container">
+            <div class="state-button state-button-active">
+              <input type="radio" name="chState3" id="chState3_1" value={inputs.chState3_1 || "1"} onChange={handleChange} checked={inputs.chState3==="1"}/>
+              <label for="chState3_1"><span class="rank-state-active">ACTIVE</span></label>
+            </div>
+            <div class="state-button state-button-fulfilled">
+              <input type="radio" name="chState3" id="chState3_2" value={inputs.chState3_2 || "2"} onChange={handleChange} checked={inputs.chState3==="2"}/>
+              <label for="chState3_2"><span class="rank-state-fulfilled">FULFILLED</span></label>
+            </div>
+            <div class="state-button state-button-failed">
+              <input type="radio" name="chState3" id="chState3_3" value={inputs.chState3_3 || "3"} onChange={handleChange} checked={inputs.chState3==="3"}/>
+              <label for="chState3_3"><span class="rank-state-failed">FAILED</span></label>
+            </div>
+          </div>
         </div>
 
         <div class="challenge-container">
@@ -182,6 +224,20 @@ function Challenges() {
             <div class="rank-button">
               <input type="radio" name="chRank4" id="chRank4_5" value={inputs.chRank4_5 || "5"} onChange={handleChange} checked={inputs.chRank4==="5"}/>
               <label for="chRank4_5"><span class="rank-type">EPIC:</span> +2%; 50XP</label>
+            </div>
+          </div>
+          <div class="state-buttons-container">
+            <div class="state-button state-button-active">
+              <input type="radio" name="chState4" id="chState4_1" value={inputs.chState4_1 || "1"} onChange={handleChange} checked={inputs.chState4==="1"}/>
+              <label for="chState4_1"><span class="rank-state-active">ACTIVE</span></label>
+            </div>
+            <div class="state-button state-button-fulfilled">
+              <input type="radio" name="chState4" id="chState4_2" value={inputs.chState4_2 || "2"} onChange={handleChange} checked={inputs.chState4==="2"}/>
+              <label for="chState4_2"><span class="rank-state-fulfilled">FULFILLED</span></label>
+            </div>
+            <div class="state-button state-button-failed">
+              <input type="radio" name="chState4" id="chState4_3" value={inputs.chState4_3 || "3"} onChange={handleChange} checked={inputs.chState4==="3"}/>
+              <label for="chState4_3"><span class="rank-state-failed">FAILED</span></label>
             </div>
           </div>
         </div>
@@ -219,6 +275,20 @@ function Challenges() {
               <label for="chRank5_5"><span class="rank-type">EPIC:</span> +2%; 50XP</label>
             </div>
           </div>
+          <div class="state-buttons-container">
+            <div class="state-button state-button-active">
+              <input type="radio" name="chState5" id="chState5_1" value={inputs.chState5_1 || "1"} onChange={handleChange} checked={inputs.chState5==="1"}/>
+              <label for="chState5_1"><span class="rank-state-active">ACTIVE</span></label>
+            </div>
+            <div class="state-button state-button-fulfilled">
+              <input type="radio" name="chState5" id="chState5_2" value={inputs.chState5_2 || "2"} onChange={handleChange} checked={inputs.chState5==="2"}/>
+              <label for="chState5_2"><span class="rank-state-fulfilled">FULFILLED</span></label>
+            </div>
+            <div class="state-button state-button-failed">
+              <input type="radio" name="chState5" id="chState5_3" value={inputs.chState5_3 || "3"} onChange={handleChange} checked={inputs.chState5==="3"}/>
+              <label for="chState5_3"><span class="rank-state-failed">FAILED</span></label>
+            </div>
+          </div>
         </div>
 
         <div class="challenge-container">
@@ -252,6 +322,20 @@ function Challenges() {
             <div class="rank-button">
               <input type="radio" name="chRank6" id="chRank6_5" value={inputs.chRank6_5 || "5"} onChange={handleChange} checked={inputs.chRank6==="5"}/>
               <label for="chRank6_5"><span class="rank-type">EPIC:</span> +2%; 50XP</label>
+            </div>
+          </div>
+          <div class="state-buttons-container">
+            <div class="state-button state-button-active">
+              <input type="radio" name="chState6" id="chState6_1" value={inputs.chState6_1 || "1"} onChange={handleChange} checked={inputs.chState6==="1"}/>
+              <label for="chState6_1"><span class="rank-state-active">ACTIVE</span></label>
+            </div>
+            <div class="state-button state-button-fulfilled">
+              <input type="radio" name="chState6" id="chState6_2" value={inputs.chState6_2 || "2"} onChange={handleChange} checked={inputs.chState6==="2"}/>
+              <label for="chState6_2"><span class="rank-state-fulfilled">FULFILLED</span></label>
+            </div>
+            <div class="state-button state-button-failed">
+              <input type="radio" name="chState6" id="chState6_3" value={inputs.chState6_3 || "3"} onChange={handleChange} checked={inputs.chState6==="3"}/>
+              <label for="chState6_3"><span class="rank-state-failed">FAILED</span></label>
             </div>
           </div>
         </div>
@@ -289,6 +373,20 @@ function Challenges() {
               <label for="chRank7_5"><span class="rank-type">EPIC:</span> +2%; 50XP</label>
             </div>
           </div>
+          <div class="state-buttons-container">
+            <div class="state-button state-button-active">
+              <input type="radio" name="chState7" id="chState7_1" value={inputs.chState7_1 || "1"} onChange={handleChange} checked={inputs.chState7==="1"}/>
+              <label for="chState7_1"><span class="rank-state-active">ACTIVE</span></label>
+            </div>
+            <div class="state-button state-button-fulfilled">
+              <input type="radio" name="chState7" id="chState7_2" value={inputs.chState7_2 || "2"} onChange={handleChange} checked={inputs.chState7==="2"}/>
+              <label for="chState7_2"><span class="rank-state-fulfilled">FULFILLED</span></label>
+            </div>
+            <div class="state-button state-button-failed">
+              <input type="radio" name="chState7" id="chState7_3" value={inputs.chState7_3 || "3"} onChange={handleChange} checked={inputs.chState7==="3"}/>
+              <label for="chState7_3"><span class="rank-state-failed">FAILED</span></label>
+            </div>
+          </div>
         </div>
 
         <div class="challenge-container">
@@ -322,6 +420,20 @@ function Challenges() {
             <div class="rank-button">
               <input type="radio" name="chRank8" id="chRank8_5" value={inputs.chRank8_5 || "5"} onChange={handleChange} checked={inputs.chRank8==="5"}/>
               <label for="chRank8_5"><span class="rank-type">EPIC:</span> +2%; 50XP</label>
+            </div>
+          </div>
+          <div class="state-buttons-container">
+            <div class="state-button state-button-active">
+              <input type="radio" name="chState8" id="chState8_1" value={inputs.chState8_1 || "1"} onChange={handleChange} checked={inputs.chState8==="1"}/>
+              <label for="chState8_1"><span class="rank-state-active">ACTIVE</span></label>
+            </div>
+            <div class="state-button state-button-fulfilled">
+              <input type="radio" name="chState8" id="chState8_2" value={inputs.chState8_2 || "2"} onChange={handleChange} checked={inputs.chState8==="2"}/>
+              <label for="chState8_2"><span class="rank-state-fulfilled">FULFILLED</span></label>
+            </div>
+            <div class="state-button state-button-failed">
+              <input type="radio" name="chState8" id="chState8_3" value={inputs.chState8_3 || "3"} onChange={handleChange} checked={inputs.chState8==="3"}/>
+              <label for="chState8_3"><span class="rank-state-failed">FAILED</span></label>
             </div>
           </div>
         </div>
