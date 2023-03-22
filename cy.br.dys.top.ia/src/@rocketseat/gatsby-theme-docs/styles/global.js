@@ -964,7 +964,7 @@ export default function GlobalStyle() {
                   font-size: 0.7em;
                   font-weight: bold;
                   padding: 6px 6px 6px 8px;
-                  border-radius: 10px;
+                  border-radius: 3px;
                   border: 1px solid #666;
                   color: #666;
                   transition: 1s;
