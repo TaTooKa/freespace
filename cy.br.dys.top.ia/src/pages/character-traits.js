@@ -9,6 +9,14 @@ import diplomat_art from '/src/images/diplomat.jpg';
 import driver_art from '/src/images/driver.jpg';
 import face_art from '/src/images/face.jpg';
 import infiltrator_art from '/src/images/infiltrator.jpg';
+import medic_art from '/src/images/medic.jpg';
+import netrunner_art from '/src/images/netrunner.jpg';
+import sniper_art from '/src/images/sniper.jpg';
+import streetrat_art from '/src/images/streetrat.jpg';
+import armored_art from '/src/images/armored.jpg';
+import brainbox_art from '/src/images/brainbox.jpg';
+import cyberclaws_art from '/src/images/cyberclaws.jpg';
+import cyberdeck_art from '/src/images/cyberdeck.jpg';
 
 function CharacterStats() {
   const windowGlobal = typeof window !== 'undefined' && window
@@ -123,18 +131,22 @@ function CharacterStats() {
             <div class="trait skill">
                 <input id="skillMedic" type="checkbox" name="skillMedic" value={inputs.skillMedic} onChange={handleChange} defaultChecked={inputs.skillMedic}/>
                 <label for="skillMedic"> <span class="trait-name">MEDIC</span>: gain a <span class="boost">BOOST</span> when you <a href="/prompts/recovery-prompts#heal">HEAL</a>, and if you <a href="/prompts/suffer-prompts#sacrifice-resources">SACRIFICE RESOURCES</a> for it, spend 1 less GEAR than needed to gain the same benefits.</label>
+                <img src={medic_art} class="art"/>
             </div>
             <div class="trait skill">
                 <input id="skillNetrunner" type="checkbox" name="skillNetrunner" value={inputs.skillNetrunner} onChange={handleChange} defaultChecked={inputs.skillNetrunner}/>
                 <label for="skillNetrunner"> <span class="trait-name">NETRUNNER</span>: gain a <span class="boost">BOOST</span> for any test involving hacking or surfing the NET.</label>
+                <img src={netrunner_art} class="art"/>
             </div>
             <div class="trait skill">
                 <input id="skillSniper" type="checkbox" name="skillSniper" value={inputs.skillSniper} onChange={handleChange} defaultChecked={inputs.skillSniper}/>
                 <label for="skillSniper"> <span class="trait-name">SNIPER</span>: while attacking at long range, gain a <span class="boost">BOOST</span> in <a href="/prompts/general-prompts#clash">CLASH</a> and <a href="/prompts/general-prompts#secure-an-advantage">SECURE AN ADVANTAGE</a> as long as you are <i>IN CONTROL</i>.</label>
+                <img src={sniper_art} class="art"/>
             </div>
             <div class="trait skill">
                 <input id="skillStreetRat" type="checkbox" name="skillStreetRat" value={inputs.skillStreetRat} onChange={handleChange} defaultChecked={inputs.skillStreetRat}/>
                 <label for="skillStreetRat"> <span class="trait-name">STREET RAT</span>: gain a <span class="boost">BOOST</span> for any test involving lying, bluffing, stealing or cheating.</label>
+                <img src={streetrat_art} class="art"/>
             </div>
         </div>
 
@@ -148,18 +160,22 @@ function CharacterStats() {
             <div class="trait gear">
                 <input id="gearArmored" type="checkbox" name="gearArmored" value={inputs.gearArmored} onChange={handleChange} defaultChecked={inputs.gearArmored}/>
                 <label for="gearArmored"> <span class="trait-name">ARMORED</span>: <i>Shiny and Chrome</i>. gain a <span class="boost">BOOST</span> when you <a href="/prompts/general-prompts#act-under-pressure">ACT UNDER PRESSURE</a> or <a href="/prompts/general-prompts#clash">CLASH</a> against physical attacks or impact damage.</label>
+                <img src={armored_art} class="art"/>
             </div>
             <div class="trait gear">
                 <input id="gearBrainbox" type="checkbox" name="gearBrainbox" value={inputs.gearBrainbox} onChange={handleChange} defaultChecked={inputs.gearBrainbox}/>
                 <label for="gearBrainbox"> <span class="trait-name">BRAINBOX</span>: <i>A blackbox for your brain</i>. Ignore a <span class="fuchsia">FAILURE</span> when you <a href="/prompts/suffer-prompts#face-death">FACE DEATH</a>, but then <a href="/prompts/fate-prompts#pay-the-consequences">PAY THE CONSEQUENCES</a> of having your <i>mind-backup</i> reinserted in a new body, and lose the BRAINBOX.</label>
+                <img src={brainbox_art} class="art"/>
             </div>
             <div class="trait gear">
                 <input id="gearCyberClaws" type="checkbox" name="gearCyberClaws" value={inputs.gearCyberClaws} onChange={handleChange} defaultChecked={inputs.gearCyberClaws}/>
                 <label for="gearCyberClaws"> <span class="trait-name">CYBERCLAWS</span>: <i>Retracting Mollies or Logans</i>. Gain a <span class="boost">BOOST</span> when you <a href="/prompts/challenge-prompts#accept-a-challenge">ACCEPT A CHALLENGE</a> of violence, when you <a href="/prompts/general-prompts#clash">CLASH</a> or when you <a href="/prompts/general-prompts#compel">COMPEL</a> with <span class="stat">CHROME</span>.</label>
+                <img src={cyberclaws_art} class="art"/>
             </div>
             <div class="trait gear">
                 <input id="gearCyberdeck" type="checkbox" name="gearCyberdeck" value={inputs.gearCyberdeck} onChange={handleChange} defaultChecked={inputs.gearCyberdeck}/>
                 <label for="gearCyberdeck"> <span class="trait-name">CYBERDECK</span>: <i>Tool of the netrunner’s trade</i>. gain a <span class="boost">BOOST</span> for any test involving hacking or surfing the NET.</label>
+                <img src={cyberdeck_art} class="art"/>
             </div>
             <div class="trait gear">
                 <input id="gearMirrorShades" type="checkbox" name="gearMirrorShades" value={inputs.gearMirrorShades} onChange={handleChange} defaultChecked={inputs.gearMirrorShades}/>
