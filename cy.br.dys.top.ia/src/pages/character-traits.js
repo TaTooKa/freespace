@@ -8,6 +8,7 @@ import brawler_art from '/src/images/brawler.jpg';
 import diplomat_art from '/src/images/diplomat.jpg';
 import driver_art from '/src/images/driver.jpg';
 import face_art from '/src/images/face.jpg';
+import gunkata_art from '/src/images/gunkata.jpg';
 import infiltrator_art from '/src/images/infiltrator.jpg';
 import medic_art from '/src/images/medic.jpg';
 import netrunner_art from '/src/images/netrunner.jpg';
@@ -19,7 +20,9 @@ import cyberclaws_art from '/src/images/cyberclaws.jpg';
 import cyberdeck_art from '/src/images/cyberdeck.jpg';
 import mirrorshades_art from '/src/images/mirrorshades.jpg';
 import neuralink_art from '/src/images/neuralink.jpg';
+import retinalhud_art from '/src/images/retinalhud.jpg';
 import smartcosmetics_art from '/src/images/smartcosmetics.jpg';
+import specialammomod_art from '/src/images/specialammomod.jpg';
 import subdermalshockers_art from '/src/images/subdermalshockers.jpg';
 import synapsechip_art from '/src/images/synapsechip.jpg';
 import thermopticcamo_art from '/src/images/thermopticcamo.jpg';
@@ -135,6 +138,11 @@ function CharacterStats() {
                 <img src={face_art} class="art"/>
             </div>
             <div class="trait skill">
+                <input id="skillGunKata" type="checkbox" name="skillGunKata" value={inputs.skillGunKata} onChange={handleChange} defaultChecked={inputs.skillGunKata}/>
+                <label for="skillGunKata"> <span class="trait-name">GUN KATA</span>: gain a <span class="boost">BOOST</span> whenever you use firearms in close quarters and you test your <span class="stat">EDGE</span> to <a href="/prompts/general-prompts#clash">CLASH</a>, <a href="/prompts/general-prompts#secure-an-advantage">SECURE AN ADVANTAGE</a> or <a href="/prompts/general-prompts#act-under-pressure">ACT UNDER PRESSURE</a>.</label>
+                <img src={gunkata_art} class="art"/>
+            </div>
+            <div class="trait skill">
                 <input id="skillInfiltrator" type="checkbox" name="skillInfiltrator" value={inputs.skillInfiltrator} onChange={handleChange} defaultChecked={inputs.skillInfiltrator}/>
                 <label for="skillInfiltrator"> <span class="trait-name">INFILTRATOR</span>: gain a <span class="boost">BOOST</span> for any test involving breaking into a secure site, deceiving someone through social engineering or impersonating someone with higher access or hierarchy.</label>
                 <img src={infiltrator_art} class="art"/>
@@ -175,7 +183,7 @@ function CharacterStats() {
             </div>
             <div class="trait gear">
                 <input id="gearBrainbox" type="checkbox" name="gearBrainbox" value={inputs.gearBrainbox} onChange={handleChange} defaultChecked={inputs.gearBrainbox}/>
-                <label for="gearBrainbox"> <span class="trait-name">BRAINBOX</span>: <i>A blackbox for your brain</i>. Ignore a <span class="fuchsia">FAILURE</span> when you <a href="/prompts/suffer-prompts#face-death">FACE DEATH</a>, but then <a href="/prompts/fate-prompts#pay-the-consequences">PAY THE CONSEQUENCES</a> of having your <i>mind-backup</i> reinserted in a new body, and lose the BRAINBOX.</label>
+                <label for="gearBrainbox"> <span class="trait-name">BRAINBOX</span>: <i>A blackbox for your brain</i>. Ignore a <span class="fuchsia bold">FAILURE</span> when you <a href="/prompts/suffer-prompts#face-death">FACE DEATH</a>, but then <a href="/prompts/fate-prompts#pay-the-consequences">PAY THE CONSEQUENCES</a> of having your <i>mind-backup</i> reinserted in a new body, and lose the BRAINBOX.</label>
                 <img src={brainbox_art} class="art"/>
             </div>
             <div class="trait gear">
@@ -199,9 +207,19 @@ function CharacterStats() {
                 <img src={neuralink_art} class="art"/>
             </div>
             <div class="trait gear">
+                <input id="gearRetinalHud" type="checkbox" name="gearRetinalHud" value={inputs.gearRetinalHud} onChange={handleChange} defaultChecked={inputs.gearRetinalHud}/>
+                <label for="gearRetinalHud"> <span class="trait-name">RETINAL HUD</span>: <i>Target acquired</i>. Your cybereyes project an augmented display with target acquisition, IFF software (identify friend/foe), vulnerability analysis, personal data retrieval, etc. Gain a <span class="boost">BOOST</span> whenever that would give you an advantage in action-packed situations or investigation scenes.</label>
+                <img src={retinalhud_art} class="art"/>
+            </div>
+            <div class="trait gear">
                 <input id="gearSmartCosmetics" type="checkbox" name="gearSmartCosmetics" value={inputs.gearSmartCosmetics} onChange={handleChange} defaultChecked={inputs.gearSmartCosmetics}/>
                 <label for="gearSmartCosmetics"> <span class="trait-name">SMART COSMETICS</span>: Change hairstyle, makeup or facial features <i>at will</i>. Gain a <span class="boost">BOOST</span> when you take advantage of this to <a href="/prompts/general-prompts#compel">COMPEL</a>, <a href="/prompts/general-prompts#gather-information">GATHER INFORMATION</a> or <a href="/prompts/recovery-prompts#resupply">RESUPPLY</a> by awing or seducing others with <span class="stat">FLASH</span>.</label>
                 <img src={smartcosmetics_art} class="art"/>
+            </div>
+            <div class="trait gear">
+                <input id="gearSpecialAmmoMod" type="checkbox" name="gearSpecialAmmoMod" value={inputs.gearSpecialAmmoMod} onChange={handleChange} defaultChecked={inputs.gearSpecialAmmoMod}/>
+                <label for="gearSpecialAmmoMod"> <span class="trait-name">SPECIAL AMMO MOD</span>: Your firearm has a voice-activated mod that switches between <i>special ammo on demand</i>. Including but not limited to: Armor-piercing, Incendiary, Heat-seeker, Flashbang, Cyber-scrambler,  Rubber-ricochet. <a href="/prompts/suffer-prompts#sacrifice-resources">SACRIFICE RESOURCES (1)</a> to gain <i>Narrative Permission</i> and a <span class="boost">BOOST</span> when you use one for a particular situation.</label>
+                <img src={specialammomod_art} class="art"/>
             </div>
             <div class="trait gear">
                 <input id="gearSubdermalShockers" type="checkbox" name="gearSubdermalShockers" value={inputs.gearSubdermalShockers} onChange={handleChange} defaultChecked={inputs.gearSubdermalShockers}/>
