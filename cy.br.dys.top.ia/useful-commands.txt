@@ -1,0 +1,4 @@
+nvm use 18
+gatsby.cmd develop
+gatsby.cmd clean 
+npm run deploy
