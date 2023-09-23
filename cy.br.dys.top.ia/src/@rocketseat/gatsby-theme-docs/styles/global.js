@@ -155,6 +155,15 @@ export default function GlobalStyle() {
         .stat {
             font-family: 'Android101';
         }
+        .stat-value {
+          font-size: 0.7em;
+          font-weight: bold;
+          color: #888;
+          margin: 0 0 0 3px;
+          vertical-align: middle;
+          text-shadow: 0 0 10px #000;
+          cursor: help;
+        }
 
         code.inline-code {
           display: inline-block;

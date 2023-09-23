@@ -76,7 +76,7 @@ function CharacterStats() {
     var all_traits_names_and_links = [];
     Object.keys(inputs).map((key, index) => {
         var element = document.getElementById(key);
-        if ( element.type == "checkbox" ) {
+        if ( element && element.type == "checkbox" ) {
             var trait_label = element.nextElementSibling;
             var trait_name = trait_label.querySelector('.trait-name').innerHTML;
             if ( element.checked == true ) {
