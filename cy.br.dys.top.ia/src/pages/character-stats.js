@@ -4,6 +4,7 @@ import Seo from '@rocketseat/gatsby-theme-docs/src/components/SEO';
 
 function CharacterStats() {
   const windowGlobal = typeof window !== 'undefined' && window
+  var activeTraits = windowGlobal ? windowGlobal.localStorage.getItem("activeTraits") : "";
 
   const [inputs, setInputs] = useState(() => {
     const savedCharacterStr = windowGlobal ? windowGlobal.localStorage.getItem("character") : "{}"
@@ -35,6 +36,13 @@ function CharacterStats() {
 
   useEffect(() => {
     const timeOutId = setTimeout(() => saveCharacter(inputs), 500);
+    // Traits 
+    var traitsContainerEl = document.getElementById('traits-container');
+    if (!activeTraits) {
+      activeTraits = "NONE YET. Pick 3 in the <a href=\"/character-traits\">TRAITS PAGE</a>.";
+    }
+    traitsContainerEl.innerHTML = "Your current <a href=\"/character-traits\">TRAITS</a>:<br/>"+activeTraits;
+
     return () => clearTimeout(timeOutId);
   }, [inputs]);
 
@@ -149,6 +157,8 @@ function CharacterStats() {
           </div>
 
         </div>
+
+        <div id="traits-container"></div>
 
         <div class="right-side">
 
