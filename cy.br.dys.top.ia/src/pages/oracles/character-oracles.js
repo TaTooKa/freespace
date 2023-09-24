@@ -10,6 +10,8 @@ export default function characterOracles() {
     {depth: 2, value: "GENERAL CHARACTERS"},
     {depth: 3, value: "NAME"},
     {depth: 3, value: "LOOK"},
+    {depth: 3, value: "ETHNICITY"},
+    {depth: 3, value: "GENDER"},
     {depth: 3, value: "DISPOSITION"},
     {depth: 3, value: "FIRST IMPRESSIONS"},
     {depth: 3, value: "PROFESSION / BACKGROUND"},
@@ -18,7 +20,6 @@ export default function characterOracles() {
     {depth: 3, value: "VICE / ADDICTION"},
     {depth: 3, value: "TATTOO"},
     {depth: 3, value: "SEXUAL ORIENTATION"},
-    {depth: 3, value: "GENDER"},
     {depth: 3, value: "FLASHY CYBERWARE"},
     {depth: 2, value: "SPECIFIC CHARACTERS"},
     {depth: 3, value: "CORPORATE ARISTOCRAT"},
@@ -48,10 +49,11 @@ export default function characterOracles() {
     e.preventDefault();
     const gender = document.getElementById('oracle-character-gender-result').innerText;
     const look = document.getElementById('oracle-character-look-result').innerText;
+    const ethnicity = document.getElementById('oracle-character-ethnicity-result').innerText;
     const profession = document.getElementById('oracle-character-profession-background-result').innerText;
     const impressions = document.getElementById('oracle-character-first-impressions-result').innerText;
 
-    const url = "https://perchance.org/cyberpunk-portrait?gender="+gender+"&look="+look+"&profession="+profession+"&impressions="+impressions;
+    const url = "https://perchance.org/cyberpunk-portrait?gender="+gender+"&look="+look+"&ethnicity="+ethnicity+"&profession="+profession+"&impressions="+impressions;
     window.open(url, '_blank');
   }
 
@@ -60,9 +62,10 @@ export default function characterOracles() {
     const gender = document.getElementById('oracle-character-gender-result').innerText;
     const profession = "Corporate Aristocrat"
     const look = "wealthy"
+    const ethnicity = document.getElementById('oracle-character-ethnicity-result').innerText;
     const impressions = document.getElementById('oracle-character-corporate-aristocrat-mannerisms-looks-result').innerText;
 
-    const url = "https://perchance.org/cyberpunk-portrait?gender="+gender+"&look="+look+"&profession="+profession+"&impressions="+impressions;
+    const url = "https://perchance.org/cyberpunk-portrait?gender="+gender+"&look="+look+"&ethnicity="+ethnicity+"&profession="+profession+"&impressions="+impressions;
     window.open(url, '_blank');
   }
 
@@ -72,9 +75,10 @@ export default function characterOracles() {
     const trade = document.getElementById('oracle-character-fixer-profession-result').innerText;
     const profession = "Fixer ("+trade+")";
     const look = "smart"
+    const ethnicity = document.getElementById('oracle-character-ethnicity-result').innerText;
     const impressions = encodeURIComponent(document.getElementById('oracle-character-fixer-mannerisms-looks-result').innerText);
 
-    const url = "https://perchance.org/cyberpunk-portrait?gender="+gender+"&look="+look+"&profession="+profession+"&impressions="+impressions;
+    const url = "https://perchance.org/cyberpunk-portrait?gender="+gender+"&look="+look+"&ethnicity="+ethnicity+"&profession="+profession+"&impressions="+impressions;
     window.open(url, '_blank');
   }
 
@@ -83,9 +87,10 @@ export default function characterOracles() {
     const gender = document.getElementById('oracle-character-gender-result').innerText;
     const profession = "Mercenary";
     const look = "tough"
+    const ethnicity = document.getElementById('oracle-character-ethnicity-result').innerText;
     const impressions = encodeURIComponent(document.getElementById('oracle-character-merc-mannerisms-looks-result').innerText);
 
-    const url = "https://perchance.org/cyberpunk-portrait?gender="+gender+"&look="+look+"&profession="+profession+"&impressions="+impressions;
+    const url = "https://perchance.org/cyberpunk-portrait?gender="+gender+"&look="+look+"&ethnicity="+ethnicity+"&profession="+profession+"&impressions="+impressions;
     window.open(url, '_blank');
   }
 
@@ -94,9 +99,10 @@ export default function characterOracles() {
     const gender = document.getElementById('oracle-character-gender-result').innerText;
     const profession = "Hacker";
     const look = "wired"
+    const ethnicity = document.getElementById('oracle-character-ethnicity-result').innerText;
     const impressions = encodeURIComponent(document.getElementById('oracle-character-hacker-mannerisms-looks-result').innerText);
 
-    const url = "https://perchance.org/cyberpunk-portrait?gender="+gender+"&look="+look+"&profession="+profession+"&impressions="+impressions;
+    const url = "https://perchance.org/cyberpunk-portrait?gender="+gender+"&look="+look+"&ethnicity="+ethnicity+"&profession="+profession+"&impressions="+impressions;
     window.open(url, '_blank');
   }
   
@@ -105,9 +111,10 @@ export default function characterOracles() {
     const gender = document.getElementById('oracle-character-gender-result').innerText;
     const profession = "Prostitute";
     const look = "sexy"
+    const ethnicity = document.getElementById('oracle-character-ethnicity-result').innerText;
     const impressions = encodeURIComponent(document.getElementById('oracle-character-street-walker-result').innerText);
 
-    const url = "https://perchance.org/cyberpunk-portrait?gender="+gender+"&look="+look+"&profession="+profession+"&impressions="+impressions;
+    const url = "https://perchance.org/cyberpunk-portrait?gender="+gender+"&look="+look+"&ethnicity="+ethnicity+"&profession="+profession+"&impressions="+impressions;
     window.open(url, '_blank');
   }
 
@@ -116,9 +123,10 @@ export default function characterOracles() {
     const gender = document.getElementById('oracle-character-gender-result').innerText;
     const profession = "Cabbie";
     const look = document.getElementById('oracle-character-cabbie-nationality-result').innerText;
+    const ethnicity = document.getElementById('oracle-character-ethnicity-result').innerText;
     const impressions = encodeURIComponent(document.getElementById('oracle-character-cabbie-appearance-result').innerText);
 
-    const url = "https://perchance.org/cyberpunk-portrait?gender="+gender+"&look="+look+"&profession="+profession+"&impressions="+impressions;
+    const url = "https://perchance.org/cyberpunk-portrait?gender="+gender+"&look="+look+"&ethnicity="+ethnicity+"&profession="+profession+"&impressions="+impressions;
     window.open(url, '_blank');
   }  
 
@@ -150,6 +158,16 @@ export default function characterOracles() {
         <div class="oracle-container">
           <span role="textbox" id="oracle-character-look-result" class="oracle-result"></span>
           <button type="button" id="oracle-character-look-button" class="randomize-button" onClick={handleOnClick}></button>
+        </div>
+        <h3 id="look">ETHNICITY</h3>
+        <div class="oracle-container">
+          <span role="textbox" id="oracle-character-ethnicity-result" class="oracle-result"></span>
+          <button type="button" id="oracle-character-ethnicity-button" class="randomize-button" onClick={handleOnClick}></button>
+        </div>
+        <h3 id="gender">GENDER</h3>
+        <div class="oracle-container">
+          <span role="textbox" id="oracle-character-gender-result" class="oracle-result"></span>
+          <button type="button" id="oracle-character-gender-button" class="randomize-button" onClick={handleOnClick}></button>
         </div>
         <h3 id="disposition">DISPOSITION</h3>
         <div class="oracle-container">
@@ -216,11 +234,6 @@ export default function characterOracles() {
         <div class="oracle-container">
           <span role="textbox" id="oracle-character-sexual-orientation-result" class="oracle-result"></span>
           <button type="button" id="oracle-character-sexual-orientation-button" class="randomize-button" onClick={handleOnClick}></button>
-        </div>
-        <h3 id="gender">GENDER</h3>
-        <div class="oracle-container">
-          <span role="textbox" id="oracle-character-gender-result" class="oracle-result"></span>
-          <button type="button" id="oracle-character-gender-button" class="randomize-button" onClick={handleOnClick}></button>
         </div>
         <br/>
         <h2 id="flashy-cyberware">FLASHY CYBERWARE</h2>

@@ -1709,6 +1709,13 @@ const characterOracleResults = {
         "Wounded",
         "Youthful",
     ],
+    "oracle-character-ethnicity-result": [
+        "caucasian",
+        "african american",
+        "native american",
+        "asian",
+        "latino",
+    ],
     "oracle-character-disposition-result": [
         "Helpful",
         "Friendly",
@@ -1782,7 +1789,7 @@ const characterOracleResults = {
         "researcher or Data Analyst",
         "Street <a href=\"/oracles/faction-oracles#street-gangs\">Gang</a> Thug",
         "lab Worker",
-        "Street Kid(s)",
+        "Street Kid",
         "Gambler or Con Artist",
         "uber or limo Driver",
         "<a href=\"/oracles/character-oracles#fixer\">Fixer</a>",
