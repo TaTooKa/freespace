@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import Layout from '@rocketseat/gatsby-theme-docs/src/components/Layout';
 import Seo from '@rocketseat/gatsby-theme-docs/src/components/SEO';
 
 import cityOracleResults from '/src/datatables/city-oracles'
 
-export default function cityOracles() {
+export default function CityOracles() {
   const headings = [
     {depth: 2, value: "SENSES"},
     {depth: 3, value: "SMELL"},
@@ -31,6 +31,19 @@ export default function cityOracles() {
     {depth: 3, value: "ATYPICAL WEATHER"},
   ]
 
+  const oracleLogName = "cityOraclesLog";
+
+  const windowGlobal = typeof window !== 'undefined' && window
+  const savedOracleLog = windowGlobal ? windowGlobal.localStorage.getItem(oracleLogName) : ""
+
+  useEffect(() => {
+    // on load...
+    const oraclesLog = document.getElementById('oracles-log');
+    oraclesLog.innerHTML = savedOracleLog;
+    oraclesLog.scrollTop = oraclesLog.scrollHeight;
+  }, []);
+
+
   const handleOnClick = (event) => {
     var desiredElementId = event.target.id.split("-").slice(0, -1).join("-").concat("-result"); // get button id and infer input result id
     const inputResult = document.getElementById(desiredElementId);
@@ -49,6 +62,14 @@ export default function cityOracles() {
     }
 
     inputResult.classList.add("toggled");
+
+    /* Oracle LOG */
+    const titleElement = inputResult.parentElement.closest('div.oracle-container').previousElementSibling;
+    const oraclesLog = document.getElementById('oracles-log');
+    const log = "<span class=\"log-entry\"><b>"+titleElement.innerHTML+":</b> "+oracleResult+"</span><br/>";
+    oraclesLog.innerHTML += log;
+    oraclesLog.scrollTop = oraclesLog.scrollHeight;
+    windowGlobal.localStorage.setItem(oracleLogName, oraclesLog.innerHTML);
 
     setTimeout(()=> {
       inputResult.classList.remove("toggled");
@@ -92,6 +113,9 @@ export default function cityOracles() {
   return (
     <Layout title="CITY ORACLES" headings={headings}>
       <Seo title="City Oracles" />
+
+      <div id="oracles-log"></div>
+
       <div class="oracles-container">
 
         <h2 id="senses">SENSES</h2>
@@ -206,34 +230,33 @@ export default function cityOracles() {
           <span role="textbox" id="oracle-nightclub-encounter-result" class="oracle-result"></span>
           <button type="button" id="oracle-nightclub-encounter-button" class="randomize-button" onClick={handleOnClick}></button>
         </div>
-        <br/>
         <blockquote><p>Use this oracle when on a nightclub and you want to generate a complication, plot hook, or both.</p></blockquote>
         <br/>
 
         <h3 id="screen-content">SCREEN CONTENT</h3>
-        <blockquote><p>Use the following oracles to generate what's on the always-present screens, holos and AR displays everywhere.</p></blockquote>
         <div class="oracle-container">
           <span role="textbox" id="oracle-screen-content-result" class="oracle-result"></span>
           <button type="button" id="oracle-screen-content-button" class="randomize-button" onClick={handleOnClick}></button>
         </div>
+        <blockquote><p>Use the following oracles to generate what's on the always-present screens, holos and AR displays everywhere.</p></blockquote>
         <br/>
         <h3 id="advertainment">ADVERTAINMENT</h3>
-        <h4 id="advertainment-brand">⤷ BRAND</h4>
+        <h4 id="advertainment-brand">⤷ ADVERTAINMENT - BRAND</h4>
         <div class="oracle-container">
           <span role="textbox" id="oracle-advertainment-brand-result" class="oracle-result"></span>
           <button type="button" id="oracle-advertainment-brand-button" class="randomize-button" onClick={handleOnClick}></button>
         </div>
-        <h4 id="advertainment-product-name">⤷ PRODUCT NAME</h4>
+        <h4 id="advertainment-product-name">⤷ ADVERTAINMENT - PRODUCT NAME</h4>
         <div class="oracle-container">
           <span role="textbox" id="oracle-advertainment-product-name-result" class="oracle-result"></span>
           <button type="button" id="oracle-advertainment-product-name-button" class="randomize-button" onClick={handleOnClick}></button>
         </div>
-        <h4 id="advertainment-product-line">⤷ PRODUCT LINE</h4>
+        <h4 id="advertainment-product-line">⤷ ADVERTAINMENT - PRODUCT LINE</h4>
         <div class="oracle-container">
           <span role="textbox" id="oracle-advertainment-product-line-result" class="oracle-result"></span>
           <button type="button" id="oracle-advertainment-product-line-button" class="randomize-button" onClick={handleOnClick}></button>
         </div>
-        <h4 id="advertainment-marketing-style">⤷ MARKETING STYLE</h4>
+        <h4 id="advertainment-marketing-style">⤷ ADVERTAINMENT - MARKETING STYLE</h4>
         <div class="oracle-container">
           <span role="textbox" id="oracle-advertainment-marketing-style-result" class="oracle-result"></span>
           <button type="button" id="oracle-advertainment-marketing-style-button" class="randomize-button" onClick={handleOnClick}></button>
@@ -244,38 +267,38 @@ export default function cityOracles() {
         <h2 id="vehicles">VEHICLES</h2>
         <blockquote><p>Use these oracles to generate vehicles with varying levels of detail.</p></blockquote>
         <h3 id="terrestrial-vehicle">TERRESTRIAL VEHICLE</h3>
-        <h4 id="terrestrial-vehicle-type">⤷ GENERAL TYPE</h4>
+        <h4 id="terrestrial-vehicle-type">⤷ VEHICLE - GENERAL TYPE</h4>
         <div class="oracle-container">
           <span role="textbox" id="oracle-terrestrial-vehicle-type-result" class="oracle-result"></span>
           <button type="button" id="oracle-terrestrial-vehicle-type-button" class="randomize-button" onClick={handleOnClick}></button>
         </div>
-        <h4 id="terrestrial-vehicle-car">⤷ CAR BRAND, TYPE AND PAINTJOB</h4>
+        <h4 id="terrestrial-vehicle-car">⤷ VEHICLE - BRAND, TYPE AND PAINTJOB</h4>
         <div class="oracle-container">
           <span role="textbox" id="oracle-terrestrial-vehicle-car-result" class="oracle-result combined"></span>
           <button type="button" id="oracle-terrestrial-vehicle-car-button" class="randomize-button" onClick={handleOnClick}></button>
         </div>
-        <h4 id="terrestrial-vehicle-activity">⤷ ACTIVITY</h4>
+        <h4 id="terrestrial-vehicle-activity">⤷ VEHICLE - ACTIVITY</h4>
         <div class="oracle-container">
           <span role="textbox" id="oracle-terrestrial-vehicle-activity-result" class="oracle-result"></span>
           <button type="button" id="oracle-terrestrial-vehicle-activity-button" class="randomize-button" onClick={handleOnClick}></button>
         </div>
-        <h4 id="terrestrial-vehicle-feature">⤷ FEATURE</h4>
+        <h4 id="terrestrial-vehicle-feature">⤷ VEHICLE - FEATURE</h4>
         <div class="oracle-container">
           <span role="textbox" id="oracle-terrestrial-vehicle-feature-result" class="oracle-result"></span>
           <button type="button" id="oracle-terrestrial-vehicle-feature-button" class="randomize-button" onClick={handleOnClick}></button>
         </div>
-        <h4 id="terrestrial-vehicle-condition">⤷ CONDITION</h4>
+        <h4 id="terrestrial-vehicle-condition">⤷ VEHICLE - CONDITION</h4>
         <div class="oracle-container">
           <span role="textbox" id="oracle-terrestrial-vehicle-condition-result" class="oracle-result"></span>
           <button type="button" id="oracle-terrestrial-vehicle-condition-button" class="randomize-button" onClick={handleOnClick}></button>
         </div>
         <h3 id="aerial-vehicle">AERIAL VEHICLE</h3>
-        <h4 id="aerial-vehicle-type">⤷ TYPE</h4>
+        <h4 id="aerial-vehicle-type">⤷ AERIAL VEHICLE - TYPE</h4>
         <div class="oracle-container">
           <span role="textbox" id="oracle-aerial-vehicle-type-result" class="oracle-result"></span>
           <button type="button" id="oracle-aerial-vehicle-type-button" class="randomize-button" onClick={handleOnClick}></button>
         </div>
-        <h4 id="aerial-vehicle-activity">⤷ ACTIVITY</h4>
+        <h4 id="aerial-vehicle-activity">⤷ AERIAL VEHICLE - ACTIVITY</h4>
         <div class="oracle-container">
           <span role="textbox" id="oracle-aerial-vehicle-activity-result" class="oracle-result"></span>
           <button type="button" id="oracle-aerial-vehicle-activity-button" class="randomize-button" onClick={handleOnClick}></button>
@@ -290,12 +313,12 @@ export default function cityOracles() {
         <h2 id="ominous-occurrences">OMINOUS OCCURRENCES</h2>
         <blockquote><p>Use these oracles to generate things that are background color now, but might mean trouble later.</p></blockquote>
         <h3 id="strange-sickness">STRANGE SICKNESS</h3>
-        <h4 id="strange-sickness-symptoms">⤷ SYMPTOMS</h4>
+        <h4 id="strange-sickness-symptoms">⤷ STRANGE SICKNESS - SYMPTOMS</h4>
         <div class="oracle-container">
           <span role="textbox" id="oracle-strange-sickness-symptoms-result" class="oracle-result"></span>
           <button type="button" id="oracle-strange-sickness-symptoms-button" class="randomize-button" onClick={handleOnClick}></button>
         </div>
-        <h4 id="strange-sickness-cause">⤷ CAUSE</h4>
+        <h4 id="strange-sickness-cause">⤷ STRANGE SICKNESS - CAUSE</h4>
         <div class="oracle-container">
           <span role="textbox" id="oracle-strange-sickness-cause-result" class="oracle-result"></span>
           <button type="button" id="oracle-strange-sickness-cause-button" class="randomize-button" onClick={handleOnClick}></button>

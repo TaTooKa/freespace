@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import Layout from '@rocketseat/gatsby-theme-docs/src/components/Layout';
 import Seo from '@rocketseat/gatsby-theme-docs/src/components/SEO';
 
 import miscOracleResults from '/src/datatables/misc-oracles'
 
-export default function missionOracles() {
+export default function MiscOracles() {
   const headings = [
     {depth: 2, value: "COMBAT ACTION"},
     {depth: 2, value: "NEWS FEED"},
@@ -20,6 +20,19 @@ export default function missionOracles() {
     {depth: 2, value: "VID SHOW"},
 
   ]
+
+  const oracleLogName = "miscOraclesLog";
+
+  const windowGlobal = typeof window !== 'undefined' && window
+  const savedOracleLog = windowGlobal ? windowGlobal.localStorage.getItem(oracleLogName) : ""
+
+  useEffect(() => {
+    // on load...
+    const oraclesLog = document.getElementById('oracles-log');
+    oraclesLog.innerHTML = savedOracleLog;
+    oraclesLog.scrollTop = oraclesLog.scrollHeight;
+  }, []);
+
 
   const handleOnClick = (event) => {
     var desiredElementId = event.target.id.split("-").slice(0, -1).join("-").concat("-result"); // get button id and infer input result id
@@ -40,6 +53,14 @@ export default function missionOracles() {
 
     inputResult.classList.add("toggled");
 
+    /* Oracle LOG */
+    const titleElement = inputResult.parentElement.closest('div.oracle-container').previousElementSibling;
+    const oraclesLog = document.getElementById('oracles-log');
+    const log = "<span class=\"log-entry\"><b>"+titleElement.innerHTML+":</b> "+oracleResult+"</span><br/>";
+    oraclesLog.innerHTML += log;
+    oraclesLog.scrollTop = oraclesLog.scrollHeight;
+    windowGlobal.localStorage.setItem(oracleLogName, oraclesLog.innerHTML);
+
     setTimeout(()=> {
       inputResult.classList.remove("toggled");
       inputResult.innerHTML = oracleResult;
@@ -50,6 +71,9 @@ export default function missionOracles() {
   return (
     <Layout title="MISC ORACLES" headings={headings}>
       <Seo title="Misc Oracles" />
+
+      <div id="oracles-log"></div>
+
       <div class="oracles-container">
 
         <h2 id="combat-action">COMBAT ACTION</h2>
@@ -69,17 +93,17 @@ export default function missionOracles() {
         <br/>
 
         <h2 id="ar-display">AR DISPLAY</h2>
-        <h3 id="type">TYPE</h3>
+        <h3 id="type">AR DISPLAY - TYPE</h3>
         <div class="oracle-container">
           <span role="textbox" id="oracle-ar-display-type-result" class="oracle-result"></span>
           <button type="button" id="oracle-ar-display-type-button" class="randomize-button" onClick={handleOnClick}></button>
         </div>
-        <h3 id="aesthetic">AESTHETIC</h3>
+        <h3 id="aesthetic">AR DISPLAY - AESTHETIC</h3>
         <div class="oracle-container">
           <span role="textbox" id="oracle-ar-display-aesthetic-result" class="oracle-result"></span>
           <button type="button" id="oracle-ar-display-aesthetic-button" class="randomize-button" onClick={handleOnClick}></button>
         </div>
-        <h3 id="style">STYLE</h3>
+        <h3 id="style">AR DISPLAY - STYLE</h3>
         <div class="oracle-container">
           <span role="textbox" id="oracle-ar-display-style-result" class="oracle-result"></span>
           <button type="button" id="oracle-ar-display-style-button" class="randomize-button" onClick={handleOnClick}></button>
@@ -91,7 +115,6 @@ export default function missionOracles() {
           <span role="textbox" id="oracle-bug-in-the-system-result" class="oracle-result"></span>
           <button type="button" id="oracle-bug-in-the-system-button" class="randomize-button" onClick={handleOnClick}></button>
         </div>
-        <br/>
         <blockquote><p>Use this oracle to generate errors or mishaps in a malfunctioning system or device, or when a netrunner makes a mistake in a hacking attempt.</p></blockquote>
         <br/>
 

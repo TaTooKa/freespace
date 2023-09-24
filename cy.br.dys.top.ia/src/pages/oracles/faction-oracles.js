@@ -1,16 +1,28 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import Layout from '@rocketseat/gatsby-theme-docs/src/components/Layout';
 import Seo from '@rocketseat/gatsby-theme-docs/src/components/SEO';
 
 import factionOracleResults from '/src/datatables/faction-oracles'
 
-export default function factionOracles() {
+export default function FactionOracles() {
   const headings = [
     {depth: 2, value: "MEGACORPS"},
     {depth: 2, value: "STREET GANGS"},
 
   ]
+
+  const oracleLogName = "factionOraclesLog";
+
+  const windowGlobal = typeof window !== 'undefined' && window
+  const savedOracleLog = windowGlobal ? windowGlobal.localStorage.getItem(oracleLogName) : ""
+
+  useEffect(() => {
+    // on load...
+    const oraclesLog = document.getElementById('oracles-log');
+    oraclesLog.innerHTML = savedOracleLog;
+    oraclesLog.scrollTop = oraclesLog.scrollHeight;
+  }, []);
 
   const handleOnClick = (event) => {
     var desiredElementId = event.target.id.split("-").slice(0, -1).join("-").concat("-result"); // get button id and infer input result id
@@ -31,6 +43,14 @@ export default function factionOracles() {
 
     inputResult.classList.add("toggled");
 
+    /* Oracle LOG */
+    const titleElement = inputResult.parentElement.closest('div.oracle-container').previousElementSibling;
+    const oraclesLog = document.getElementById('oracles-log');
+    const log = "<span class=\"log-entry\"><b>"+titleElement.innerHTML+":</b> "+oracleResult+"</span><br/>";
+    oraclesLog.innerHTML += log;
+    oraclesLog.scrollTop = oraclesLog.scrollHeight;
+    windowGlobal.localStorage.setItem(oracleLogName, oraclesLog.innerHTML);
+
     setTimeout(()=> {
       inputResult.classList.remove("toggled");
       inputResult.innerHTML = oracleResult;
@@ -41,6 +61,9 @@ export default function factionOracles() {
   return (
     <Layout title="FACTION ORACLES" headings={headings}>
       <Seo title="Faction Oracles" />
+
+      <div id="oracles-log"></div>
+
       <div class="oracles-container">
 
         <h2 id="megacorps">MEGACORPS</h2>
@@ -49,19 +72,19 @@ export default function factionOracles() {
           <span role="textbox" id="oracle-megacorp-name-result" class="oracle-result combined"></span>
           <button type="button" id="oracle-megacorp-name-button" class="randomize-button" onClick={handleOnClick}></button>
         </div>
-        <h3 id="megacorp-maneuvers">BOARDROOM MANEUVERS</h3>
-        <blockquote><p>Use this oracle for whatever the corp might be planning or currently doing.</p></blockquote>
+        <h3 id="megacorp-maneuvers">CORP BOARDROOM MANEUVERS</h3>
         <div class="oracle-container">
           <span role="textbox" id="oracle-megacorp-maneuvers-result" class="oracle-result"></span>
           <button type="button" id="oracle-megacorp-maneuvers-button" class="randomize-button" onClick={handleOnClick}></button>
         </div>
+        <blockquote><p>Use this oracle for whatever the corp might be planning or currently doing.</p></blockquote>
         <br/>
-        <h3 id="megacorp-assets">DENIABLE ASSETS</h3>
-        <blockquote><p>Use this oracle for resources or unconventional tools a corporate aristocrat can bring to the table to get the job done.</p></blockquote>
+        <h3 id="megacorp-assets">CORP DENIABLE ASSETS</h3>
         <div class="oracle-container">
           <span role="textbox" id="oracle-megacorp-assets-result" class="oracle-result"></span>
           <button type="button" id="oracle-megacorp-assets-button" class="randomize-button" onClick={handleOnClick}></button>
         </div>
+        <blockquote><p>Use this oracle for resources or unconventional tools a corporate aristocrat can bring to the table to get the job done.</p></blockquote>
         <br/>
 
 
