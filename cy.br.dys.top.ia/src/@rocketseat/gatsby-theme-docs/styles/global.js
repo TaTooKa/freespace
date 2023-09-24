@@ -456,6 +456,52 @@ export default function GlobalStyle() {
           content: 'flow';
           background: #e8bd36;
         }
+        ${'' /* MENU */}
+        aside {
+          background-color: ${theme.darkcolors.background} !important;
+          nav {
+            margin: 0 0 20px 0;
+            ul {
+              margin: 0 !important;
+              li[class*="Heading"] {
+                margin: 18px 0 0 0;
+                padding: 0;
+                text-align: center !important;
+                display: inline-block !important;
+              }
+              li {
+                margin: 8px 0 0 0;
+                line-height: 20px;
+                transition: 1s;
+                a {
+                  border-radius: 15px !important;
+                  font-weight: bold !important;
+                  font-family: 'Eurostyle';
+                  font-variant: small-caps;
+                  font-size: 1.2em !important;
+                  text-align: center !important;
+                  display: inline-block !important;
+                  color: ${theme.colors.turquoise} !important;
+                  background-color: ${theme.darkcolors.components.input.background} !important;
+                  text-shadow: 1px 1px 3px black;
+                  box-shadow: inset -2px -2px 4px #000;
+                  transition: 1.5s ease-out !important;
+                  :hover {
+                    box-shadow: inset 0 0 5px ${theme.colors.turquoise};
+                    text-shadow: 0 0 10px ${theme.colors.turquoise};
+                    transition: .3s ease-in !important;
+                  }
+                }
+                a.active-link {
+                  background-color: ${theme.colors.fuchsia} !important;
+                  box-shadow: inset -2px -2px 4px ${theme.darkcolors.components.blockquote.background}, inset 2px 4px 6px #ffffff88;
+                  text-shadow: 1px 1px 3px black, 0 0 10px ${theme.colors.turquoise};
+                  transition: 1s;
+                }
+              }
+            }
+          }
+        }
 
         ${'' /* FORMS */}
         form.character-stats {
