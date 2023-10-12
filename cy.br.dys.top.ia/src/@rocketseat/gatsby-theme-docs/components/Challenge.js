@@ -1,8 +1,11 @@
 import React from 'react';
 import reactTriggerChange from 'react-trigger-change';
+import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
+import IconButton from '@material-ui/core/IconButton';
 
-const Challenge = ({challengeIndex, inputs, setInputs}) => {
+const Challenge = ({challengeIndex, inputs, setInputs, deleteChallengeFunction}) => {
 
+  const challengeContainerId = "challenge-container-"+challengeIndex;
   const chDescId = "chDesc"+challengeIndex;
   const chProgressId = "chProgress"+challengeIndex; 
   const chStateId = "chState"+challengeIndex;
@@ -28,26 +31,26 @@ const Challenge = ({challengeIndex, inputs, setInputs}) => {
 
   const makeProgress = (event) => {
     event.preventDefault();
-    var currentProgress = parseInt(event.target.attributes.currentProgress.value);
-    var currentRank = parseInt(event.target.attributes.currentRank.value);
+    var currentprogress = parseInt(event.target.attributes.currentprogress.value);
+    var currentrank = parseInt(event.target.attributes.currentrank.value);
 
     var newProgress = null;
 
-    switch (currentRank) {
+    switch (currentrank) {
       case 1:
-        newProgress = currentProgress + 30;
+        newProgress = currentprogress + 30;
         break;
       case 2:
-        newProgress = currentProgress + 20;
+        newProgress = currentprogress + 20;
         break;
       case 3:
-        newProgress = currentProgress + 10;
+        newProgress = currentprogress + 10;
         break;
       case 4:
-        newProgress = currentProgress + 5;
+        newProgress = currentprogress + 5;
         break;
       case 5:
-        newProgress = currentProgress + 2;
+        newProgress = currentprogress + 2;
         break;
     }
     if ( newProgress > 99 ) {
@@ -55,7 +58,7 @@ const Challenge = ({challengeIndex, inputs, setInputs}) => {
     }
 
     var buttonEl = document.getElementById(makeProgressButtonId);
-    buttonEl.setAttribute("currentProgress", newProgress);
+    buttonEl.setAttribute("currentprogress", newProgress);
 
     var progressFieldEl = document.getElementById(chProgressId);
     progressFieldEl.value = newProgress;
@@ -65,26 +68,26 @@ const Challenge = ({challengeIndex, inputs, setInputs}) => {
 
   const revertProgress = (event) => {
     event.preventDefault();
-    var currentProgress = parseInt(event.target.attributes.currentProgress.value);
-    var currentRank = parseInt(event.target.attributes.currentRank.value);
+    var currentprogress = parseInt(event.target.attributes.currentprogress.value);
+    var currentrank = parseInt(event.target.attributes.currentrank.value);
 
     var newProgress = null;
 
-    switch (currentRank) {
+    switch (currentrank) {
       case 1:
-        newProgress = currentProgress - 30;
+        newProgress = currentprogress - 30;
         break;
       case 2:
-        newProgress = currentProgress - 20;
+        newProgress = currentprogress - 20;
         break;
       case 3:
-        newProgress = currentProgress - 10;
+        newProgress = currentprogress - 10;
         break;
       case 4:
-        newProgress = currentProgress - 5;
+        newProgress = currentprogress - 5;
         break;
       case 5:
-        newProgress = currentProgress - 2;
+        newProgress = currentprogress - 2;
         break;
     }
     if ( newProgress < 1 ) {
@@ -92,7 +95,7 @@ const Challenge = ({challengeIndex, inputs, setInputs}) => {
     }
 
     var buttonEl = document.getElementById(makeProgressButtonId);
-    buttonEl.setAttribute("currentProgress", newProgress);
+    buttonEl.setAttribute("currentprogress", newProgress);
 
     var progressFieldEl = document.getElementById(chProgressId);
     progressFieldEl.value = newProgress;
@@ -101,7 +104,7 @@ const Challenge = ({challengeIndex, inputs, setInputs}) => {
   }
 
   return (
-    <div class="challenge-container">
+    <div class="challenge-container" id={challengeContainerId}>
 
       <div class="challenge-inputs">
         <div class="description-container">
@@ -121,8 +124,8 @@ const Challenge = ({challengeIndex, inputs, setInputs}) => {
       </div>
 
       <div class="make-progress-container">
-        <button class="progress-button make-progress-button" id={makeProgressButtonId} currentProgress={inputs[chProgressId]? inputs[chProgressId]: 1} currentRank={inputs[chRankName]? inputs[chRankName] : 1} onClick={makeProgress}>MAKE PROGRESS</button>
-        <button class="progress-button revert-progress-button" id={revertProgressButtonId} currentProgress={inputs[chProgressId]? inputs[chProgressId]: 1} currentRank={inputs[chRankName]? inputs[chRankName] : 1} onClick={revertProgress}>REVERT</button>
+        <button class="progress-button make-progress-button" id={makeProgressButtonId} currentprogress={inputs[chProgressId]? inputs[chProgressId]: 1} currentrank={inputs[chRankName]? inputs[chRankName] : 1} onClick={makeProgress}>MAKE PROGRESS</button>
+        <button class="progress-button revert-progress-button" id={revertProgressButtonId} currentprogress={inputs[chProgressId]? inputs[chProgressId]: 1} currentrank={inputs[chRankName]? inputs[chRankName] : 1} onClick={revertProgress}>REVERT</button>
       </div>
 
       <div class="ranks-container">
@@ -160,6 +163,11 @@ const Challenge = ({challengeIndex, inputs, setInputs}) => {
         <div class="state-button state-button-failed">
           <input type="radio" name={chStateId} id={chStateId+"_3"} value={inputs[chStateId+"_3"] || "3"} onChange={handleChange} checked={inputs[chStateId]==="3"}/>
           <label for={chStateId+"_3"}><span class="rank-state-failed">FAILED</span></label>
+        </div>
+        <div class="erase-button">
+          <IconButton data-challengeindex={challengeIndex} onClick={deleteChallengeFunction} class="button" aria-label="erase-button" component="span">
+            <DeleteForeverIcon/>
+          </IconButton>
         </div>
       </div>
 

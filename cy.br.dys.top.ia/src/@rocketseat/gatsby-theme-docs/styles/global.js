@@ -910,6 +910,24 @@ export default function GlobalStyle() {
           }
         }
 
+        button#add-challenge-button {
+          border: 1px solid ${theme.colors.turquoise};
+          height: 30px;
+          padding: 5px 10px;
+          font-family: 'EuroStyle';
+          font-size: 0.8em;
+          font-weight: bold;
+          border-radius: 5px;
+          background-color: ${theme.darkcolors.components.input.background};
+          color: ${theme.colors.turquoise};
+          box-shadow: inset 0 0 5px ${theme.colors.turquoise};
+          transition: .5s ease;
+          :hover {
+            box-shadow: inset 0 0 15px ${theme.colors.turquoise};
+
+          }
+        }
+
         form.challenges {
           input {
             text-align: center;
@@ -931,6 +949,10 @@ export default function GlobalStyle() {
             border: 1px solid #0a6d6199;
             border-radius: 5px 15px 5px 5px;
             padding: 15px 5px;
+            transition: 1.5s ease-out;
+            &.created {
+              box-shadow: 0 0 20px ${theme.colors.turquoise}; 
+            }
             .challenge-inputs {
               width: 98%;
               margin: 0 5px 0 5px;
@@ -1010,6 +1032,7 @@ export default function GlobalStyle() {
             .make-progress-container {
               margin: 0 5px 0 5px;
               .progress-button {
+                cursor: pointer;
                 background: ${theme.darkcolors.background};
                 font-family: 'EuroStyle';
                 font-weight: bold;
@@ -1074,6 +1097,7 @@ export default function GlobalStyle() {
                 }
                 label {
                   display: block;
+                  cursor: pointer;
                   margin: 5px;
                   font-size: 0.4em;
                   padding: 6px 6px 6px 8px;
@@ -1102,11 +1126,13 @@ export default function GlobalStyle() {
               .state-button {
                 margin: 0 auto;
                 width: 100%;
+                cursor: pointer;
                 input {
                   display: none;
                 }
                 label {
                   display: block;
+                  cursor: pointer;
                   text-align: center;
                   margin: 5px;
                   font-size: 0.7em;
@@ -1137,6 +1163,39 @@ export default function GlobalStyle() {
                   border: 1px solid ${theme.colors.fuchsia};
                   color: ${theme.colors.fuchsia};
                   box-shadow: 0 0 5px ${theme.colors.fuchsia};
+              }
+              .erase-button {
+                margin: 0 10px 0 0;
+                span.button {
+                  margin: 5px;
+                  display: block;
+                  width: 100%;
+                  height: 30px;
+                  border: 1px solid ${theme.colors.fuchsia};
+                  box-shadow: inset 0 0 5px ${theme.colors.fuchsia};
+                  border-radius: 3px;
+                  text-align: center;
+                  vertical-align: middle;
+                  transition: .5s ease;
+                  :hover {
+                    box-shadow: inset 0 0 15px ${theme.colors.fuchsia};
+                    cursor: pointer;
+                  }
+                  svg.MuiSvgIcon-root {
+                    margin: 1px auto;
+                    text-align: center;
+                    transition: 1s ease;
+                    color: ${theme.colors.fuchsia};
+                    opacity: .7;
+                    scale: 90%;
+                    :hover {
+                      opacity: 1;
+                      scale: 105%;
+                      color: #fff;
+
+                    }
+                  }
+                }
               }
 
             }

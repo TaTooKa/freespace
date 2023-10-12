@@ -49,7 +49,6 @@ function CharacterStats() {
   })
 
   const handleChange = (event) => {
-    // console.log(event, event.target.name, event.target.value, event.target.checked)
     if ( event.target.type == "checkbox" ) {
         const name = event.target.name;
         const value = event.target.checked;
