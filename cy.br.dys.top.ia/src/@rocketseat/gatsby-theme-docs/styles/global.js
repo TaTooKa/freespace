@@ -1200,6 +1200,66 @@ export default function GlobalStyle() {
 
             }
           }
+          .challenge-deleted-anim {
+            transition: .5s ease-out;
+            margin: 30px 0 30px 0;
+            border: 1px solid #0a6d6199;
+            border-radius: 5px 15px 5px 5px;
+            box-shadow: inset 0 0 5px #000;
+            padding: 15px 5px;
+            text-align: center;
+            vertical-align: middle;
+            background: linear-gradient(
+              ${theme.colors.fuchsia},
+              #000,
+              ${theme.colors.fuchsia},
+              #000,
+              ${theme.colors.fuchsia}
+            )
+            0 0/100% 200%;
+            background-size: 100% 20%;
+            animation: gradient 6s linear infinite;
+            &.phase1 {
+              height: 150px !important;
+              opacity: .7;
+              box-shadow: inset 0 0 15px #000;
+              font-size: .9em;
+              filter: saturate(75%);
+            }
+            &.phase2 {
+              height: 100px !important;
+              opacity: .5;
+              box-shadow: inset 0 0 30px #000;
+              font-size: .7em;
+              filter: saturate(50%);
+            }
+            &.phase3 {
+              height: 50px !important;
+              opacity: .2;
+              box-shadow: inset 0 0 60px #000;
+              font-size: .5em;
+              filter: saturate(25%);
+            }
+            &.phase4 {
+              padding: 0;
+              margin: 0;
+              height: 1px !important;
+              opacity: 0;
+              box-shadow: inset 0 0 120px #000;
+              font-size: .3em;
+              filter: saturate(1%);
+            }
+            span {
+              transition: .5s;
+              display: inline-block;
+              margin: 0 auto;
+              font-weight: bold;
+              color: #ffff;
+              text-shadow: 0 0 5px ${theme.colors.fuchsia};
+            }
+        }
+        @keyframes gradient {
+          to {background-position:0 -800%}
         }
 
         ${'' /* GLITCH EFFECT */}

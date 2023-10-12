@@ -65,6 +65,8 @@ function Challenges() {
     var buttonEl = event.target.closest("span.button");
     var index = parseInt(buttonEl.attributes['data-challengeindex'].value);
 
+    removeChallengeAnimation();
+
     // shift all values (chProgressN, chRankN, chStateN, chNameN) 1 down from current index
     for (let i=index; i<challengeIndexes.current.length; i++) {
       var currentIndex = i.toString();
@@ -81,6 +83,34 @@ function Challenges() {
     delete inputs["chRank"+lastIndex];
     delete inputs["chState"+lastIndex];
     delete inputs["chDesc"+lastIndex];
+
+    async function removeChallengeAnimation() {
+      var challengeFormEl = document.getElementById("challenge-form");
+      var challengeContainerEl = document.getElementById("challenge-container-"+index);
+      var containerHeight = challengeContainerEl.getBoundingClientRect().height;
+      var animEl = document.createElement("div");
+      animEl.classList.add("challenge-deleted-anim");
+      animEl.style.height = Math.round(containerHeight)+"px";
+
+      challengeFormEl.insertBefore(animEl, challengeContainerEl);
+      var deletingTextEl = document.createElement("span");
+      deletingTextEl.innerText = "DELETING ...";
+      animEl.appendChild(deletingTextEl);
+
+      await delay(300);
+      animEl.classList.add("phase1");
+      await delay(300);
+      animEl.classList.add("phase2");
+      animEl.classList.remove("phase1");
+      await delay(300);
+      animEl.classList.add("phase3");
+      animEl.classList.remove("phase2");
+      await delay(300);
+      animEl.classList.add("phase4");
+      animEl.classList.remove("phase3");
+      await delay(300);
+      animEl.remove();
+    }
 
     // remove last challenge index
     challengeIndexes.current.pop();
