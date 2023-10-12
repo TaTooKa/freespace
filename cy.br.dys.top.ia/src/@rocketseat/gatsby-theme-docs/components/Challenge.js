@@ -39,7 +39,7 @@ const Challenge = ({challengeIndex, inputs, setInputs}) => {
 
       <div class="progress-bar-container">
         <div class="progress-bar-outer">
-          <div class="progress-bar-inner" style={{width: inputs[chProgressId]? inputs[chProgressId]: 1+"%"}}></div>
+          <div class="progress-bar-inner" style={{width: inputs[chProgressId]+"%"}}></div>
         </div>
       </div>
 
