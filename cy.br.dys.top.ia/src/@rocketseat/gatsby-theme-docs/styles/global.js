@@ -977,6 +977,36 @@ export default function GlobalStyle() {
                 }
               }
             }
+
+            .progress-bar-container {
+              margin: 12px 5px 10px 5px;
+              .progress-bar-outer {
+                border: 1px solid #666;
+                box-shadow: inset 0 0 3px #000;
+                border-radius: 4px;
+                height: 10px;
+                width: calc(100% -3px);
+                .progress-bar-inner {
+                  border-radius: 4px;
+                  transition: 0.5s;
+                  background: linear-gradient(
+                    120deg,
+                    ${theme.colors.fuchsia},
+                    ${theme.colors.turquoise},
+                    ${theme.darkcolors.background}
+                  );
+                  background-size: 150%;
+                  animation: gradient 40s ease infinite;
+                  height: 8px;
+                }
+                @keyframes gradient {
+                  0% { background-position: 0 0; }
+                  50% { background-position: 100% 0; }
+                  100% { background-position:  0 0; }
+                }
+              }
+            }
+
             .ranks-container {
               display: flex;
               margin: 5px 0 0 0;
