@@ -1,4 +1,5 @@
 import React from 'react';
+import reactTriggerChange from 'react-trigger-change';
 
 const Challenge = ({challengeIndex, inputs, setInputs}) => {
 
@@ -6,6 +7,8 @@ const Challenge = ({challengeIndex, inputs, setInputs}) => {
   const chProgressId = "chProgress"+challengeIndex; 
   const chStateId = "chState"+challengeIndex;
   const chRankName = "chRank"+challengeIndex;
+  var makeProgressButtonId = "makeProgressButton"+challengeIndex;
+  var revertProgressButtonId = "revertProgressButton"+challengeIndex;
 
   const handleChange = (event) => {
     if ( event.target.type == "checkbox" ) {
@@ -14,13 +17,87 @@ const Challenge = ({challengeIndex, inputs, setInputs}) => {
         setInputs(values => ({...values, [name]: value}))
     } else if ( event.target.type == "number" ) {
       const name = event.target.name;
-      const value = event.target.value;
+      var value = event.target.value;
       setInputs(values => ({...values, [name]: value}))
     } else {
         const name = event.target.name;
         const value = event.target.value;
         setInputs(values => ({...values, [name]: value}))
     }
+  }
+
+  const makeProgress = (event) => {
+    event.preventDefault();
+    var currentProgress = parseInt(event.target.attributes.currentProgress.value);
+    var currentRank = parseInt(event.target.attributes.currentRank.value);
+
+    var newProgress = null;
+
+    switch (currentRank) {
+      case 1:
+        newProgress = currentProgress + 30;
+        break;
+      case 2:
+        newProgress = currentProgress + 20;
+        break;
+      case 3:
+        newProgress = currentProgress + 10;
+        break;
+      case 4:
+        newProgress = currentProgress + 5;
+        break;
+      case 5:
+        newProgress = currentProgress + 2;
+        break;
+    }
+    if ( newProgress > 99 ) {
+      newProgress = 99;
+    }
+
+    var buttonEl = document.getElementById(makeProgressButtonId);
+    buttonEl.setAttribute("currentProgress", newProgress);
+
+    var progressFieldEl = document.getElementById(chProgressId);
+    progressFieldEl.value = newProgress;
+
+    reactTriggerChange(progressFieldEl);
+  }
+
+  const revertProgress = (event) => {
+    event.preventDefault();
+    var currentProgress = parseInt(event.target.attributes.currentProgress.value);
+    var currentRank = parseInt(event.target.attributes.currentRank.value);
+
+    var newProgress = null;
+
+    switch (currentRank) {
+      case 1:
+        newProgress = currentProgress - 30;
+        break;
+      case 2:
+        newProgress = currentProgress - 20;
+        break;
+      case 3:
+        newProgress = currentProgress - 10;
+        break;
+      case 4:
+        newProgress = currentProgress - 5;
+        break;
+      case 5:
+        newProgress = currentProgress - 2;
+        break;
+    }
+    if ( newProgress < 1 ) {
+      newProgress = 1;
+    }
+
+    var buttonEl = document.getElementById(makeProgressButtonId);
+    buttonEl.setAttribute("currentProgress", newProgress);
+
+    var progressFieldEl = document.getElementById(chProgressId);
+    progressFieldEl.value = newProgress;
+
+    reactTriggerChange(progressFieldEl);
   }
 
   return (
@@ -41,6 +118,11 @@ const Challenge = ({challengeIndex, inputs, setInputs}) => {
         <div class="progress-bar-outer">
           <div class="progress-bar-inner" style={{width: inputs[chProgressId]+"%"}}></div>
         </div>
+      </div>
+
+      <div class="make-progress-container">
+        <button class="progress-button make-progress-button" id={makeProgressButtonId} currentProgress={inputs[chProgressId]? inputs[chProgressId]: 1} currentRank={inputs[chRankName]? inputs[chRankName] : 1} onClick={makeProgress}>MAKE PROGRESS</button>
+        <button class="progress-button revert-progress-button" id={revertProgressButtonId} currentProgress={inputs[chProgressId]? inputs[chProgressId]: 1} currentRank={inputs[chRankName]? inputs[chRankName] : 1} onClick={revertProgress}>REVERT</button>
       </div>
 
       <div class="ranks-container">

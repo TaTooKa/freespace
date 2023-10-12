@@ -5,12 +5,22 @@ import Seo from '@rocketseat/gatsby-theme-docs/src/components/SEO';
 import Challenge from '/src/@rocketseat/gatsby-theme-docs/components/Challenge'
 
 function Challenges() {
-  const windowGlobal = typeof window !== 'undefined' && window
+  const windowGlobal = typeof window !== 'undefined' && window;
 
   const [inputs, setInputs] = useState(() => {
-    const savedChallengesStr = windowGlobal ? windowGlobal.localStorage.getItem("challenges") : "{}"
-    const savedChallenges = JSON.parse(savedChallengesStr)
-    return savedChallenges || {}
+    const savedChallengesStr = windowGlobal ? windowGlobal.localStorage.getItem("challenges") : "{}";
+    const savedChallenges = JSON.parse(savedChallengesStr);
+
+    // defaults
+    var defaultChallenges = {};
+    for (let i=1; i<=10; i++) {
+      var chProgressKey = "chProgress"+i;
+      var chRankKey = "chRank"+i;
+      defaultChallenges[chProgressKey] = "1";
+      defaultChallenges[chRankKey] = "1";
+    }
+
+    return savedChallenges || defaultChallenges;
   })
 
   useEffect(() => {

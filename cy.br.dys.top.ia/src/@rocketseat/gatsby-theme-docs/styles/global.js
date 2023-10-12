@@ -979,7 +979,7 @@ export default function GlobalStyle() {
             }
 
             .progress-bar-container {
-              margin: 12px 5px 10px 5px;
+              margin: 12px 5px 6px 5px;
               .progress-bar-outer {
                 border: 1px solid #666;
                 box-shadow: inset 0 0 3px #000;
@@ -1005,6 +1005,53 @@ export default function GlobalStyle() {
                   100% { background-position:  0 0; }
                 }
               }
+            }
+
+            .make-progress-container {
+              margin: 0 5px 0 5px;
+              .progress-button {
+                background: ${theme.darkcolors.background};
+                font-family: 'EuroStyle';
+                font-weight: bold;
+                letter-spacing: .2em;
+                border: none;
+                height: 30px;
+                border-radius: 5px;
+                transition: .5s ease;
+                :hover {
+                  color: #fff;
+                  text-shadow: 0 0 5px #fff;
+                  letter-spacing: .3em;
+                }
+                :active {
+                }
+              }
+              .make-progress-button {
+                width:70%;
+                color: ${theme.colors.turquoise};
+                text-shadow: 0 0 15px ${theme.colors.turquoise};
+                box-shadow: inset 0 0 6px ${theme.colors.turquoise};
+                :hover {
+                  box-shadow: inset 0 0 4px ${theme.colors.turquoise};
+                }
+                :active {
+                  box-shadow: inset 0 0 20px ${theme.colors.turquoise};
+                }
+              }
+              .revert-progress-button {
+                width: 28%;
+                margin: 0 0 0 2%;
+                color: ${theme.colors.fuchsia};
+                text-shadow: 0 0 15px ${theme.colors.fuchsia};
+                box-shadow: inset 0 0 6px ${theme.colors.fuchsia};
+                :hover {
+                  box-shadow: inset 0 0 4px ${theme.colors.fuchsia};
+                }
+                :active {
+                  box-shadow: inset 0 0 20px ${theme.colors.fuchsia};
+                }
+              }
+
             }
 
             .ranks-container {
