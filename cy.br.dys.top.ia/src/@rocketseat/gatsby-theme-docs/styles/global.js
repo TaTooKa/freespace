@@ -456,6 +456,11 @@ export default function GlobalStyle() {
           content: 'flow';
           background: #e8bd36;
         }
+
+        input[type=number] {
+          -moz-appearance: textfield;
+        }
+
         ${'' /* MENU */}
         aside {
           background-color: ${theme.darkcolors.background} !important;
