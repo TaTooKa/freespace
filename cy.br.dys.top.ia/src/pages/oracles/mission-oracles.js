@@ -4,6 +4,7 @@ import Layout from '@rocketseat/gatsby-theme-docs/src/components/Layout';
 import Seo from '@rocketseat/gatsby-theme-docs/src/components/SEO';
 
 import missionOracleResults from '/src/datatables/mission-oracles'
+import Oracle from '/src/@rocketseat/gatsby-theme-docs/components/Oracle'
 
 export default function MissionOracles() {
   const headings = [
@@ -24,41 +25,6 @@ export default function MissionOracles() {
     oraclesLog.scrollTop = oraclesLog.scrollHeight;
   }, []);
 
-
-  const handleOnClick = (event) => {
-    var desiredElementId = event.target.id.split("-").slice(0, -1).join("-").concat("-result"); // get button id and infer input result id
-    const inputResult = document.getElementById(desiredElementId);
-    var oracleResult  = "";
-
-    if ( inputResult.classList.contains("combined") ) {
-      // Result is built from multiple subtables
-      var result = [];
-      missionOracleResults[desiredElementId].forEach((subTable) => {
-        result.push(subTable[Math.floor(Math.random()*subTable.length)]);
-      });
-      oracleResult = result.join(" ");
-    } else {
-      // Result is built from a single table
-      oracleResult = missionOracleResults[desiredElementId][Math.floor(Math.random()*missionOracleResults[desiredElementId].length)];
-    }
-
-    inputResult.classList.add("toggled");
-
-    /* Oracle LOG */
-    const titleElement = inputResult.parentElement.closest('div.oracle-container').previousElementSibling;
-    const oraclesLog = document.getElementById('oracles-log');
-    const log = "<span class=\"log-entry\"><b>"+titleElement.innerHTML+":</b> "+oracleResult+"</span><br/>";
-    oraclesLog.innerHTML += log;
-    oraclesLog.scrollTop = oraclesLog.scrollHeight;
-    windowGlobal.localStorage.setItem(oracleLogName, oraclesLog.innerHTML);
-
-    setTimeout(()=> {
-      inputResult.classList.remove("toggled");
-      inputResult.innerHTML = oracleResult;
-    }, 500);
-
-  }
-
   return (
     <Layout title="MISSION ORACLES" headings={headings}>
       <Seo title="Mission Oracles" />
@@ -69,32 +35,24 @@ export default function MissionOracles() {
 
         <h2 id="missions">MISSIONS</h2>
         <blockquote><p>Usually, runners are contacted by a <a href="/oracles/character-oracles#fixer">Fixer</a> (for jobs of all kinds) or a <i>Mr. Johnson</i> (missions for Megacorps or other big players).</p></blockquote>
+
         <h3 id="mission-people">MISSION TARGET IS A PERSON</h3>
-        <div class="oracle-container">
-          <span role="textbox" id="oracle-mission-people-result" class="oracle-result combined"></span>
-          <button type="button" id="oracle-mission-people-button" class="randomize-button" onClick={handleOnClick}></button>
-        </div>
+        <Oracle oracleName="mission-people" oracleDatatable={missionOracleResults} oracleLogName={oracleLogName} combined/>
+
         <h3 id="mission-thing">MISSION TARGET IS A THING</h3>
-        <div class="oracle-container">
-          <span role="textbox" id="oracle-mission-thing-result" class="oracle-result combined"></span>
-          <button type="button" id="oracle-mission-thing-button" class="randomize-button" onClick={handleOnClick}></button>
-        </div>
+        <Oracle oracleName="mission-thing" oracleDatatable={missionOracleResults} oracleLogName={oracleLogName} combined/>
+
         <h4 id="mission-problem">MISSION PROBLEM (OR WITHHELD INFORMATION)</h4>
-        <div class="oracle-container">
-          <span role="textbox" id="oracle-mission-problem-result" class="oracle-result"></span>
-          <button type="button" id="oracle-mission-problem-button" class="randomize-button" onClick={handleOnClick}></button>
-        </div>
+        <Oracle oracleName="mission-problem" oracleDatatable={missionOracleResults} oracleLogName={oracleLogName}/>
         <br/>
+
         <h2 id="plot-hooks-and-twists">PLOT HOOKS AND TWISTS</h2>
+
         <h3 id="rumors-on-the-street">RUMORS ON THE STREET</h3>
-        <div class="oracle-container">
-          <span role="textbox" id="oracle-rumors-street-result" class="oracle-result"></span>
-          <button type="button" id="oracle-rumors-street-button" class="randomize-button" onClick={handleOnClick}></button>
-        </div>
+        <Oracle oracleName="rumors-street" oracleDatatable={missionOracleResults} oracleLogName={oracleLogName}/>
+
         <br/>
         <blockquote><p>Use this oracle when you need to generate chatter or get a job offer in a different way.</p></blockquote>
-
-
  
         <br/>
         <br/>

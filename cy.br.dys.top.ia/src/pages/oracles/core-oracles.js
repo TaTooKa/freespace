@@ -4,6 +4,7 @@ import Layout from '@rocketseat/gatsby-theme-docs/src/components/Layout';
 import Seo from '@rocketseat/gatsby-theme-docs/src/components/SEO';
 
 import coreOracleResults from '/src/datatables/core-oracles'
+import Oracle from '/src/@rocketseat/gatsby-theme-docs/components/Oracle'
 
 export default function CoreOracles() {
   const headings = [
@@ -27,27 +28,6 @@ export default function CoreOracles() {
     oraclesLog.scrollTop = oraclesLog.scrollHeight;
   }, []);
 
-  const handleOnClick = (event) => {
-    var desiredElementId = event.target.id.split("-").slice(0, -1).join("-").concat("-result"); // get button id and infer input result id
-    const inputResult = document.getElementById(desiredElementId);
-    const oracleResult = coreOracleResults[desiredElementId][Math.floor(Math.random()*coreOracleResults[desiredElementId].length)];
-    inputResult.classList.add("toggled");
-
-    /* Oracle LOG */
-    const titleElement = inputResult.parentElement.closest('div.oracle-container').previousElementSibling;
-    const oraclesLog = document.getElementById('oracles-log');
-    const log = "<span class=\"log-entry\"><b>"+titleElement.innerHTML+":</b> "+oracleResult+"</span><br/>";
-    oraclesLog.innerHTML += log;
-    oraclesLog.scrollTop = oraclesLog.scrollHeight;
-    windowGlobal.localStorage.setItem(oracleLogName, oraclesLog.innerHTML);
-
-    setTimeout(()=> {
-      inputResult.classList.remove("toggled");
-      inputResult.innerHTML = oracleResult;
-    }, 500);
-
-  }
-
   return (
     <Layout title="CORE ORACLES" headings={headings}>
       <Seo title="Core Oracles" />
@@ -56,45 +36,30 @@ export default function CoreOracles() {
 
       <div class="oracles-container">
         <h2 id="action">ACTION</h2>
-        <div class="oracle-container">
-          <span role="textbox" id="oracle-action-result" class="oracle-result"></span>
-          <button type="button" id="oracle-action-button" class="randomize-button" onClick={handleOnClick}></button>
-        </div>
+        <Oracle oracleName="action" oracleDatatable={coreOracleResults} oracleLogName={oracleLogName}/>
+
         <h2 id="theme">THEME</h2>
-        <div class="oracle-container">
-          <span role="textbox" id="oracle-theme-result" class="oracle-result"></span>
-          <button type="button" id="oracle-theme-button" class="randomize-button" onClick={handleOnClick}></button>
-        </div>
+        <Oracle oracleName="theme" oracleDatatable={coreOracleResults} oracleLogName={oracleLogName}/>
         <br/>
         <blockquote><p>Use ACTION + THEME to get a result of something that's happening, the desire or objective of someone, the need or purpose of a challenge, etc.</p></blockquote>
         <br/>
 
         <h2 id="descriptor">DESCRIPTOR</h2>
-        <div class="oracle-container">
-          <span role="textbox" id="oracle-descriptor-result" class="oracle-result"></span>
-          <button type="button" id="oracle-descriptor-button" class="randomize-button" onClick={handleOnClick}></button>
-        </div>
+        <Oracle oracleName="descriptor" oracleDatatable={coreOracleResults} oracleLogName={oracleLogName}/>
+
         <h2 id="focus">FOCUS</h2>
-        <div class="oracle-container">
-          <span role="textbox" id="oracle-focus-result" class="oracle-result"></span>
-          <button type="button" id="oracle-focus-button" class="randomize-button" onClick={handleOnClick}></button>
-        </div>
+        <Oracle oracleName="focus" oracleDatatable={coreOracleResults} oracleLogName={oracleLogName}/>
         <br/>
         <blockquote><p>Use DESCRIPTOR + FOCUS to get a result of a particular thing or happenstance, a finding, a revealed entity or phenomenon, etc.</p></blockquote>
 
         <br/>
         <h2 id="story-complication">STORY COMPLICATION</h2>
-        <div class="oracle-container">
-          <span role="textbox" id="oracle-story-complication-result" class="oracle-result"></span>
-          <button type="button" id="oracle-story-complication-button" class="randomize-button" onClick={handleOnClick}></button>
-        </div>
+        <Oracle oracleName="story-complication" oracleDatatable={coreOracleResults} oracleLogName={oracleLogName}/>
         <br/>
         <blockquote><p>Use this oracle when you suffer a negative consequence and you are not sure what to come up with or need some inspiration.</p></blockquote>
+
         <h2 id="story-clue">STORY CLUE</h2>
-        <div class="oracle-container">
-          <span role="textbox" id="oracle-story-clue-result" class="oracle-result"></span>
-          <button type="button" id="oracle-story-clue-button" class="randomize-button" onClick={handleOnClick}></button>
-        </div>
+        <Oracle oracleName="story-clue" oracleDatatable={coreOracleResults} oracleLogName={oracleLogName}/>
         <br/>
         <blockquote><p>Use this oracle when you find a clue or lead and want to get inspiration on its nature.</p></blockquote>
 

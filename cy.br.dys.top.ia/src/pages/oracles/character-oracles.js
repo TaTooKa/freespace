@@ -4,6 +4,7 @@ import Layout from '@rocketseat/gatsby-theme-docs/src/components/Layout';
 import Seo from '@rocketseat/gatsby-theme-docs/src/components/SEO';
 
 import characterOracleResults from '/src/datatables/character-oracles'
+import Oracle from '/src/@rocketseat/gatsby-theme-docs/components/Oracle'
 
 export default function CharacterOracles() {
   const headings = [
@@ -43,28 +44,6 @@ export default function CharacterOracles() {
     oraclesLog.innerHTML = savedOracleLog;
     oraclesLog.scrollTop = oraclesLog.scrollHeight;
   }, []);
-
-
-  const handleOnClick = (event) => {
-    var desiredElementId = event.target.id.split("-").slice(0, -1).join("-").concat("-result"); // get button id and infer input result id
-    const inputResult = document.getElementById(desiredElementId);
-    const oracleResult = characterOracleResults[desiredElementId][Math.floor(Math.random()*characterOracleResults[desiredElementId].length)];
-    inputResult.classList.add("toggled");
-
-    /* Oracle LOG */
-    const titleElement = inputResult.parentElement.closest('div.oracle-container').previousElementSibling;
-    const oraclesLog = document.getElementById('oracles-log');
-    const log = "<span class=\"log-entry\"><b>"+titleElement.innerHTML+":</b> "+oracleResult+"</span><br/>";
-    oraclesLog.innerHTML += log;
-    oraclesLog.scrollTop = oraclesLog.scrollHeight;
-    windowGlobal.localStorage.setItem(oracleLogName, oraclesLog.innerHTML);
-
-    setTimeout(()=> {
-      inputResult.classList.remove("toggled");
-      inputResult.innerHTML = oracleResult;
-    }, 500);
-
-  }
 
   function openAIGeneratedPortrait(e) {
     e.preventDefault();
@@ -161,158 +140,113 @@ export default function CharacterOracles() {
 
         <h2 id="general-characters">GENERAL CHARACTERS</h2>
         <blockquote><p>Use these general oracles for any type of character.</p></blockquote>
+
         <h3 id="name">NAME</h3>
+
         <h4 id="character-name-male">⤷ MALE-SOUNDING NAME</h4>
-        <div class="oracle-container">
-          <span role="textbox" id="oracle-character-name-male-result" class="oracle-result"></span>
-          <button type="button" id="oracle-character-name-male-button" class="randomize-button" onClick={handleOnClick}></button>
-        </div>
+        <Oracle oracleName="character-name-male" oracleDatatable={characterOracleResults} oracleLogName={oracleLogName}/>
+
         <h4 id="character-name-female">⤷ FEMALE-SOUNDING NAME</h4>
-        <div class="oracle-container">
-          <span role="textbox" id="oracle-character-name-female-result" class="oracle-result"></span>
-          <button type="button" id="oracle-character-name-female-button" class="randomize-button" onClick={handleOnClick}></button>
-        </div>
+        <Oracle oracleName="character-name-female" oracleDatatable={characterOracleResults} oracleLogName={oracleLogName}/>
+
         <h4 id="character-name-lastname">⤷ LAST-NAME</h4>
-        <div class="oracle-container">
-          <span role="textbox" id="oracle-character-name-lastname-result" class="oracle-result"></span>
-          <button type="button" id="oracle-character-name-lastname-button" class="randomize-button" onClick={handleOnClick}></button>
-        </div>
+        <Oracle oracleName="character-name-lastname" oracleDatatable={characterOracleResults} oracleLogName={oracleLogName}/>
+
         <br/>
         <h3 id="look">LOOK</h3>
-        <div class="oracle-container">
-          <span role="textbox" id="oracle-character-look-result" class="oracle-result"></span>
-          <button type="button" id="oracle-character-look-button" class="randomize-button" onClick={handleOnClick}></button>
-        </div>
+        <Oracle oracleName="character-look" oracleDatatable={characterOracleResults} oracleLogName={oracleLogName}/>
+
         <h3 id="look">ETHNICITY</h3>
-        <div class="oracle-container">
-          <span role="textbox" id="oracle-character-ethnicity-result" class="oracle-result"></span>
-          <button type="button" id="oracle-character-ethnicity-button" class="randomize-button" onClick={handleOnClick}></button>
-        </div>
+        <Oracle oracleName="character-ethnicity" oracleDatatable={characterOracleResults} oracleLogName={oracleLogName}/>
+
         <h3 id="gender">GENDER</h3>
-        <div class="oracle-container">
-          <span role="textbox" id="oracle-character-gender-result" class="oracle-result"></span>
-          <button type="button" id="oracle-character-gender-button" class="randomize-button" onClick={handleOnClick}></button>
-        </div>
+        <Oracle oracleName="character-gender" oracleDatatable={characterOracleResults} oracleLogName={oracleLogName}/>
+
         <h3 id="disposition">DISPOSITION</h3>
-        <div class="oracle-container">
-          <span role="textbox" id="oracle-character-disposition-result" class="oracle-result"></span>
-          <button type="button" id="oracle-character-disposition-button" class="randomize-button" onClick={handleOnClick}></button>
-        </div>
+        <Oracle oracleName="character-disposition" oracleDatatable={characterOracleResults} oracleLogName={oracleLogName}/>
+
         <h3 id="first-impressions">FIRST IMPRESSIONS</h3>
-        <div class="oracle-container">
-          <span role="textbox" id="oracle-character-first-impressions-result" class="oracle-result"></span>
-          <button type="button" id="oracle-character-first-impressions-button" class="randomize-button" onClick={handleOnClick}></button>
-        </div>
+        <Oracle oracleName="character-first-impressions" oracleDatatable={characterOracleResults} oracleLogName={oracleLogName}/>
 
         <h3 id="profession--background">PROFESSION / BACKGROUND</h3>
-        <div class="oracle-container">
-          <span role="textbox" id="oracle-character-profession-background-result" class="oracle-result"></span>
-          <button type="button" id="oracle-character-profession-background-button" class="randomize-button" onClick={handleOnClick}></button>
-        </div>
+        <Oracle oracleName="character-profession-background" oracleDatatable={characterOracleResults} oracleLogName={oracleLogName}/>
+
         <br/>
         <div id="portrait-container">
           <span><a href="" target="_blank" onClick={openAIGeneratedPortrait}>⤷ Get AI generated portrait for these results</a></span>
         </div>
         <br/>
+
         <h3 id="revealed-aspect">REVEALED ASPECT</h3>
-        <div class="oracle-container">
-          <span role="textbox" id="oracle-character-revealed-aspect-result" class="oracle-result"></span>
-          <button type="button" id="oracle-character-revealed-aspect-button" class="randomize-button" onClick={handleOnClick}></button>
-        </div>
+        <Oracle oracleName="character-revealed-aspect" oracleDatatable={characterOracleResults} oracleLogName={oracleLogName}/>
         <br/>
         <blockquote><p>Use this oracle (more than once, if necessary) as you get to know a character and discover more of their moods or personality quirks.</p></blockquote>
         <br/>
 
         <h2 id="intimate-details">INTIMATE DETAILS</h2>
         <blockquote><p>Use these oracles to generate intimate details for your character, or when you develop enough confidence or familiarity with another character in which these facts might get revealed.</p></blockquote>
+
         <h3 id="vice--addiction">VICE / ADDICTION</h3>
+
         <h4 id="vice-addiction-type">⤷ VICE / ADDICTION - TYPE</h4>
-        <div class="oracle-container">
-          <span role="textbox" id="oracle-character-vice-addiction-type-result" class="oracle-result"></span>
-          <button type="button" id="oracle-character-vice-addiction-type-button" class="randomize-button" onClick={handleOnClick}></button>
-        </div>
+        <Oracle oracleName="character-vice-addiction-type" oracleDatatable={characterOracleResults} oracleLogName={oracleLogName}/>
+
         <h4 id="vice-addiction-level">⤷ VICE / ADDICTION - LEVEL OF NEED</h4>
-        <div class="oracle-container">
-          <span role="textbox" id="oracle-character-vice-addiction-level-result" class="oracle-result"></span>
-          <button type="button" id="oracle-character-vice-addiction-level-button" class="randomize-button" onClick={handleOnClick}></button>
-        </div>
+        <Oracle oracleName="character-vice-addiction-level" oracleDatatable={characterOracleResults} oracleLogName={oracleLogName}/>
+
         <br/>
         <h3 id="tattoo">TATTOO</h3>
+
         <h4 id="tattoo-design">⤷ TATTOO: DESIGN</h4>
-        <div class="oracle-container">
-          <span role="textbox" id="oracle-character-tattoo-design-result" class="oracle-result"></span>
-          <button type="button" id="oracle-character-tattoo-design-button" class="randomize-button" onClick={handleOnClick}></button>
-        </div>
+        <Oracle oracleName="character-tattoo-design" oracleDatatable={characterOracleResults} oracleLogName={oracleLogName}/>
+
         <h4 id="tattoo-style">⤷ TATTOO: STYLE</h4>
-        <div class="oracle-container">
-          <span role="textbox" id="oracle-character-tattoo-style-result" class="oracle-result"></span>
-          <button type="button" id="oracle-character-tattoo-style-button" class="randomize-button" onClick={handleOnClick}></button>
-        </div>
+        <Oracle oracleName="character-tattoo-style" oracleDatatable={characterOracleResults} oracleLogName={oracleLogName}/>
+
         <h4 id="tattoo-location">⤷ TATTOO: LOCATION</h4>
-        <div class="oracle-container">
-          <span role="textbox" id="oracle-character-tattoo-location-result" class="oracle-result"></span>
-          <button type="button" id="oracle-character-tattoo-location-button" class="randomize-button" onClick={handleOnClick}></button>
-        </div>
+        <Oracle oracleName="character-tattoo-location" oracleDatatable={characterOracleResults} oracleLogName={oracleLogName}/>
+
         <br/>
         <h3 id="sexual-orientation">SEXUAL ORIENTATION</h3>
-        <div class="oracle-container">
-          <span role="textbox" id="oracle-character-sexual-orientation-result" class="oracle-result"></span>
-          <button type="button" id="oracle-character-sexual-orientation-button" class="randomize-button" onClick={handleOnClick}></button>
-        </div>
+        <Oracle oracleName="character-sexual-orientation" oracleDatatable={characterOracleResults} oracleLogName={oracleLogName}/>
+
         <br/>
         <h2 id="flashy-cyberware">FLASHY CYBERWARE</h2>
         <blockquote><p>If the character sports cyberware, these oracles will give them some aesthetic flavor.</p></blockquote>
+
         <h4 id="flashy-cyberware-type">⤷ CYBERWARE - TYPE OF UPGRADES</h4>
-        <div class="oracle-container">
-          <span role="textbox" id="oracle-flashy-cyberware-type-result" class="oracle-result"></span>
-          <button type="button" id="oracle-flashy-cyberware-type-button" class="randomize-button" onClick={handleOnClick}></button>
-        </div>
+        <Oracle oracleName="flashy-cyberware-type" oracleDatatable={characterOracleResults} oracleLogName={oracleLogName}/>
+
         <h4 id="flashy-cyberware-cybereyes">⤷ CYBERWARE - CYBEREYES</h4>
-        <div class="oracle-container">
-          <span role="textbox" id="oracle-flashy-cyberware-cybereyes-result" class="oracle-result"></span>
-          <button type="button" id="oracle-flashy-cyberware-cybereyes-button" class="randomize-button" onClick={handleOnClick}></button>
-        </div>
+        <Oracle oracleName="flashy-cyberware-cybereyes" oracleDatatable={characterOracleResults} oracleLogName={oracleLogName}/>
+
         <h4 id="flashy-cyberware-cyberarms">⤷ CYBERWARE - CYBERARMS</h4>
-        <div class="oracle-container">
-          <span role="textbox" id="oracle-flashy-cyberware-cyberarms-result" class="oracle-result"></span>
-          <button type="button" id="oracle-flashy-cyberware-cyberarms-button" class="randomize-button" onClick={handleOnClick}></button>
-        </div>
+        <Oracle oracleName="flashy-cyberware-cyberarms" oracleDatatable={characterOracleResults} oracleLogName={oracleLogName}/>
+
         <h4 id="flashy-cyberware-cyberlegs">⤷ CYBERWARE - CYBERLEGS</h4>
-        <div class="oracle-container">
-          <span role="textbox" id="oracle-flashy-cyberware-cyberlegs-result" class="oracle-result"></span>
-          <button type="button" id="oracle-flashy-cyberware-cyberlegs-button" class="randomize-button" onClick={handleOnClick}></button>
-        </div>
+        <Oracle oracleName="flashy-cyberware-cyberlegs" oracleDatatable={characterOracleResults} oracleLogName={oracleLogName}/>
+
         <h4 id="flashy-cyberware-blades">⤷ CYBERWARE - BLADES (MOLLIES OR LOGANS)</h4>
-        <div class="oracle-container">
-          <span role="textbox" id="oracle-flashy-cyberware-blades-result" class="oracle-result"></span>
-          <button type="button" id="oracle-flashy-cyberware-blades-button" class="randomize-button" onClick={handleOnClick}></button>
-        </div>
+        <Oracle oracleName="flashy-cyberware-blades" oracleDatatable={characterOracleResults} oracleLogName={oracleLogName}/>
+
         <h4 id="flashy-cyberware-plugs">⤷ CYBERWARE - PLUGS (DATA JACK)</h4>
-        <div class="oracle-container">
-          <span role="textbox" id="oracle-flashy-cyberware-plugs-result" class="oracle-result"></span>
-          <button type="button" id="oracle-flashy-cyberware-plugs-button" class="randomize-button" onClick={handleOnClick}></button>
-        </div>
+        <Oracle oracleName="flashy-cyberware-plugs" oracleDatatable={characterOracleResults} oracleLogName={oracleLogName}/>
         <br/>
 
         <h2 id="specific-characters">SPECIFIC CHARACTERS</h2>
         <blockquote><p>Use these oracles to generate a character of a more specific category.</p></blockquote>
 
         <h3 id="corporate-aristocrat">CORPORATE ARISTOCRAT</h3>
+
         <h4 id="corporate-aristocrat-personality-quirk">⤷ CORPO - PERSONALITY QUIRK</h4>
-        <div class="oracle-container">
-          <span role="textbox" id="oracle-character-corporate-aristocrat-personality-quirk-result" class="oracle-result"></span>
-          <button type="button" id="oracle-character-corporate-aristocrat-personality-quirk-button" class="randomize-button" onClick={handleOnClick}></button>
-        </div>
+        <Oracle oracleName="character-corporate-aristocrat-personality-quirk" oracleDatatable={characterOracleResults} oracleLogName={oracleLogName}/>
+
         <h4 id="corporate-aristocrat-position-assets">⤷ CORPO - POSITION AND ASSETS</h4>
-        <div class="oracle-container">
-          <span role="textbox" id="oracle-character-corporate-aristocrat-position-assets-result" class="oracle-result"></span>
-          <button type="button" id="oracle-character-corporate-aristocrat-position-assets-button" class="randomize-button" onClick={handleOnClick}></button>
-        </div>
+        <Oracle oracleName="character-corporate-aristocrat-position-assets" oracleDatatable={characterOracleResults} oracleLogName={oracleLogName}/>
+
         <h4 id="corporate-aristocrat-mannerisms-looks">⤷ CORPO - MANNERISMS AND LOOKS</h4>
-        <div class="oracle-container">
-          <span role="textbox" id="oracle-character-corporate-aristocrat-mannerisms-looks-result" class="oracle-result"></span>
-          <button type="button" id="oracle-character-corporate-aristocrat-mannerisms-looks-button" class="randomize-button" onClick={handleOnClick}></button>
-        </div>
+        <Oracle oracleName="character-corporate-aristocrat-mannerisms-looks" oracleDatatable={characterOracleResults} oracleLogName={oracleLogName}/>
+
         <br/>
         <div id="corporate-portrait-container">
           <span><a href="" target="_blank" onClick={openAIGeneratedCorporatePortrait}>⤷ Get AI generated portrait for these results</a></span>
@@ -320,51 +254,35 @@ export default function CharacterOracles() {
         <br/>
 
         <h3 id="gangbanger">GANGBANGER</h3>
-        <div class="oracle-container">
-          <span role="textbox" id="oracle-character-gangbanger-result" class="oracle-result"></span>
-          <button type="button" id="oracle-character-gangbanger-button" class="randomize-button" onClick={handleOnClick}></button>
-        </div>
+        <Oracle oracleName="character-gangbanger" oracleDatatable={characterOracleResults} oracleLogName={oracleLogName}/>
         <br/>
         
         <h3 id="law-enforcement">LAW ENFORCEMENT</h3>
+
         <h4 id="law-enforcement-type">⤷ LAW ENFORCEMENT - TYPE</h4>
-        <div class="oracle-container">
-          <span role="textbox" id="oracle-character-law-enforcement-type-result" class="oracle-result"></span>
-          <button type="button" id="oracle-character-law-enforcement-type-button" class="randomize-button" onClick={handleOnClick}></button>
-        </div>
+        <Oracle oracleName="character-law-enforcement-type" oracleDatatable={characterOracleResults} oracleLogName={oracleLogName}/>
+
         <h4 id="law-enforcement-activity">⤷ LAW ENFORCEMENT - ACTIVITY</h4>
-        <div class="oracle-container">
-          <span role="textbox" id="oracle-character-law-enforcement-activity-result" class="oracle-result"></span>
-          <button type="button" id="oracle-character-law-enforcement-activity-button" class="randomize-button" onClick={handleOnClick}></button>
-        </div>
+        <Oracle oracleName="character-law-enforcement-activity" oracleDatatable={characterOracleResults} oracleLogName={oracleLogName}/>
+
         <h4 id="law-enforcement-backup">⤷ LAW ENFORCEMENT - BACKUP</h4>
-        <div class="oracle-container">
-          <span role="textbox" id="oracle-character-law-enforcement-backup-result" class="oracle-result"></span>
-          <button type="button" id="oracle-character-law-enforcement-backup-button" class="randomize-button" onClick={handleOnClick}></button>
-        </div>
+        <Oracle oracleName="character-law-enforcement-backup" oracleDatatable={characterOracleResults} oracleLogName={oracleLogName}/>
         <br/>
 
         <h3 id="fixer">FIXER</h3>
+
         <h4 id="fixer-known-callsign">⤷ FIXER - KNOWN CALLSIGN</h4>
-        <div class="oracle-container">
-          <span role="textbox" id="oracle-character-fixer-known-callsign-result" class="oracle-result"></span>
-          <button type="button" id="oracle-character-fixer-known-callsign-button" class="randomize-button" onClick={handleOnClick}></button>
-        </div>
+        <Oracle oracleName="character-fixer-known-callsign" oracleDatatable={characterOracleResults} oracleLogName={oracleLogName}/>
+
         <h4 id="fixer-personality-quirk">⤷ FIXER - PERSONALITY QUIRK</h4>
-        <div class="oracle-container">
-          <span role="textbox" id="oracle-character-fixer-personality-quirk-result" class="oracle-result"></span>
-          <button type="button" id="oracle-character-fixer-personality-quirk-button" class="randomize-button" onClick={handleOnClick}></button>
-        </div>
+        <Oracle oracleName="character-fixer-personality-quirk" oracleDatatable={characterOracleResults} oracleLogName={oracleLogName}/>
+
         <h4 id="fixer-profession">⤷ FIXER - MAIN TRADE</h4>
-        <div class="oracle-container">
-          <span role="textbox" id="oracle-character-fixer-profession-result" class="oracle-result"></span>
-          <button type="button" id="oracle-character-fixer-profession-button" class="randomize-button" onClick={handleOnClick}></button>
-        </div>
+        <Oracle oracleName="character-fixer-profession" oracleDatatable={characterOracleResults} oracleLogName={oracleLogName}/>
+
         <h4 id="fixer-mannerisms-looks">⤷ FIXER - MANNERISMS AND LOOKS</h4>
-        <div class="oracle-container">
-          <span role="textbox" id="oracle-character-fixer-mannerisms-looks-result" class="oracle-result"></span>
-          <button type="button" id="oracle-character-fixer-mannerisms-looks-button" class="randomize-button" onClick={handleOnClick}></button>
-        </div>
+        <Oracle oracleName="character-fixer-mannerisms-looks" oracleDatatable={characterOracleResults} oracleLogName={oracleLogName}/>
+
         <br/>
         <div id="fixer-portrait-container">
           <span><a href="" target="_blank" onClick={openAIGeneratedFixerPortrait}>⤷ Get AI generated portrait for these results</a></span>
@@ -372,21 +290,16 @@ export default function CharacterOracles() {
         <br/>
 
         <h3 id="merc">MERC</h3>
+
         <h4 id="merc-personality-quirk">⤷ MERC - PERSONALITY QUIRK</h4>
-        <div class="oracle-container">
-          <span role="textbox" id="oracle-character-merc-personality-quirk-result" class="oracle-result"></span>
-          <button type="button" id="oracle-character-merc-personality-quirk-button" class="randomize-button" onClick={handleOnClick}></button>
-        </div>
+        <Oracle oracleName="character-merc-personality-quirk" oracleDatatable={characterOracleResults} oracleLogName={oracleLogName}/>
+
         <h4 id="merc-tools">⤷ MERC - TOOLS OF THE TRADE</h4>
-        <div class="oracle-container">
-          <span role="textbox" id="oracle-character-merc-tools-result" class="oracle-result"></span>
-          <button type="button" id="oracle-character-merc-tools-button" class="randomize-button" onClick={handleOnClick}></button>
-        </div>
+        <Oracle oracleName="character-merc-tools" oracleDatatable={characterOracleResults} oracleLogName={oracleLogName}/>
+
         <h4 id="merc-mannerisms-looks">⤷ MERC - MANNERISMS AND LOOKS</h4>
-        <div class="oracle-container">
-          <span role="textbox" id="oracle-character-merc-mannerisms-looks-result" class="oracle-result"></span>
-          <button type="button" id="oracle-character-merc-mannerisms-looks-button" class="randomize-button" onClick={handleOnClick}></button>
-        </div>
+        <Oracle oracleName="character-merc-mannerisms-looks" oracleDatatable={characterOracleResults} oracleLogName={oracleLogName}/>
+
         <br/>
         <div id="merc-portrait-container">
           <span><a href="" target="_blank" onClick={openAIGeneratedMercPortrait}>⤷ Get AI generated portrait for these results</a></span>
@@ -394,26 +307,19 @@ export default function CharacterOracles() {
         <br/>
 
         <h3 id="hacker">HACKER</h3>
+
         <h4 id="hacker-callsign">⤷ HACKER - CALLSIGN</h4>
-        <div class="oracle-container">
-          <span role="textbox" id="oracle-character-hacker-callsign-result" class="oracle-result"></span>
-          <button type="button" id="oracle-character-hacker-callsign-button" class="randomize-button" onClick={handleOnClick}></button>
-        </div>
+        <Oracle oracleName="character-hacker-callsign" oracleDatatable={characterOracleResults} oracleLogName={oracleLogName}/>
+
         <h4 id="hacker-personality-quirk">⤷ HACKER - PERSONALITY QUIRK</h4>
-        <div class="oracle-container">
-          <span role="textbox" id="oracle-character-hacker-personality-quirk-result" class="oracle-result"></span>
-          <button type="button" id="oracle-character-hacker-personality-quirk-button" class="randomize-button" onClick={handleOnClick}></button>
-        </div>
+        <Oracle oracleName="character-hacker-personality-quirk" oracleDatatable={characterOracleResults} oracleLogName={oracleLogName}/>
+
         <h4 id="hacker-obscure-fact">⤷ HACKER - OBSCURE FACT</h4>
-        <div class="oracle-container">
-          <span role="textbox" id="oracle-character-hacker-obscure-fact-result" class="oracle-result"></span>
-          <button type="button" id="oracle-character-hacker-obscure-fact-button" class="randomize-button" onClick={handleOnClick}></button>
-        </div>
+        <Oracle oracleName="character-hacker-obscure-fact" oracleDatatable={characterOracleResults} oracleLogName={oracleLogName}/>
+
         <h4 id="hacker-mannerisms-looks">⤷ HACKER - MANNERISMS AND LOOKS</h4>
-        <div class="oracle-container">
-          <span role="textbox" id="oracle-character-hacker-mannerisms-looks-result" class="oracle-result"></span>
-          <button type="button" id="oracle-character-hacker-mannerisms-looks-button" class="randomize-button" onClick={handleOnClick}></button>
-        </div>
+        <Oracle oracleName="character-hacker-mannerisms-looks" oracleDatatable={characterOracleResults} oracleLogName={oracleLogName}/>
+
         <br/>
         <div id="hacker-portrait-container">
           <span><a href="" target="_blank" onClick={openAIGeneratedHackerPortrait}>⤷ Get AI generated portrait for these results</a></span>
@@ -421,10 +327,8 @@ export default function CharacterOracles() {
         <br/>
 
         <h3 id="street-walker">STREET WALKER</h3>
-        <div class="oracle-container">
-          <span role="textbox" id="oracle-character-street-walker-result" class="oracle-result"></span>
-          <button type="button" id="oracle-character-street-walker-button" class="randomize-button" onClick={handleOnClick}></button>
-        </div>
+        <Oracle oracleName="character-street-walker" oracleDatatable={characterOracleResults} oracleLogName={oracleLogName}/>
+
         <br/>
         <div id="street-walker-portrait-container">
           <span><a href="" target="_blank" onClick={openAIGeneratedProstitutePortrait}>⤷ Get AI generated portrait for these results</a></span>
@@ -432,21 +336,16 @@ export default function CharacterOracles() {
         <br/>
 
         <h3 id="cabbie">CABBIE</h3>
+
         <h4 id="cabbie-appearance">⤷ CABBIE APPEARANCE</h4>
-        <div class="oracle-container">
-          <span role="textbox" id="oracle-character-cabbie-appearance-result" class="oracle-result"></span>
-          <button type="button" id="oracle-character-cabbie-appearance-button" class="randomize-button" onClick={handleOnClick}></button>
-        </div>
+        <Oracle oracleName="character-cabbie-appearance" oracleDatatable={characterOracleResults} oracleLogName={oracleLogName}/>
+
         <h4 id="cabbie-nationality">⤷ CABBIE NATIONALITY</h4>
-        <div class="oracle-container">
-          <span role="textbox" id="oracle-character-cabbie-nationality-result" class="oracle-result"></span>
-          <button type="button" id="oracle-character-cabbie-nationality-button" class="randomize-button" onClick={handleOnClick}></button>
-        </div>
+        <Oracle oracleName="character-cabbie-nationality" oracleDatatable={characterOracleResults} oracleLogName={oracleLogName}/>
+
         <h4 id="cabbie-conversation-topic">⤷ CABBIE CONVERSATION TOPIC</h4>
-        <div class="oracle-container">
-          <span role="textbox" id="oracle-character-cabbie-conversation-topic-result" class="oracle-result"></span>
-          <button type="button" id="oracle-character-cabbie-conversation-topic-button" class="randomize-button" onClick={handleOnClick}></button>
-        </div>
+        <Oracle oracleName="character-cabbie-conversation-topic" oracleDatatable={characterOracleResults} oracleLogName={oracleLogName}/>
+
         <br/>
         <div id="cabbie-portrait-container">
           <span><a href="" target="_blank" onClick={openAIGeneratedCabbiePortrait}>⤷ Get AI generated portrait for these results</a></span>
