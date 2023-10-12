@@ -14,10 +14,8 @@ function Challenges() {
     // defaults
     var defaultChallenges = {};
     for (let i=1; i<=10; i++) {
-      var chProgressKey = "chProgress"+i;
-      var chRankKey = "chRank"+i;
-      defaultChallenges[chProgressKey] = "1";
-      defaultChallenges[chRankKey] = "1";
+      defaultChallenges["chProgress"+i] = "1";
+      defaultChallenges["chRank"+i] = "1";
     }
 
     return savedChallenges || defaultChallenges;
