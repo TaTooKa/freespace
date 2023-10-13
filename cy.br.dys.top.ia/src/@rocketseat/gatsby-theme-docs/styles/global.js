@@ -1046,8 +1046,6 @@ export default function GlobalStyle() {
                   text-shadow: 0 0 5px #fff;
                   letter-spacing: .3em;
                 }
-                :active {
-                }
               }
               .make-progress-button {
                 width:70%;
@@ -1257,9 +1255,10 @@ export default function GlobalStyle() {
               color: #ffff;
               text-shadow: 0 0 5px ${theme.colors.fuchsia};
             }
+          }
         }
         @keyframes gradient {
-          to {background-position:0 -800%}
+          to {background-position:0 -800%};
         }
 
         ${'' /* GLITCH EFFECT */}
