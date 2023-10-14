@@ -1078,7 +1078,29 @@ export default function GlobalStyle() {
             .ranks-container {
               display: flex;
               margin: 5px 0 0 0;
-              @media screen and (max-width: 700px) {
+              @media screen and (max-width: 1300px) {
+                label {
+                  margin: 5px auto;
+                  max-width: 100px !important;
+                  min-width: 20px !important;
+                  width: 82px;
+                }
+              }
+              @media screen and (max-width: 1200px) {
+                label {
+                  margin: 5px auto;
+                  max-width: 100px !important;
+                  min-width: 20px !important;
+                  width: 120px;
+                }
+              }
+              @media screen and (max-width: 930px) {
+                label {
+                  margin: 5px auto;
+                  width: 82px;
+                }
+              }
+              @media screen and (max-width: 840px) {
                 display: block;
                 height: 100px;
                 label {
@@ -1086,6 +1108,32 @@ export default function GlobalStyle() {
                   height: 35px;
                   float: left;
                   margin: 5px auto;
+                }
+              }
+              @media screen and (max-width: 780px) {
+                height: 50px;
+                display: flex;
+                content-align: center;
+                label {
+                  margin: 5px auto;
+                  max-width: 130px !important;
+                  min-width: 20px !important;
+                  width: 100%;
+                }
+              }
+              @media screen and (max-width: 600px) {
+                display: block;
+                height: 100px;
+                label {
+                  width: 25%;
+                  height: 35px;
+                  float: left;
+                  margin: 5px auto;
+                }
+              }
+              @media screen and (max-width: 400px) {
+                label {
+                  font-size: .35em !important;
                 }
               }
               .rank-button {
@@ -1105,9 +1153,11 @@ export default function GlobalStyle() {
                   transition: 0.5s;
                   word-break: break-word;
                   box-shadow: inset 0 0 5px #000;
+                  text-align: center;
+                  min-width: 100px;
                   .rank-type {
                     font-weight: bold;
-                  font-size: 1.4em;
+                    font-size: 1.4em;
                   }
                 }
                 input:checked+label {
@@ -1144,6 +1194,9 @@ export default function GlobalStyle() {
                   box-shadow: inset 0 0 5px #000;
                   @media screen and (max-width: 700px) {
                     font-size: 0.6em;
+                  }
+                  @media screen and (max-width: 400px) {
+                    font-size: 0.4em;
                   }
                 }
               }

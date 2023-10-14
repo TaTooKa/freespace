@@ -131,23 +131,23 @@ const Challenge = ({challengeIndex, inputs, setInputs, deleteChallengeFunction})
       <div class="ranks-container">
         <div class="rank-button">
           <input type="radio" name={chRankName} id={chRankName+"_1"} value={inputs[chRankName+"_1"] || "1"} onChange={handleChange} checked={inputs[chRankName]==="1"}/>
-          <label for={chRankName+"_1"}><span class="rank-type">SHORT:</span> +30%; 2XP</label>
+          <label for={chRankName+"_1"}><span class="rank-type">SHORT:</span><br/> +30%; 2XP</label>
         </div>
         <div class="rank-button">
           <input type="radio" name={chRankName} id={chRankName+"_2"} value={inputs[chRankName+"_2"] || "2"} onChange={handleChange} checked={inputs[chRankName]==="2"}/>
-          <label for={chRankName+"_2"}><span class="rank-type">MEDIUM:</span> +20%; 5XP</label>
+          <label for={chRankName+"_2"}><span class="rank-type">MEDIUM:</span><br/> +20%; 5XP</label>
         </div>
         <div class="rank-button">
           <input type="radio" name={chRankName} id={chRankName+"_3"} value={inputs[chRankName+"_3"] || "3"} onChange={handleChange} checked={inputs[chRankName]==="3"}/>
-          <label for={chRankName+"_3"}><span class="rank-type">LONG:</span> +10%; 10XP</label>
+          <label for={chRankName+"_3"}><span class="rank-type">LONG:</span><br/> +10%; 10XP</label>
         </div>
         <div class="rank-button">
           <input type="radio" name={chRankName} id={chRankName+"_4"} value={inputs[chRankName+"_4"] || "4"} onChange={handleChange} checked={inputs[chRankName]==="4"}/>
-          <label for={chRankName+"_4"}><span class="rank-type">EXTREME:</span> +5%; 20XP</label>
+          <label for={chRankName+"_4"}><span class="rank-type">EXTREME:</span><br/> +5%; 20XP</label>
         </div>
         <div class="rank-button">
           <input type="radio" name={chRankName} id={chRankName+"_5"} value={inputs[chRankName+"_5"] || "5"} onChange={handleChange} checked={inputs[chRankName]==="5"}/>
-          <label for={chRankName+"_5"}><span class="rank-type">EPIC:</span> +2%; 50XP</label>
+          <label for={chRankName+"_5"}><span class="rank-type">EPIC:</span><br/> +2%; 50XP</label>
         </div>
       </div>
 
