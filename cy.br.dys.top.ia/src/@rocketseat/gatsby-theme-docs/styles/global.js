@@ -305,8 +305,59 @@ export default function GlobalStyle() {
           border-radius: 0 15px 0 15px;
           margin: 15px auto 5px auto;
           width: 100%;
+          height: 350px;
           transition: 0.5s;
           filter: brightness(0.8) saturate(0.7) hue-rotate(-5deg);
+          object-fit: cover;
+          :hover {
+            border: 0px !important;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px #000 !important;
+            width: 100%;
+            height: 550px;
+          }
+          @media screen and (max-width: 1350px) {
+            height: 320px !important;
+            :hover {
+              height: 450px !important;
+            }
+          }
+          @media screen and (max-width: 1200px) {
+            height: 500px !important;
+            :hover {
+              height: 600px !important;
+            }
+          }
+          @media screen and (max-width: 1100px) {
+            height: 450px !important;
+            :hover {
+              height: 500px !important;
+            }
+          }
+          @media screen and (max-width: 900px) {
+            height: 300px !important;
+            :hover {
+              height: 400px !important;
+            }
+          }
+          @media screen and (max-width: 780px) {
+            height: 400px !important;
+            :hover {
+              height: 500px !important;
+            }
+          }
+          @media screen and (max-width: 600px) {
+            height: 300px !important;
+            :hover {
+              height: 400px !important;
+            }
+          }
+          @media screen and (max-width: 450px) {
+            height: 200px !important;
+            :hover {
+              height: 300px !important;
+            }
+          }
         }
 
         ul,
@@ -899,12 +950,6 @@ export default function GlobalStyle() {
               filter: brightness(1);
             }
 
-            img.art:hover {
-              transform: scale(1.4);
-              border: 0px;
-              border-radius: 5px;
-              box-shadow: 0px 0px 10px #000;
-            }
           }
           .trait.contact {
             margin: 40px 0 10px 0;
