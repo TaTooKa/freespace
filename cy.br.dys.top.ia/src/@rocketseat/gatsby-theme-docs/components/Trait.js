@@ -2,11 +2,12 @@ import React from 'react';
 
 const Trait = (props) => {
 
-  const traitId = "skill"+props.name;
+  const traitId = props.type+props.name;
   const value = props.inputs[traitId];
   const anchorName = encodeURIComponent(props.title).replace('%20','-').toLowerCase();
 
-  const classes = value === true ? "trait active" : "trait inactive";
+  const baseClasses = value === true ? "trait active" : "trait inactive";
+  const classes = baseClasses + " " + props.type;
 
   return (
     <div class={classes} id={anchorName}>

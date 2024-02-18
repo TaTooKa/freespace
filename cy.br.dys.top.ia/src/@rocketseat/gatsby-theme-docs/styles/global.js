@@ -796,7 +796,42 @@ export default function GlobalStyle() {
           }
         }
 
+        #traits-loading-container {
+            text-align: center;
+          span {
+            display: block;
+            margin: 30px 0;
+            font-weight: bold;
+            font-size: 1.5em;
+          }
+        }
         form.character-traits {
+          display: none;
+          #toggle-visibility-container {
+            display: flex;
+            .toggleVisibilityInput {
+              display: none;
+            } 
+            .toggleVisibilityInput:checked+label {
+              border: 1px solid ${theme.colors.turquoise};
+              box-shadow: inset 0 0 5px ${theme.colors.turquoise}; 
+              color: ${theme.colors.turquoise};
+            }
+            .toggleVisibilityLabel {
+              border: 1px solid #666;
+              color: #ffffff66;
+              margin: 25px 10px;
+              padding: 4px 15px;
+              display: block;
+              width: 100%;
+              text-align: center;
+              transition: 0.5s;
+              border-radius: 3px;
+              box-shadow: 0 0 5px #000;
+              font-weight: bold;
+              cursor: pointer;
+            }          
+          }
           .trait {
             border: 1px solid #0a6d6166;
             margin: 10px 0 25px 0;
@@ -865,7 +900,7 @@ export default function GlobalStyle() {
             }
 
             img.art:hover {
-              transform: scale(1.2);
+              transform: scale(1.3);
               border: 0px;
               border-radius: 25px;
               box-shadow: 0px 0px 10px #000;
