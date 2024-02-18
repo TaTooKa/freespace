@@ -1,5 +1,7 @@
 import React from 'react';
 
+const LOG_MAX_LINES = 40;
+
 const Oracle = ({oracleName, oracleDatatable, oracleLogName, combined=false}) => {
 
   const textboxId = "oracle-"+oracleName+"-result";
@@ -38,6 +40,7 @@ const Oracle = ({oracleName, oracleDatatable, oracleLogName, combined=false}) =>
     const log = "<span class=\"log-entry\"><b>"+titleElement.innerHTML+":</b> "+oracleResult+"</span><br/>";
     oraclesLog.innerHTML += log;
     oraclesLog.scrollTop = oraclesLog.scrollHeight;
+    trimLog();
     windowGlobal.localStorage.setItem(oracleLogName, oraclesLog.innerHTML);
 
     setTimeout(()=> {
@@ -45,6 +48,14 @@ const Oracle = ({oracleName, oracleDatatable, oracleLogName, combined=false}) =>
       inputResult.innerHTML = oracleResult;
     }, 500);
 
+  }
+
+  const trimLog = () => {
+    const oraclesLog = document.getElementById('oracles-log');
+    while ( oraclesLog.childNodes.length > LOG_MAX_LINES ) {
+      // because of <br> elements, log entry limit is half of LOG_MAX_LINES
+      oraclesLog.removeChild(oraclesLog.firstChild);
+    }
   }
 
   return (
