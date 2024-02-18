@@ -900,9 +900,9 @@ export default function GlobalStyle() {
             }
 
             img.art:hover {
-              transform: scale(1.3);
+              transform: scale(1.4);
               border: 0px;
-              border-radius: 25px;
+              border-radius: 5px;
               box-shadow: 0px 0px 10px #000;
             }
           }
