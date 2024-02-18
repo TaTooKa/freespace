@@ -358,6 +358,15 @@ export default function GlobalStyle() {
               height: 300px !important;
             }
           }
+          :hover {
+            animation: slideImg 30s linear infinite;
+            @keyframes slideImg {
+              0% { object-position: center center; }
+              30% { object-position: 25% 25%; }
+              60% { object-position: 75% 75%; }
+              100% { object-position:  center center; }
+            }
+          }
         }
 
         ul,
