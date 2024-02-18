@@ -863,6 +863,13 @@ export default function GlobalStyle() {
               box-shadow: 0 0 5px ${theme.colors.fuchsia}; 
               filter: brightness(1);
             }
+
+            img.art:hover {
+              transform: scale(1.2);
+              border: 0px;
+              border-radius: 25px;
+              box-shadow: 0px 0px 10px #000;
+            }
           }
           .trait.contact {
             margin: 40px 0 10px 0;

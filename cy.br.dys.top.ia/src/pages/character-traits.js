@@ -2,6 +2,8 @@ import React, { useState, useEffect, Component } from "react"
 import Layout from '@rocketseat/gatsby-theme-docs/src/components/Layout';
 import Seo from '@rocketseat/gatsby-theme-docs/src/components/SEO';
 
+import Trait from '/src/@rocketseat/gatsby-theme-docs/components/Trait'
+
 import blademaster_art from '/src/images/blademaster.jpg';
 import bountyhunter_art from '/src/images/bountyhunter.jpg';
 import brawler_art from '/src/images/brawler.jpg';
@@ -112,66 +114,55 @@ function CharacterStats() {
 
         <div class="traits-container" id="skills-container">
             <h2 id="skills-and-background">SKILLS AND BACKGROUND</h2>
-            <div class="trait skill">
-                <input id="skillBlademaster" type="checkbox" name="skillBlademaster" value={inputs.skillBlademaster} onChange={handleChange} defaultChecked={inputs.skillBlademaster}/>
-                <label for="skillBlademaster"> <span class="trait-name">BLADEMASTER</span>: when wielding a long blade, gain a <span class="boost">BOOST</span> when you test <span class="stat">CHROME</span> to <a href="/prompts/general-prompts#clash">CLASH</a> or when you <a href="/prompts/general-prompts#act-under-pressure">ACT UNDER PRESSURE</a> to defend.</label>
-                <img src={blademaster_art} class="art"/>
-            </div>
-            <div class="trait skill">
-                <input id="skillBountyHunter" type="checkbox" name="skillBountyHunter" value={inputs.skillBountyHunter} onChange={handleChange} defaultChecked={inputs.skillBountyHunter}/>
-                <label for="skillBountyHunter"> <span class="trait-name">BOUNTY HUNTER</span>: gain a <span class="boost">BOOST</span> whenever you <a href="/prompts/general-prompts#gather-information">GATHER INFORMATION</a>, <a href="/prompts/challenge-prompts#accept-a-challenge">ACCEPT A CHALLENGE</a> or <a href="/prompts/challenge-prompts#fulfill-a-challenge">FULFILL A CHALLENGE</a> related to a bounty.</label>
-                <img src={bountyhunter_art} class="art"/>
-            </div>
-            <div class="trait skill">
-                <input id="skillBrawler" type="checkbox" name="skillBrawler" value={inputs.skillBrawler} onChange={handleChange} defaultChecked={inputs.skillBrawler}/>
-                <label for="skillBrawler"> <span class="trait-name">BRAWLER</span>: gain a <span class="boost">BOOST</span> when you <a href="/prompts/general-prompts#act-under-pressure">ACT UNDER PRESSURE</a>, <a href="/prompts/general-prompts#secure-an-advantage">SECURE AN ADVANTAGE</a> or <a href="/prompts/general-prompts#clash">CLASH</a> as long as you are leveraging your unarmed fighting prowess.</label>
-                <img src={brawler_art} class="art"/>
-            </div>
-            <div class="trait skill">
-                <input id="skillDiplomat" type="checkbox" name="skillDiplomat" value={inputs.skillDiplomat} onChange={handleChange} defaultChecked={inputs.skillDiplomat}/>
-                <label for="skillDiplomat"> <span class="trait-name">DIPLOMAT</span>: gain a <span class="boost">BOOST</span> for any test involving defusing a charged situation, resolving a dispute or negotiating an agreement.</label>
-                <img src={diplomat_art} class="art"/>
-            </div>
-            <div class="trait skill">
-                <input id="skillDriver" type="checkbox" name="skillDriver" value={inputs.skillDriver} onChange={handleChange} defaultChecked={inputs.skillDriver}/>
-                <label for="skillDriver"> <span class="trait-name">DRIVER</span>: gain a <span class="boost">BOOST</span> whenever you <a href="/prompts/general-prompts#act-under-pressure">ACT UNDER PRESSURE</a>, <a href="/prompts/general-prompts#secure-an-advantage">SECURE AN ADVANTAGE</a> or <a href="/prompts/general-prompts#clash">CLASH</a> while piloting a vehicle.</label>
-                <img src={driver_art} class="art"/>
-            </div>
-            <div class="trait skill">
-                <input id="skillFace" type="checkbox" name="skillFace" value={inputs.skillFace} onChange={handleChange} defaultChecked={inputs.skillFace}/>
-                <label for="skillFace"> <span class="trait-name">FACE</span>: gain a <span class="boost">BOOST</span> when attempting to <a href="/prompts/general-prompts#secure-an-advantage">SECURE AN ADVANTAGE</a> with leadership, coordination or planning; or when you <a href="/prompts/challenge-prompts#accept-a-challenge">ACCEPT A CHALLENGE</a> by testing your <span class="stat">FLASH</span>.</label>
-                <img src={face_art} class="art"/>
-            </div>
-            <div class="trait skill">
-                <input id="skillGunKata" type="checkbox" name="skillGunKata" value={inputs.skillGunKata} onChange={handleChange} defaultChecked={inputs.skillGunKata}/>
-                <label for="skillGunKata"> <span class="trait-name">GUN KATA</span>: gain a <span class="boost">BOOST</span> whenever you use firearms in close quarters and you test your <span class="stat">EDGE</span> to <a href="/prompts/general-prompts#clash">CLASH</a>, <a href="/prompts/general-prompts#secure-an-advantage">SECURE AN ADVANTAGE</a> or <a href="/prompts/general-prompts#act-under-pressure">ACT UNDER PRESSURE</a>.</label>
-                <img src={gunkata_art} class="art"/>
-            </div>
-            <div class="trait skill">
-                <input id="skillInfiltrator" type="checkbox" name="skillInfiltrator" value={inputs.skillInfiltrator} onChange={handleChange} defaultChecked={inputs.skillInfiltrator}/>
-                <label for="skillInfiltrator"> <span class="trait-name">INFILTRATOR</span>: gain a <span class="boost">BOOST</span> for any test involving breaking into a secure site, deceiving someone through social engineering or impersonating someone with higher access or hierarchy.</label>
-                <img src={infiltrator_art} class="art"/>
-            </div>
-            <div class="trait skill">
-                <input id="skillMedic" type="checkbox" name="skillMedic" value={inputs.skillMedic} onChange={handleChange} defaultChecked={inputs.skillMedic}/>
-                <label for="skillMedic"> <span class="trait-name">MEDIC</span>: gain a <span class="boost">BOOST</span> when you <a href="/prompts/recovery-prompts#heal">HEAL</a>, and if you <a href="/prompts/suffer-prompts#sacrifice-resources">SACRIFICE RESOURCES</a> for it, spend 1 less GEAR than needed to gain the same benefits.</label>
-                <img src={medic_art} class="art"/>
-            </div>
-            <div class="trait skill">
-                <input id="skillNetrunner" type="checkbox" name="skillNetrunner" value={inputs.skillNetrunner} onChange={handleChange} defaultChecked={inputs.skillNetrunner}/>
-                <label for="skillNetrunner"> <span class="trait-name">NETRUNNER</span>: gain a <span class="boost">BOOST</span> for any test involving hacking or surfing the NET.</label>
-                <img src={netrunner_art} class="art"/>
-            </div>
-            <div class="trait skill">
-                <input id="skillSniper" type="checkbox" name="skillSniper" value={inputs.skillSniper} onChange={handleChange} defaultChecked={inputs.skillSniper}/>
-                <label for="skillSniper"> <span class="trait-name">SNIPER</span>: while attacking at long range, gain a <span class="boost">BOOST</span> in <a href="/prompts/general-prompts#clash">CLASH</a> and <a href="/prompts/general-prompts#secure-an-advantage">SECURE AN ADVANTAGE</a> as long as you are <i>IN CONTROL</i>.</label>
-                <img src={sniper_art} class="art"/>
-            </div>
-            <div class="trait skill">
-                <input id="skillStreetRat" type="checkbox" name="skillStreetRat" value={inputs.skillStreetRat} onChange={handleChange} defaultChecked={inputs.skillStreetRat}/>
-                <label for="skillStreetRat"> <span class="trait-name">STREET RAT</span>: gain a <span class="boost">BOOST</span> for any test involving lying, bluffing, stealing or cheating.</label>
-                <img src={streetrat_art} class="art"/>
-            </div>
+
+            <Trait name="skillBlademaster" title="BLADEMASTER" art={blademaster_art} inputs={inputs} handleChange={handleChange}>
+                <span>when wielding a long blade, gain a <span class="boost">BOOST</span> when you test <span class="stat">CHROME</span> to <a href="/prompts/general-prompts#clash">CLASH</a> or when you <a href="/prompts/general-prompts#act-under-pressure">ACT UNDER PRESSURE</a> to defend.</span>
+            </Trait>
+
+            <Trait name="skillBountyHunter" title="BOUNTY HUNTER" art={bountyhunter_art} inputs={inputs} handleChange={handleChange}>
+                <span>gain a <span class="boost">BOOST</span> whenever you <a href="/prompts/general-prompts#gather-information">GATHER INFORMATION</a>, <a href="/prompts/challenge-prompts#accept-a-challenge">ACCEPT A CHALLENGE</a> or <a href="/prompts/challenge-prompts#fulfill-a-challenge">FULFILL A CHALLENGE</a> related to a bounty.</span>
+            </Trait>
+
+            <Trait name="skillBrawler" title="BRAWLER" art={brawler_art} inputs={inputs} handleChange={handleChange}>
+                <span>gain a <span class="boost">BOOST</span> when you <a href="/prompts/general-prompts#act-under-pressure">ACT UNDER PRESSURE</a>, <a href="/prompts/general-prompts#secure-an-advantage">SECURE AN ADVANTAGE</a> or <a href="/prompts/general-prompts#clash">CLASH</a> as long as you are leveraging your unarmed fighting prowess.</span>
+            </Trait>
+
+            <Trait name="skillDiplomat" title="DIPLOMAT" art={diplomat_art} inputs={inputs} handleChange={handleChange}>
+                <span>gain a <span class="boost">BOOST</span> for any test involving defusing a charged situation, resolving a dispute or negotiating an agreement.</span>
+            </Trait>
+
+            <Trait name="skillDriver" title="DRIVER" art={driver_art} inputs={inputs} handleChange={handleChange}>
+                <span>gain a <span class="boost">BOOST</span> whenever you <a href="/prompts/general-prompts#act-under-pressure">ACT UNDER PRESSURE</a>, <a href="/prompts/general-prompts#secure-an-advantage">SECURE AN ADVANTAGE</a> or <a href="/prompts/general-prompts#clash">CLASH</a> while piloting a vehicle.</span>
+            </Trait>
+
+            <Trait name="skillFace" title="FACE" art={face_art} inputs={inputs} handleChange={handleChange}>
+                <span>gain a <span class="boost">BOOST</span> when attempting to <a href="/prompts/general-prompts#secure-an-advantage">SECURE AN ADVANTAGE</a> with leadership, coordination or planning; or when you <a href="/prompts/challenge-prompts#accept-a-challenge">ACCEPT A CHALLENGE</a> by testing your <span class="stat">FLASH</span>.</span>
+            </Trait>
+
+            <Trait name="skillGunKata" title="GUN KATA" art={gunkata_art} inputs={inputs} handleChange={handleChange}>
+                <span>gain a <span class="boost">BOOST</span> whenever you use firearms in close quarters and you test your <span class="stat">EDGE</span> to <a href="/prompts/general-prompts#clash">CLASH</a>, <a href="/prompts/general-prompts#secure-an-advantage">SECURE AN ADVANTAGE</a> or <a href="/prompts/general-prompts#act-under-pressure">ACT UNDER PRESSURE</a>.</span>
+            </Trait>
+
+            <Trait name="skillInfiltrator" title="INFILTRATOR" art={infiltrator_art} inputs={inputs} handleChange={handleChange}>
+                <span>gain a <span class="boost">BOOST</span> for any test involving breaking into a secure site, deceiving someone through social engineering or impersonating someone with higher access or hierarchy.</span>
+            </Trait>
+
+            <Trait name="skillMedic" title="MEDIC" art={medic_art} inputs={inputs} handleChange={handleChange}>
+                <span>gain a <span class="boost">BOOST</span> when you <a href="/prompts/recovery-prompts#heal">HEAL</a>, and if you <a href="/prompts/suffer-prompts#sacrifice-resources">SACRIFICE RESOURCES</a> for it, spend 1 less GEAR than needed to gain the same benefits.</span>
+            </Trait>
+
+            <Trait name="skillNetrunner" title="NETRUNNER" art={netrunner_art} inputs={inputs} handleChange={handleChange}>
+                <span>gain a <span class="boost">BOOST</span> for any test involving hacking or surfing the NET.</span>
+            </Trait>
+
+            <Trait name="skillSniper" title="SNIPER" art={sniper_art} inputs={inputs} handleChange={handleChange}>
+                <span>while attacking at long range, gain a <span class="boost">BOOST</span> in <a href="/prompts/general-prompts#clash">CLASH</a> and <a href="/prompts/general-prompts#secure-an-advantage">SECURE AN ADVANTAGE</a> as long as you are <i>IN CONTROL</i>.</span>
+            </Trait>
+
+            <Trait name="skillStreetRat" title="STREET RAT" art={streetrat_art} inputs={inputs} handleChange={handleChange}>
+                <span>gain a <span class="boost">BOOST</span> for any test involving lying, bluffing, stealing or cheating.</span>
+            </Trait>
+
         </div>
 
         <br/>
