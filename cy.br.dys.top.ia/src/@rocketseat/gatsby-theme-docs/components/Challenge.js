@@ -5,6 +5,10 @@ import IconButton from '@material-ui/core/IconButton';
 
 const Challenge = ({challengeIndex, inputs, setInputs, deleteChallengeFunction}) => {
 
+  const delay = ms => new Promise(
+    resolve => setTimeout(resolve, ms)
+  );
+
   const challengeContainerId = "challenge-container-"+challengeIndex;
   const chDescId = "chDesc"+challengeIndex;
   const chProgressId = "chProgress"+challengeIndex; 
@@ -35,24 +39,29 @@ const Challenge = ({challengeIndex, inputs, setInputs, deleteChallengeFunction})
     var currentrank = parseInt(event.target.attributes.currentrank.value);
 
     var newProgress = null;
+    var numberChange = 0;
 
     switch (currentrank) {
       case 1:
-        newProgress = currentprogress + 30;
+        numberChange = 30;
         break;
       case 2:
-        newProgress = currentprogress + 20;
+        numberChange = 20;
         break;
       case 3:
-        newProgress = currentprogress + 10;
+        numberChange = 10;
         break;
       case 4:
-        newProgress = currentprogress + 5;
+        numberChange = 5;
         break;
       case 5:
-        newProgress = currentprogress + 2;
+        numberChange = 2;
         break;
     }
+
+    newProgress = currentprogress + numberChange;
+    spawnFloatingNumber(event.target, numberChange);
+
     if ( newProgress > 99 ) {
       newProgress = 99;
     }
@@ -72,24 +81,29 @@ const Challenge = ({challengeIndex, inputs, setInputs, deleteChallengeFunction})
     var currentrank = parseInt(event.target.attributes.currentrank.value);
 
     var newProgress = null;
+    var numberChange = 0;
 
     switch (currentrank) {
       case 1:
-        newProgress = currentprogress - 30;
+        numberChange = -30;
         break;
       case 2:
-        newProgress = currentprogress - 20;
+        numberChange = -20;
         break;
       case 3:
-        newProgress = currentprogress - 10;
+        numberChange = -10;
         break;
       case 4:
-        newProgress = currentprogress - 5;
+        numberChange = -5;
         break;
       case 5:
-        newProgress = currentprogress - 2;
+        numberChange = -2;
         break;
     }
+
+    newProgress = currentprogress + numberChange;
+    spawnFloatingNumber(event.target, numberChange);
+
     if ( newProgress < 1 ) {
       newProgress = 1;
     }
@@ -101,6 +115,32 @@ const Challenge = ({challengeIndex, inputs, setInputs, deleteChallengeFunction})
     progressFieldEl.value = newProgress;
 
     reactTriggerChange(progressFieldEl);
+  }
+
+  async function spawnFloatingNumber(buttonEl, number) {
+    const progressBarEl = buttonEl.parentElement.parentElement.querySelectorAll('.progress-bar-inner')[0];
+    const progressBarRect = progressBarEl.getBoundingClientRect();
+
+    const topPos = progressBarRect.top + window.scrollY - 10;
+    const leftPos = progressBarRect.right;
+
+    const text = number < 0 ? `${number}%` : `+${number}%`; 
+    const color = number < 0 ? "#ff0096ff" : "#0cffe1ff";
+
+    const floatingNumberContainer = document.createElement("div");
+    floatingNumberContainer.classList.add('floating-number-container');
+    const floatingNumber = document.createTextNode(text);
+    floatingNumberContainer.appendChild(floatingNumber);
+
+    floatingNumberContainer.style.position = 'absolute';
+    floatingNumberContainer.style.top = `${topPos}px`;
+    floatingNumberContainer.style.left = `${leftPos}px`;
+    floatingNumberContainer.style.color = color;
+
+    document.body.appendChild(floatingNumberContainer);
+
+    await delay(1000);
+    floatingNumberContainer.remove();
   }
 
   return (

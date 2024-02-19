@@ -521,6 +521,17 @@ export default function GlobalStyle() {
           -moz-appearance: textfield;
         }
 
+        .floating-number-container {
+          font-weight: bold;
+          text-shadow: 2px 2px 4px #000;
+          font-size: 0.9em;
+          animation: float 1s ease-out 1;
+          @keyframes float {
+            70% { opacity: 1; }
+            100% { transform: translate(0, -20px) rotate(-10deg); opacity: 0; }
+          }
+        }
+
         ${'' /* MENU */}
         aside {
           background-color: ${theme.darkcolors.background} !important;
