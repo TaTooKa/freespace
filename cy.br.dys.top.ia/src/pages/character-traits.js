@@ -33,6 +33,9 @@ import dealer_art from '/src/images/dealer.jpg';
 import fixer_art from '/src/images/fixer.jpg';
 import infobroker_art from '/src/images/infobroker.jpg';
 import streetdoc_art from '/src/images/streetdoc.jpg';
+import plaskin_art from '/src/images/plaskin.jpg';
+import simsenserecorder_art from '/src/images/simsenserecorder.jpg';
+import voicemod_art from '/src/images/voicemod.jpg';
 
 function CharacterStats() {
   const windowGlobal = typeof window !== 'undefined' && window
@@ -168,7 +171,7 @@ function CharacterStats() {
             </Trait>
 
             <Trait type="skill" name="BountyHunter" title="BOUNTY HUNTER" art={bountyhunter_art} inputs={inputs} handleChange={handleChange}>
-                <span>gain a <span class="boost">BOOST</span> whenever you <a href="/prompts/general-prompts#gather-information">GATHER INFORMATION</a>, <a href="/prompts/challenge-prompts#accept-a-challenge">ACCEPT A CHALLENGE</a> or <a href="/prompts/challenge-prompts#fulfill-a-challenge">FULFILL A CHALLENGE</a> related to a bounty.</span>
+                <span>gain a <span class="boost">BOOST</span> whenever you <a href="/prompts/general-prompts#gather-information">GATHER INFORMATION</a>, <a href="/prompts/challenge-prompts#accept-a-challenge">ACCEPT A CHALLENGE</a> or <a href="/prompts/challenge-prompts#fulfill-a-challenge">FULFILL A CHALLENGE</a> related to a bounty or the procurement of a person.</span>
             </Trait>
 
             <Trait type="skill" name="Brawler" title="BRAWLER" art={brawler_art} inputs={inputs} handleChange={handleChange}>
@@ -208,7 +211,7 @@ function CharacterStats() {
             </Trait>
 
             <Trait type="skill" name="StreetRat" title="STREET RAT" art={streetrat_art} inputs={inputs} handleChange={handleChange}>
-                <span>gain a <span class="boost">BOOST</span> for any test involving lying, bluffing, stealing or cheating.</span>
+                <span>gain a <span class="boost">BOOST</span> for any test involving lying, bluffing, stealing or cheating, or when you <a href="/prompts/general-prompts#gather-information">GATHER INFORMATION</a> in the underbelly of the city.</span>
             </Trait>
 
         </div>
@@ -223,7 +226,7 @@ function CharacterStats() {
             <h2 id="gear-and-cyberware">GEAR AND CYBERWARE</h2>
 
             <Trait type="gear" name="Armored" title="ARMORED" art={armored_art} inputs={inputs} handleChange={handleChange}>
-                <span><i>Shiny and Chrome</i>. gain a <span class="boost">BOOST</span> when you <a href="/prompts/general-prompts#act-under-pressure">ACT UNDER PRESSURE</a> or <a href="/prompts/general-prompts#clash">CLASH</a> against physical attacks or impact damage.</span>
+                <span><i>Shiny and Chrome</i>. Muscle+Bone lace and/or metallic alloy plating. Gain a <span class="boost">BOOST</span> when you <a href="/prompts/general-prompts#act-under-pressure">ACT UNDER PRESSURE</a> or <a href="/prompts/general-prompts#clash">CLASH</a> against physical attacks or impact damage.</span>
             </Trait>
 
             <Trait type="gear" name="Brainbox" title="BRAINBOX" art={brainbox_art} inputs={inputs} handleChange={handleChange}>
@@ -246,8 +249,17 @@ function CharacterStats() {
                 <span><i>Jack me in</i>. gain a <span class="boost">BOOST</span> when netrunning in <i>deep mode</i> (full sensory immersion).</span>
             </Trait>
 
+            <Trait type="gear" name="Plaskin" title="PLASKIN" art={plaskin_art} inputs={inputs} handleChange={handleChange}>
+                <span><i>Better than real skin™.</i> A patch of flexible carbon-fiber polymer mesh over muscle tissue, covered in artificial plastic skin (a self-healing material). Sensitive feedback can be tuned up or down at will. Installable in any part of the body you want. Gain a <span class="boost">BOOST</span> when you <a href="/prompts/general-prompts#act-under-pressure">ACT UNDER PRESSURE</a> to resist electric/cold/heat damage on that body part, or when you <a href="/prompts/recovery-prompts#heal">HEAL</a> from burns, cuts or scratches. </span>
+            </Trait>
+
             <Trait type="gear" name="RetinalHud" title="RETINAL HUD" art={retinalhud_art} inputs={inputs} handleChange={handleChange}>
                 <span><i>Target acquired</i>. Your cybereyes project an augmented display with target acquisition, IFF software (identify friend/foe), vulnerability analysis, personal data retrieval, etc. Gain a <span class="boost">BOOST</span> whenever that would give you an advantage in action-packed situations or investigation scenes.</span>
+            </Trait>
+            
+            <Trait type="gear" name="SimsenseRecorder" title="SIMSENSE RECORDER" art={simsenserecorder_art} inputs={inputs} handleChange={handleChange}>
+                <span>Live <i>Better Than Life™</i> experiences. SimSense allows to record/playback someone's experience in full five senses. Filtered simchips translate physical sensations only; unfiltered (hacked) ones also replay emotions and thoughts. Apart from being able to replay simchips from others, you can record your own ones to replay later (which gives a <span class="boost">BOOST</span> when you <a href="/prompts/general-prompts#secure-an-advantage">SECURE AN ADVANTAGE</a> or <a href="/prompts/general-prompts#gather-information">GATHER INFORMATION</a> related to that scene, or when you <a href="/prompts/recovery-prompts#relax">RELAX</a> by reliving a pleasant moment).
+</span>
             </Trait>
 
             <Trait type="gear" name="SmartCosmetics" title="SMART COSMETICS" art={smartcosmetics_art} inputs={inputs} handleChange={handleChange}>
@@ -267,11 +279,15 @@ function CharacterStats() {
             </Trait>
 
             <Trait type="gear" name="ThermopticCamo" title="THERMOPTIC CAMO" art={thermopticcamo_art} inputs={inputs} handleChange={handleChange}>
-                <span><i>now you see me</i>... gain a <span class="boost">BOOST</span> whenever you test your <span class="stat">SHADE</span> by going almost invisible.</span>
+                <span><i>now you see me</i>... Camouflage with nano cameras that records what's behind and reproduces it in front. Gain a <span class="boost">BOOST</span> whenever you test your <span class="stat">SHADE</span> by going almost invisible.</span>
+            </Trait>
+
+            <Trait type="gear" name="VoiceMod" title="VOICE MOD" art={voicemod_art} inputs={inputs} handleChange={handleChange}>
+                <span><i>Change your voice on demand</i>. This throat+larynx implant includes settings for Ventriloquism, Velvet Singer, Extra-Loud, Screamo Growl, Autotune, Voice-Copy, Instant-Translate, Polyphone, Sound FX, among others. Gain a <span class="boost">BOOST</span> whenever using those features could give you an advantage.</span>
             </Trait>
 
             <Trait type="gear" name="WiredReflexes" title="WIRED REFLEXES" art={wiredreflexes_art} inputs={inputs} handleChange={handleChange}>
-                <span><i>Sandevistan!</i> gain a <span class="boost">BOOST</span> when you test your <span class="stat">EDGE</span> to <a href="/prompts/general-prompts#act-under-pressure">ACT UNDER PRESSURE</a>, <a href="/prompts/general-prompts#secure-an-advantage">SECURE AN ADVANTAGE</a> or <a href="/prompts/general-prompts#clash">CLASH</a>.</span>
+                <span><i>Sandevistan!</i> Spine implant with neural boosters and adrenaline stimulators that makes you abnormaly fast. Gain a <span class="boost">BOOST</span> when you test your <span class="stat">EDGE</span> to <a href="/prompts/general-prompts#act-under-pressure">ACT UNDER PRESSURE</a>, <a href="/prompts/general-prompts#secure-an-advantage">SECURE AN ADVANTAGE</a> or <a href="/prompts/general-prompts#clash">CLASH</a>.</span>
             </Trait>
 
         </div>
