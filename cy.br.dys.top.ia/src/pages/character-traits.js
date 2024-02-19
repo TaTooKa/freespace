@@ -143,6 +143,12 @@ function CharacterStats() {
     loadingEl.style.display = "none";
     var traitsFormEl = document.getElementById("character-traits-form");
     traitsFormEl.style.display = "block";
+    
+    // scroll to anchor, if present in url
+    const hash = window.location.hash.substring(1);
+    if ( hash.length !== 0 )  {
+      window.location = window.location;
+    }
   }
 
   return (
@@ -211,7 +217,7 @@ function CharacterStats() {
             </Trait>
 
             <Trait type="skill" name="StreetRat" title="STREET RAT" art={streetrat_art} inputs={inputs} handleChange={handleChange}>
-                <span>gain a <span class="boost">BOOST</span> for any test involving lying, bluffing, stealing or cheating, or when you <a href="/prompts/general-prompts#gather-information">GATHER INFORMATION</a> in the underbelly of the city.</span>
+                <span>gain a <span class="boost">BOOST</span> for any test involving lying, bluffing, stealing or cheating, or when you <a href="/prompts/general-prompts#act-under-pressure">ACT UNDER PRESSURE</a> or <a href="/prompts/general-prompts#gather-information">GATHER INFORMATION</a> in the underbelly of the city.</span>
             </Trait>
 
         </div>
