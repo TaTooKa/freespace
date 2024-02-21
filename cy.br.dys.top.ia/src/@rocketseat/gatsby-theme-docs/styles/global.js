@@ -1136,6 +1136,9 @@ export default function GlobalStyle() {
                   height: 20px;
                   display: block;
                   margin: 5px 0 0 0;
+                  @media screen and (max-width: 500px) {
+                    font-size: 0.5em;
+                  }
                 }
                 input.progress {
                   width: 100%;
