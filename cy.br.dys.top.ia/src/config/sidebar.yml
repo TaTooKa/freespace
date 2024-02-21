@@ -34,12 +34,12 @@
       link: '/oracles/mission-oracles'
     - label: 'Misc Oracles'
       link: '/oracles/misc-oracles'
-- label: Rules Reference
+- label: Game Rules
   items:
-    - label: 'General Rules'
-      link: '/rules/general-rules'
     - label: 'How To Play'
       link: '/rules/how-to-play'
+    - label: 'Quick Reference'
+      link: '/rules/quick-reference'
 - label: Meta
   items:
     - label: 'Introduction'
