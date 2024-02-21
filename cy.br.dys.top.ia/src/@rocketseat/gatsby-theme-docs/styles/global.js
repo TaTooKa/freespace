@@ -764,6 +764,24 @@ export default function GlobalStyle() {
                     box-shadow: inset 0 0 5px ${theme.colors.turquoise};
                     text-shadow: 0 0 10px ${theme.colors.turquoise};
                 }
+                input:checked+label.stat-level-0 {
+                  filter: hue-rotate(190deg);
+                }
+                input:checked+label.stat-level-1 {
+                  filter: hue-rotate(220deg);
+                }
+                input:checked+label.stat-level-2 {
+                  filter: hue-rotate(250deg);
+                }
+                input:checked+label.stat-level-3 {
+                  filter: hue-rotate(270deg);
+                }
+                input:checked+label.stat-level-4 {
+                  filter: hue-rotate(340deg);
+                }
+                input:checked+label.stat-level-5 {
+                  filter: hue-rotate(0deg);
+                }
                 input {
                     display: none;
                 }
