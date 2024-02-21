@@ -1054,27 +1054,65 @@ export default function GlobalStyle() {
           .challenge-container {
             margin: 30px 0 30px 0;
             border: 1px solid #0a6d6199;
+            background-color: ${theme.darkcolors.background};
             border-radius: 5px 15px 5px 5px;
             padding: 15px 5px;
-            transition: 1.5s ease-out;
+            transition: 0.25s ease-out;
             &.created {
-              box-shadow: 0 0 20px ${theme.colors.turquoise}; 
+              box-shadow: 0 0 10px #fff !important; 
             }
             .challenge-inputs {
               width: 98%;
               margin: 0 5px 0 5px;
+              .minimize-button {
+                margin: -10px 0 0 -5px;
+                width: 25px;
+                display: block;
+                position: absolute;
+                span.button {
+                  margin: 5px;
+                  display: block;
+                  width: 100%;
+                  height: 25px;
+                  border: 1px solid ${theme.colors.turquoise};
+                  box-shadow: inset 0 0 5px ${theme.colors.turquoise};
+                  border-radius: 3px;
+                  text-align: center;
+                  vertical-align: middle;
+                  transition: .5s ease;
+                  :hover {
+                    box-shadow: inset 0 0 15px ${theme.colors.turquoise};
+                    cursor: pointer;
+                  }
+                  svg.MuiSvgIcon-root {
+                    margin: 0px auto;
+                    text-align: center;
+                    transition: 1s ease;
+                    color: ${theme.colors.turquoise};
+                    opacity: .7;
+                    scale: 90%;
+                    :hover {
+                      opacity: 1;
+                      scale: 105%;
+                      color: #fff;
+
+                    }
+                  }
+                }
+              }
               .description-container {
                 display: inline-block;
                 width: 78%;
                 label {
                   display: block;
                   font-size: 0.8em;
+                  text-transform: uppercase;
                   font-weight: bold;
                   height: 20px;
-                  margin: 0 0 5px 15px;
+                  margin: 0 0 5px 40px;
                   @media screen and (max-width: 700px) {
                     font-size: 0.7em;
-                    margin: 0 0 5px 0;
+                    margin: 0 0 5px 40px;
                     white-space: nowrap;
                   }
                 }
@@ -1103,8 +1141,20 @@ export default function GlobalStyle() {
                   width: 100%;
                   height: 35px;
                   border-radius: 0 20px 3px 0;
+                  :disabled {
+                    border: 1px solid #222;
+                    color: #999;
+                    box-shadow: inset 0 0 6px #666;
+                    text-shadow: 0 0 15px #222;
+                    cursor: not-allowed;
+                  }
                 }
               }
+            }
+
+            .challenge-controls {
+              transition: 0.5s ease-in;
+              max-height: 200px;
             }
 
             .progress-bar-container {
@@ -1165,6 +1215,13 @@ export default function GlobalStyle() {
                 :active {
                   box-shadow: inset 0 0 20px ${theme.colors.turquoise};
                 }
+                :disabled {
+                  border: 1px solid #222;
+                  color: #666;
+                  box-shadow: inset 0 0 6px #666;
+                  text-shadow: 0 0 15px #222;
+                  cursor: not-allowed;
+                }
               }
               .revert-progress-button {
                 width: 28%;
@@ -1178,186 +1235,158 @@ export default function GlobalStyle() {
                 :active {
                   box-shadow: inset 0 0 20px ${theme.colors.fuchsia};
                 }
-              }
-
-            }
-
-            .ranks-container {
-              display: flex;
-              margin: 5px 0 0 0;
-              @media screen and (max-width: 1300px) {
-                label {
-                  margin: 5px auto;
-                  max-width: 100px !important;
-                  min-width: 20px !important;
-                  width: 82px;
-                }
-              }
-              @media screen and (max-width: 1200px) {
-                label {
-                  margin: 5px auto;
-                  max-width: 100px !important;
-                  min-width: 20px !important;
-                  width: 120px;
-                }
-              }
-              @media screen and (max-width: 930px) {
-                label {
-                  margin: 5px auto;
-                  width: 82px;
-                }
-              }
-              @media screen and (max-width: 840px) {
-                display: block;
-                height: 100px;
-                label {
-                  width: 25%;
-                  height: 35px;
-                  float: left;
-                  margin: 5px auto;
-                }
-              }
-              @media screen and (max-width: 780px) {
-                height: 50px;
-                display: flex;
-                content-align: center;
-                label {
-                  margin: 5px auto;
-                  max-width: 130px !important;
-                  min-width: 20px !important;
-                  width: 100%;
-                }
-              }
-              @media screen and (max-width: 600px) {
-                display: block;
-                height: 100px;
-                label {
-                  width: 25%;
-                  height: 35px;
-                  float: left;
-                  margin: 5px auto;
-                }
-              }
-              @media screen and (max-width: 400px) {
-                label {
-                  font-size: .35em !important;
-                }
-              }
-              .rank-button {
-                margin: 0 auto;
-                input {
-                  display: none;
-                }
-                label {
-                  display: block;
-                  cursor: pointer;
-                  margin: 5px;
-                  font-size: 0.4em;
-                  padding: 6px 6px 6px 8px;
-                  border-radius: 10px;
-                  border: 1px solid #666;
+                :disabled {
+                  border: 1px solid #222;
                   color: #666;
-                  transition: 0.5s;
-                  word-break: break-word;
-                  box-shadow: inset 0 0 5px #000;
-                  text-align: center;
-                  min-width: 100px;
-                  .rank-type {
-                    font-weight: bold;
-                    font-size: 1.4em;
-                  }
+                  box-shadow: inset 0 0 6px #666;
+                  text-shadow: 0 0 15px #222;
+                  cursor: not-allowed;
                 }
-                input:checked+label {
-                  border: 1px solid ${theme.colors.turquoise};
-                  color: ${theme.colors.turquoise};
-                  box-shadow: 0 0 5px ${theme.colors.turquoise};
-                }
-
               }
+
             }
-            .state-buttons-container {
+
+            .selectors-container {
               display: flex;
-              margin: 5px 0 0 0;
-              .state-button {
-                margin: 0 auto;
-                width: 100%;
-                cursor: pointer;
-                input {
-                  display: none;
-                }
-                label {
-                  display: block;
-                  cursor: pointer;
-                  text-align: center;
-                  margin: 5px;
+              flex-flow: row;
+              flex-wrap: wrap;
+              margin: 10px 0;
+
+              .ranks-container {
+                margin: 3px 5px;
+                display: flex;
+                flex-basis: 150px;
+                flex-grow: 1;
+                text-align: center;
+                .rank-label {
                   font-size: 0.7em;
                   font-weight: bold;
-                  padding: 6px 6px 6px 8px;
-                  border-radius: 3px;
-                  border: 1px solid #666;
-                  color: #666;
-                  transition: 1s;
-                  word-break: break-word;
-                  box-shadow: inset 0 0 5px #000;
-                  @media screen and (max-width: 700px) {
-                    font-size: 0.6em;
-                  }
-                  @media screen and (max-width: 400px) {
-                    font-size: 0.4em;
+                  width: 30%;
+                  padding: 8px 0 0 0;
+                }
+                select {
+                  border: 1px solid ${theme.colors.turquoise};
+                  border-radius: 5px;
+                  color: ${theme.colors.turquoise};
+                  cursor: pointer;
+                  background-color: ${theme.darkcolors.background};
+                  box-shadow: inset 0 0 5px ${theme.colors.turquoise};
+                  height: 30px;
+                  padding: 5px;
+                  margin: 0 5px;
+                  flex-grow: 1;
+                  font-family: 'EuroStyle';
+                  font-weight: bold;
+                  letter-spacing: 0.1em;
+                  text-align: center;
+                  :disabled {
+                    border: 1px solid #222;
+                    color: #666;
+                    box-shadow: inset 0 0 6px #666;
+                    text-shadow: 0 0 15px #222;
+                    cursor: not-allowed;
                   }
                 }
               }
-              .state-button.state-button-active input:checked+label {
-                  border: 1px solid white;
-                  color: white;
-                  box-shadow: 0 0 5px white;
-              }
-              .state-button.state-button-fulfilled input:checked+label {
-                  border: 1px solid ${theme.colors.turquoise};
-                  color: ${theme.colors.turquoise};
-                  box-shadow: 0 0 5px ${theme.colors.turquoise};
-              }
-              .state-button.state-button-failed input:checked+label {
-                  border: 1px solid ${theme.colors.fuchsia};
-                  color: ${theme.colors.fuchsia};
-                  box-shadow: 0 0 5px ${theme.colors.fuchsia};
-              }
-              .erase-button {
-                margin: 0 10px 0 0;
-                span.button {
-                  margin: 5px;
-                  display: block;
-                  width: 100%;
-                  height: 30px;
-                  border: 1px solid ${theme.colors.fuchsia};
-                  box-shadow: inset 0 0 5px ${theme.colors.fuchsia};
-                  border-radius: 3px;
-                  text-align: center;
-                  vertical-align: middle;
-                  transition: .5s ease;
-                  :hover {
-                    box-shadow: inset 0 0 15px ${theme.colors.fuchsia};
-                    cursor: pointer;
-                  }
-                  svg.MuiSvgIcon-root {
-                    margin: 1px auto;
-                    text-align: center;
-                    transition: 1s ease;
-                    color: ${theme.colors.fuchsia};
-                    opacity: .7;
-                    scale: 90%;
-                    :hover {
-                      opacity: 1;
-                      scale: 105%;
-                      color: #fff;
 
-                    }
-                  }
+              .state-container {
+                margin: 3px 5px;
+                display: flex;
+                flex-basis: 150px;
+                flex-grow: 1;
+                text-align: center;
+                .state-label {
+                  font-size: 0.7em;
+                  font-weight: bold;
+                  width: 30%;
+                  padding: 8px 0 0 0;
+                }
+                select {
+                  border: 1px solid ${theme.colors.turquoise};
+                  border-radius: 5px;
+                  color: ${theme.colors.turquoise};
+                  cursor: pointer;
+                  background-color: ${theme.darkcolors.background};
+                  box-shadow: inset 0 0 5px ${theme.colors.turquoise};
+                  height: 30px;
+                  padding: 5px;
+                  margin: 0 5px;
+                  flex-grow: 1;
+                  font-family: 'EuroStyle';
+                  font-weight: bold;
+                  letter-spacing: 0.1em;
+                  text-align: center;
+                }
+              }
+
+            }
+
+
+            .buttons-container {
+              display: flex;
+              .button {
+                display: flex;
+                justify-content: center;
+                border: 1px solid ${theme.colors.turquoise};
+                box-shadow: inset 0 0 5px ${theme.colors.turquoise};
+                color: ${theme.colors.turquoise};
+                border-radius: 5px;
+                margin: 0 4px;
+                flex-grow: 1;
+                transition: 0.5s;
+                :hover {
+                  box-shadow: inset 0 0 15px ${theme.colors.turquoise};
+                  cursor: pointer;
+                  color: #fff;
+                }
+              }
+              .button.delete {
+                border: 1px solid ${theme.colors.fuchsia};
+                box-shadow: inset 0 0 5px ${theme.colors.fuchsia};
+                color: ${theme.colors.fuchsia};
+                :hover {
+                  box-shadow: inset 0 0 15px ${theme.colors.fuchsia};
+                  color: #fff;
                 }
               }
 
             }
           }
+
+          .challenge-container.minimized .challenge-controls {
+            opacity: 0;
+            max-height: 0px;
+            visibility: hidden;
+          }
+
+          .challenge-container.challenge-indent-0 {
+            margin-left: 0px;
+          }
+          .challenge-container.challenge-indent-1 {
+            margin-left: 20px;
+          }
+          .challenge-container.challenge-indent-2 {
+            margin-left: 40px;
+          }
+
+          .challenge-container.state-active {
+            border: 1px solid #585d66ff;
+            box-shadow: inset 0 0 5px #585d66ff;
+            background: #242d39ff;
+          }
+
+          .challenge-container.state-fulfilled {
+            border: 1px solid #146157ff;
+            box-shadow: inset 0 0 15px #146157ff;
+            background: #0f2a27ff;
+          }
+
+          .challenge-container.state-failed {
+            border: 1px solid #552240ff;
+            box-shadow: inset 0 0 15px ${theme.colors.fuchsia};
+            background: #291220ff;
+          }
+
           .challenge-deleted-anim {
             transition: .5s ease-out;
             margin: 30px 0 30px 0;

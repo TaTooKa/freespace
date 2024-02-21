@@ -1,66 +1,77 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import reactTriggerChange from 'react-trigger-change';
 import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
+import UnfoldLessIcon from '@material-ui/icons/UnfoldLess';
+import UnfoldMoreIcon from '@material-ui/icons/UnfoldMore';
+import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
+import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown';
+import KeyboardArrowLeftIcon from '@material-ui/icons/KeyboardArrowLeft';
+import KeyboardArrowRightIcon from '@material-ui/icons/KeyboardArrowRight';
 import IconButton from '@material-ui/core/IconButton';
 
-const Challenge = ({challengeIndex, inputs, setInputs, deleteChallengeFunction}) => {
+const Challenge = ({challenge, index, challenges, setChallenges}) => {
 
   const delay = ms => new Promise(
     resolve => setTimeout(resolve, ms)
   );
 
-  const challengeContainerId = "challenge-container-"+challengeIndex;
-  const chDescId = "chDesc"+challengeIndex;
-  const chProgressId = "chProgress"+challengeIndex; 
-  const chStateId = "chState"+challengeIndex;
-  const chRankName = "chRank"+challengeIndex;
-  var makeProgressButtonId = "makeProgressButton"+challengeIndex;
-  var revertProgressButtonId = "revertProgressButton"+challengeIndex;
+  const chContainerId = "challenge-container-"+index;
+  const chDescId = "chDesc"+index;
+  const chProgressId = "chProgress"+index; 
+  const chRankName = "chRank"+index;
+  const chStateName = "chState"+index;
+  var makeProgressButtonId = "makeProgressButton"+index;
+  var revertProgressButtonId = "revertProgressButton"+index;
+  var minimized = challenge["minimized"];
+  var classes = "challenge-container challenge-indent-"+challenge['indent'];
+  classes += minimized ? " minimized" : "";
+  classes += " state-" + challenge['state'];
+  var challengeDescription = challenge['state'] + " challenge";
+
+  useEffect(() => {
+    toggleBlockControls(challenge['state']);
+  }, [challenges]);
 
   const handleChange = (event) => {
-    if ( event.target.type == "checkbox" ) {
-        const name = event.target.name;
-        const value = event.target.checked;
-        setInputs(values => ({...values, [name]: value}))
-    } else if ( event.target.type == "number" ) {
-      const name = event.target.name;
-      var value = event.target.value;
-      setInputs(values => ({...values, [name]: value}))
-    } else {
-        const name = event.target.name;
-        const value = event.target.value;
-        setInputs(values => ({...values, [name]: value}))
+    const target = event.target;
+    const value = target.type === 'checkbox' ? target.checked : target.value;
+    const key = target.name;
+
+    let tempChallenges = [...challenges];
+    tempChallenges[index][key] = value;
+    setChallenges(tempChallenges);
+
+    if ( target.name === "state" ) {
+      toggleBlockControls(value);
     }
   }
 
-  const makeProgress = (event) => {
+  const makeProgress = (event, currentprogress, currentrank) => {
     event.preventDefault();
-    var currentprogress = parseInt(event.target.attributes.currentprogress.value);
-    var currentrank = parseInt(event.target.attributes.currentrank.value);
 
     var newProgress = null;
     var numberChange = 0;
 
     switch (currentrank) {
-      case 1:
+      case 'short':
         numberChange = 30;
         break;
-      case 2:
+      case 'medium':
         numberChange = 20;
         break;
-      case 3:
+      case 'long':
         numberChange = 10;
         break;
-      case 4:
+      case 'extreme':
         numberChange = 5;
         break;
-      case 5:
+      case 'epic':
         numberChange = 2;
         break;
     }
 
     newProgress = currentprogress + numberChange;
-    spawnFloatingNumber(event.target, numberChange);
+    spawnFloatingNumber(numberChange);
 
     if ( newProgress > 99 ) {
       newProgress = 99;
@@ -75,34 +86,32 @@ const Challenge = ({challengeIndex, inputs, setInputs, deleteChallengeFunction})
     reactTriggerChange(progressFieldEl);
   }
 
-  const revertProgress = (event) => {
+  const revertProgress = (event, currentprogress, currentrank) => {
     event.preventDefault();
-    var currentprogress = parseInt(event.target.attributes.currentprogress.value);
-    var currentrank = parseInt(event.target.attributes.currentrank.value);
 
     var newProgress = null;
     var numberChange = 0;
 
     switch (currentrank) {
-      case 1:
+      case 'short':
         numberChange = -30;
         break;
-      case 2:
+      case 'medium':
         numberChange = -20;
         break;
-      case 3:
+      case 'long':
         numberChange = -10;
         break;
-      case 4:
+      case 'extreme':
         numberChange = -5;
         break;
-      case 5:
+      case 'epic':
         numberChange = -2;
         break;
     }
 
     newProgress = currentprogress + numberChange;
-    spawnFloatingNumber(event.target, numberChange);
+    spawnFloatingNumber(numberChange);
 
     if ( newProgress < 1 ) {
       newProgress = 1;
@@ -117,8 +126,9 @@ const Challenge = ({challengeIndex, inputs, setInputs, deleteChallengeFunction})
     reactTriggerChange(progressFieldEl);
   }
 
-  async function spawnFloatingNumber(buttonEl, number) {
-    const progressBarEl = buttonEl.parentElement.parentElement.querySelectorAll('.progress-bar-inner')[0];
+  async function spawnFloatingNumber(number) {
+    const challengeContainerEl = document.getElementById(chContainerId);
+    const progressBarEl = challengeContainerEl.querySelectorAll('.progress-bar-inner')[0];
     const progressBarRect = progressBarEl.getBoundingClientRect();
 
     const topPos = progressBarRect.top + window.scrollY - 10;
@@ -143,72 +153,213 @@ const Challenge = ({challengeIndex, inputs, setInputs, deleteChallengeFunction})
     floatingNumberContainer.remove();
   }
 
+  const minimizeToggle = () => {
+    let tempChallenges = [...challenges];
+    tempChallenges[index]["minimized"] = minimized ? false : true;
+    setChallenges(tempChallenges);
+  }
+
+  async function moveChallengeUp() {
+    if ( index > 0 ) {
+      hideWhileMoving(index-1, "up");
+      await delay(250);
+      let tempChallenges = [...challenges];
+      [tempChallenges[index], tempChallenges[index-1]] = [tempChallenges[index-1], tempChallenges[index]];
+      setChallenges(tempChallenges);
+    }
+  }
+
+  async function moveChallengeDown() {
+    if ( index < challenges.length-1 ) {
+      hideWhileMoving(index+1, "down");
+      await delay(250);
+      let tempChallenges = [...challenges];
+      [tempChallenges[index], tempChallenges[index+1]] = [tempChallenges[index+1], tempChallenges[index]];
+      setChallenges(tempChallenges);
+    }
+  }
+
+  async function hideWhileMoving(otherIndex, direction) {
+    var movement = direction === "up" ? -100 : 100;
+    var challengeEl = document.getElementById(chContainerId);
+    var otherChallengeEl = document.getElementById("challenge-container-"+otherIndex);
+    var challengeElorigMarginLeft = challengeEl.style.marginLeft;
+    var otherChallengeElorigMarginLeft = otherChallengeEl.style.marginLeft;
+    // challengeEl.style.opacity = 0;
+    challengeEl.style.transform = "translate(0, "+movement+"px)";
+    challengeEl.style.filter = "blur(25px) brightness(0)";
+    challengeEl.style.marginLeft = "0";
+    // otherChallengeEl.style.opacity = 0;
+    otherChallengeEl.style.transform = "translate(0, "+(-movement)+"px)";
+    otherChallengeEl.style.filter = "blur(25px) brightness(0)";
+    otherChallengeEl.style.marginLeft = "0";
+    await delay(700);
+    // challengeEl.style.opacity = 1;
+    challengeEl.style.transform = "translate(0, 0)";
+    challengeEl.style.filter = "none";
+    challengeEl.style.marginLeft = challengeElorigMarginLeft;
+    // otherChallengeEl.style.opacity = 1;
+    otherChallengeEl.style.transform = "translate(0, 0)";
+    otherChallengeEl.style.filter = "none";
+    otherChallengeEl.style.marginLeft = otherChallengeElorigMarginLeft;
+  }
+
+  const indentChallengeLeft = () => {
+    if ( challenge['indent'] > 0 ) {
+      let tempChallenges = [...challenges];
+      tempChallenges[index]['indent'] -= 1;
+      setChallenges(tempChallenges);
+    }
+  }
+
+  const indentChallengeRight = () => {
+    if ( challenge['indent'] < 2 ) {
+      let tempChallenges = [...challenges];
+      tempChallenges[index]['indent'] += 1;
+      setChallenges(tempChallenges);
+    }
+  }
+
+  async function deleteChallenge() {
+    removeChallengeAnimation();
+    let tempChallenges = [...challenges];
+    tempChallenges.splice(index, 1);
+    setChallenges(tempChallenges);
+  }
+
+  async function removeChallengeAnimation() {
+    var challengeFormEl = document.getElementById("challenge-form");
+    var challengeContainerEl = document.getElementById("challenge-container-"+index);
+    var containerHeight = challengeContainerEl.getBoundingClientRect().height;
+    var animEl = document.createElement("div");
+    animEl.classList.add("challenge-deleted-anim");
+    animEl.style.height = Math.round(containerHeight)+"px";
+
+    challengeFormEl.insertBefore(animEl, challengeContainerEl);
+    challengeContainerEl.style.border = "1px solid red !important";
+    var deletingTextEl = document.createElement("span");
+    deletingTextEl.innerText = "DELETING ...";
+    animEl.appendChild(deletingTextEl);
+
+    await delay(300);
+    animEl.classList.add("phase1");
+    await delay(300);
+    animEl.classList.add("phase2");
+    animEl.classList.remove("phase1");
+    await delay(300);
+    animEl.classList.add("phase3");
+    animEl.classList.remove("phase2");
+    await delay(300);
+    animEl.classList.add("phase4");
+    animEl.classList.remove("phase3");
+    await delay(300);
+    animEl.remove();
+  }
+
+  const toggleBlockControls = (state) => {
+    var progressInputEl = document.getElementById(chProgressId);
+    var makeProgressButtonEl = document.getElementById('makeProgressButton'+index);
+    var revertProgressButtonEl = document.getElementById('revertProgressButton'+index);
+    var rankSelectEl = document.getElementById(chRankName);
+
+    if ( state === "active" ) {
+      makeProgressButtonEl.disabled = false;
+      revertProgressButtonEl.disabled = false;
+      rankSelectEl.disabled = false;
+      progressInputEl.disabled = false;
+    } else {
+      makeProgressButtonEl.disabled = true;
+      revertProgressButtonEl.disabled = true;
+      rankSelectEl.disabled = true;
+      progressInputEl.disabled = true;
+    }
+
+  }
+
   return (
-    <div class="challenge-container" id={challengeContainerId}>
+    <div class={classes} id={chContainerId}>
 
       <div class="challenge-inputs">
-        <div class="description-container">
-          <label for={chDescId}>CHALLENGE DESCRIPTION</label>
-          <input id={chDescId} type="text" name={chDescId} class="description" value={inputs[chDescId]} onChange={handleChange}/>
-        </div>
-        <div class="progress-container">
-          <label for={chProgressId}>PROGRESS</label>
-          <input id={chProgressId} type="number" name={chProgressId} class="progress" value={inputs[chProgressId]? inputs[chProgressId]: 1} onChange={handleChange} min="1" max="99"/>
-        </div>
-      </div>
 
-      <div class="progress-bar-container">
-        <div class="progress-bar-outer">
-          <div class="progress-bar-inner" style={{width: inputs[chProgressId]+"%"}}></div>
-        </div>
-      </div>
-
-      <div class="make-progress-container">
-        <button class="progress-button make-progress-button" id={makeProgressButtonId} currentprogress={inputs[chProgressId]? inputs[chProgressId]: 1} currentrank={inputs[chRankName]? inputs[chRankName] : 1} onClick={makeProgress}>MAKE PROGRESS</button>
-        <button class="progress-button revert-progress-button" id={revertProgressButtonId} currentprogress={inputs[chProgressId]? inputs[chProgressId]: 1} currentrank={inputs[chRankName]? inputs[chRankName] : 1} onClick={revertProgress}>REVERT</button>
-      </div>
-
-      <div class="ranks-container">
-        <div class="rank-button">
-          <input type="radio" name={chRankName} id={chRankName+"_1"} value={inputs[chRankName+"_1"] || "1"} onChange={handleChange} checked={inputs[chRankName]==="1"}/>
-          <label for={chRankName+"_1"}><span class="rank-type">SHORT:</span><br/> +30%; 2XP</label>
-        </div>
-        <div class="rank-button">
-          <input type="radio" name={chRankName} id={chRankName+"_2"} value={inputs[chRankName+"_2"] || "2"} onChange={handleChange} checked={inputs[chRankName]==="2"}/>
-          <label for={chRankName+"_2"}><span class="rank-type">MEDIUM:</span><br/> +20%; 5XP</label>
-        </div>
-        <div class="rank-button">
-          <input type="radio" name={chRankName} id={chRankName+"_3"} value={inputs[chRankName+"_3"] || "3"} onChange={handleChange} checked={inputs[chRankName]==="3"}/>
-          <label for={chRankName+"_3"}><span class="rank-type">LONG:</span><br/> +10%; 10XP</label>
-        </div>
-        <div class="rank-button">
-          <input type="radio" name={chRankName} id={chRankName+"_4"} value={inputs[chRankName+"_4"] || "4"} onChange={handleChange} checked={inputs[chRankName]==="4"}/>
-          <label for={chRankName+"_4"}><span class="rank-type">EXTREME:</span><br/> +5%; 20XP</label>
-        </div>
-        <div class="rank-button">
-          <input type="radio" name={chRankName} id={chRankName+"_5"} value={inputs[chRankName+"_5"] || "5"} onChange={handleChange} checked={inputs[chRankName]==="5"}/>
-          <label for={chRankName+"_5"}><span class="rank-type">EPIC:</span><br/> +2%; 50XP</label>
-        </div>
-      </div>
-
-      <div class="state-buttons-container">
-        <div class="state-button state-button-active">
-          <input type="radio" name={chStateId} id={chStateId+"_1"} value={inputs[chStateId+"_1"] || "1"} onChange={handleChange} checked={inputs[chStateId]==="1"}/>
-          <label for={chStateId+"_1"}><span class="rank-state-active">ACTIVE</span></label>
-        </div>
-        <div class="state-button state-button-fulfilled">
-          <input type="radio" name={chStateId} id={chStateId+"_2"} value={inputs[chStateId+"_2"] || "2"} onChange={handleChange} checked={inputs[chStateId]==="2"}/>
-          <label for={chStateId+"_2"}><span class="rank-state-fulfilled">FULFILLED</span></label>
-        </div>
-        <div class="state-button state-button-failed">
-          <input type="radio" name={chStateId} id={chStateId+"_3"} value={inputs[chStateId+"_3"] || "3"} onChange={handleChange} checked={inputs[chStateId]==="3"}/>
-          <label for={chStateId+"_3"}><span class="rank-state-failed">FAILED</span></label>
-        </div>
-        <div class="erase-button">
-          <IconButton data-challengeindex={challengeIndex} onClick={deleteChallengeFunction} class="button" aria-label="erase-button" component="span">
-            <DeleteForeverIcon/>
+        <div class="minimize-button">
+          <IconButton onClick={minimizeToggle} class="button" aria-label="minimize-button" component="span">
+            {minimized && <UnfoldMoreIcon/> || <UnfoldLessIcon/>}
           </IconButton>
         </div>
+
+        <div class="description-container">
+          <label for={chDescId}>{challengeDescription}</label>
+          <input id={chDescId} type="text" name="name" class="description" value={challenge['name']} onChange={handleChange} placeholder='CHALLENGE DESCRIPTION'/>
+        </div>
+
+        <div class="progress-container">
+          <label for={chProgressId}>PROGRESS</label>
+          <input id={chProgressId} type="number" name="progress" class="progress" value={challenge['progress']} onChange={handleChange} min="1" max="99"/>
+        </div>
+
+        <div class="progress-bar-container">
+          <div class="progress-bar-outer">
+            <div class="progress-bar-inner" style={{width: challenge['progress']+"%"}}></div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="challenge-controls">
+
+        <div class="make-progress-container">
+          <button class="progress-button make-progress-button" id={makeProgressButtonId} onClick={event => makeProgress(event, parseInt(challenge['progress']), challenge['rank'])}>MAKE PROGRESS</button>
+          <button class="progress-button revert-progress-button" id={revertProgressButtonId} onClick={event => revertProgress(event, parseInt(challenge['progress']), challenge['rank'])}>REVERT</button>
+        </div>
+
+        <div class="selectors-container">
+
+          <div class="ranks-container">
+            <span class="rank-label">RANK:</span>
+            <select name="rank" id={chRankName} onChange={handleChange}>
+              <option value="short" selected={challenge['rank']==="short"} style={{fontFamily: "sans-serif"}}>SHORT: +30%; 2XP</option>
+              <option value="medium" selected={challenge['rank']==="medium"} style={{fontFamily: "sans-serif"}}>MEDIUM: +20%; 5XP</option>
+              <option value="long" selected={challenge['rank']==="long"} style={{fontFamily: "sans-serif"}}>LONG: +10%; 10XP</option>
+              <option value="extreme" selected={challenge['rank']==="extreme"} style={{fontFamily: "sans-serif"}}>EXTREME: +5%; 20XP</option>
+              <option value="epic" selected={challenge['rank']==="epic"} style={{fontFamily: "sans-serif"}}>EPIC: +2%; 50XP</option>
+            </select>
+          </div>
+
+          <div class="state-container">
+            <span class="state-label">STATE:</span>
+            <select name="state" id={chStateName} onChange={handleChange}>
+              <option value="active" selected={challenge['state']==="active"} style={{fontFamily: "sans-serif"}}>ACTIVE</option>
+              <option value="fulfilled" selected={challenge['state']==="fulfilled"} style={{fontFamily: "sans-serif"}}>FULFILLED</option>
+              <option value="failed" selected={challenge['state']==="failed"} style={{fontFamily: "sans-serif"}}>FAILED</option>
+            </select>
+          </div>
+
+        </div>
+
+        <div class="buttons-container">
+
+          <IconButton onClick={moveChallengeUp} class="button" aria-label="moveup-button" component="span">
+            <KeyboardArrowUpIcon/>
+          </IconButton>
+
+          <IconButton onClick={moveChallengeDown} class="button" aria-label="movedown-button" component="span">
+            <KeyboardArrowDownIcon/>
+          </IconButton>
+
+          <IconButton onClick={indentChallengeLeft} class="button" aria-label="indentleft-button" component="span">
+            <KeyboardArrowLeftIcon/>
+          </IconButton>
+
+          <IconButton onClick={indentChallengeRight} class="button" aria-label="indentright-button" component="span">
+            <KeyboardArrowRightIcon/>
+          </IconButton>
+
+          <IconButton onClick={deleteChallenge} class="button delete" aria-label="erase-button" component="span">
+            <DeleteForeverIcon/>
+          </IconButton>
+
+        </div>
+
       </div>
 
     </div>
