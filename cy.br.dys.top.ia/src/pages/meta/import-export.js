@@ -26,6 +26,8 @@ export default function importExport() {
             saveCharacterData(contents);
         };
         reader.readAsText(file);
+
+        window.location.href = '/character-stats';
     }
 
     function saveCharacterData(characterDataStr) {
@@ -38,11 +40,13 @@ export default function importExport() {
         }
         const loadedCharacterStats = loadedCharacterData['character'];
         const loadedCharacterTraits = loadedCharacterData['traits'];
+        const loadedCharacterActiveTraits = loadedCharacterData['activeTraits'];
         const loadedCharacterChallenges = loadedCharacterData['challenges'];
 
         if ( windowGlobal ) {
             windowGlobal.localStorage.setItem("character", JSON.stringify(loadedCharacterStats));
             windowGlobal.localStorage.setItem("traits", JSON.stringify(loadedCharacterTraits));
+            windowGlobal.localStorage.setItem("activeTraits", loadedCharacterActiveTraits);
             windowGlobal.localStorage.setItem("challenges", JSON.stringify(loadedCharacterChallenges));
         }
 
@@ -57,16 +61,27 @@ export default function importExport() {
         const savedTraitsStr = windowGlobal ? windowGlobal.localStorage.getItem("traits") : "{}"
         const savedTraits = JSON.parse(savedTraitsStr)
 
+        // character traits
+        const savedActiveTraits = windowGlobal ? windowGlobal.localStorage.getItem("activeTraits") : "{}"
+
         // challenges
         const savedChallengesStr = windowGlobal ? windowGlobal.localStorage.getItem("challenges") : "{}"
         const savedChallenges = JSON.parse(savedChallengesStr)
 
         characterData['character'] = savedCharacter;
         characterData['traits'] = savedTraits;
+        characterData['activeTraits'] = savedActiveTraits;
         characterData['challenges'] = savedChallenges;
 
         var filename = savedCharacter['name'].replace(/[^a-z0-9]/gi, '_').toLowerCase();
         download(JSON.stringify(characterData), filename, 'application/json');
+    }
+
+    function deleteAllData() {
+        if ( windowGlobal ) {
+            localStorage.clear();
+            window.location.href = '/';
+        }
     }
 
     return (
@@ -88,6 +103,15 @@ export default function importExport() {
                 <hr/>
                 <br/>
                 <blockquote><p>Note that the <b>cy.br/dys.top.ia</b> web app already saves your character stats, traits and challenges using your browser's <i>localStorage</i>. Since this is similar to <i>web cookies</i>, it will get erased if you clear the cache, uninstall the app, etc. <br/>For that reason, it is recommended that you use this IMPORT/EXPORT functionality often to backup your progress safely.</p></blockquote>
+                <br/>
+                <h2>DELETE ALL DATA</h2>
+                <label for="delete-all">Clear all data (<i>localStorage</i>) from this device:</label><br/>
+                <button id="delete-all" onClick={deleteAllData}>DELETE</button>
+                <blockquote><p>Use this function to clear all data at once when you need to reset the state of the entire app, or if you've found a breaking bug or a malfunction caused by a desync after a breaking update.<br/><b>WARNING</b>: This action cannot be undone.</p></blockquote>
+                <hr/>
+                <br/>
+                <br/>
+                <br/>
             </div>
         </Layout>
     );

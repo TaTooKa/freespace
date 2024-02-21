@@ -1893,7 +1893,7 @@ export default function GlobalStyle() {
 
         ${'' /* IMPORT/EXPORT PAGE  */}
         div.import-export-container {
-          button#export, input#import {
+          button#export, button#delete-all, input#import {
             width: 100%;
             margin: 10px 0 20px 0;
             border: 2px solid ${theme.colors.fuchsia};

@@ -140,14 +140,16 @@ function CharacterStats() {
   async function turnOnForm() {
     await delay(1500);
     var loadingEl = document.getElementById("traits-loading-container");
-    loadingEl.style.display = "none";
-    var traitsFormEl = document.getElementById("character-traits-form");
-    traitsFormEl.style.display = "block";
-    
-    // scroll to anchor, if present in url
-    const hash = window.location.hash.substring(1);
-    if ( hash.length !== 0 )  {
-      window.location = window.location;
+    if ( !Object.is(loadingEl, null) ) {
+      loadingEl.style.display = "none";
+      var traitsFormEl = document.getElementById("character-traits-form");
+      traitsFormEl.style.display = "block";
+      
+      // scroll to anchor, if present in url
+      const hash = window.location.hash.substring(1);
+      if ( hash.length !== 0 )  {
+        window.location = window.location;
+      }
     }
   }
 
