@@ -800,26 +800,28 @@ export default function GlobalStyle() {
 
             .angle-container {
                 margin: 30px 0 20px 0;
+                border: 1px solid #444;
+                box-shadow: 0 0 5px #000;
+                border-radius: 5px 32px 5px 5px;
+                padding: 10px 10px;
                 .angle-header {
                     display: flex;
+                    justify-content: space-between;
                     .angle-title {
-                        display: block;
-                        width: 30%;
-                        font-size: 1.3em;
-                        float: left;
+                      display: flex;
+                      width: 30%;
+                      font-size: 1.3em;
                     }
                     .angle-progress {
-                        display: flex;
-                        width: 60%;
-                        float: right;
-                        font-size: 1em;
-                        margin: 3px 0 0 auto;
-                        input {
-                            display: block;
-                            margin: -3px 0 0 10px;
-                            height: 30px;
-                            width: 45px;
-                        }
+                      justify-content: flex-end;
+                      display: flex;
+                      font-size: 1em;
+                      flex-grow: 1;
+                      input {
+                          margin: -3px 0 0 10px;
+                          height: 30px;
+                          width: 45px;
+                      }
                     }
                 }
                 .angle-options {
