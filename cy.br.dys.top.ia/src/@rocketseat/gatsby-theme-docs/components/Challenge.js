@@ -9,28 +9,37 @@ import KeyboardArrowLeftIcon from '@material-ui/icons/KeyboardArrowLeft';
 import KeyboardArrowRightIcon from '@material-ui/icons/KeyboardArrowRight';
 import IconButton from '@material-ui/core/IconButton';
 
-const Challenge = ({challenge, index, challenges, setChallenges}) => {
+const Challenge = ({challenge, index, challenges, setChallenges, chType, otherChallenges, otherSetChallenges}) => {
 
   const delay = ms => new Promise(
     resolve => setTimeout(resolve, ms)
   );
 
-  const chContainerId = "challenge-container-"+index;
-  const chDescId = "chDesc"+index;
-  const chProgressId = "chProgress"+index; 
-  const chRankName = "chRank"+index;
-  const chStateName = "chState"+index;
-  var makeProgressButtonId = "makeProgressButton"+index;
-  var revertProgressButtonId = "revertProgressButton"+index;
+  const chContainerId = "challenge-container-"+chType+"-"+index;
+  const chDescId = "chDesc-"+chType+"-"+index;
+  const chProgressId = "chProgress"+chType+"-"+index; 
+  const chRankName = "chRank-"+chType+"-"+index;
+  const chStateName = "chState"+chType+"-"+index;
+  var makeProgressButtonId = "makeProgressButton"+chType+"-"+index;
+  var revertProgressButtonId = "revertProgressButton"+chType+"-"+index;
   var minimized = challenge["minimized"];
+  var challengeDescription = challenge['state'] + " challenge";
+  if ( chType === "archived" ) {
+    challengeDescription+= " (ARCHIVED)";
+  }
+
   var classes = "challenge-container challenge-indent-"+challenge['indent'];
   classes += minimized ? " minimized" : "";
   classes += " state-" + challenge['state'];
-  var challengeDescription = challenge['state'] + " challenge";
+  classes += " "+chType;
 
   useEffect(() => {
     toggleBlockControls(challenge['state']);
   }, [challenges]);
+
+  useEffect(() => {
+    toggleBlockControls(challenge['state']);
+  }, [otherChallenges]);
 
   const handleChange = (event) => {
     const target = event.target;
@@ -182,9 +191,11 @@ const Challenge = ({challenge, index, challenges, setChallenges}) => {
   async function hideWhileMoving(otherIndex, direction) {
     var movement = direction === "up" ? -100 : 100;
     var challengeEl = document.getElementById(chContainerId);
-    var otherChallengeEl = document.getElementById("challenge-container-"+otherIndex);
+    var otherChallengeEl = document.getElementById("challenge-container-"+chType+"-"+otherIndex);
     var challengeElorigMarginLeft = challengeEl.style.marginLeft;
     var otherChallengeElorigMarginLeft = otherChallengeEl.style.marginLeft;
+    var challengeElorigFilters = challengeEl.style.filter;
+    var otherChallengeElorigFilters = otherChallengeEl.style.filter;
     // challengeEl.style.opacity = 0;
     challengeEl.style.transform = "translate(0, "+movement+"px)";
     challengeEl.style.filter = "blur(25px) brightness(0)";
@@ -196,11 +207,11 @@ const Challenge = ({challenge, index, challenges, setChallenges}) => {
     await delay(700);
     // challengeEl.style.opacity = 1;
     challengeEl.style.transform = "translate(0, 0)";
-    challengeEl.style.filter = "none";
+    challengeEl.style.filter = challengeElorigFilters;
     challengeEl.style.marginLeft = challengeElorigMarginLeft;
     // otherChallengeEl.style.opacity = 1;
     otherChallengeEl.style.transform = "translate(0, 0)";
-    otherChallengeEl.style.filter = "none";
+    otherChallengeEl.style.filter = otherChallengeElorigFilters;
     otherChallengeEl.style.marginLeft = otherChallengeElorigMarginLeft;
   }
 
@@ -222,14 +233,37 @@ const Challenge = ({challenge, index, challenges, setChallenges}) => {
 
   async function deleteChallenge() {
     removeChallengeAnimation();
+    if ( chType === "regular" ) {
+      // send to archived section
+      let tempChallenges = [...challenges];
+      let otherTempChallenges = [...otherChallenges];
+      otherTempChallenges.push(tempChallenges[index]);
+      tempChallenges.splice(index, 1);
+      setChallenges(tempChallenges);
+      otherSetChallenges(otherTempChallenges);
+    }
+    if ( chType === "archived" ) {
+      // definitely delete
+      let tempChallenges = [...challenges];
+      tempChallenges.splice(index, 1);
+      setChallenges(tempChallenges);
+    }
+  }
+
+  function restoreChallenge(event) {
+    event.preventDefault();
     let tempChallenges = [...challenges];
+    let otherTempChallenges = [...otherChallenges];
+    otherTempChallenges.push(tempChallenges[index]);
     tempChallenges.splice(index, 1);
     setChallenges(tempChallenges);
+    otherSetChallenges(otherTempChallenges);
   }
 
   async function removeChallengeAnimation() {
-    var challengeFormEl = document.getElementById("challenge-form");
-    var challengeContainerEl = document.getElementById("challenge-container-"+index);
+    var challengeFormId = chType === "regular" ? "challenge-form" : "archived-challenges-container";
+    var challengeFormEl = document.getElementById(challengeFormId);
+    var challengeContainerEl = document.getElementById("challenge-container-"+chType+"-"+index);
     var containerHeight = challengeContainerEl.getBoundingClientRect().height;
     var animEl = document.createElement("div");
     animEl.classList.add("challenge-deleted-anim");
@@ -238,7 +272,8 @@ const Challenge = ({challenge, index, challenges, setChallenges}) => {
     challengeFormEl.insertBefore(animEl, challengeContainerEl);
     challengeContainerEl.style.border = "1px solid red !important";
     var deletingTextEl = document.createElement("span");
-    deletingTextEl.innerText = "DELETING ...";
+    var actionText = chType === "regular" ? "ARCHIVING" : "DELETING";
+    deletingTextEl.innerText = actionText+" ...";
     animEl.appendChild(deletingTextEl);
 
     await delay(300);
@@ -258,8 +293,8 @@ const Challenge = ({challenge, index, challenges, setChallenges}) => {
 
   const toggleBlockControls = (state) => {
     var progressInputEl = document.getElementById(chProgressId);
-    var makeProgressButtonEl = document.getElementById('makeProgressButton'+index);
-    var revertProgressButtonEl = document.getElementById('revertProgressButton'+index);
+    var makeProgressButtonEl = document.getElementById(makeProgressButtonId);
+    var revertProgressButtonEl = document.getElementById(revertProgressButtonId);
     var rankSelectEl = document.getElementById(chRankName);
 
     if ( state === "active" ) {
@@ -307,12 +342,12 @@ const Challenge = ({challenge, index, challenges, setChallenges}) => {
 
       <div class="challenge-controls">
 
-        <div class="make-progress-container">
+        <div class={chType === "regular" ? "make-progress-container" : "hidden-make-progress-container"}>
           <button class="progress-button make-progress-button" id={makeProgressButtonId} onClick={event => makeProgress(event, parseInt(challenge['progress']), challenge['rank'])}>MAKE PROGRESS</button>
           <button class="progress-button revert-progress-button" id={revertProgressButtonId} onClick={event => revertProgress(event, parseInt(challenge['progress']), challenge['rank'])}>REVERT</button>
         </div>
 
-        <div class="selectors-container">
+        <div class={chType === "regular" ? "selectors-container" : "hidden-selectors-container"}>
 
           <div class="ranks-container">
             <span class="rank-label">RANK:</span>
@@ -334,6 +369,10 @@ const Challenge = ({challenge, index, challenges, setChallenges}) => {
             </select>
           </div>
 
+        </div>
+
+        <div class={chType === "archived" ? "restore-button-container" : "hidden-restore-button-container"}>
+          <button onClick={restoreChallenge}>RESTORE CHALLENGE</button>
         </div>
 
         <div class="buttons-container">

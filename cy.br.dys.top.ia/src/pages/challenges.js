@@ -33,12 +33,21 @@ function Challenges() {
     return savedChallenges || defaultChallenges;
   });
 
+  const [archivedChallenges, setArchivedChallenges] = useState(() => {
+    // initial value of archived challenges
+    const savedArchivedChallengesStr = windowGlobal ? windowGlobal.localStorage.getItem("archivedChallenges") : "{}";
+    const savedArchivedChallenges = JSON.parse(savedArchivedChallengesStr);
+
+    return savedArchivedChallenges || [];
+
+  });
+
   async function addChallenge()  {
     setChallenges(prevChallenges => ([...prevChallenges, getNewChallenge()]));
 
     // scroll and created effect
     await delay(500);
-    var lastChallengeEl = document.getElementById("challenge-container-"+challenges.length);
+    var lastChallengeEl = document.getElementById("challenge-container-regular-"+challenges.length);
     lastChallengeEl.classList.add("created");
     lastChallengeEl.scrollIntoView({behavior: "smooth"});
     await delay(700);
@@ -50,9 +59,20 @@ function Challenges() {
     return () => clearTimeout(timeOutId);
   }, [challenges]);
 
+  useEffect(() => {
+    const timeOutId = setTimeout(() => saveArchivedChallenges(archivedChallenges), 500);
+    return () => clearTimeout(timeOutId);
+  }, [archivedChallenges]);
+
   const saveChallenges = () => {
     if ( windowGlobal ) {
       windowGlobal.localStorage.setItem("challenges", JSON.stringify(challenges));
+    }
+  }
+
+  const saveArchivedChallenges = () => {
+    if ( windowGlobal ) {
+      windowGlobal.localStorage.setItem("archivedChallenges", JSON.stringify(archivedChallenges));
     }
   }
 
@@ -62,7 +82,18 @@ function Challenges() {
       <h2>CHALLENGE TRACKER</h2>
       <button id="add-challenge-button" onClick={addChallenge}>ADD CHALLENGE</button>
       <form class="challenges" id="challenge-form">
-        {challenges.length > 0 && challenges.map((challenge, i) => <Challenge challenge={challenge} index={i} challenges={challenges} setChallenges={setChallenges}/>)}
+
+        {challenges.length > 0 && challenges.map((challenge, i) => <Challenge challenge={challenge} index={i} challenges={challenges} setChallenges={setChallenges} chType="regular" otherChallenges={archivedChallenges} otherSetChallenges={setArchivedChallenges} />)}
+
+        <br/>
+        <hr/>
+        <br/>
+        <h2>ARCHIVED CHALLENGES</h2>
+        <blockquote><p>Challenges that are deleted are first sent to this ARCHIVE for safe-keeping. Click on the trash button one more time to delete them definitely, or use the RESTORE button to bring them back to the active list above.</p></blockquote>
+        <div id="archived-challenges-container">
+          {archivedChallenges.length > 0 && archivedChallenges.map((challenge, i) => <Challenge challenge={challenge} index={i} challenges={archivedChallenges} setChallenges={setArchivedChallenges} chType="archived" otherChallenges={challenges} otherSetChallenges={setChallenges} />)}
+        </div>
+
       </form>
     </Layout>
   )

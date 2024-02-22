@@ -1037,6 +1037,8 @@ export default function GlobalStyle() {
           }
         }
 
+        ${'' /* CHALLENGES */}
+
         button#add-challenge-button {
           border: 1px solid ${theme.colors.turquoise};
           height: 30px;
@@ -1268,6 +1270,9 @@ export default function GlobalStyle() {
               }
 
             }
+            .hidden-make-progress-container {
+              display: none;
+            }
 
             .selectors-container {
               display: flex;
@@ -1343,6 +1348,41 @@ export default function GlobalStyle() {
               }
 
             }
+            .hidden-selectors-container {
+              display: none;
+            }
+
+            .restore-button-container {
+              margin: 10px 0;
+              button {
+                cursor: pointer;
+                background: ${theme.darkcolors.background};
+                font-family: 'EuroStyle';
+                font-weight: bold;
+                letter-spacing: .2em;
+                border: none;
+                height: 50px;
+                border-radius: 5px;
+                transition: .5s ease;
+                width: 100%;
+                color: ${theme.colors.turquoise};
+                text-shadow: 0 0 15px ${theme.colors.turquoise};
+                box-shadow: inset 0 0 6px ${theme.colors.turquoise};
+                :hover {
+                  box-shadow: inset 0 0 4px ${theme.colors.turquoise};
+                  color: #fff;
+                  text-shadow: 0 0 5px #fff;
+                  letter-spacing: .3em;
+                }
+                :active {
+                  box-shadow: inset 0 0 20px ${theme.colors.turquoise};
+                }
+              }
+
+            }
+            .hidden-restore-button-container {
+              display: none;
+            }
 
 
             .buttons-container {
@@ -1408,6 +1448,12 @@ export default function GlobalStyle() {
             border: 1px solid #552240ff;
             box-shadow: inset 0 0 15px ${theme.colors.fuchsia};
             background: #291220ff;
+          }
+
+          #archived-challenges-container {
+            .challenge-container {
+              filter: opacity(70%) grayscale(30%);
+            }
           }
 
           .challenge-deleted-anim {
@@ -1895,7 +1941,7 @@ export default function GlobalStyle() {
         div.import-export-container {
           button#export, button#delete-all, input#import {
             width: 100%;
-            margin: 10px 0 20px 0;
+            margin: 10px 0 20px 0 : "hidden-make-progress-container";
             border: 2px solid ${theme.colors.fuchsia};
             overflow: hidden;
             background-color: #000;
