@@ -9,7 +9,7 @@ const Stat = ({name}) => {
   const windowGlobal = typeof window !== 'undefined' && window
 
   const savedCharacterStr = windowGlobal ? windowGlobal.localStorage.getItem("character") : "{}"
-  const savedCharacter = JSON.parse(savedCharacterStr)
+  const savedCharacter = JSON.parse(savedCharacterStr) || {}
 
   var statValue = 1;
 
