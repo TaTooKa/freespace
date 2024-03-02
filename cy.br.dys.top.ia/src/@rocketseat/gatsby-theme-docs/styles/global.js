@@ -933,7 +933,28 @@ export default function GlobalStyle() {
             :has(input:checked) {
               opacity: 1;
               border: 1px solid #0a6d61ff;
-              box-shadow: inset 0 0 100px #0a6d61ff;
+              box-shadow: inset 0 0 50px #0a6d61ff;
+
+              background: linear-gradient(
+                48deg,
+                black 5%,
+                #0a6d6122 20%,
+                black 25%,
+                #0a6d6166 30%,
+                black 40%,
+                #0a6d6122 50%,
+                black 55%,
+                #0a6d6166 60%,
+                black 70%,
+                #0a6d6122 
+              );
+              animation: foil 40s ease infinite;
+              background-size:400% 400%;
+              @keyframes foil {
+                0% { background-position: 84% 0; }
+                50% { background-position: 17% 100%; }
+                100% { background-position: 84% 0; }
+              }
             }
             input[type="checkbox"] {
               appearance: none;
