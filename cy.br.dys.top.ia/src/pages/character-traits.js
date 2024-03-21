@@ -207,7 +207,7 @@ function CharacterStats() {
             </Trait>
 
             <Trait type="skill" name="Face" title="FACE" art={face_art} inputs={inputs} handleChange={handleChange}>
-                <span>gain a <span class="boost">BOOST</span> when attempting to <a href="/prompts/general-prompts#secure-an-advantage">SECURE AN ADVANTAGE</a> with leadership, coordination or planning; or when you <a href="/prompts/challenge-prompts#accept-a-challenge">ACCEPT A CHALLENGE</a> or <a href="/prompts/general-prompts#compel">COMPEL</a> by testing your <span class="stat">FLASH</span>.</span>
+                <span>gain a <span class="boost">BOOST</span> when attempting to <a href="/prompts/general-prompts#secure-an-advantage">SECURE AN ADVANTAGE</a> with leadership, coordination or planning; or when you <a href="/prompts/challenge-prompts#accept-a-challenge">ACCEPT A CHALLENGE</a>, <a href="/prompts/general-prompts#lead-the-team">LEAD THE TEAM</a> or <a href="/prompts/general-prompts#compel">COMPEL</a> by testing your <span class="stat">FLASH</span>.</span>
             </Trait>
 
             <Trait type="skill" name="GunKata" title="GUN KATA" art={gunkata_art} inputs={inputs} handleChange={handleChange}>
