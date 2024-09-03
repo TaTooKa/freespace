@@ -1,8 +1,11 @@
 import React, { useState, useEffect, Component } from "react"
 import Layout from '@rocketseat/gatsby-theme-docs/src/components/Layout';
 import Seo from '@rocketseat/gatsby-theme-docs/src/components/SEO';
+import Chart from 'chart.js/auto';
+import { useTheme, Global, css } from '@emotion/react';
 
 function CharacterStats() {
+  const theme = useTheme();
   const windowGlobal = typeof window !== 'undefined' && window
   var activeTraits = windowGlobal ? windowGlobal.localStorage.getItem("activeTraits") : "";
 
@@ -24,7 +27,6 @@ function CharacterStats() {
   const handleChange = (event) => {
     if ( event.target.type == "number" ) {
       const name = event.target.name;
-      //const value = Math.max(event.target.min, Math.min(event.target.max, Number(event.target.value)));
       const value = event.target.value;
       setInputs(values => ({...values, [name]: value}))
     } else {
@@ -43,12 +45,111 @@ function CharacterStats() {
     }
     traitsContainerEl.innerHTML = "Your current <a href=\"/character-traits\">TRAITS</a>:<br/>"+activeTraits;
 
+    handleStatsChart();
+
     return () => clearTimeout(timeOutId);
   }, [inputs]);
 
   const saveCharacter = () => {
     if ( windowGlobal ) {
       windowGlobal.localStorage.setItem("character", JSON.stringify(inputs))
+    }
+  }
+
+  function setAlpha(hexString, alpha) {
+    return hexString.slice(0, -2) + alpha;
+  }
+
+  async function handleStatsChart() {
+    const chartData = {
+        labels: ['BRAIN', 'CHROME', 'EDGE', 'FLASH', 'SHADE'],
+        datasets: [{
+          data: [inputs.brain, inputs.chrome, inputs.edge, inputs.flash, inputs.shade],
+          borderWidth: 1,
+          borderColor: theme.colors.fuchsia,
+          backgroundColor: setAlpha(theme.colors.fuchsia, "33"),
+          pointBackgroundColor: setAlpha(theme.colors.turquoise, "33"),
+          pointBorderColor: theme.colors.turquoise,
+          pointStyle: "rectRounded",
+        }]
+      };
+      const chartOptions = {
+        scales: {
+          r: {
+              angleLines: {
+                display: true,
+                color: setAlpha(theme.colors.turquoise, "11"),
+                lineWidth: 2,
+                borderDash: [5, 5],
+              },
+              pointLabels: {
+                display: true,
+                color: setAlpha(theme.colors.turquoise, "88"),
+                font: {
+                  family: "Android101",
+                  size: 15,
+                },
+              },
+              ticks: {
+                display: true,
+                showLabelBackdrop: false,
+                z: 1,
+                color: setAlpha(theme.colors.turquoise, "22"),
+                stepSize: 20,
+                maxTicksLimit: 6,
+                font: {
+                  family: "EuroStyle",
+                  size: 10,
+                },
+              },
+              grid: {
+                display: true,
+                color: setAlpha(theme.colors.turquoise, "11"),
+                circular: true,
+                lineWidth: 1,
+                font: {
+                  family: "EuroStyle",
+                },
+              },
+              suggestedMin: 0,
+              suggestedMax: 100,
+              min: 0,
+              max: 100,
+              animate: false,
+          },
+        },
+        plugins: {
+          legend: {
+            display: false,
+          },
+          tooltip: {
+            titleFont: {
+              family: "Android101",
+            },
+            titleAlign: "center",
+            bodyFont: {
+              family: "EuroStyle",
+              weight: "bold",
+              size: 15,
+            },
+            bodyAlign: "center",
+          },
+        },
+        animation: false,
+      };
+
+    const statsChartCanvas = document.getElementById("stats-chart");
+
+    const statsChartObj = Chart.getChart("stats-chart");
+    if (!statsChartObj) {
+      const statsChartObj = new Chart(statsChartCanvas, {
+        type: 'radar',
+        data: chartData,
+        options: chartOptions,
+      });
+    } else {
+      statsChartObj.data = chartData;
+      statsChartObj.update();
     }
   }
 
@@ -124,6 +225,10 @@ function CharacterStats() {
                 <span class="stat-desc">deception and stealth</span>
               </div>
             </div>
+          </div>
+
+          <div id="stats-chart-container">
+            <canvas id="stats-chart"></canvas>
           </div>
 
           <div class="stat-bar" id="grit-stat-bar">

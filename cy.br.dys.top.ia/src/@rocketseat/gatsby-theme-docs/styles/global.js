@@ -705,7 +705,7 @@ export default function GlobalStyle() {
             }
 
             .stats-container {
-                margin: 20px 0 30px 0;
+                margin: 20px 0 10px 0;
                 .stat-container {
                     margin: 10px auto;
                     display: flex;
@@ -785,6 +785,22 @@ export default function GlobalStyle() {
                 input {
                     display: none;
                 }
+            }
+
+            #stats-chart-container {
+              height: 400px;
+              margin-bottom: -35px;
+
+              #stats-chart {
+                padding-left: 0;
+                padding-right: 0;
+                margin-left: auto;
+                margin-right: auto;
+                display: block;
+                height: 400px;
+                width: 400px;
+                margin-top: -40px;
+              }
             }
 
             #traits-container {
