@@ -671,15 +671,90 @@ export default function GlobalStyle() {
             }
 
             .state-container {
-                margin: 15px 0 15px 0;
+                margin: 0 auto;
+                position: relative;
                 width: 100%;
+                height: 80px;
+                overflow: hidden;
+                max-width: 500px;
+
+                .heart-rate {
+                  width: 350px;
+                  height: 73px;
+                  position: relative;
+                  margin: 5px auto;
+                  z-index: 1;
+                  polyline {
+                    text-shadow: 0 0 10px #fff;
+                    transition: 2s;
+                  }
+                }
+
+                .fade-in {
+                  position: absolute;
+                  width: 100%;
+                  height: 100%;
+                  background-color: ${theme.darkcolors.background};
+                  top: 0;
+                  right: 0;
+                  animation: heartRateIn 2.5s linear infinite;
+                }
+
+                .fade-out {
+                  position: absolute;
+                  width: 120%;
+                  height: 100%;
+                  top: 0;
+                  left: -120%;
+                  animation: heartRateOut 2.5s linear infinite;
+                  background: ${theme.darkcolors.background};
+                  background: -moz-linear-gradient(left, ${theme.darkcolors.background} 0%, ${theme.darkcolors.background} 50%, rgba(255, 255, 255, 0) 100%);
+                  background: -webkit-linear-gradient(left, ${theme.darkcolors.background} 0%, ${theme.darkcolors.background} 50%, rgba(255, 255, 255, 0) 100%);
+                  background: -o-linear-gradient(left, ${theme.darkcolors.background} 0%, ${theme.darkcolors.background} 50%, rgba(255, 255, 255, 0) 100%);
+                  background: -ms-linear-gradient(left, ${theme.darkcolors.background} 0%, ${theme.darkcolors.background} 50%, rgba(255, 255, 255, 0) 100%);
+                  background: linear-gradient(to right, ${theme.darkcolors.background} 0%, ${theme.darkcolors.background} 80%, rgba(255, 255, 255, 0) 100%);
+                }
+
+                @keyframes heartRateIn {
+                  0% {
+                    width: 100%;
+                  }
+                  50% {
+                    width: 0;
+                  }
+                  100% {
+                    width: 0;
+                  }
+                }
+
+                @keyframes heartRateOut {
+                  0% {
+                    left: -120%;
+                  }
+                  30% {
+                    left: -120%;
+                  }
+                  100% {
+                    left: 0;
+                  }
+                }
+
                 .input-container {
+                    z-index: 2;
                     width: 100%;
                     margin: auto;
+                    position: absolute;
+                    top: 35px;
+                    display: flex;
+                    justify-content: space-between;
                     white-space: nowrap;
                     text-align: center;
                     input {
                         display: none;
+                    }
+                    #inControlInput+label {
+                    }
+                    #inABadSpotInput+label {
                     }
                     #inControlInput:checked+label {
                         color: ${theme.colors.turquoise};
@@ -695,12 +770,22 @@ export default function GlobalStyle() {
                     }
                 }
                 label {
-                    margin: 0 20px 0 0;
                     transition: 2s;
                     border: 1px solid #444;
                     padding: 2px 10px;
                     border-radius: 6px;
                     box-shadow: inset 0 0 5px #000;
+                    font-size: 0.9em;
+                    background-color: #00000099;
+                    @media screen and (max-width: 500px) {
+                      font-size: 0.8em;
+                      margin-top: 3px;
+                    }
+
+                    @media screen and (max-width: 430px) {
+                      font-size: 0.7em;
+                      margin-top: 5px;
+                    }
                 }
             }
 

@@ -151,6 +151,29 @@ function CharacterStats() {
     }
   }
 
+  function getRandHeartbeatPoints() {
+    return " 0, \
+             45 130, \
+              \
+             45 136, \
+             33 142, \
+              45 149, \
+              \
+              45 154, \
+              \
+              55 160, \
+              9  167, \
+              63 174, \
+              \
+              45 182, \
+              \
+              45 187, \
+              38 193, \
+              45 337, \
+              \
+              45"
+  }
+
   return (
     <Layout title="CHARACTER STATS">
       <Seo title="Character Stats" />
@@ -172,6 +195,15 @@ function CharacterStats() {
           </div>
 
           <div class="state-container">
+
+            <div class="heart-rate">
+              <svg version="1.0"  x="0px" y="0px" width="350px" height="73px" viewBox="0 0 350 73" enable-background="new 0 0 350 73">
+                <polyline fill="none" stroke={inputs.state==="inControl" ? setAlpha(theme.colors.turquoise, "88") : setAlpha(theme.colors.fuchsia, "88")} stroke-width="2" stroke-miterlimit="10" points={getRandHeartbeatPoints()} />
+              </svg>
+              <div class="fade-in"></div>
+              <div class="fade-out"></div>
+            </div>
+
             <div class="input-container">
               <input id="inControlInput" type="radio" name="state" value={inputs.inControl || "inControl"} onChange={handleChange} checked={inputs.state==="inControl"}/><label for="inControlInput"> IN CONTROL</label>
               <input id="inABadSpotInput" type="radio" name="state" value={inputs.inABadSpot || "inABadSpot"} onChange={handleChange} checked={inputs.state==="inABadSpot"}/><label for="inABadSpotInput"> IN A BAD SPOT</label>
