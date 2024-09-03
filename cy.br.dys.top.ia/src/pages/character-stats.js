@@ -21,11 +21,11 @@ function CharacterStats() {
       psyche: "5",
       gear: "5",
       angleProgress: "1",
-      brain: "0",
-      chrome: "0",
-      edge: "0",
-      flash: "0",
-      shade: "0",
+      brain: "1",
+      chrome: "1",
+      edge: "1",
+      flash: "1",
+      shade: "1",
     }
   })
 
@@ -50,8 +50,6 @@ function CharacterStats() {
       activeTraits = "NONE YET. Pick 3 in the <a href=\"/character-traits\">TRAITS PAGE</a>.";
     }
     traitsContainerEl.innerHTML = "Your current <a href=\"/character-traits\">TRAITS</a>:<br/>"+activeTraits;
-
-    // handleStatsChart();
 
     return () => clearTimeout(timeOutId);
   }, [inputs]);
@@ -132,16 +130,6 @@ function CharacterStats() {
           },
           tooltip: {
             enabled: false,
-            titleFont: {
-              family: fontFamilyAndroid,
-            },
-            titleAlign: "center",
-            bodyFont: {
-              family: fontFamilyEuroStyle,
-              weight: "bold",
-              size: 15,
-            },
-            bodyAlign: "center",
           },
         },
         animation: false,
@@ -195,7 +183,7 @@ function CharacterStats() {
             <div class="stat-container">
               <div class="label-n-input-container">
                 <div class="stat-label">BRAIN</div>
-                <div class="stat-input"><input type="number" name="brain" value={inputs.brain || ""} onChange={handleChange} min="1" max="99" /></div>
+                <div class="stat-input"><input type="text" name="brain" value={inputs.brain || ""} onChange={handleChange} inputmode="numeric"/></div>
               </div>
               <div class="stat-desc-container"><span class="stat-desc">cunning and knowledge</span></div>
             </div>
@@ -203,7 +191,7 @@ function CharacterStats() {
             <div class="stat-container">
               <div class="label-n-input-container">
                 <div class="stat-label">CHROME</div>
-                <div class="stat-input"><input type="number" name="chrome" value={inputs.chrome || ""} onChange={handleChange} min="1" max="99" /></div>
+                <div class="stat-input"><input type="text" name="chrome" value={inputs.chrome || ""} onChange={handleChange} inputmode="numeric"/></div>
               </div>
               <div class="stat-desc-container"><span class="stat-desc">strength and endurance</span></div>
             </div>
@@ -211,7 +199,7 @@ function CharacterStats() {
             <div class="stat-container">
               <div class="label-n-input-container">
                 <div class="stat-label">EDGE</div>
-                <div class="stat-input"><input type="number" name="edge" value={inputs.edge || ""} onChange={handleChange} min="1" max="99" /></div>
+                <div class="stat-input"><input type="text" name="edge" value={inputs.edge || ""} onChange={handleChange} inputmode="numeric"/></div>
               </div>
               <div class="stat-desc-container"><span class="stat-desc">speed and precision</span></div>
             </div>
@@ -219,7 +207,7 @@ function CharacterStats() {
             <div class="stat-container">
               <div class="label-n-input-container">
                 <div class="stat-label">FLASH</div>
-                <div class="stat-input"><input type="number" name="flash" value={inputs.flash || ""} onChange={handleChange} min="1" max="99" /></div>
+                <div class="stat-input"><input type="text" name="flash" value={inputs.flash || ""} onChange={handleChange} inputmode="numeric"/></div>
               </div>
               <div class="stat-desc-container"><span class="stat-desc">personality and empathy</span></div>
             </div>
@@ -227,7 +215,7 @@ function CharacterStats() {
             <div class="stat-container">
               <div class="label-n-input-container">
                 <div class="stat-label">SHADE</div>
-                <div class="stat-input"><input type="number" name="shade" value={inputs.shade || ""} onChange={handleChange} min="1" max="99" /></div>
+                <div class="stat-input"><input type="text" name="shade" value={inputs.shade || ""} onChange={handleChange} inputmode="numeric"/></div>
               </div>
               <div class="stat-desc-container"><span class="stat-desc">deception and stealth</span></div>
             </div>
