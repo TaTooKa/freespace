@@ -23,7 +23,7 @@ export const Container = styled.aside`
 
   nav {
     width: 100%;
-    padding-top: 24px;
+    padding-top: 2px;
     align-self: flex-start;
     flex: 1;
   }
