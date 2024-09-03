@@ -789,7 +789,6 @@ export default function GlobalStyle() {
 
             #stats-chart-container {
               height: 400px;
-              margin-bottom: -35px;
 
               #stats-chart {
                 padding-left: 0;
@@ -799,7 +798,6 @@ export default function GlobalStyle() {
                 display: block;
                 height: 400px;
                 width: 400px;
-                margin-top: -40px;
               }
             }
 
