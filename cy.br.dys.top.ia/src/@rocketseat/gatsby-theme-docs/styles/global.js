@@ -581,7 +581,7 @@ export default function GlobalStyle() {
 
         ${'' /* FORMS */}
         form.character-stats {
-            max-width: 400px;
+            /* max-width: 400px; */
 
             ${'' /* .left-side {
               float: left;
@@ -671,7 +671,7 @@ export default function GlobalStyle() {
             }
 
             .state-container {
-                margin: 10px 0 10px 0;
+                margin: 15px 0 15px 0;
                 width: 100%;
                 .input-container {
                     width: 100%;
@@ -705,43 +705,121 @@ export default function GlobalStyle() {
             }
 
             .stats-container {
-                margin: 20px 0 10px 0;
+                margin: 10px 0 10px 0;
+                display: flex;
+                flex-wrap: no-wrap;
+                width: 100%;
+
                 .stat-container {
-                    margin: 10px auto;
-                    display: flex;
-                    .left-col {
-                        label.stat {
+                    margin: 3px auto;
+                    text-align: center;
+
+                    .label-n-input-container {
+
+                      .stat-label {
+                          font-family: 'Android101';
+                          font-size: 1.2em;
+                          text-shadow: 0 0 5px #aaa;
+                          margin: 0 auto;
+
+                          @media screen and (max-width: 1300px) {
+                            font-size: 1em;
+                          }
+
+                          @media screen and (max-width: 1200px) {
                             font-size: 1.2em;
-                            display: inline-block;
-                            width: 200px;
-                            text-align: right;
-                            text-shadow: 0 0 5px #aaa;
+                          }
+
+                          @media screen and (max-width: 950px) {
+                            font-size: 1em;
+                          }
+
+                          @media screen and (max-width: 850px) {
+                            font-size: 0.8em;
+                          }
+
+                          @media screen and (max-width: 780px) {
+                            font-size: 1.2em;
+                          }
+
+                          @media screen and (max-width: 650px) {
+                            font-size: 1em;
+                          }
+
+                          @media screen and (max-width: 540px) {
+                            font-size: 0.8em;
+                          }
+
+                          @media screen and (max-width: 450px) {
+                            font-size: 0.7em;
+                          }
+
+                          @media screen and (max-width: 380px) {
+                            font-size: 0.5em;
+                          }
+
                         }
-                        input {
+
+                      .stat-input {
+                          margin: 5px auto 2px auto;
+                          input {
                             height: 30px;
-                            width: 45px;
-                        }
+                            border-radius: 3px;
+                            width: 60px;
+
+                            @media screen and (max-width: 500px) {
+                              width: 45px;
+                            }
+                          }
+                      }
                     }
-                    .right-col {
-                        margin: 0 0 0 15px;
-                        span.stat-desc {
-                            margin: 5px 0 0 0;
-                            display: inline-block;
-                            line-height: 1.2em;
+
+                    .stat-desc-container {
+                        span {
+                          margin: 5px 2px 0 0;
+                          display: inline-block;
+                          line-height: 1.2em;
+                          font-size: 0.6em;
+                          font-style: italic;
+                          color: #777;
+                          vertical-align: top;
+
+                          @media screen and (max-width: 1200px) {
+                            font-size: 0.5em;
+                          }
+
+                          @media screen and (max-width: 1100px) {
+                            font-size: 0.45em;
+                          }
+
+                          @media screen and (max-width: 850px) {
+                            font-size: 0.5em;
+                          }
+
+                          @media screen and (max-width: 780px) {
                             font-size: 0.6em;
-                            font-style: italic;
-                            color: #777;
+                          }
+
+                          @media screen and (max-width: 540px) {
+                            font-size: 0.5em;
+                          }
+
+                          @media screen and (max-width: 480px) {
+                            font-size: 0.4em;
+                          }
+
                         }
                     }
 
-                }
+                  }
+
             }
 
             .stat-bar {
                 margin: 10px 0 10px 0;
                 display: flex;
                 width: 100%;
-                max-width: 400px;
+                /* max-width: 400px; */
                 .title {
                     font-size: 0.9em;
                     display: block;
@@ -789,6 +867,12 @@ export default function GlobalStyle() {
 
             #stats-chart-container {
               height: 300px;
+              width: 100%;
+              margin: 10px auto 0 auto;
+
+              @media screen and (max-width: 500px) {
+                height: 200px;
+              }
 
               #stats-chart {
                 padding-left: 0;
@@ -798,6 +882,10 @@ export default function GlobalStyle() {
                 display: block;
                 height: 400px;
                 width: 400px;
+
+                @media screen and (max-width: 500px) {
+                  width: 300px;
+                }
               }
             }
 
@@ -843,6 +931,7 @@ export default function GlobalStyle() {
                     .columns {
                         display: flex;
                         margin: 5px 0 0 0;
+                        justify-content: space-around;
                     }
                     .col input {
                         display: none;

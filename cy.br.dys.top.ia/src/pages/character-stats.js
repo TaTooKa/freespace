@@ -21,6 +21,11 @@ function CharacterStats() {
       psyche: "5",
       gear: "5",
       angleProgress: "1",
+      brain: "0",
+      chrome: "0",
+      edge: "0",
+      flash: "0",
+      shade: "0",
     }
   })
 
@@ -38,6 +43,7 @@ function CharacterStats() {
 
   useEffect(() => {
     const timeOutId = setTimeout(() => saveCharacter(inputs), 500);
+    const timeOutId2 = setTimeout(() => handleStatsChart(), 100);
     // Traits 
     var traitsContainerEl = document.getElementById('traits-container');
     if (!activeTraits) {
@@ -45,7 +51,7 @@ function CharacterStats() {
     }
     traitsContainerEl.innerHTML = "Your current <a href=\"/character-traits\">TRAITS</a>:<br/>"+activeTraits;
 
-    handleStatsChart();
+    // handleStatsChart();
 
     return () => clearTimeout(timeOutId);
   }, [inputs]);
@@ -61,10 +67,12 @@ function CharacterStats() {
   }
 
   async function handleStatsChart() {
+    const fontFamilyAndroid = "'Android101', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif";
+    const fontFamilyEuroStyle = "'EuroStyle', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif";
     const chartData = {
-        labels: ['BRAIN', 'CHROME', 'EDGE', 'FLASH', 'SHADE'],
+        labels: ['CHROME '+inputs.chrome, 'EDGE '+inputs.edge, 'SHADE '+inputs.shade, 'FLASH '+inputs.flash, 'BRAIN '+inputs.brain],
         datasets: [{
-          data: [inputs.brain, inputs.chrome, inputs.edge, inputs.flash, inputs.shade],
+          data: [inputs.chrome, inputs.edge, inputs.shade, inputs.flash, inputs.brain],
           borderWidth: 1,
           borderColor: theme.colors.fuchsia,
           backgroundColor: setAlpha(theme.colors.fuchsia, "33"),
@@ -86,8 +94,8 @@ function CharacterStats() {
                 display: true,
                 color: setAlpha(theme.colors.turquoise, "88"),
                 font: {
-                  family: "Android101",
-                  size: 15,
+                  family: fontFamilyAndroid,
+                  size: 10,
                 },
               },
               ticks: {
@@ -98,7 +106,7 @@ function CharacterStats() {
                 stepSize: 20,
                 maxTicksLimit: 6,
                 font: {
-                  family: "EuroStyle",
+                  family: fontFamilyEuroStyle,
                   size: 10,
                 },
               },
@@ -108,7 +116,7 @@ function CharacterStats() {
                 circular: true,
                 lineWidth: 1,
                 font: {
-                  family: "EuroStyle",
+                  family: fontFamilyEuroStyle,
                 },
               },
               suggestedMin: 0,
@@ -123,12 +131,13 @@ function CharacterStats() {
             display: false,
           },
           tooltip: {
+            enabled: false,
             titleFont: {
-              family: "Android101",
+              family: fontFamilyAndroid,
             },
             titleAlign: "center",
             bodyFont: {
-              family: "EuroStyle",
+              family: fontFamilyEuroStyle,
               weight: "bold",
               size: 15,
             },
@@ -182,50 +191,47 @@ function CharacterStats() {
           </div>
 
           <div class="stats-container">
+
             <div class="stat-container">
-              <div class="left-col">
-                <label class="stat">BRAIN <input type="number" name="brain" value={inputs.brain || ""} onChange={handleChange} min="1" max="99" /></label>
+              <div class="label-n-input-container">
+                <div class="stat-label">BRAIN</div>
+                <div class="stat-input"><input type="number" name="brain" value={inputs.brain || ""} onChange={handleChange} min="1" max="99" /></div>
               </div>
-              <div class="right-col">
-                <span class="stat-desc">cunning and knowledge</span>
-              </div>
+              <div class="stat-desc-container"><span class="stat-desc">cunning and knowledge</span></div>
             </div>
 
             <div class="stat-container">
-              <div class="left-col">
-                <label class="stat">CHROME <input type="number" name="chrome" value={inputs.chrome || ""} onChange={handleChange} min="1" max="99"/></label>
+              <div class="label-n-input-container">
+                <div class="stat-label">CHROME</div>
+                <div class="stat-input"><input type="number" name="chrome" value={inputs.chrome || ""} onChange={handleChange} min="1" max="99" /></div>
               </div>
-              <div class="right-col">
-                <span class="stat-desc">strength and endurance</span>
-              </div>
+              <div class="stat-desc-container"><span class="stat-desc">strength and endurance</span></div>
             </div>
 
             <div class="stat-container">
-              <div class="left-col">
-                <label class="stat">EDGE <input type="number" name="edge" value={inputs.edge || ""} onChange={handleChange} min="1" max="99"/></label>
+              <div class="label-n-input-container">
+                <div class="stat-label">EDGE</div>
+                <div class="stat-input"><input type="number" name="edge" value={inputs.edge || ""} onChange={handleChange} min="1" max="99" /></div>
               </div>
-              <div class="right-col">
-                <span class="stat-desc">speed and precision</span>
-              </div>
+              <div class="stat-desc-container"><span class="stat-desc">speed and precision</span></div>
             </div>
 
             <div class="stat-container">
-              <div class="left-col">
-                <label class="stat">FLASH <input type="number" name="flash" value={inputs.flash || ""} onChange={handleChange} min="1" max="99"/></label>
+              <div class="label-n-input-container">
+                <div class="stat-label">FLASH</div>
+                <div class="stat-input"><input type="number" name="flash" value={inputs.flash || ""} onChange={handleChange} min="1" max="99" /></div>
               </div>
-              <div class="right-col">
-                <span class="stat-desc">personality and empathy</span>
-              </div>
+              <div class="stat-desc-container"><span class="stat-desc">personality and empathy</span></div>
             </div>
 
             <div class="stat-container">
-              <div class="left-col">
-                <label class="stat">SHADE <input type="number" name="shade" value={inputs.shade || ""} onChange={handleChange} min="1" max="99"/></label>
+              <div class="label-n-input-container">
+                <div class="stat-label">SHADE</div>
+                <div class="stat-input"><input type="number" name="shade" value={inputs.shade || ""} onChange={handleChange} min="1" max="99" /></div>
               </div>
-              <div class="right-col">
-                <span class="stat-desc">deception and stealth</span>
-              </div>
+              <div class="stat-desc-container"><span class="stat-desc">deception and stealth</span></div>
             </div>
+
           </div>
 
           <div id="stats-chart-container">
