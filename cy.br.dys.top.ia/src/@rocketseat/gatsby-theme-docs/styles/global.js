@@ -788,7 +788,7 @@ export default function GlobalStyle() {
             }
 
             #stats-chart-container {
-              height: 400px;
+              height: 300px;
 
               #stats-chart {
                 padding-left: 0;

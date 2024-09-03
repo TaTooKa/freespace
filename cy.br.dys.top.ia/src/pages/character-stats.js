@@ -136,6 +136,7 @@ function CharacterStats() {
           },
         },
         animation: false,
+        maintainAspectRatio: false,
       };
 
     const statsChartCanvas = document.getElementById("stats-chart");
