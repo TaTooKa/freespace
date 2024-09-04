@@ -685,7 +685,7 @@ export default function GlobalStyle() {
                   margin: 5px auto;
                   z-index: 1;
                   polyline {
-                    transition: 2s;
+                    transition: 2.5s;
                   }
                 }
 
