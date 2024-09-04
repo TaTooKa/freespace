@@ -9,6 +9,8 @@ function CharacterStats() {
   const windowGlobal = typeof window !== 'undefined' && window
   var activeTraits = windowGlobal ? windowGlobal.localStorage.getItem("activeTraits") : "";
 
+  const [randHeartbeatPoints, setRandHeartbeatPoints] = useState(0);
+
   const [inputs, setInputs] = useState(() => {
     const savedCharacterStr = windowGlobal ? windowGlobal.localStorage.getItem("character") : "{}"
     const savedCharacter = JSON.parse(savedCharacterStr)
@@ -151,28 +153,38 @@ function CharacterStats() {
     }
   }
 
-  function getRandHeartbeatPoints() {
-    return " 0, \
+  // Heartbeat Effect
+  function getRandomInt(min, max) {
+      min = Math.ceil(min);
+      max = Math.floor(max);
+      return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setRandHeartbeatPoints(randHeartbeatPoints => " 0, \
              45 130, \
               \
              45 136, \
-             33 142, \
+              "+getRandomInt(20, 40)+" 142, \
               45 149, \
               \
               45 154, \
               \
-              55 160, \
-              9  167, \
-              63 174, \
+              "+getRandomInt(55, 80)+" 160, \
+              "+getRandomInt(1, 30)+"  167, \
+              "+getRandomInt(55, 80)+" 174, \
               \
               45 182, \
               \
               45 187, \
-              38 193, \
+              "+getRandomInt(20, 40)+" 193, \
               45 337, \
               \
-              45"
-  }
+              45");
+    }, 2500);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <Layout title="CHARACTER STATS">
@@ -198,7 +210,7 @@ function CharacterStats() {
 
             <div class="heart-rate">
               <svg version="1.0"  x="0px" y="0px" width="350px" height="73px" viewBox="0 0 350 73" enable-background="new 0 0 350 73">
-                <polyline fill="none" stroke={inputs.state==="inControl" ? setAlpha(theme.colors.turquoise, "88") : setAlpha(theme.colors.fuchsia, "88")} stroke-width="2" stroke-miterlimit="10" points={getRandHeartbeatPoints()} />
+                <polyline fill="none" stroke={inputs.state==="inControl" ? setAlpha(theme.colors.turquoise, "88") : setAlpha(theme.colors.fuchsia, "88")} stroke-width="2" stroke-miterlimit="10" points={randHeartbeatPoints} />
               </svg>
               <div class="fade-in"></div>
               <div class="fade-out"></div>
