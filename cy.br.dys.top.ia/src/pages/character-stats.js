@@ -318,11 +318,13 @@ function CharacterStats() {
                   <input id="angleInput1" type="radio" name="angle" value={inputs.angle1 || "Get Out"} onChange={handleChange} checked={inputs.angle==="Get Out"}/><label for="angleInput1"> Get Out</label>
                   <input id="angleInput2" type="radio" name="angle" value={inputs.angle2 || "Upgrade Life"} onChange={handleChange} checked={inputs.angle==="Upgrade Life"}/><label for="angleInput2"> Upgrade Life</label>
                   <input id="angleInput3" type="radio" name="angle" value={inputs.angle3 || "Learn The Truth"} onChange={handleChange} checked={inputs.angle==="Learn The Truth"}/><label for="angleInput3"> Learn The Truth</label>
+                  <input id="angleInput4" type="radio" name="angle" value={inputs.angle4 || "Make'em Pay"} onChange={handleChange} checked={inputs.angle==="Make'em Pay"}/><label for="angleInput4"> Make'em Pay</label>
                 </div>
                 <div class="col right-col">
-                  <input id="angleInput4" type="radio" name="angle" value={inputs.angle4 || "Make'em Pay"} onChange={handleChange} checked={inputs.angle==="Make'em Pay"}/><label for="angleInput4"> Make'em Pay</label>
                   <input id="angleInput5" type="radio" name="angle" value={inputs.angle5 || "Look After Them"} onChange={handleChange} checked={inputs.angle==="Look After Them"}/><label for="angleInput5"> Look After Them</label>
                   <input id="angleInput6" type="radio" name="angle" value={inputs.angle6 || "Take A Stand"} onChange={handleChange} checked={inputs.angle==="Take A Stand"}/><label for="angleInput6"> Take A Stand</label>
+                  <input id="angleInput7" type="radio" name="angle" value={inputs.angle7 || "Watch It All Burn"} onChange={handleChange} checked={inputs.angle==="Watch It All Burn"}/><label for="angleInput7"> Watch It All Burn</label>
+                  <input id="angleInput8" type="radio" name="angle" value={inputs.angle8 || "Leave A Mark"} onChange={handleChange} checked={inputs.angle==="Leave A Mark"}/><label for="angleInput8"> Leave A Mark</label>
                 </div>
               </div>
             </div>
