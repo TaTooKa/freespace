@@ -70,7 +70,9 @@ export default function GlobalStyle() {
             font-display: swap;
             font-style: normal;
             font-named-instance: 'Regular';
-            src: url(/fonts/Osiris.woff2) format("woff2");
+            src: 
+              url(/fonts/Osiris.woff2) format("woff2"),
+              url(/fonts/Osiris.otf) format("opentype");
             size-adjust: 100%;
         }
 
