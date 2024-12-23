@@ -54,6 +54,26 @@ export default function GlobalStyle() {
             size-adjust: 100%;
         }
 
+        @font-face {
+            font-family: 'The Outbox ST';
+            font-weight: normal;
+            font-display: swap;
+            font-style: normal;
+            font-named-instance: 'Regular';
+            src: url(/fonts/TheOutboxST.woff2) format("woff2");
+            size-adjust: 100%;
+        }
+
+        @font-face {
+            font-family: 'Osiris';
+            font-weight: normal;
+            font-display: swap;
+            font-style: normal;
+            font-named-instance: 'Regular';
+            src: url(/fonts/Osiris.woff2) format("woff2");
+            size-adjust: 100%;
+        }
+
         body {
           font-size: 22px;
           font-family: ${theme.fonts.body};
