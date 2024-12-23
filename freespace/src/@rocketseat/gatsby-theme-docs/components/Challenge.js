@@ -144,7 +144,7 @@ const Challenge = ({challenge, index, challenges, setChallenges, chType, otherCh
     const leftPos = progressBarRect.right;
 
     const text = number < 0 ? `${number}%` : `+${number}%`; 
-    const color = number < 0 ? "#ff0096ff" : "#0cffe1ff";
+    const color = number < 0 ? "#ff0096ff" : "#0ca4ffff";
 
     const floatingNumberContainer = document.createElement("div");
     floatingNumberContainer.classList.add('floating-number-container');

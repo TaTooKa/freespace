@@ -301,7 +301,7 @@ export default function GlobalStyle() {
         }
 
         img.art {
-          border: 1px solid #0a6d61;
+          border: 1px solid ${theme.colors.accent};
           border-radius: 0 15px 0 15px;
           margin: 15px auto 5px auto;
           width: 100%;
@@ -927,19 +927,19 @@ export default function GlobalStyle() {
                     text-shadow: 0 0 10px ${theme.colors.turquoise};
                 }
                 input:checked+label.stat-level-0 {
-                  filter: hue-rotate(190deg);
+                  filter: hue-rotate(135deg);
                 }
                 input:checked+label.stat-level-1 {
-                  filter: hue-rotate(220deg);
+                  filter: hue-rotate(160deg);
                 }
                 input:checked+label.stat-level-2 {
-                  filter: hue-rotate(250deg);
+                  filter: hue-rotate(190deg);
                 }
                 input:checked+label.stat-level-3 {
-                  filter: hue-rotate(270deg);
+                  filter: hue-rotate(210deg);
                 }
                 input:checked+label.stat-level-4 {
-                  filter: hue-rotate(340deg);
+                  filter: hue-rotate(260deg);
                 }
                 input:checked+label.stat-level-5 {
                   filter: hue-rotate(0deg);
@@ -1061,11 +1061,11 @@ export default function GlobalStyle() {
         }
 
         div.active-traits {
-          border: 1px solid #0a6d61;
+          border: 1px solid ${theme.colors.accent};
           padding: 10px 20px;
           border-radius: 0 15px 0 15px;
           span#active-traits-title {
-            color: #0a6d61;
+            color: ${theme.colors.accent};
             font-size: 0.9em;
             font-weight: bold;
           }
@@ -1111,7 +1111,7 @@ export default function GlobalStyle() {
             }          
           }
           .trait {
-            border: 1px solid #0a6d6166;
+            border: 1px solid ${theme.colors.accent}66;
             margin: 10px 0 25px 0;
             ${'' /* padding: 10px 0; */}
             padding: 20px;
@@ -1119,21 +1119,21 @@ export default function GlobalStyle() {
             opacity: 0.9;
             :has(input:checked) {
               opacity: 1;
-              border: 1px solid #0a6d61ff;
-              box-shadow: inset 0 0 50px #0a6d61ff;
+              border: 1px solid ${theme.colors.accent};
+              box-shadow: inset 0 0 50px ${theme.colors.accent};
 
               background: linear-gradient(
                 48deg,
                 black 5%,
-                #0a6d6122 20%,
+                ${theme.colors.accent}22 20%,
                 black 25%,
-                #0a6d6166 30%,
+                ${theme.colors.accent}66 30%,
                 black 40%,
-                #0a6d6122 50%,
+                ${theme.colors.accent}22 50%,
                 black 55%,
-                #0a6d6166 60%,
+                ${theme.colors.accent}66 60%,
                 black 70%,
-                #0a6d6122 
+                ${theme.colors.accent}22 
               );
               animation: foil 40s ease infinite;
               background-size:400% 400%;
@@ -1993,22 +1993,22 @@ export default function GlobalStyle() {
           animation-name: shine;
           animation-duration: 15s;
           animation-iteration-count: infinite;
-          text-shadow: 0 0 0 #0cffe166;
+          text-shadow: 0 0 0 ${theme.colors.shine};
           ${'' /* -webkit-text-stroke: 1px #ffffff11; */}
         }
 
         @-webkit-keyframes shine {
           0%, 10% {
             background-position: 200px;
-            text-shadow: 0 0 0 #0cffe166;
+            text-shadow: 0 0 0 ${theme.colors.shine};
             transform: skew(0deg);
           }
           50% {
-            text-shadow: 0 0 0 #0cffe188;
+            text-shadow: 0 0 0 ${theme.colors.boost.light};
             transform: skew(-10deg);
           }
           75% {
-            text-shadow: 0 0 0 #0cffe166;
+            text-shadow: 0 0 0 ${theme.colors.shine};
             transform: skew(-5deg);
           }
           100% {

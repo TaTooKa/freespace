@@ -1,12 +1,14 @@
 export default {
   colors: {
-    primary: '#ff0096ff',
+    primary: '#ffff00ff',
     background: '#FFFFFF',
     shape: `#F2F2FA`,
     title: `#5c5c70`,
     text: `#26282c`,
-    turquoise: `#0cffe1ff`,
-    fuchsia: `#ff0096ff`, 
+    turquoise: `#2f7ce5ff`,
+    fuchsia: `#ce0900ff`, 
+    shine: `#1d6dfe66`,
+    accent: `#104e9e`,
     components: {
       blockquote: {
         background: `#939dae`,
@@ -20,13 +22,13 @@ export default {
     }
   },
   darkcolors: {
-    primary: '#ff0096ff',
+    // primary: '#ff0096ff',
     background: '#181d24',
     shape: `#131313`,
     title: `#bfbfbf`,
     text: `#ffffff`,
-    turquoise: `#0cffe1ff`,
-    fuchsia: `#ff0096ff`, 
+    // turquoise: `#2f7ce5ff`,
+    // fuchsia: `#ce0900ff`, 
     components: {
       blockquote: {
         background: `#2d3748`,

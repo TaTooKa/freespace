@@ -25,7 +25,7 @@ const Container = styled.header`
       color: #fff;
     }
     span.turquoise {
-      color: #0cffe1;
+      color: #0ca4ff;
     }
     span.fuchsia {
       color: #ff0096;
