@@ -4,7 +4,7 @@ import React from 'react';
 import cybrdystopialogo from './assets/logo.png';
 
 const Logo = () => (
-  <img src={cybrdystopialogo} alt="cybrdystopia logo" style={{ width: 180 }} />
+  <img src={cybrdystopialogo} alt="cybrdystopia logo" style={{ width: 220, margin: "auto" }} />
 );
 
 export default Logo;

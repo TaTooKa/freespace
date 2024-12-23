@@ -51,7 +51,6 @@ export const LogoContainer = styled.div`
 
   a {
     width: 100%;
-    padding-left: 30px;
 
     display: flex;
     justify-content: flex-start;
