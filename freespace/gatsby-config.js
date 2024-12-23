@@ -1,10 +1,10 @@
 module.exports = {
   siteMetadata: {
-    siteTitle: `cy.br/dys.top.ia`,
-    defaultTitle: `cy.br/dys.top.ia`,
-    siteTitleShort: `cy.br/dys.top.ia`,
-    siteDescription: `cy.br/dys.top.ia RPG website`,
-    siteUrl: `https://tatooka.github.io`,
+    siteTitle: `Free Space`,
+    defaultTitle: `Free Space`,
+    siteTitleShort: `freespace`,
+    siteDescription: `Free Space RPG website`,
+    siteUrl: `https://freespace-rpg.vercel.app`,
     siteAuthor: `@tatooka`,
     siteImage: `/banner.png`,
     siteLanguage: `en`,
@@ -26,8 +26,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `cy.br/dys.top.ia`,
-        short_name: `cy.br/dys.top.ia`,
+        name: `Free Space`,
+        short_name: `freespace`,
         start_url: `/`,
         background_color: `#ffffff`,
         display: `standalone`,

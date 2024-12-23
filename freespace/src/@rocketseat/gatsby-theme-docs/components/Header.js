@@ -71,15 +71,7 @@ export default function Header({ handleMenuOpen }) {
       </button>
       {/* <h2>{siteTitle}</h2> */}
       <h2>
-        <span class="fuchsia">cy</span>
-        <span class="white">.</span>
-        <span class="fuchsia">br</span>
-        <span class="white">/</span>
-        <span class="turquoise">dys</span>
-        <span class="white">.</span>
-        <span class="turquoise">top</span>
-        <span class="white">.</span>
-        <span class="turquoise">ia</span>
+        <span class="header-title">FREE SPACE</span>
       </h2>
     </Container>
   );

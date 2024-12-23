@@ -152,9 +152,14 @@ export default function GlobalStyle() {
             font-weight: bold;
         }
 
+        .header-title {
+            font-family: 'Osiris';
+            font-size: 1.2em;
+            -webkit-text-stroke: 0.5px ${theme.colors.accent};
+        }
+
         .stat {
             font-family: 'Osiris';
-            text-stroke: 1px blue;
             -webkit-text-stroke: 0.8px ${theme.colors.accent};
         }
         .stat-value {
