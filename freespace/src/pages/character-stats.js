@@ -23,11 +23,11 @@ function CharacterStats() {
       psyche: "5",
       gear: "5",
       angleProgress: "1",
-      brain: "1",
-      chrome: "1",
-      edge: "1",
-      flash: "1",
-      shade: "1",
+      intellect: "1",
+      physique: "1",
+      dexterity: "1",
+      charisma: "1",
+      subterfuge: "1",
     }
   })
 
@@ -70,9 +70,9 @@ function CharacterStats() {
     const fontFamilyAndroid = "'Android101', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif";
     const fontFamilyEuroStyle = "'EuroStyle', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif";
     const chartData = {
-        labels: ['CHROME '+inputs.chrome, 'EDGE '+inputs.edge, 'SHADE '+inputs.shade, 'FLASH '+inputs.flash, 'BRAIN '+inputs.brain],
+        labels: ['PHYSIQUE '+inputs.physique, 'DEXTERITY '+inputs.dexterity, 'SUBTERFUGE '+inputs.subterfuge, 'CHARISMA '+inputs.charisma, 'INTELLECT '+inputs.intellect],
         datasets: [{
-          data: [inputs.chrome, inputs.edge, inputs.shade, inputs.flash, inputs.brain],
+          data: [inputs.physique, inputs.dexterity, inputs.subterfuge, inputs.charisma, inputs.intellect],
           borderWidth: 1,
           borderColor: theme.colors.fuchsia,
           backgroundColor: setAlpha(theme.colors.fuchsia, "33"),
@@ -226,40 +226,40 @@ function CharacterStats() {
 
             <div class="stat-container">
               <div class="label-n-input-container">
-                <div class="stat-label">BRAIN</div>
-                <div class="stat-input"><input type="text" name="brain" value={inputs.brain || ""} onChange={handleChange} inputmode="numeric"/></div>
+                <div class="stat-label">INTELLECT</div>
+                <div class="stat-input"><input type="text" name="intellect" value={inputs.intellect || ""} onChange={handleChange} inputmode="numeric"/></div>
               </div>
               <div class="stat-desc-container"><span class="stat-desc">cunning and knowledge</span></div>
             </div>
 
             <div class="stat-container">
               <div class="label-n-input-container">
-                <div class="stat-label">CHROME</div>
-                <div class="stat-input"><input type="text" name="chrome" value={inputs.chrome || ""} onChange={handleChange} inputmode="numeric"/></div>
+                <div class="stat-label">PHYSIQUE</div>
+                <div class="stat-input"><input type="text" name="physique" value={inputs.physique || ""} onChange={handleChange} inputmode="numeric"/></div>
               </div>
               <div class="stat-desc-container"><span class="stat-desc">strength and endurance</span></div>
             </div>
 
             <div class="stat-container">
               <div class="label-n-input-container">
-                <div class="stat-label">EDGE</div>
-                <div class="stat-input"><input type="text" name="edge" value={inputs.edge || ""} onChange={handleChange} inputmode="numeric"/></div>
+                <div class="stat-label">DEXTERITY</div>
+                <div class="stat-input"><input type="text" name="dexterity" value={inputs.dexterity || ""} onChange={handleChange} inputmode="numeric"/></div>
               </div>
               <div class="stat-desc-container"><span class="stat-desc">speed and precision</span></div>
             </div>
 
             <div class="stat-container">
               <div class="label-n-input-container">
-                <div class="stat-label">FLASH</div>
-                <div class="stat-input"><input type="text" name="flash" value={inputs.flash || ""} onChange={handleChange} inputmode="numeric"/></div>
+                <div class="stat-label">CHARISMA</div>
+                <div class="stat-input"><input type="text" name="charisma" value={inputs.charisma || ""} onChange={handleChange} inputmode="numeric"/></div>
               </div>
               <div class="stat-desc-container"><span class="stat-desc">personality and empathy</span></div>
             </div>
 
             <div class="stat-container">
               <div class="label-n-input-container">
-                <div class="stat-label">SHADE</div>
-                <div class="stat-input"><input type="text" name="shade" value={inputs.shade || ""} onChange={handleChange} inputmode="numeric"/></div>
+                <div class="stat-label">SUBTERFUGE</div>
+                <div class="stat-input"><input type="text" name="subterfuge" value={inputs.subterfuge || ""} onChange={handleChange} inputmode="numeric"/></div>
               </div>
               <div class="stat-desc-container"><span class="stat-desc">deception and stealth</span></div>
             </div>

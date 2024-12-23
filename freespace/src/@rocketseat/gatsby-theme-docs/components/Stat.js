@@ -14,20 +14,20 @@ const Stat = ({name}) => {
   var statValue = 1;
 
   switch (name) {
-    case 'BRAIN':
-      statValue = savedCharacter.brain;
+    case 'INTELLECT':
+      statValue = savedCharacter.intellect;
       break;
-    case 'CHROME':
-      statValue = savedCharacter.chrome;
+    case 'PHYSIQUE':
+      statValue = savedCharacter.physique;
       break;
-    case 'EDGE':
-      statValue = savedCharacter.edge;
+    case 'DEXTERITY':
+      statValue = savedCharacter.dexterity;
       break;
-    case 'FLASH':
-      statValue = savedCharacter.flash;
+    case 'CHARISMA':
+      statValue = savedCharacter.charisma;
       break;
-    case 'SHADE':
-      statValue = savedCharacter.shade;
+    case 'SUBTERFUGE':
+      statValue = savedCharacter.subterfuge;
       break;
   }
 
