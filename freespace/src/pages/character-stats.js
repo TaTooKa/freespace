@@ -26,7 +26,7 @@ function CharacterStats() {
       intellect: "1",
       physique: "1",
       dexterity: "1",
-      charisma: "1",
+      resolve: "1",
       subterfuge: "1",
     }
   })
@@ -70,9 +70,9 @@ function CharacterStats() {
     const fontFamilyAndroid = "'Android101', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif";
     const fontFamilyEuroStyle = "'EuroStyle', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif";
     const chartData = {
-        labels: ['PHYSIQUE '+inputs.physique, 'DEXTERITY '+inputs.dexterity, 'SUBTERFUGE '+inputs.subterfuge, 'CHARISMA '+inputs.charisma, 'INTELLECT '+inputs.intellect],
+        labels: ['PHYSIQUE '+inputs.physique, 'DEXTERITY '+inputs.dexterity, 'SUBTERFUGE '+inputs.subterfuge, 'RESOLVE '+inputs.resolve, 'INTELLECT '+inputs.intellect],
         datasets: [{
-          data: [inputs.physique, inputs.dexterity, inputs.subterfuge, inputs.charisma, inputs.intellect],
+          data: [inputs.physique, inputs.dexterity, inputs.subterfuge, inputs.resolve, inputs.intellect],
           borderWidth: 1,
           borderColor: theme.colors.fuchsia,
           backgroundColor: setAlpha(theme.colors.fuchsia, "33"),
@@ -250,10 +250,10 @@ function CharacterStats() {
 
             <div class="stat-container">
               <div class="label-n-input-container">
-                <div class="stat-label">CHARISMA</div>
-                <div class="stat-input"><input type="text" name="charisma" value={inputs.charisma || ""} onChange={handleChange} inputmode="numeric"/></div>
+                <div class="stat-label">RESOLVE</div>
+                <div class="stat-input"><input type="text" name="resolve" value={inputs.resolve || ""} onChange={handleChange} inputmode="numeric"/></div>
               </div>
-              <div class="stat-desc-container"><span class="stat-desc">personality and empathy</span></div>
+              <div class="stat-desc-container"><span class="stat-desc">empathy and willpower</span></div>
             </div>
 
             <div class="stat-container">

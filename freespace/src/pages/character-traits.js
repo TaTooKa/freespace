@@ -207,7 +207,7 @@ function CharacterStats() {
             </Trait>
 
             <Trait type="skill" name="Face" title="FACE" art={face_art} inputs={inputs} handleChange={handleChange}>
-                <span>gain a <span class="boost">BOOST</span> when attempting to <a href="/prompts/general-prompts#secure-an-advantage">SECURE AN ADVANTAGE</a> with leadership, coordination or planning; or when you <a href="/prompts/challenge-prompts#accept-a-challenge">ACCEPT A CHALLENGE</a>, <a href="/prompts/general-prompts#lead-the-team">LEAD THE TEAM</a> or <a href="/prompts/general-prompts#compel">COMPEL</a> by testing your <span class="stat">CHARISMA</span>.</span>
+                <span>gain a <span class="boost">BOOST</span> when attempting to <a href="/prompts/general-prompts#secure-an-advantage">SECURE AN ADVANTAGE</a> with leadership, coordination or planning; or when you <a href="/prompts/challenge-prompts#accept-a-challenge">ACCEPT A CHALLENGE</a>, <a href="/prompts/general-prompts#lead-the-team">LEAD THE TEAM</a> or <a href="/prompts/general-prompts#compel">COMPEL</a> by testing your <span class="stat">RESOLVE</span>.</span>
             </Trait>
 
             <Trait type="skill" name="GunKata" title="GUN KATA" art={gunkata_art} inputs={inputs} handleChange={handleChange}>
@@ -231,7 +231,7 @@ function CharacterStats() {
             </Trait>
 
             <Trait type="skill" name="StreetRat" title="STREET RAT" art={streetrat_art} inputs={inputs} handleChange={handleChange}>
-                <span>gain a <span class="boost">BOOST</span> for any test involving lying, bluffing, stealing or cheating. When you are in the underbelly of the city, you can <a href="/prompts/general-prompts#gather-information">GATHER INFORMATION</a> with <span class="stat">CHARISMA</span> or <span class="stat">SUBTERFUGE</span>, and you gain a <span class="boost">BOOST</span> whenever you <a href="/prompts/general-prompts#act-under-pressure">ACT UNDER PRESSURE</a> to parkour through the environment, hide or mix with the people, or move through a secret shortcut.</span>
+                <span>gain a <span class="boost">BOOST</span> for any test involving lying, bluffing, stealing or cheating. When you are in the underbelly of the city, you can <a href="/prompts/general-prompts#gather-information">GATHER INFORMATION</a> with <span class="stat">RESOLVE</span> or <span class="stat">SUBTERFUGE</span>, and you gain a <span class="boost">BOOST</span> whenever you <a href="/prompts/general-prompts#act-under-pressure">ACT UNDER PRESSURE</a> to parkour through the environment, hide or mix with the people, or move through a secret shortcut.</span>
             </Trait>
 
             <Trait type="skill" name="VirtualCowboy" title="VIRTUAL COWBOY" art={virtualcowboy_art} inputs={inputs} handleChange={handleChange}>
@@ -266,7 +266,7 @@ function CharacterStats() {
             </Trait>
 
             <Trait type="gear" name="MirrorShades" title="MIRRORSHADES" art={mirrorshades_art} inputs={inputs} handleChange={handleChange}>
-                <span><i>excessively cool</i>. Gain a <span class="boost">BOOST</span> whenever you test your <span class="stat">CHARISMA</span>.</span>
+                <span><i>excessively cool</i>. Gain a <span class="boost">BOOST</span> whenever you test your <span class="stat">RESOLVE</span>.</span>
             </Trait>
 
             <Trait type="gear" name="Neuralink" title="NEURALINK" art={neuralink_art} inputs={inputs} handleChange={handleChange}>
@@ -287,7 +287,7 @@ function CharacterStats() {
             </Trait>
 
             <Trait type="gear" name="SmartCosmetics" title="SMART COSMETICS" art={smartcosmetics_art} inputs={inputs} handleChange={handleChange}>
-                <span>Change hairstyle, makeup or facial features <i>at will</i>. Gain a <span class="boost">BOOST</span> when you take advantage of this to <a href="/prompts/general-prompts#compel">COMPEL</a> or <a href="/prompts/recovery-prompts#resupply">RESUPPLY</a> by awing or seducing others with <span class="stat">CHARISMA</span>. Additionally, you can <a href="/prompts/general-prompts#gather-information">GATHER INFORMATION</a> with <span class="stat">CHARISMA</span>.</span>
+                <span>Change hairstyle, makeup or facial features <i>at will</i>. Gain a <span class="boost">BOOST</span> when you take advantage of this to <a href="/prompts/general-prompts#compel">COMPEL</a> or <a href="/prompts/recovery-prompts#resupply">RESUPPLY</a> by awing or seducing others with <span class="stat">RESOLVE</span>. Additionally, you can <a href="/prompts/general-prompts#gather-information">GATHER INFORMATION</a> with <span class="stat">RESOLVE</span>.</span>
             </Trait>
 
             <Trait type="gear" name="SpecialAmmoMod" title="SPECIAL AMMO MOD" art={specialammomod_art} inputs={inputs} handleChange={handleChange}>

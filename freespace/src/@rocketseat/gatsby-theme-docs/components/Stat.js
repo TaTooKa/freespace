@@ -24,8 +24,8 @@ const Stat = ({name}) => {
     case 'DEXTERITY':
       statValue = savedCharacter.dexterity;
       break;
-    case 'CHARISMA':
-      statValue = savedCharacter.charisma;
+    case 'RESOLVE':
+      statValue = savedCharacter.resolve;
       break;
     case 'SUBTERFUGE':
       statValue = savedCharacter.subterfuge;
