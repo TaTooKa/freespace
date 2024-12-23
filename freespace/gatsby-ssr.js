@@ -34,5 +34,21 @@ export const onRenderBody = ({ setHeadComponents }) => {
       crossOrigin="anonymous"
       key="Android101"
     />,
+    <link
+      rel="preload"
+      href="./fonts/TheOutboxST.woff2"
+      as="font"
+      type="font/woff2"
+      crossOrigin="anonymous"
+      key="The Outbox ST"
+    />,
+    <link
+      rel="preload"
+      href="./fonts/Osiris.woff2"
+      as="font"
+      type="font/woff2"
+      crossOrigin="anonymous"
+      key="Osiris"
+    />,
   ])
 }

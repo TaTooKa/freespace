@@ -12,6 +12,7 @@ const Stat = ({name}) => {
   const savedCharacter = JSON.parse(savedCharacterStr) || {}
 
   var statValue = 1;
+  var classes = "stat-value";
 
   switch (name) {
     case 'INTELLECT':
@@ -34,11 +35,19 @@ const Stat = ({name}) => {
   if ( !isNumeric(statValue) ) {
     statValue = "?";
   }
+
+  if (statValue <= 30) {
+      classes+=" bad";
+  } else if (statValue > 30 && statValue < 60) {
+      classes+=" normal";
+  } else if (statValue >= 60) {
+      classes+=" good";
+  }
   
   return (
     <span>
       <span class="stat">{name}</span>
-      <span class="stat-value" title="this value is defined in the character STATS page.">({statValue})</span>
+      <span class={classes} title="this value is defined in the character STATS page.">({statValue}%)</span>
     </span>
   )
 };

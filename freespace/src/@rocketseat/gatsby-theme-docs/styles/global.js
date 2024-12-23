@@ -153,16 +153,28 @@ export default function GlobalStyle() {
         }
 
         .stat {
-            font-family: 'Android101';
+            font-family: 'Osiris';
+            text-stroke: 1px blue;
+            -webkit-text-stroke: 0.8px ${theme.colors.accent};
         }
         .stat-value {
           font-size: 0.7em;
           font-weight: bold;
           color: #888;
+          opacity: 0.7;
           margin: 0 0 0 3px;
           vertical-align: middle;
           text-shadow: 0 0 10px #000;
           cursor: help;
+        }
+        .stat-value.bad {
+          color: #c36963ff;
+        }
+        .stat-value.normal {
+          color: #989057ff;
+        }
+        .stat-value.good {
+          color: #578498ff;
         }
 
         code.inline-code {
@@ -801,8 +813,8 @@ export default function GlobalStyle() {
                     .label-n-input-container {
 
                       .stat-label {
-                          font-family: 'Android101';
-                          font-size: 1.2em;
+                          font-family: 'The Outbox ST';
+                          font-size: 1.1em;
                           text-shadow: 0 0 5px #aaa;
                           margin: 0 auto;
 
@@ -811,11 +823,11 @@ export default function GlobalStyle() {
                           }
 
                           @media screen and (max-width: 1200px) {
-                            font-size: 1.2em;
+                            font-size: 1.0em;
                           }
 
                           @media screen and (max-width: 950px) {
-                            font-size: 1em;
+                            font-size: 0.9em;
                           }
 
                           @media screen and (max-width: 850px) {
@@ -823,19 +835,19 @@ export default function GlobalStyle() {
                           }
 
                           @media screen and (max-width: 780px) {
-                            font-size: 1.2em;
+                            font-size: 1.1em;
                           }
 
                           @media screen and (max-width: 650px) {
-                            font-size: 1em;
+                            font-size: 0.9em;
                           }
 
                           @media screen and (max-width: 540px) {
-                            font-size: 0.8em;
+                            font-size: 0.7em;
                           }
 
                           @media screen and (max-width: 450px) {
-                            font-size: 0.7em;
+                            font-size: 0.6em;
                           }
 
                           @media screen and (max-width: 380px) {
