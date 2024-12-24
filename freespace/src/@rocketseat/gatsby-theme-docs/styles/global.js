@@ -162,12 +162,12 @@ export default function GlobalStyle() {
         
         .turquoise {
             color: ${theme.colors.turquoise};
-            -webkit-text-stroke: 1px #008978;
+            -webkit-text-stroke: 1px ${theme.colors.shine};
         }
 
         .fuchsia {
             color: ${theme.colors.fuchsia};
-            -webkit-text-stroke: 1px #9b005b;
+            -webkit-text-stroke: 1px ${theme.colors.reddish};
         }
 
         .bold {
@@ -2017,13 +2017,13 @@ export default function GlobalStyle() {
           font-weight: bold;
           background-image: linear-gradient(
             -40deg, 
-            rgba(255,255,255,0) 0%, 
-            rgba(255,255,255,0) 40%, 
-            #fff 50%, 
-            rgba(255,255,255,0) 60%, 
-            rgba(255,255,255,0) 100%
+            #ffffff00 0%, 
+            #ffffff00 40%, 
+            #ffffffff 50%, 
+            #ffffff00 60%, 
+            #ffffff00 100%
           );
-          color: rgba(255, 255, 255, 0.1);
+          color: #ffffff11;
           -webkit-background-size: 50px;
           -webkit-background-clip: text;
           -webkit-animation-name: shine;
@@ -2033,27 +2033,16 @@ export default function GlobalStyle() {
           animation-name: shine;
           animation-duration: 15s;
           animation-iteration-count: infinite;
-          text-shadow: 0 0 0 ${theme.colors.shine};
-          ${'' /* -webkit-text-stroke: 1px #ffffff11; */}
+          text-shadow: 0px 0px 0px ${theme.colors.shine2}, 2px 2px 1px black, 0px 0px 1px ${theme.colors.boost.light};
+          -webkit-text-stroke: 0.5px ${theme.colors.boost.light}99;
         }
 
         @-webkit-keyframes shine {
           0%, 10% {
             background-position: 200px;
-            text-shadow: 0 0 0 ${theme.colors.shine};
-            transform: skew(0deg);
-          }
-          50% {
-            text-shadow: 0 0 0 ${theme.colors.boost.light};
-            transform: skew(-10deg);
-          }
-          75% {
-            text-shadow: 0 0 0 ${theme.colors.shine};
-            transform: skew(-5deg);
           }
           100% {
             background-position: -200px;
-            transform: skew(0deg);
           }
         }
 

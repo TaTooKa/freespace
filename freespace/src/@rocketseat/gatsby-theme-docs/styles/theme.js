@@ -8,7 +8,9 @@ export default {
     turquoise: `#2f7ce5ff`,
     fuchsia: `#ce0900ff`, 
     shine: `#1d6dfe66`,
+    shine2: `#1d6dfe44`,
     accent: `#104e9e`,
+    reddish: `#9b005b99`,
     components: {
       blockquote: {
         background: `#939dae`,
