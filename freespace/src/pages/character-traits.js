@@ -219,7 +219,7 @@ function CharacterStats() {
             </Trait>
 
             <Trait type="skill" name="Medic" title="MEDIC" art={medic_art} inputs={inputs} handleChange={handleChange}>
-                <span>gain a <span class="boost">BOOST</span> when you <a href="/prompts/recovery-prompts#heal">HEAL</a>, and if you <a href="/prompts/suffer-prompts#sacrifice-resources">SACRIFICE RESOURCES</a> for it, spend 1 less GEAR than needed to gain the same benefits.</span>
+                <span>gain a <span class="boost">BOOST</span> when you <a href="/prompts/recovery-prompts#heal">HEAL</a>, and if you <a href="/prompts/suffer-prompts#sacrifice-resources">SACRIFICE RESOURCES</a> for it, spend 1 less RESOURCES than needed to gain the same benefits.</span>
             </Trait>
 
             <Trait type="skill" name="Netrunner" title="NETRUNNER" art={netrunner_art} inputs={inputs} handleChange={handleChange}>

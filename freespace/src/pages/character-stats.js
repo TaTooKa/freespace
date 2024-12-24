@@ -19,9 +19,9 @@ function CharacterStats() {
       xpCurrent: "0",
       xpTotal: "0",
       state: "inControl",
-      grit: "5",
+      health: "5",
       psyche: "5",
-      gear: "5",
+      resources: "5",
       angleProgress: "1",
       intellect: "1",
       physique: "1",
@@ -270,14 +270,14 @@ function CharacterStats() {
             <canvas id="stats-chart"></canvas>
           </div>
 
-          <div class="stat-bar" id="grit-stat-bar">
-            <span class="title">GRIT</span>
-            <input type="radio" name="grit" id="grit0" value={inputs.grit0 || "0"} onChange={handleChange} checked={inputs.grit==="0"}/><label for="grit0" class="stat-level-0">0</label>
-            <input type="radio" name="grit" id="grit1" value={inputs.grit1 || "1"} onChange={handleChange} checked={inputs.grit==="1"}/><label for="grit1" class="stat-level-1">1</label>
-            <input type="radio" name="grit" id="grit2" value={inputs.grit2 || "2"} onChange={handleChange} checked={inputs.grit==="2"}/><label for="grit2" class="stat-level-2">2</label>
-            <input type="radio" name="grit" id="grit3" value={inputs.grit3 || "3"} onChange={handleChange} checked={inputs.grit==="3"}/><label for="grit3" class="stat-level-3">3</label>
-            <input type="radio" name="grit" id="grit4" value={inputs.grit4 || "4"} onChange={handleChange} checked={inputs.grit==="4"}/><label for="grit4" class="stat-level-4">4</label>
-            <input type="radio" name="grit" id="grit5" value={inputs.grit5 || "5"} onChange={handleChange} checked={inputs.grit==="5"}/><label for="grit5" class="stat-level-5">5</label>
+          <div class="stat-bar" id="health-stat-bar">
+            <span class="title">HEALTH</span>
+            <input type="radio" name="health" id="health0" value={inputs.health0 || "0"} onChange={handleChange} checked={inputs.health==="0"}/><label for="health0" class="stat-level-0">0</label>
+            <input type="radio" name="health" id="health1" value={inputs.health1 || "1"} onChange={handleChange} checked={inputs.health==="1"}/><label for="health1" class="stat-level-1">1</label>
+            <input type="radio" name="health" id="health2" value={inputs.health2 || "2"} onChange={handleChange} checked={inputs.health==="2"}/><label for="health2" class="stat-level-2">2</label>
+            <input type="radio" name="health" id="health3" value={inputs.health3 || "3"} onChange={handleChange} checked={inputs.health==="3"}/><label for="health3" class="stat-level-3">3</label>
+            <input type="radio" name="health" id="health4" value={inputs.health4 || "4"} onChange={handleChange} checked={inputs.health==="4"}/><label for="health4" class="stat-level-4">4</label>
+            <input type="radio" name="health" id="health5" value={inputs.health5 || "5"} onChange={handleChange} checked={inputs.health==="5"}/><label for="health5" class="stat-level-5">5</label>
           </div>
 
           <div class="stat-bar" id="psyche-stat-bar">
@@ -290,14 +290,14 @@ function CharacterStats() {
             <input type="radio" name="psyche" id="psyche5" value={inputs.psyche5 || "5"} onChange={handleChange} checked={inputs.psyche==="5"}/><label for="psyche5" class="stat-level-5">5</label>
           </div>
 
-          <div class="stat-bar" id="gear-stat-bar">
-            <span class="title">GEAR</span>
-            <input type="radio" name="gear" id="gear0" value={inputs.gear0 || "0"} onChange={handleChange} checked={inputs.gear==="0"}/><label for="gear0" class="stat-level-0">0</label>
-            <input type="radio" name="gear" id="gear1" value={inputs.gear1 || "1"} onChange={handleChange} checked={inputs.gear==="1"}/><label for="gear1" class="stat-level-1">1</label>
-            <input type="radio" name="gear" id="gear2" value={inputs.gear2 || "2"} onChange={handleChange} checked={inputs.gear==="2"}/><label for="gear2" class="stat-level-2">2</label>
-            <input type="radio" name="gear" id="gear3" value={inputs.gear3 || "3"} onChange={handleChange} checked={inputs.gear==="3"}/><label for="gear3" class="stat-level-3">3</label>
-            <input type="radio" name="gear" id="gear4" value={inputs.gear4 || "4"} onChange={handleChange} checked={inputs.gear==="4"}/><label for="gear4" class="stat-level-4">4</label>
-            <input type="radio" name="gear" id="gear5" value={inputs.gear5 || "5"} onChange={handleChange} checked={inputs.gear==="5"}/><label for="gear5" class="stat-level-5">5</label>
+          <div class="stat-bar" id="resources-stat-bar">
+            <span class="title">RESOURCES</span>
+            <input type="radio" name="resources" id="resources0" value={inputs.resources0 || "0"} onChange={handleChange} checked={inputs.resources==="0"}/><label for="resources0" class="stat-level-0">0</label>
+            <input type="radio" name="resources" id="resources1" value={inputs.resources1 || "1"} onChange={handleChange} checked={inputs.resources==="1"}/><label for="resources1" class="stat-level-1">1</label>
+            <input type="radio" name="resources" id="resources2" value={inputs.resources2 || "2"} onChange={handleChange} checked={inputs.resources==="2"}/><label for="resources2" class="stat-level-2">2</label>
+            <input type="radio" name="resources" id="resources3" value={inputs.resources3 || "3"} onChange={handleChange} checked={inputs.resources==="3"}/><label for="resources3" class="stat-level-3">3</label>
+            <input type="radio" name="resources" id="resources4" value={inputs.resources4 || "4"} onChange={handleChange} checked={inputs.resources==="4"}/><label for="resources4" class="stat-level-4">4</label>
+            <input type="radio" name="resources" id="resources5" value={inputs.resources5 || "5"} onChange={handleChange} checked={inputs.resources==="5"}/><label for="resources5" class="stat-level-5">5</label>
           </div>
 
         </div>
