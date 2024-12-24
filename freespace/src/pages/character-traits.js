@@ -4,6 +4,7 @@ import Seo from '@rocketseat/gatsby-theme-docs/src/components/SEO';
 
 import Trait from '/src/@rocketseat/gatsby-theme-docs/components/Trait'
 
+import placeholder_art from '/src/images/placeholder.png';
 import blademaster_art from '/src/images/blademaster.jpg';
 import bountyhunter_art from '/src/images/bountyhunter.jpg';
 import brawler_art from '/src/images/brawler.jpg';
@@ -175,6 +176,10 @@ function CharacterStats() {
 
         <div class="traits-container" id="skills-container">
             <h2 id="skills-and-background">SKILLS AND BACKGROUND</h2>
+
+            <Trait type="skill" name="Placeholder" title="PLACEHOLDER" art={placeholder_art} inputs={inputs} handleChange={handleChange}>
+                <span>Placeholder.</span>
+            </Trait>
 
             <Trait type="skill" name="Blademaster" title="BLADEMASTER" art={blademaster_art} inputs={inputs} handleChange={handleChange}>
                 <span>when wielding a bladed weapon, gain a <span class="boost">BOOST</span> when you test <span class="stat">PHYSIQUE</span> to <a href="/prompts/general-prompts#clash">CLASH</a> or when you <a href="/prompts/general-prompts#act-under-pressure">ACT UNDER PRESSURE</a> to defend. When you <a href="/prompts/challenge-prompts#fulfill-a-challenge">FULFILL A CHALLENGE</a> of melee combat, you gain double XP.</span>
