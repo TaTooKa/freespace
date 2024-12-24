@@ -227,14 +227,14 @@ export default function GlobalStyle() {
         a {
           color: ${theme.colors.text};
           font-weight: bold;
-          text-decoration-style: dotted;
-          text-decoration-color: ${theme.colors.fuchsia};
+          text-decoration-style: dashed;
+          text-decoration-color: ${theme.colors.turquoise};
           transition: 0.5s;
 
           &:hover {
             text-decoration-style: dashed;
-            text-decoration-color: ${theme.colors.turquoise};
-            text-shadow: 0 0 3px ${theme.colors.turquoise};
+            text-decoration-color: ${theme.colors.boost.light};
+            text-shadow: 0 0 3px ${theme.colors.turquoise}, 0 0 5px ${theme.colors.accent};
           }
         }
 
@@ -989,6 +989,7 @@ export default function GlobalStyle() {
             }
 
             #stats-chart-container {
+              font-family: 'Eurostyle';
               height: 300px;
               width: 100%;
               margin: 10px auto 0 auto;
