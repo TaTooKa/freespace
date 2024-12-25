@@ -2041,6 +2041,12 @@ export default function GlobalStyle() {
           0%, 10% {
             background-position: 200px;
           }
+          25%, 75% {
+            color: #ffffff11;
+          }
+          50% {
+            color: ${theme.colors.boost.light}99;
+          }
           100% {
             background-position: -200px;
           }
