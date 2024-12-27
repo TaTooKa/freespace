@@ -978,7 +978,7 @@ export default function GlobalStyle() {
                   filter: hue-rotate(210deg);
                 }
                 input:checked+label.stat-level-4 {
-                  filter: hue-rotate(260deg);
+                  filter: hue-rotate(300deg);
                 }
                 input:checked+label.stat-level-5 {
                   filter: hue-rotate(0deg);
