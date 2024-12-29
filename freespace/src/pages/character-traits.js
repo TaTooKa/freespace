@@ -5,48 +5,38 @@ import Seo from '@rocketseat/gatsby-theme-docs/src/components/SEO';
 import Trait from '/src/@rocketseat/gatsby-theme-docs/components/Trait'
 
 import placeholder_art from '/src/images/placeholder.png';
-import blademaster_art from '/src/images/blademaster.jpg';
+import acepilot_art from '/src/images/acepilot.jpg';
+import astrogator_art from '/src/images/astrogator.jpg';
 import bountyhunter_art from '/src/images/bountyhunter.jpg';
-import brawler_art from '/src/images/brawler.jpg';
+import colonist_art from '/src/images/colonist.jpg';
+import commander_art from '/src/images/commander.jpg';
 import diplomat_art from '/src/images/diplomat.jpg';
-import driver_art from '/src/images/driver.jpg';
-import face_art from '/src/images/face.jpg';
-import gunkata_art from '/src/images/gunkata.jpg';
+import explorer_art from '/src/images/explorer.jpg';
+import freetrader_art from '/src/images/freetrader.jpg';
+import hacker_art from '/src/images/hacker.jpg';
 import infiltrator_art from '/src/images/infiltrator.jpg';
+import journalist_art from '/src/images/journalist.jpg';
+import lawenforcement_art from '/src/images/lawenforcement.jpg';
+import marauder_art from '/src/images/marauder.jpg';
+import mechanic_art from '/src/images/mechanic.jpg';
 import medic_art from '/src/images/medic.jpg';
-import netrunner_art from '/src/images/netrunner.jpg';
+import performer_art from '/src/images/performer.jpg';
+import pirate_art from '/src/images/pirate.jpg';
+import scavenger_art from '/src/images/scavenger.jpg';
+import scholar_art from '/src/images/scholar.jpg';
+import scientist_art from '/src/images/scientist.jpg';
+import scoundrel_art from '/src/images/scoundrel.jpg';
+import sharpshooter_art from '/src/images/sharpshooter.jpg';
+import shocktrooper_art from '/src/images/shocktrooper.jpg';
 import sniper_art from '/src/images/sniper.jpg';
-import streetrat_art from '/src/images/streetrat.jpg';
-import armored_art from '/src/images/armored.jpg';
-import brainbox_art from '/src/images/brainbox.jpg';
-import cyberclaws_art from '/src/images/cyberclaws.jpg';
-import cyberdeck_art from '/src/images/cyberdeck.jpg';
-import mirrorshades_art from '/src/images/mirrorshades.jpg';
-import neuralink_art from '/src/images/neuralink.jpg';
-import retinalhud_art from '/src/images/retinalhud.jpg';
-import smartcosmetics_art from '/src/images/smartcosmetics.jpg';
-import specialammomod_art from '/src/images/specialammomod.jpg';
-import subdermalshockers_art from '/src/images/subdermalshockers.jpg';
-import synapsechip_art from '/src/images/synapsechip.jpg';
-import thermopticcamo_art from '/src/images/thermopticcamo.jpg';
-import wiredreflexes_art from '/src/images/wiredreflexes.jpg';
-import dealer_art from '/src/images/dealer.jpg';
-import fixer_art from '/src/images/fixer.jpg';
-import infobroker_art from '/src/images/infobroker.jpg';
-import streetdoc_art from '/src/images/streetdoc.jpg';
-import plaskin_art from '/src/images/plaskin.jpg';
-import simsenserecorder_art from '/src/images/simsenserecorder.jpg';
-import voicemod_art from '/src/images/voicemod.jpg';
-import virtualcowboy_art from '/src/images/virtualcowboy.jpg';
-import dronerigger_art from '/src/images/dronerigger.jpg';
+import spacemarine_art from '/src/images/spacemarine.jpg';
 
 function CharacterStats() {
   const windowGlobal = typeof window !== 'undefined' && window
 
   const headings = [
     {depth: 2, value: "SKILLS AND BACKGROUND"},
-    {depth: 2, value: "GEAR AND CYBERWARE"},
-    {depth: 2, value: "CONTACTS"},
+    {depth: 2, value: "ITEMS AND GEAR"},
 ]
 
   const delay = ms => new Promise(
@@ -177,70 +167,104 @@ function CharacterStats() {
         <div class="traits-container" id="skills-container">
             <h2 id="skills-and-background">SKILLS AND BACKGROUND</h2>
 
-            <Trait type="skill" name="Placeholder" title="PLACEHOLDER" art={placeholder_art} inputs={inputs} handleChange={handleChange}>
-                <span>Placeholder.</span>
+            <Trait type="skill" name="AcePilot" title="ACE PILOT" art={acepilot_art} inputs={inputs} handleChange={handleChange}>
+                <span>Gain a <span class="boost">BOOST</span> whenever you <a href="/prompts/general-prompts#act-under-pressure">ACT UNDER PRESSURE</a> while piloting a ship in high-stakes situations or combat, or when you <a href="/prompts/general-prompts#secure-an-advantage">SECURE AN ADVANTAGE</a> by maneuvering your ship into a superior position or exploiting weaknesses in enemy tactics. When you <a href="/prompts/challenge-prompts#fulfill-a-challenge">FULFILL A CHALLENGE</a> of a risky piloting chase, escape or stunt, you gain double XP.</span>
             </Trait>
 
-            <Trait type="skill" name="Blademaster" title="BLADEMASTER" art={blademaster_art} inputs={inputs} handleChange={handleChange}>
-                <span>when wielding a bladed weapon, gain a <span class="boost">BOOST</span> when you test <span class="stat">PHYSIQUE</span> to <a href="/prompts/general-prompts#clash">CLASH</a> or when you <a href="/prompts/general-prompts#act-under-pressure">ACT UNDER PRESSURE</a> to defend. When you <a href="/prompts/challenge-prompts#fulfill-a-challenge">FULFILL A CHALLENGE</a> of melee combat, you gain double XP.</span>
+            <Trait type="skill" name="Astrogator" title="ASTROGATOR" art={astrogator_art} inputs={inputs} handleChange={handleChange}>
+                <span>Gain a <span class="boost">BOOST</span> whenever you <a href="/prompts/general-prompts#gather-information">GATHER INFORMATION</a> about star systems, planets, or celestial phenomena, or when you <a href="/prompts/general-prompts#secure-an-advantage">SECURE AN ADVANTAGE</a> by plotting the best course through space or identifying the safest routes through hazardous areas.</span>
             </Trait>
 
             <Trait type="skill" name="BountyHunter" title="BOUNTY HUNTER" art={bountyhunter_art} inputs={inputs} handleChange={handleChange}>
-                <span>gain a <span class="boost">BOOST</span> whenever you <a href="/prompts/general-prompts#gather-information">GATHER INFORMATION</a>, <a href="/prompts/challenge-prompts#accept-a-challenge">ACCEPT A CHALLENGE</a> or <a href="/prompts/challenge-prompts#fulfill-a-challenge">FULFILL A CHALLENGE</a> related to a bounty or the procurement of a person. When you <a href="/prompts/challenge-prompts#fulfill-a-challenge">FULFILL A CHALLENGE</a> of capturing a bounty, you gain double XP.</span>
+                <span>Gain a <span class="boost">BOOST</span> whenever you <a href="/prompts/general-prompts#gather-information">GATHER INFORMATION</a>, <a href="/prompts/challenge-prompts#accept-a-challenge">ACCEPT A CHALLENGE</a> or <a href="/prompts/challenge-prompts#fulfill-a-challenge">FULFILL A CHALLENGE</a> related to a bounty or the procurement of a person. When you <a href="/prompts/challenge-prompts#fulfill-a-challenge">FULFILL A CHALLENGE</a> of capturing a bounty, you gain double XP.</span>
             </Trait>
 
-            <Trait type="skill" name="Brawler" title="BRAWLER" art={brawler_art} inputs={inputs} handleChange={handleChange}>
-                <span>gain a <span class="boost">BOOST</span> when you <a href="/prompts/general-prompts#act-under-pressure">ACT UNDER PRESSURE</a>, <a href="/prompts/general-prompts#secure-an-advantage">SECURE AN ADVANTAGE</a> or <a href="/prompts/general-prompts#clash">CLASH</a> as long as you are leveraging your unarmed fighting prowess. You can also <a href="/prompts/general-prompts#gather-information">GATHER INFORMATION</a> with <span class="stat">PHYSIQUE</span> if you use an intimidating approach.</span>
+            <Trait type="skill" name="Colonist" title="COLONIST" art={colonist_art} inputs={inputs} handleChange={handleChange}>
+                <span>Gain a <span class="boost">BOOST</span> whenever you <a href="/prompts/general-prompts#act-under-pressure">ACT UNDER PRESSURE</a> or <a href="/prompts/general-prompts#gather-information">GATHER INFORMATION</a> in a situation or environment that is new to you or outside of your comfort zone. When you <a href="/prompts/challenge-prompts#fulfill-a-challenge">FULFILL A CHALLENGE</a> that improves the well-being of a remote community or outpost, you gain double XP.</span>
+            </Trait>
+
+            <Trait type="skill" name="Commander" title="COMMANDER" art={commander_art} inputs={inputs} handleChange={handleChange}>
+                <span>Gain a <span class="boost">BOOST</span> whenever you <a href="/prompts/general-prompts#lead-the-team">LEAD THE TEAM</a> in organizing, strategizing, and executing a complex mission or task, or when you <a href="/prompts/general-prompts#secure-an-advantage">SECURE AN ADVANTAGE</a> by planning ahead, gaining crucial intelligence, or positioning your team effectively. When you <a href="/prompts/challenge-prompts#fulfill-a-challenge">FULFILL A CHALLENGE</a> that is very impactful for your whole team, you gain double XP.</span>
             </Trait>
 
             <Trait type="skill" name="Diplomat" title="DIPLOMAT" art={diplomat_art} inputs={inputs} handleChange={handleChange}>
-                <span>gain a <span class="boost">BOOST</span> for any test involving defusing a charged situation, resolving a dispute or negotiating an agreement. When you <a href="/prompts/challenge-prompts#fulfill-a-challenge">FULFILL A CHALLENGE</a> of a social encounter or a negotiation, you gain double XP.</span>
+                <span>Gain a <span class="boost">BOOST</span> whenever you <a href="/prompts/general-prompts#compel">COMPEL</a> others in negotiations, resolving conflicts or forging alliances through your diplomacy skills, or when you <a href="/prompts/general-prompts#gather-information">GATHER INFORMATION</a> through subtle questioning, leveraging your understanding of politics and social dynamics. When you <a href="/prompts/challenge-prompts#fulfill-a-challenge">FULFILL A CHALLENGE</a> of a social encounter or a negotiation, you gain double XP.</span>
             </Trait>
 
-            <Trait type="skill" name="Driver" title="DRIVER" art={driver_art} inputs={inputs} handleChange={handleChange}>
-                <span>gain a <span class="boost">BOOST</span> whenever you <a href="/prompts/general-prompts#act-under-pressure">ACT UNDER PRESSURE</a>, <a href="/prompts/general-prompts#secure-an-advantage">SECURE AN ADVANTAGE</a> or <a href="/prompts/general-prompts#clash">CLASH</a> while piloting a vehicle. Additionally, you can <a href="/prompts/general-prompts#clash">CLASH</a> with <span class="stat">DEXTERITY</span> if you use your vehicle as a weapon. When you <a href="/prompts/challenge-prompts#fulfill-a-challenge">FULFILL A CHALLENGE</a> of a vehicular chase or escape, you gain double XP.</span>
+            <Trait type="skill" name="Explorer" title="EXPLORER" art={explorer_art} inputs={inputs} handleChange={handleChange}>
+                <span>Gain a <span class="boost">BOOST</span> whenever you <a href="/prompts/general-prompts#gather-information">GATHER INFORMATION</a> about unknown worlds, species, or phenomena during your explorations, or when you <a href="/prompts/general-prompts#secure-an-advantage">SECURE AN ADVANTAGE</a> by leveraging your expertise in survival or navigating uncharted territories. When you <a href="/prompts/challenge-prompts#fulfill-a-challenge">FULFILL A CHALLENGE</a> related to an important discovery, you gain double XP.</span>
             </Trait>
 
-            <Trait type="skill" name="DroneRigger" title="DRONE RIGGER" art={dronerigger_art} inputs={inputs} handleChange={handleChange}>
-                <span>Gain a <span class="boost">BOOST</span> for any action involving controlling remote drones or robotics. You can also <a href="/prompts/suffer-prompts#sacrifice-resources">SACRIFICE RESOURCES (X)</a> to produce a Drone that protects you or your allies (the Drone <a href="/prompts/fate-prompts#pay-the-consequences">PAYS THE CONSEQUENCES</a> instead, a number of times equal to <b>X</b>) and helps you depending on its type:
-                  <ul>
-                    <li>UTILITY DRONE: <span class="boost">BOOSTS</span> <a href="/prompts/general-prompts#secure-an-advantage">SECURE AN ADVANTAGE</a></li>
-                    <li>SPY DRONE: <span class="boost">BOOSTS</span> <a href="/prompts/general-prompts#gather-information">GATHER INFORMATION</a></li>
-                    <li>COMBAT DRONE: <span class="boost">BOOSTS</span> <a href="/prompts/general-prompts#clash">CLASH</a></li>
-                  </ul>
-                </span>
+            <Trait type="skill" name="FreeTrader" title="FREE TRADER" art={freetrader_art} inputs={inputs} handleChange={handleChange}>
+                <span>Gain a <span class="boost">BOOST</span> when you <a href="/prompts/general-prompts#compel">COMPEL</a> others to make deals, leveraging your negotiating abilities or valuable resources, or when you <a href="/prompts/recovery-prompts#resupply">RESUPPLY</a> by acquiring valuable materials or trade goods at a lower cost than expected. When you <a href="/prompts/challenge-prompts#fulfill-a-challenge">FULFILL A CHALLENGE</a> related to transporting something important or sorely needed, you gain double XP.</span>
             </Trait>
 
-            <Trait type="skill" name="Face" title="FACE" art={face_art} inputs={inputs} handleChange={handleChange}>
-                <span>gain a <span class="boost">BOOST</span> when attempting to <a href="/prompts/general-prompts#secure-an-advantage">SECURE AN ADVANTAGE</a> with leadership, coordination or planning; or when you <a href="/prompts/challenge-prompts#accept-a-challenge">ACCEPT A CHALLENGE</a>, <a href="/prompts/general-prompts#lead-the-team">LEAD THE TEAM</a> or <a href="/prompts/general-prompts#compel">COMPEL</a> by testing your <span class="stat">RESOLVE</span>.</span>
-            </Trait>
-
-            <Trait type="skill" name="GunKata" title="GUN KATA" art={gunkata_art} inputs={inputs} handleChange={handleChange}>
-                <span>gain a <span class="boost">BOOST</span> whenever you use firearms in close quarters and you test your <span class="stat">DEXTERITY</span> to <a href="/prompts/general-prompts#clash">CLASH</a>, <a href="/prompts/general-prompts#secure-an-advantage">SECURE AN ADVANTAGE</a> or <a href="/prompts/general-prompts#act-under-pressure">ACT UNDER PRESSURE</a>. When you <a href="/prompts/challenge-prompts#fulfill-a-challenge">FULFILL A CHALLENGE</a> of a firefight, you gain double XP.</span>
+            <Trait type="skill" name="Hacker" title="HACKER" art={hacker_art} inputs={inputs} handleChange={handleChange}>
+                <span>Gain a <span class="boost">BOOST</span> whenever you <a href="/prompts/general-prompts#act-under-pressure">ACT UNDER PRESSURE</a> while infiltrating systems, breaking encryption, or manipulating digital networks, or when you <a href="/prompts/general-prompts#secure-an-advantage">SECURE AN ADVANTAGE</a> by exploiting vulnerabilities in tech, sabotaging systems or harnessing the unintended capabilities of a device to your benefit. When you <a href="/prompts/challenge-prompts#fulfill-a-challenge">FULFILL A CHALLENGE</a> primarily related to hacking, you gain double XP.</span>
             </Trait>
 
             <Trait type="skill" name="Infiltrator" title="INFILTRATOR" art={infiltrator_art} inputs={inputs} handleChange={handleChange}>
-                <span>gain a <span class="boost">BOOST</span> for any test involving breaking into a secure site, deceiving someone through social engineering or impersonating someone with higher access or hierarchy. When you <a href="/prompts/challenge-prompts#fulfill-a-challenge">FULFILL A CHALLENGE</a> of stealth or espionage, you gain double XP.</span>
+                <span>Gain a <span class="boost">BOOST</span> whenever you <a href="/prompts/general-prompts#gather-information">GATHER INFORMATION</a> by infiltrating, eavesdropping, or gathering intel through covert means, or when you <a href="/prompts/general-prompts#act-under-pressure">ACT UNDER PRESSURE</a> while evading detection or working in dangerous, high-stakes situations. When you <a href="/prompts/challenge-prompts#fulfill-a-challenge">FULFILL A CHALLENGE</a> of stealth or espionage, you gain double XP.</span>
+            </Trait>
+
+            <Trait type="skill" name="Journalist" title="JOURNALIST" art={journalist_art} inputs={inputs} handleChange={handleChange}>
+                <span>Gain a <span class="boost">BOOST</span> when you <a href="/prompts/general-prompts#gather-information">GATHER INFORMATION</a> or <a href="/prompts/general-prompts#compel">COMPEL</a> by using your expertise and rapport. You are also a good listener; when others rely on you to <a href="/prompts/recovery-prompts#relax">RELAX</a>, they gain a <span class="boost">BOOST</span>. When you <a href="/prompts/challenge-prompts#fulfill-a-challenge">FULFILL A CHALLENGE</a> related to publicly uncovering a hard truth, you gain double XP.</span>
+            </Trait>
+
+            <Trait type="skill" name="LawEnforcement" title="LAW ENFORCEMENT" art={lawenforcement_art} inputs={inputs} handleChange={handleChange}>
+                <span>Gain a <span class="boost">BOOST</span> whenever you <a href="/prompts/general-prompts#gather-information">GATHER INFORMATION</a> or when you <a href="/prompts/general-prompts#compel">COMPEL</a> by using your privileged status of law officer. When you <a href="/prompts/challenge-prompts#fulfill-a-challenge">FULFILL A CHALLENGE</a> related to delivering justice, you gain double XP.</span>
+            </Trait>
+
+            <Trait type="skill" name="Marauder" title="MARAUDER" art={marauder_art} inputs={inputs} handleChange={handleChange}>
+                <span>An expert of close combat and melee weaponry. Gain a <span class="boost">BOOST</span> when you <a href="/prompts/general-prompts#clash">CLASH</a> or <a href="/prompts/general-prompts#compel">COMPEL</a> with your <span class="stat">PHYSIQUE</span>. When you <a href="/prompts/challenge-prompts#fulfill-a-challenge">FULFILL A CHALLENGE</a> of melee combat, you gain double XP.</span>
+            </Trait>
+
+            <Trait type="skill" name="Mechanic" title="MECHANIC" art={mechanic_art} inputs={inputs} handleChange={handleChange}>
+                <span>Gain a <span class="boost">BOOST</span> when you <a href="/prompts/general-prompts#secure-an-advantage">SECURE AN ADVANTAGE</a> by finding creative solutions to mechanical problems or designing efficient systems, or when you <a href="/prompts/general-prompts#act-under-pressure">ACT UNDER PRESSURE</a> while fixing or jury-rigging something under the heat of danger.</span>
             </Trait>
 
             <Trait type="skill" name="Medic" title="MEDIC" art={medic_art} inputs={inputs} handleChange={handleChange}>
-                <span>gain a <span class="boost">BOOST</span> when you <a href="/prompts/recovery-prompts#heal">HEAL</a>, and if you <a href="/prompts/suffer-prompts#sacrifice-resources">SACRIFICE RESOURCES</a> for it, spend 1 less RESOURCES than needed to gain the same benefits.</span>
+                <span>Gain a <span class="boost">BOOST</span> whenever you <a href="/prompts/recovery-prompts#heal">HEAL</a> or provide medical care. Additionally, you gain a <span class="boost">BOOST</span> when you <a href="/prompts/recovery-prompts#resupply">RESUPPLY</a> by finding or sourcing medical supplies for yourself or others.</span>
+            </Trait>
+            
+            <Trait type="skill" name="Performer" title="PERFORMER" art={performer_art} inputs={inputs} handleChange={handleChange}>
+                <span>Gain a <span class="boost">BOOST</span> whenever you <a href="/prompts/general-prompts#secure-an-advantage">SECURE AN ADVANTAGE</a> through your charisma or stage presence, or when you <a href="/prompts/general-prompts#compel">COMPEL</a> others using your persuasive talents or emotional appeal. When you entertain others to <a href="/prompts/recovery-prompts#relax">RELAX</a>, they gain a <span class="boost">BOOST</span>.</span>
             </Trait>
 
-            <Trait type="skill" name="Netrunner" title="NETRUNNER" art={netrunner_art} inputs={inputs} handleChange={handleChange}>
-                <span>gain a <span class="boost">BOOST</span> when you <a href="/prompts/challenge-prompts#accept-a-challenge">ACCEPT A CHALLENGE</a> or <a href="/prompts/challenge-prompts#fulfill-a-challenge">FULFILL A CHALLENGE</a> related to hacking a system, or when you <a href="/prompts/general-prompts#gather-information">GATHER INFORMATION</a> by searching the NET. When you <a href="/prompts/challenge-prompts#fulfill-a-challenge">FULFILL A CHALLENGE</a> of an involved netrun, you gain double XP.</span>
+            <Trait type="skill" name="Pirate" title="PIRATE" art={pirate_art} inputs={inputs} handleChange={handleChange}>
+                <span>Gain a <span class="boost">BOOST</span> whenever you <a href="/prompts/general-prompts#clash">CLASH</a> with enemies during raids or space combat, using your ruthless and unpredictable methods, or when you <a href="/prompts/general-prompts#secure-an-advantage">SECURE AN ADVANTAGE</a> by intimidating or deceiving your targets, or when you use your knowledge of piracy to outmaneuver rivals.</span>
+            </Trait>
+
+            <Trait type="skill" name="Scavenger" title="SCAVENGER" art={scavenger_art} inputs={inputs} handleChange={handleChange}>
+                <span>Whenever you <a href="/prompts/general-prompts#use-your-gear">USE YOUR GEAR</a> or <a href="/prompts/suffer-prompts#sacrifice-resources">SACRIFICE RESOURCES</a>, you spend one less than expected (minimum of 1). Also gain a <span class="boost">BOOST</span> when you <a href="/prompts/recovery-prompts#resupply">RESUPPLY</a> by scavenging or crafting.</span>
+            </Trait>
+
+            <Trait type="skill" name="Scholar" title="SCHOLAR" art={scholar_art} inputs={inputs} handleChange={handleChange}>
+                <span>Gain a <span class="boost">BOOST</span> whenever you <a href="/prompts/general-prompts#gather-information">GATHER INFORMATION</a> through research, study, or analyzing ancient texts or artifacts, or when you <a href="/prompts/general-prompts#secure-an-advantage">SECURE AN ADVANTAGE</a> by applying your knowledge to solve problems or uncover hidden truths.</span>
+            </Trait>
+
+            <Trait type="skill" name="Scientist" title="SCIENTIST" art={scientist_art} inputs={inputs} handleChange={handleChange}>
+                <span>Gain a <span class="boost">BOOST</span> when you <a href="/prompts/general-prompts#secure-an-advantage">SECURE AN ADVANTAGE</a> by applying your scientific knowledge to solve technical or theoretical problems, or when you <a href="/prompts/general-prompts#act-under-pressure">ACT UNDER PRESSURE</a> by leveraging your out-of-the-box insights in the heat of the moment.</span>
+            </Trait>
+
+            <Trait type="skill" name="Scoundrel" title="SCOUNDREL" art={scoundrel_art} inputs={inputs} handleChange={handleChange}>
+                <span>Gain a <span class="boost">BOOST</span> when you <a href="/prompts/general-prompts#act-under-pressure">ACT UNDER PRESSURE</a> while performing criminal acts or pulling off high-risk schemes, or when you <a href="/prompts/general-prompts#clash">CLASH</a> with enemies or rivals using clever tricks, traps, or other devious methods. When you <a href="/prompts/challenge-prompts#fulfill-a-challenge">FULFILL A CHALLENGE</a> related to a con, a heist or swindle, you gain double XP.</span>
+            </Trait>
+
+            <Trait type="skill" name="Sharpshooter" title="SHARPSHOOTER" art={sharpshooter_art} inputs={inputs} handleChange={handleChange}>
+                <span>Either when you take your time to aim or when you attempt a hip-shot, you gain a <span class="boost">BOOST</span> whenever you test your <span class="stat">DEXTERITY</span> to shoot when you <a href="/prompts/general-prompts#clash">CLASH</a>, <a href="/prompts/general-prompts#secure-an-advantage">SECURE AN ADVANTAGE</a> or <a href="/prompts/general-prompts#act-under-pressure">ACT UNDER PRESSURE</a>. When you <a href="/prompts/challenge-prompts#fulfill-a-challenge">FULFILL A CHALLENGE</a> that mainly involved ranged combat, you gain double XP.</span>
+            </Trait>
+
+            <Trait type="skill" name="ShockTropper" title="SHOCK TROOPER" art={shocktrooper_art} inputs={inputs} handleChange={handleChange}>
+                <span>Gain a <span class="boost">BOOST</span> whenever you <a href="/prompts/challenge-prompts#accept-a-challenge">ACCEPT A CHALLENGE</a> of deadly combat or tense action in which you are pitted against overwhelming odds, or when you <a href="/prompts/general-prompts#act-under-pressure">ACT UNDER PRESSURE</a> in chaotic, high-stakes situations.</span>
             </Trait>
 
             <Trait type="skill" name="Sniper" title="SNIPER" art={sniper_art} inputs={inputs} handleChange={handleChange}>
-                <span>while attacking at long range, gain a <span class="boost">BOOST</span> in <a href="/prompts/general-prompts#clash">CLASH</a> and <a href="/prompts/general-prompts#secure-an-advantage">SECURE AN ADVANTAGE</a> as long as you are <i>IN CONTROL</i>.</span>
+                <span>While attacking at long range, gain a <span class="boost">BOOST</span> to <a href="/prompts/general-prompts#clash">CLASH</a> or <a href="/prompts/general-prompts#secure-an-advantage">SECURE AN ADVANTAGE</a> as long as you are <i>IN CONTROL</i>.</span>
             </Trait>
 
-            <Trait type="skill" name="StreetRat" title="STREET RAT" art={streetrat_art} inputs={inputs} handleChange={handleChange}>
-                <span>gain a <span class="boost">BOOST</span> for any test involving lying, bluffing, stealing or cheating. When you are in the underbelly of the city, you can <a href="/prompts/general-prompts#gather-information">GATHER INFORMATION</a> with <span class="stat">RESOLVE</span> or <span class="stat">SUBTERFUGE</span>, and you gain a <span class="boost">BOOST</span> whenever you <a href="/prompts/general-prompts#act-under-pressure">ACT UNDER PRESSURE</a> to parkour through the environment, hide or mix with the people, or move through a secret shortcut.</span>
-            </Trait>
-
-            <Trait type="skill" name="VirtualCowboy" title="VIRTUAL COWBOY" art={virtualcowboy_art} inputs={inputs} handleChange={handleChange}>
-                <span>You are a masterful program-slinger. You can use your <span class="stat">INTELLECT</span> to <a href="/prompts/general-prompts#clash">CLASH</a> against VR constructs or avatars, or to <a href="/prompts/general-prompts#compel">COMPEL</a> against auth-bots or security guardians. Additionally, you can <a href="/prompts/suffer-prompts#sacrifice-resources">SACRIFICE RESOURCES (1)</a> to spend an <i>exploit</i> and gain a <span class="boost">BOOST</span> to hacking-related tests or to reduce the severity when you must <a href="/prompts/fate-prompts#pay-the-consequences">PAY THE CONSEQUENCES</a> of a NET-related adversity.</span>
+            <Trait type="skill" name="SpaceMarine" title="SPACE MARINE" art={spacemarine_art} inputs={inputs} handleChange={handleChange}>
+                <span>Gain a <span class="boost">BOOST</span> when you <a href="/prompts/general-prompts#clash">CLASH</a> with enemies in combat, using your specialized training in warfare, or when you <a href="/prompts/general-prompts#lead-the-team">LEAD THE TEAM</a> in battle, directing your allies with military precision. When you <a href="/prompts/challenge-prompts#fulfill-a-challenge">FULFILL A CHALLENGE</a> of dangerous combat, you gain double XP.</span>
             </Trait>
 
         </div>
@@ -252,71 +276,58 @@ function CharacterStats() {
         
         <div class="traits-container" id="gear-container">
 
-            <h2 id="gear-and-cyberware">GEAR AND CYBERWARE</h2>
-
-            <Trait type="gear" name="Armored" title="ARMORED" art={armored_art} inputs={inputs} handleChange={handleChange}>
-                <span><i>Shiny and Chrome</i>. Muscle+Bone lace and/or metallic alloy plating. Gain a <span class="boost">BOOST</span> for feats of strength when you <a href="/prompts/general-prompts#act-under-pressure">ACT UNDER PRESSURE</a> or <a href="/prompts/general-prompts#secure-an-advantage">SECURE AN ADVANTAGE</a>, or when you <a href="/prompts/general-prompts#clash">CLASH</a> with physical attacks or impact damage.</span>
-            </Trait>
-
-            <Trait type="gear" name="Brainbox" title="BRAINBOX" art={brainbox_art} inputs={inputs} handleChange={handleChange}>
-                <span><i>A blackbox for your brain</i>. Ignore a <span class="fuchsia bold">FAILURE</span> when you <a href="/prompts/suffer-prompts#face-death">FACE DEATH</a>, but then <a href="/prompts/fate-prompts#pay-the-consequences">PAY THE CONSEQUENCES</a> of having your <i>mind-backup</i> reinserted in a new body, and lose the BRAINBOX.</span>
-            </Trait>
-
-            <Trait type="gear" name="CyberClaws" title="CYBERCLAWS" art={cyberclaws_art} inputs={inputs} handleChange={handleChange}>
-                <span><i>Retracting Mollies or Logans</i>. Gain a <span class="boost">BOOST</span> when you <a href="/prompts/challenge-prompts#accept-a-challenge">ACCEPT A CHALLENGE</a> of violence, when you <a href="/prompts/general-prompts#clash">CLASH</a> or when you <a href="/prompts/general-prompts#compel">COMPEL</a> with <span class="stat">PHYSIQUE</span>.</span>
-            </Trait>
-
-            <Trait type="gear" name="Cyberdeck" title="CYBERDECK" art={cyberdeck_art} inputs={inputs} handleChange={handleChange}>
-                <span><i>Tool of the netrunner’s trade</i>. gain a <span class="boost">BOOST</span> when you <a href="/prompts/general-prompts#secure-an-advantage">SECURE AN ADVANTAGE</a> or <a href="/prompts/general-prompts#gather-information">GATHER INFORMATION</a> while hacking or surfing the NET in <i>Shallow Mode</i> (non-VR).</span>
-            </Trait>
-
-            <Trait type="gear" name="MirrorShades" title="MIRRORSHADES" art={mirrorshades_art} inputs={inputs} handleChange={handleChange}>
-                <span><i>excessively cool</i>. Gain a <span class="boost">BOOST</span> whenever you test your <span class="stat">RESOLVE</span>.</span>
-            </Trait>
-
-            <Trait type="gear" name="Neuralink" title="NEURALINK" art={neuralink_art} inputs={inputs} handleChange={handleChange}>
-                <span><i>Jacking in</i>... gain a <span class="boost">BOOST</span> for any hacking test while netrunning in <i>deep mode</i> (full sensory immersion), but since you are unaware of your meat-body and surroundings, gain a <span class="glitch" data-text="GLITCH">GLITCH</span> for any test <b>IRL</b>, and increase the severity to <i>major</i> if you have to <a href="/prompts/fate-prompts#pay-the-consequences">PAY THE CONSEQUENCES</a>.</span>
-            </Trait>
-
-            <Trait type="gear" name="Plaskin" title="PLASKIN" art={plaskin_art} inputs={inputs} handleChange={handleChange}>
-                <span><i>Better than real skin™.</i> A patch of flexible carbon-fiber polymer mesh over muscle tissue, covered in artificial plastic skin (a self-healing material). Sensitive feedback can be tuned up or down at will. Installable in any part of the body you want. Gain a <span class="boost">BOOST</span> when you <a href="/prompts/general-prompts#act-under-pressure">ACT UNDER PRESSURE</a> to resist electric/cold/heat damage on that body part, or when you <a href="/prompts/recovery-prompts#heal">HEAL</a> from burns, cuts or scratches. </span>
-            </Trait>
-
-            <Trait type="gear" name="RetinalHud" title="RETINAL HUD" art={retinalhud_art} inputs={inputs} handleChange={handleChange}>
-                <span><i>Target acquired</i>. Your cybereyes project an augmented display with target acquisition, IFF software (identify friend/foe), vulnerability analysis, personal data retrieval, etc. Gain a <span class="boost">BOOST</span> whenever that would give you an advantage in action-packed situations or investigation scenes.</span>
-            </Trait>
+            <h2 id="items-and-gear">ITEMS AND GEAR</h2>
             
-            <Trait type="gear" name="SimsenseRecorder" title="SIMSENSE RECORDER" art={simsenserecorder_art} inputs={inputs} handleChange={handleChange}>
-                <span>Live <i>Better Than Life™</i> experiences. SimSense allows to record/playback someone's experience in full five senses. Filtered simchips translate physical sensations only; unfiltered (hacked) ones also replay emotions and thoughts. Apart from being able to replay simchips from others, you can record your own ones to replay later (which gives a <span class="boost">BOOST</span> when you <a href="/prompts/general-prompts#secure-an-advantage">SECURE AN ADVANTAGE</a> or <a href="/prompts/general-prompts#gather-information">GATHER INFORMATION</a> related to that scene, or when you <a href="/prompts/recovery-prompts#relax">RELAX</a> by reliving a pleasant moment).
-</span>
+            <Trait type="gear" name="CombatBot" title="COMBAT BOT" art={placeholder_art} inputs={inputs} handleChange={handleChange}>
+                <span></span>
             </Trait>
 
-            <Trait type="gear" name="SmartCosmetics" title="SMART COSMETICS" art={smartcosmetics_art} inputs={inputs} handleChange={handleChange}>
-                <span>Change hairstyle, makeup or facial features <i>at will</i>. Gain a <span class="boost">BOOST</span> when you take advantage of this to <a href="/prompts/general-prompts#compel">COMPEL</a> or <a href="/prompts/recovery-prompts#resupply">RESUPPLY</a> by awing or seducing others with <span class="stat">RESOLVE</span>. Additionally, you can <a href="/prompts/general-prompts#gather-information">GATHER INFORMATION</a> with <span class="stat">RESOLVE</span>.</span>
+            <Trait type="gear" name="CombatExosuit" title="COMBAT EXOSUIT" art={placeholder_art} inputs={inputs} handleChange={handleChange}>
+                <span></span>
             </Trait>
 
-            <Trait type="gear" name="SpecialAmmoMod" title="SPECIAL AMMO MOD" art={specialammomod_art} inputs={inputs} handleChange={handleChange}>
-                <span>Your firearm has a voice-activated mod that switches between <i>special ammo on demand</i>. Including but not limited to: Armor-piercing, Incendiary, Heat-seeker, Flashbang, Cyber-scrambler,  Rubber-ricochet. <a href="/prompts/suffer-prompts#sacrifice-resources">SACRIFICE RESOURCES (1)</a> to gain <i>Narrative Permission</i> and a <span class="boost">BOOST</span> when you use one for a particular situation.</span>
+            <Trait type="gear" name="EnergyShield" title="ENERGY SHIELD" art={placeholder_art} inputs={inputs} handleChange={handleChange}>
+                <span></span>
             </Trait>
 
-            <Trait type="gear" name="SubdermalShockers" title="SUBDERMAL SHOCKERS" art={subdermalshockers_art} inputs={inputs} handleChange={handleChange}>
-                <span><i>no touching!</i> gain a <span class="boost">BOOST</span> when you test <span class="stat">PHYSIQUE</span> to defend yourself while you <a href="/prompts/general-prompts#act-under-pressure">ACT UNDER PRESSURE</a> or <a href="/prompts/general-prompts#clash">CLASH</a>.</span>
+            <Trait type="gear" name="HeavyWeapon" title="HEAVY WEAPON" art={placeholder_art} inputs={inputs} handleChange={handleChange}>
+                <span></span>
             </Trait>
 
-            <Trait type="gear" name="SynapseChip" title="SYNAPSE CHIP" art={synapsechip_art} inputs={inputs} handleChange={handleChange}>
-                <span><i>smarter on demand</i>. gain a <span class="boost">BOOST</span> whenever you test your <span class="stat">INTELLECT</span>.</span>
+            <Trait type="gear" name="HoloDisguise" title="HOLO-DISGUISE" art={placeholder_art} inputs={inputs} handleChange={handleChange}>
+                <span></span>
             </Trait>
 
-            <Trait type="gear" name="ThermopticCamo" title="THERMOPTIC CAMO" art={thermopticcamo_art} inputs={inputs} handleChange={handleChange}>
-                <span><i>now you see me</i>... Camouflage with nano cameras that record what's behind and reproduce it in front. Gain a <span class="boost">BOOST</span> whenever you test your <span class="stat">SUBTERFUGE</span> by going almost invisible.</span>
+            <Trait type="gear" name="Jetpack" title="JETPACK" art={placeholder_art} inputs={inputs} handleChange={handleChange}>
+                <span></span>
             </Trait>
 
-            <Trait type="gear" name="VoiceMod" title="VOICE MOD" art={voicemod_art} inputs={inputs} handleChange={handleChange}>
-                <span><i>Change your voice on demand</i>. This throat+larynx implant includes settings for Ventriloquism, Velvet Singer, Extra-Loud, Screamo Growl, Autotune, Voice-Copy, Instant-Translate, Polyphone, Sound FX, among others. Gain a <span class="boost">BOOST</span> whenever using those features could give you an advantage.</span>
+            <Trait type="gear" name="RepairTool" title="REPAIR TOOL" art={placeholder_art} inputs={inputs} handleChange={handleChange}>
+                <span></span>
             </Trait>
 
-            <Trait type="gear" name="WiredReflexes" title="WIRED REFLEXES" art={wiredreflexes_art} inputs={inputs} handleChange={handleChange}>
-                <span><i>Sandevistan!</i> Spine implant with neural boosters and adrenaline stimulators that makes you abnormaly fast. Gain a <span class="boost">BOOST</span> when you test your <span class="stat">DEXTERITY</span> to <a href="/prompts/general-prompts#act-under-pressure">ACT UNDER PRESSURE</a>, <a href="/prompts/general-prompts#secure-an-advantage">SECURE AN ADVANTAGE</a> or <a href="/prompts/general-prompts#clash">CLASH</a>.</span>
+            <Trait type="gear" name="NanoMedkit" title="NANO-MEDKIT" art={placeholder_art} inputs={inputs} handleChange={handleChange}>
+                <span></span>
+            </Trait>
+
+            <Trait type="gear" name="PersonalAssistant" title="PERSONAL ASSISTANT" art={placeholder_art} inputs={inputs} handleChange={handleChange}>
+                <span></span>
+            </Trait>
+
+            <Trait type="gear" name="PlasmaCutter" title="PLASMA CUTTER" art={placeholder_art} inputs={inputs} handleChange={handleChange}>
+                <span></span>
+            </Trait>
+
+            <Trait type="gear" name="ProtocolBot" title="PROTOCOL BOT" art={placeholder_art} inputs={inputs} handleChange={handleChange}>
+                <span></span>
+            </Trait>
+
+            <Trait type="gear" name="ReconDrone" title="RECON DRONE" art={placeholder_art} inputs={inputs} handleChange={handleChange}>
+                <span></span>
+            </Trait>
+
+            <Trait type="gear" name="SmartGun" title="SMART GUN" art={placeholder_art} inputs={inputs} handleChange={handleChange}>
+                <span></span>
             </Trait>
 
         </div>
@@ -326,46 +337,6 @@ function CharacterStats() {
         <br/>
         <br/>
         
-        <div class="traits-container" id="contacts-container">
-            <h2 id="contacts">CONTACTS</h2>
-
-            <Trait type="contact" name="Dealer" title="DEALER" art={dealer_art} inputs={inputs} handleChange={handleChange}>
-                <span>gain a <span class="boost">BOOST</span> when you resort to this contact to <a href="/prompts/recovery-prompts#relax">RELAX</a> by using addictive substances or simchips, or gain an automatic <span class="turquoise">SUCCESS</span> if you <a href="/prompts/suffer-prompts#sacrifice-resources">SACRIFICE RESOURCES</a>.</span>
-                <div class="name-container">
-                    <label for="contactDealerName">NAME / ALIAS:</label>
-                    <input id="contactDealerName" type="text" name="contactDealerName" value={inputs.contactDealerName} onChange={handleChange}/>
-                </div>
-            </Trait>
-
-            <Trait type="contact" name="Fixer" title="FIXER" art={fixer_art} inputs={inputs} handleChange={handleChange}>
-                <span>gain a <span class="boost">BOOST</span> when you resort to this contact to <a href="/prompts/recovery-prompts#resupply">RESUPPLY</a> or when you <a href="/prompts/challenge-prompts#fulfill-a-challenge">FULFILL A CHALLENGE</a> for a contract or mission that they facilitated.</span>
-                <div class="name-container">
-                    <label for="contactFixerName">NAME / ALIAS:</label>
-                    <input id="contactFixerName" type="text" name="contactFixerName" value={inputs.contactFixerName} onChange={handleChange}/>
-                </div>
-            </Trait>
-            
-            <Trait type="contact" name="InfoBroker" title="INFOBROKER" art={infobroker_art} inputs={inputs} handleChange={handleChange}>
-                <span>gain a <span class="boost">BOOST</span> when you resort to this contact to <a href="/prompts/general-prompts#gather-information">GATHER INFORMATION</a>, or gain an automatic <span class="turquoise">SUCCESS</span> if you <a href="/prompts/suffer-prompts#sacrifice-resources">SACRIFICE RESOURCES</a>.</span>
-                <div class="name-container">
-                    <label for="contactInfoBrokerName">NAME / ALIAS:</label>
-                    <input id="contactInfoBrokerName" type="text" name="contactInfoBrokerName" value={inputs.contactInfoBrokerName} onChange={handleChange}/>
-                </div>
-            </Trait>
-
-            <Trait type="contact" name="StreetDoc" title="STREET DOC" art={streetdoc_art} inputs={inputs} handleChange={handleChange}>
-                <span>gain a <span class="boost">BOOST</span> when you resort to this contact to <a href="/prompts/recovery-prompts#heal">HEAL</a>, or gain an automatic SUCCESS if you <a href="/prompts/suffer-prompts#sacrifice-resources">SACRIFICE RESOURCES (X)</a>.</span>
-                <div class="name-container">
-                    <label for="contactStreetDocName">NAME / ALIAS:</label>
-                    <input id="contactStreetDocName" type="text" name="contactStreetDocName" value={inputs.contactStreetDocName} onChange={handleChange}/>
-                </div>
-            </Trait>
-
-        </div>
-
-        <br/>
-        <br/>
-
       </form>
     </Layout>
   )
