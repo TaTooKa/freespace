@@ -66,9 +66,15 @@ function CharacterStats() {
     return hexString.slice(0, -2) + alpha;
   }
 
+  function getHighestStatValue(inputs) {
+    let stats = [inputs.physique, inputs.dexterity, inputs.subterfuge, inputs.resolve, inputs.intellect].map(Number);
+    return Math.max(...stats);
+  }
+
   async function handleStatsChart() {
     const fontFamilyAndroid = "'Android101', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif";
     const fontFamilyEuroStyle = "'EuroStyle', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif";
+    var highestStatValue = getHighestStatValue(inputs);
     const chartData = {
         labels: ['PHYSIQUE '+inputs.physique, 'DEXTERITY '+inputs.dexterity, 'SUBTERFUGE '+inputs.subterfuge, 'RESOLVE '+inputs.resolve, 'INTELLECT '+inputs.intellect],
         datasets: [{
@@ -86,7 +92,7 @@ function CharacterStats() {
           r: {
               angleLines: {
                 display: true,
-                color: setAlpha(theme.colors.turquoise, "11"),
+                color: setAlpha(theme.colors.turquoise, "22"),
                 lineWidth: 2,
                 borderDash: [5, 5],
               },
@@ -99,7 +105,7 @@ function CharacterStats() {
                 },
               },
               ticks: {
-                display: true,
+                display: false,
                 showLabelBackdrop: false,
                 z: 1,
                 color: setAlpha(theme.colors.turquoise, "22"),
@@ -119,10 +125,10 @@ function CharacterStats() {
                   family: fontFamilyEuroStyle,
                 },
               },
-              suggestedMin: 0,
-              suggestedMax: 100,
-              min: 0,
-              max: 100,
+              //suggestedMin: 0,
+              //suggestedMax: 100,
+              min: 5,
+              max: highestStatValue+5,
               animate: false,
           },
         },
@@ -149,6 +155,7 @@ function CharacterStats() {
       });
     } else {
       statsChartObj.data = chartData;
+      statsChartObj.options = chartOptions;
       statsChartObj.update();
     }
   }
