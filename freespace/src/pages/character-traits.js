@@ -37,6 +37,7 @@ function CharacterStats() {
   const headings = [
     {depth: 2, value: "SKILLS AND BACKGROUND"},
     {depth: 2, value: "ITEMS AND GEAR"},
+    {depth: 2, value: "VEHICLE MODULES"},
 ]
 
   const delay = ms => new Promise(
@@ -272,7 +273,6 @@ function CharacterStats() {
         <br/>
         <hr/>
         <br/>
-        <br/>
         
         <div class="traits-container" id="gear-container">
 
@@ -335,7 +335,20 @@ function CharacterStats() {
         <br/>
         <hr/>
         <br/>
+
+        <div class="traits-container" id="modules-container">
+
+            <h2 id="vehicle-modules">VEHICLE MODULES</h2>
+
+            <blockquote><p>If you have a vehicle like a <b>Spaceship</b>, <b>Exocraft</b> or <b>Mecha</b>, you can acquire any of these traits to improve it. If the vehicle is shared by the entire crew, any member can collaborate by purchasing different modules for it with their own XP.</p></blockquote>
+
+        </div>
+
         <br/>
+        <hr/>
+        <br/>
+        <br/>
+
         
       </form>
     </Layout>
