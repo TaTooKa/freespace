@@ -41,7 +41,7 @@ function CharacterStats() {
     {"name": "Enrichment", "description": "Either out of pure greed, or as a means to an end, you want to become rich and have a life full of luxuries."},
     {"name": "Heroism", "description": "A great evil must be thwarted. The Innocent and the weak must be protected or saved. Peace must be reclaimed. You are the one who can do it."},
     {"name": "Justice", "description": "Some laws are sacred, and everyone must abide by them. Your code might seem extreme or too radical, but you must enforce it until it is the rule of the land."},
-    {"name": "Leadership", "description": "A loner and/or outcast, you must transform into a respected leader, learning to trust others and inspire loyalty while facing your own insecurities."},
+    {"name": "Leadership", "description": "A loner or outcast, you must transform into a respected leader, learning to trust others and inspire loyalty while facing your own insecurities."},
     {"name": "Love", "description": "You are focused on a loved one; either a familiar bond or a romantic interest. You must win their love, nurture that relationship or protect it from something."},
     {"name": "Proselytism", "description": "You have a creed or dogma that you consider ideal, but most others don't share it. You must convince, proselytize or forcefully impose it until the majority accepts and embraces it."},
     {"name": "Recognition", "description": "Honor and virtue are on your destiny, but that's not enough: You need for it to be known, becoming famous and recognized for your deeds everywhere."},
