@@ -966,22 +966,22 @@ export default function GlobalStyle() {
                     text-shadow: 0 0 10px ${theme.colors.turquoise};
                 }
                 input:checked+label.stat-level-0 {
-                  filter: hue-rotate(135deg);
+                  filter: hue-rotate(130deg) contrast(150%) brightness(150%);
                 }
                 input:checked+label.stat-level-1 {
-                  filter: hue-rotate(160deg);
+                  filter: hue-rotate(160deg) contrast(150%) brightness(150%);
                 }
                 input:checked+label.stat-level-2 {
-                  filter: hue-rotate(190deg);
+                  filter: hue-rotate(190deg) contrast(150%) brightness(150%);
                 }
                 input:checked+label.stat-level-3 {
-                  filter: hue-rotate(210deg);
+                  filter: hue-rotate(210deg) contrast(150%) brightness(150%);
                 }
                 input:checked+label.stat-level-4 {
-                  filter: hue-rotate(300deg);
+                  filter: hue-rotate(300deg) contrast(150%) brightness(150%);
                 }
                 input:checked+label.stat-level-5 {
-                  filter: hue-rotate(0deg);
+                  filter: hue-rotate(0deg) contrast(150%) brightness(150%);
                 }
                 input {
                     display: none;
