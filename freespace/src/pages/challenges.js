@@ -125,7 +125,6 @@ function Challenges() {
     if ( windowGlobal ) {
       windowGlobal.localStorage.setItem("archivedChallenges", JSON.stringify(archivedChallenges));
     }
-    saveCharacterArcProgress(archivedChallenges);
   }
 
   const saveCharacterArcProgress = (challenges) => {
