@@ -23,7 +23,11 @@ const Challenge = ({challenge, index, challenges, setChallenges, chType, otherCh
   var makeProgressButtonId = "makeProgressButton"+chType+"-"+index;
   var revertProgressButtonId = "revertProgressButton"+chType+"-"+index;
   var minimized = challenge["minimized"];
+  var characterArc = challenge["characterArc"];
   var challengeDescription = challenge['state'] + " challenge";
+  if ( characterArc ) {
+    challengeDescription+= " (CHARACTER ARC)";
+  }
   if ( chType === "archived" ) {
     challengeDescription+= " (ARCHIVED)";
   }
@@ -32,6 +36,7 @@ const Challenge = ({challenge, index, challenges, setChallenges, chType, otherCh
   classes += minimized ? " minimized" : "";
   classes += " state-" + challenge['state'];
   classes += " "+chType;
+  classes += characterArc ? " characterArc" : "";
 
   useEffect(() => {
     toggleBlockControls(challenge['state']);

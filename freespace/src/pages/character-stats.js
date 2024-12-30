@@ -8,6 +8,7 @@ function CharacterStats() {
   const theme = useTheme();
   const windowGlobal = typeof window !== 'undefined' && window
   var activeTraits = windowGlobal ? windowGlobal.localStorage.getItem("activeTraits") : "";
+  var characterArcProgress = windowGlobal ? windowGlobal.localStorage.getItem("characterArcProgress") : 0;
 
   const [randHeartbeatPoints, setRandHeartbeatPoints] = useState(0);
 
@@ -22,7 +23,7 @@ function CharacterStats() {
       health: "5",
       psyche: "5",
       resources: "5",
-      angleProgress: "1",
+      characterArc: "",
       intellect: "1",
       physique: "1",
       dexterity: "1",
@@ -39,6 +40,13 @@ function CharacterStats() {
     } else {
       const name = event.target.name;
       const value = event.target.value;
+      setInputs(values => ({...values, [name]: value}))
+    }
+    if ( event.target.name == "characterArc" ) {
+      const name = "characterArcDescription"
+      const value = event.target.alt;
+      var descriptionEl = document.getElementById('characterArcDescription');
+      descriptionEl.innerHTML = value;
       setInputs(values => ({...values, [name]: value}))
     }
   }
@@ -313,27 +321,35 @@ function CharacterStats() {
 
         <div class="right-side">
 
-          <div class="angle-container">
-            <div class="angle-header">
-              <span class="angle-title">ANGLE</span>
-              <label class="angle-progress">PROGRESS <input type="number" name="angleProgress" value={inputs.angleProgress || ""} onChange={handleChange} min="1" max="99"/></label>
+          <div class="character-arc-container">
+            <div class="character-arc-header">
+              <span class="character-arc-title">CHARACTER ARC</span>
+              <div class="character-arc-progress-container">
+                <span class="character-arc-progress"> {characterArcProgress}%</span>
+                <span class="character-arc-progress-title">PROGRESS</span>
+              </div>
             </div>
-            <div class="angle-options">
+
+            <div class="character-arc-options">
               <span>Choose One:</span>
               <div class="columns">
                 <div class="col left-col">
-                  <input id="angleInput1" type="radio" name="angle" value={inputs.angle1 || "Get Out"} onChange={handleChange} checked={inputs.angle==="Get Out"}/><label for="angleInput1"> Get Out</label>
-                  <input id="angleInput2" type="radio" name="angle" value={inputs.angle2 || "Upgrade Life"} onChange={handleChange} checked={inputs.angle==="Upgrade Life"}/><label for="angleInput2"> Upgrade Life</label>
-                  <input id="angleInput3" type="radio" name="angle" value={inputs.angle3 || "Learn The Truth"} onChange={handleChange} checked={inputs.angle==="Learn The Truth"}/><label for="angleInput3"> Learn The Truth</label>
-                  <input id="angleInput4" type="radio" name="angle" value={inputs.angle4 || "Make'em Pay"} onChange={handleChange} checked={inputs.angle==="Make'em Pay"}/><label for="angleInput4"> Make'em Pay</label>
+                  <input id="characterArcInput1" type="radio" name="characterArc" value={inputs.characterArc1 || "Get Out"} onChange={handleChange} checked={inputs.characterArc==="Get Out"} alt="you want to escape or get out."/><label for="characterArcInput1"> Get Out</label>
+                  <input id="characterArcInput2" type="radio" name="characterArc" value={inputs.characterArc2 || "Upgrade Life"} onChange={handleChange} checked={inputs.characterArc==="Upgrade Life"} alt="description."/><label for="characterArcInput2"> Upgrade Life</label>
+                  <input id="characterArcInput3" type="radio" name="characterArc" value={inputs.characterArc3 || "Learn The Truth"} onChange={handleChange} checked={inputs.characterArc==="Learn The Truth"} alt="description."/><label for="characterArcInput3"> Learn The Truth</label>
+                  <input id="characterArcInput4" type="radio" name="characterArc" value={inputs.characterArc4 || "Make'em Pay"} onChange={handleChange} checked={inputs.characterArc==="Make'em Pay"} alt="description."/><label for="characterArcInput4"> Make'em Pay</label>
                 </div>
                 <div class="col right-col">
-                  <input id="angleInput5" type="radio" name="angle" value={inputs.angle5 || "Look After Them"} onChange={handleChange} checked={inputs.angle==="Look After Them"}/><label for="angleInput5"> Look After Them</label>
-                  <input id="angleInput6" type="radio" name="angle" value={inputs.angle6 || "Take A Stand"} onChange={handleChange} checked={inputs.angle==="Take A Stand"}/><label for="angleInput6"> Take A Stand</label>
-                  <input id="angleInput7" type="radio" name="angle" value={inputs.angle7 || "Watch It All Burn"} onChange={handleChange} checked={inputs.angle==="Watch It All Burn"}/><label for="angleInput7"> Watch It All Burn</label>
-                  <input id="angleInput8" type="radio" name="angle" value={inputs.angle8 || "Leave A Mark"} onChange={handleChange} checked={inputs.angle==="Leave A Mark"}/><label for="angleInput8"> Leave A Mark</label>
+                  <input id="characterArcInput5" type="radio" name="characterArc" value={inputs.characterArc5 || "Look After Them"} onChange={handleChange} checked={inputs.characterArc==="Look After Them"} alt="description."/><label for="characterArcInput5"> Look After Them</label>
+                  <input id="characterArcInput6" type="radio" name="characterArc" value={inputs.characterArc6 || "Take A Stand"} onChange={handleChange} checked={inputs.characterArc==="Take A Stand"} alt="description."/><label for="characterArcInput6"> Take A Stand</label>
+                  <input id="characterArcInput7" type="radio" name="characterArc" value={inputs.characterArc7 || "Watch It All Burn"} onChange={handleChange} checked={inputs.characterArc==="Watch It All Burn"} alt="description."/><label for="characterArcInput7"> Watch It All Burn</label>
+                  <input id="characterArcInput8" type="radio" name="characterArc" value={inputs.characterArc8 || "Leave A Mark"} onChange={handleChange} checked={inputs.characterArc==="Leave A Mark"} alt="description."/><label for="characterArcInput8"> Leave A Mark</label>
                 </div>
               </div>
+            </div>
+
+            <div class="character-arc-description-container">
+              <span role="textbox" name="characterArcDescription" id="characterArcDescription">{inputs.characterArcDescription || "N/A"}</span>
             </div>
           </div>
 

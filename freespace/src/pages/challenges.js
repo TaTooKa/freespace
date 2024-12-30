@@ -19,7 +19,50 @@ function Challenges() {
         "state": "active",
         "indent": 0,
         "minimized": false,
+        "characterArc": false,
       }
+  }
+
+  const getCharacterArcChallenge = (characterArcName) => {
+      return {
+        "name": "CHARACTER ARC: "+characterArcName,
+        "progress": 1,
+        "rank": "epic",
+        "state": "active",
+        "indent": 0,
+        "minimized": false,
+        "characterArc": true,
+      }
+  }
+
+  const getCharacterArcName = () => {
+    const savedCharacterStr = windowGlobal ? windowGlobal.localStorage.getItem("character") : "{}";
+    var characterArcName = "";
+    if (savedCharacterStr && savedCharacterStr != "{}") {
+      const savedCharacter = JSON.parse(savedCharacterStr);
+      characterArcName = savedCharacter['characterArc'];
+    } 
+    return characterArcName;
+  }
+
+  const characterArcChallengeIsPresent = (challenges) => {
+    var characterArcChallengeIsPresent = false;
+    challenges.forEach((challenge) => {
+      if (challenge["characterArc"]) {
+        characterArcChallengeIsPresent = true;
+      }
+    });
+    return characterArcChallengeIsPresent;
+
+  }
+
+  const getDefaultChallenges = () => {
+    var defaultChallenges = [getNewChallenge()];
+    const characterArcName = getCharacterArcName();
+    if ( characterArcName != "" ) {
+      defaultChallenges.unshift(getCharacterArcChallenge(characterArcName));
+    } 
+    return defaultChallenges;
   }
 
   const [challenges, setChallenges] = useState(() => {
@@ -27,8 +70,15 @@ function Challenges() {
     const savedChallengesStr = windowGlobal ? windowGlobal.localStorage.getItem("challenges") : "{}";
     const savedChallenges = JSON.parse(savedChallengesStr);
 
+    if (savedChallenges && !characterArcChallengeIsPresent(savedChallenges)) {
+      const characterArcName = getCharacterArcName();
+      if ( characterArcName != "" ) {
+        savedChallenges.unshift(getCharacterArcChallenge(characterArcName));
+      } 
+    }
+
     // defaults
-    var defaultChallenges = [getNewChallenge()];
+    var defaultChallenges = getDefaultChallenges();
 
     return savedChallenges || defaultChallenges;
   });
@@ -68,11 +118,25 @@ function Challenges() {
     if ( windowGlobal ) {
       windowGlobal.localStorage.setItem("challenges", JSON.stringify(challenges));
     }
+    saveCharacterArcProgress(challenges);
   }
 
   const saveArchivedChallenges = () => {
     if ( windowGlobal ) {
       windowGlobal.localStorage.setItem("archivedChallenges", JSON.stringify(archivedChallenges));
+    }
+    saveCharacterArcProgress(archivedChallenges);
+  }
+
+  const saveCharacterArcProgress = (challenges) => {
+    if ( windowGlobal ) {
+      var characterArcProgress = 0;
+      challenges.forEach((challenge) => {
+        if (challenge["characterArc"]) {
+          characterArcProgress = challenge["progress"];
+        }
+      })
+      windowGlobal.localStorage.setItem("characterArcProgress", characterArcProgress);
     }
   }
 

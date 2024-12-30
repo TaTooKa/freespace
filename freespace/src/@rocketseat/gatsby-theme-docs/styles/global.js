@@ -1024,33 +1024,38 @@ export default function GlobalStyle() {
               box-shadow: inset 0 0 5px #000;
             }
 
-            .angle-container {
+            .character-arc-container {
                 margin: 30px 0 20px 0;
                 border: 1px solid #444;
                 box-shadow: 0 0 5px #000;
                 border-radius: 5px 32px 5px 5px;
                 padding: 10px 10px;
-                .angle-header {
+                .character-arc-header {
                     display: flex;
                     justify-content: space-between;
-                    .angle-title {
+                    .character-arc-title {
                       display: flex;
-                      width: 30%;
+                      width: 70%;
                       font-size: 1.3em;
                     }
-                    .angle-progress {
+                    .character-arc-progress {
                       justify-content: flex-end;
                       display: flex;
                       font-size: 1em;
                       flex-grow: 1;
-                      input {
-                          margin: -3px 0 0 10px;
-                          height: 30px;
-                          width: 45px;
-                      }
+                      margin: 0 10px 0 0;
+                      color: ${theme.colors.turquoise};
+                    }
+                    .character-arc-progress-title {
+                      justify-content: flex-end;
+                      display: flex;
+                      font-size: 0.5em;
+                      flex-grow: 1;
+                      margin: 0 10px 0 0;
+                      color: #ffffff55;
                     }
                 }
-                .angle-options {
+                .character-arc-options {
                     margin: 10px 0 0 0;
                     .columns {
                         display: flex;
@@ -1081,6 +1086,25 @@ export default function GlobalStyle() {
                         transition: 0.5s;
                     }
                 }
+              .character-arc-description-container {
+                  margin: 10px 10px 0 5px;
+                  display: flex;
+                  background-color: ${theme.darkcolors.components.input.background};
+                  border: 1px solid #444;
+                  border-radius: 0 0 15px 15px;
+                  box-shadow: inset 0 0 5px #000;
+
+                  span#characterArcDescription {
+                    display: flex;
+                    padding: 5px 10px;
+                    font-family: 'EuroStyle';
+                    font-weight: bold;
+                    min-height: 35px;
+                    font-size: 0.7em;
+                    color: ${theme.darkcolors.components.input.text};
+                    transition: 1s;
+                  }
+              }
             }
             
             .notes-container {
@@ -1380,6 +1404,7 @@ export default function GlobalStyle() {
                   font-weight: bold;
                   height: 20px;
                   margin: 0 0 5px 40px;
+                  overflow: hidden;
                   @media screen and (max-width: 700px) {
                     font-size: 0.7em;
                     margin: 0 0 5px 40px;
@@ -1696,6 +1721,10 @@ export default function GlobalStyle() {
             border: 1px solid #552240ff;
             box-shadow: inset 0 0 15px ${theme.colors.fuchsia};
             background: #291220ff;
+          }
+          .challenge-container.characterArc {
+            border: 1px solid ${theme.colors.boost.mid};
+            box-shadow: inset 0 0 45px ${theme.colors.boost.dark}, 0 0 10px ${theme.colors.boost.mid};
           }
 
           #archived-challenges-container {
