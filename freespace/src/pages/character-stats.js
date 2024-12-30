@@ -32,6 +32,28 @@ function CharacterStats() {
     }
   })
 
+  const characterArcs = [
+    {"name": "Birthright", "description": "You have a claim to something important (a position, a deed, a legacy, some sort of power) that you must reach or redeem."},
+    {"name": "Conquest", "description": "The fate of a region or faction cannot be left to their own whims. You know better; you must subdue and control it from the top."},
+    {"name": "Debt", "description": "You owe something important (probably your life) to someone you admire. You will do whatever it takes to repay that great favor."},
+    {"name": "Duty", "description": "You are bound to some sort of code or service (an organization, a religion, an order) and you firmly believe in it. You must pursue your obligation until the final objective (usually idealistic and utopic) is achieved."},
+    {"name": "Empowerment", "description": "Either out of selfishness or for the benefit of others, you need to achieve greater power by doing something that will make you supreme among others."},
+    {"name": "Enrichment", "description": "Either out of pure greed, or as a means to an end, you want to become rich and have a life full of luxuries."},
+    {"name": "Heroism", "description": "A great evil must be thwarted. The Innocent and the weak must be protected or saved. Peace must be reclaimed. You are the one who can do it."},
+    {"name": "Justice", "description": "Some laws are sacred, and everyone must abide by them. Your code might seem extreme or too radical, but you must enforce it until it is the rule of the land."},
+    {"name": "Leadership", "description": "A loner and/or outcast, you must transform into a respected leader, learning to trust others and inspire loyalty while facing your own insecurities."},
+    {"name": "Love", "description": "You are focused on a loved one; either a familiar bond or a romantic interest. You must win their love, nurture that relationship or protect it from something."},
+    {"name": "Proselytism", "description": "You have a creed or dogma that you consider ideal, but most others don't share it. You must convince, proselytize or forcefully impose it until the majority accepts and embraces it."},
+    {"name": "Recognition", "description": "Honor and virtue are on your destiny, but that's not enough: You need for it to be known, becoming famous and recognized for your deeds everywhere."},
+    {"name": "Redemption", "description": "You have made mistakes in the past that haunt you. You must make amends, seek forgiveness, and redeem yourself in the eyes of those you've wronged, and perhaps even yourself."},
+    {"name": "Rescue", "description": "Someone has been captured or lost. You must rescue them, or no one else will."},
+    {"name": "Revenge", "description": "An individual or faction wronged you in some way. You will make them pay for it."},
+    {"name": "Revolution", "description": "The system you live in is oppressive or unjust. You must lead a revolution to overthrow the current regime and replace it with something better."},
+  ];
+  var half_length = Math.ceil(characterArcs.length / 2);    
+  var characterArcsFirstHalf = characterArcs.slice(0,half_length);
+  var characterArcsSecondHalf = characterArcs.slice(half_length, characterArcs.length);
+
   const handleChange = (event) => {
     if ( event.target.type == "number" ) {
       const name = event.target.name;
@@ -332,19 +354,8 @@ function CharacterStats() {
 
             <div class="character-arc-options">
               <span>Choose One:</span>
-              <div class="columns">
-                <div class="col left-col">
-                  <input id="characterArcInput1" type="radio" name="characterArc" value={inputs.characterArc1 || "Get Out"} onChange={handleChange} checked={inputs.characterArc==="Get Out"} alt="you want to escape or get out."/><label for="characterArcInput1"> Get Out</label>
-                  <input id="characterArcInput2" type="radio" name="characterArc" value={inputs.characterArc2 || "Upgrade Life"} onChange={handleChange} checked={inputs.characterArc==="Upgrade Life"} alt="description."/><label for="characterArcInput2"> Upgrade Life</label>
-                  <input id="characterArcInput3" type="radio" name="characterArc" value={inputs.characterArc3 || "Learn The Truth"} onChange={handleChange} checked={inputs.characterArc==="Learn The Truth"} alt="description."/><label for="characterArcInput3"> Learn The Truth</label>
-                  <input id="characterArcInput4" type="radio" name="characterArc" value={inputs.characterArc4 || "Make'em Pay"} onChange={handleChange} checked={inputs.characterArc==="Make'em Pay"} alt="description."/><label for="characterArcInput4"> Make'em Pay</label>
-                </div>
-                <div class="col right-col">
-                  <input id="characterArcInput5" type="radio" name="characterArc" value={inputs.characterArc5 || "Look After Them"} onChange={handleChange} checked={inputs.characterArc==="Look After Them"} alt="description."/><label for="characterArcInput5"> Look After Them</label>
-                  <input id="characterArcInput6" type="radio" name="characterArc" value={inputs.characterArc6 || "Take A Stand"} onChange={handleChange} checked={inputs.characterArc==="Take A Stand"} alt="description."/><label for="characterArcInput6"> Take A Stand</label>
-                  <input id="characterArcInput7" type="radio" name="characterArc" value={inputs.characterArc7 || "Watch It All Burn"} onChange={handleChange} checked={inputs.characterArc==="Watch It All Burn"} alt="description."/><label for="characterArcInput7"> Watch It All Burn</label>
-                  <input id="characterArcInput8" type="radio" name="characterArc" value={inputs.characterArc8 || "Leave A Mark"} onChange={handleChange} checked={inputs.characterArc==="Leave A Mark"} alt="description."/><label for="characterArcInput8"> Leave A Mark</label>
-                </div>
+              <div class="character-arc-inputs">
+                {characterArcs.map((characterArc, i) => <div class="character-arc-input-container"><input id={"characterArcInput"+i} type="radio" name="characterArc" value={characterArc["name"]} onChange={handleChange} checked={inputs["characterArc"]===characterArc["name"]} alt={characterArc["description"]}/><label for={"characterArcInput"+i}> {characterArc["name"]}</label></div>)}
               </div>
             </div>
 

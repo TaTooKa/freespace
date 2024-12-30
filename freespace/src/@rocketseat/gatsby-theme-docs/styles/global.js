@@ -1057,15 +1057,17 @@ export default function GlobalStyle() {
                 }
                 .character-arc-options {
                     margin: 10px 0 0 0;
-                    .columns {
-                        display: flex;
-                        margin: 5px 0 0 0;
-                        justify-content: space-around;
+                    .character-arc-inputs {
+                      margin: 5px 0 0 5px;
                     }
-                    .col input {
+                    .character-arc-input-container {
+                      width: 50%;
+                      display: inline-block;
+                    }
+                    .character-arc-input-container input {
                         display: none;
                     }
-                    .col label {
+                    .character-arc-input-container label {
                         font-size: 0.7em;
                         text-align: center;
                         display: inline-block;
@@ -1077,7 +1079,7 @@ export default function GlobalStyle() {
                         transition: 0.5s;
                         box-shadow: inset 0 0 5px #000;
                     }
-                    .col input:checked+label {
+                    .character-arc-input-container input:checked+label {
                         color: ${theme.colors.turquoise};
                         text-shadow: 0 0 10px ${theme.colors.turquoise};
                         box-shadow: inset 0 0 5px ${theme.colors.turquoise};
@@ -1087,7 +1089,7 @@ export default function GlobalStyle() {
                     }
                 }
               .character-arc-description-container {
-                  margin: 10px 10px 0 5px;
+                  margin: 10px 10px 5px 5px;
                   display: flex;
                   background-color: ${theme.darkcolors.components.input.background};
                   border: 1px solid #444;
