@@ -47,11 +47,11 @@ function Challenges() {
 
   const characterArcChallengeIsPresent = (challenges) => {
     var characterArcChallengeIsPresent = false;
-    challenges.forEach((challenge) => {
-      if (challenge["characterArc"]) {
+    for (var i=0; i < challenges.length; i++) {
+      if (challenges[i]["characterArc"]) {
         characterArcChallengeIsPresent = true;
       }
-    });
+    }
     return characterArcChallengeIsPresent;
 
   }
