@@ -344,10 +344,11 @@ export default function GlobalStyle() {
           border-radius: 0 15px 0 15px;
           margin: 15px auto 5px auto;
           width: 100%;
-          height: 350px;
+          height: 250px;
           transition: 0.5s;
           filter: brightness(0.8) saturate(0.7) hue-rotate(-5deg);
           object-fit: cover;
+          object-position: center 20%;
           :hover {
             border: 0px !important;
             border-radius: 5px;
@@ -356,54 +357,54 @@ export default function GlobalStyle() {
             height: 550px;
           }
           @media screen and (max-width: 1350px) {
-            height: 320px !important;
+            height: 200px !important;
             :hover {
               height: 450px !important;
             }
           }
           @media screen and (max-width: 1200px) {
-            height: 500px !important;
+            height: 300px !important;
             :hover {
               height: 600px !important;
             }
           }
           @media screen and (max-width: 1100px) {
-            height: 450px !important;
+            height: 250px !important;
             :hover {
               height: 500px !important;
             }
           }
           @media screen and (max-width: 900px) {
-            height: 300px !important;
+            height: 200px !important;
             :hover {
               height: 400px !important;
             }
           }
           @media screen and (max-width: 780px) {
-            height: 400px !important;
+            height: 250px !important;
             :hover {
               height: 500px !important;
             }
           }
           @media screen and (max-width: 600px) {
-            height: 300px !important;
+            height: 200px !important;
             :hover {
               height: 400px !important;
             }
           }
           @media screen and (max-width: 450px) {
-            height: 200px !important;
+            height: 150px !important;
             :hover {
               height: 300px !important;
             }
           }
           :hover {
-            animation: slideImg 30s linear infinite;
+            animation: slideImg 20s linear infinite;
             @keyframes slideImg {
-              0% { object-position: center center; }
-              30% { object-position: 25% 25%; }
-              60% { object-position: 75% 75%; }
-              100% { object-position:  center center; }
+              0% { object-position: center 20%; }
+              30% { object-position: 25% 20%; }
+              60% { object-position: 75% 20%; }
+              100% { object-position:  center 20%; }
             }
           }
         }
