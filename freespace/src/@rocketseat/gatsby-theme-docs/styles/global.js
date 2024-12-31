@@ -339,76 +339,6 @@ export default function GlobalStyle() {
           max-width: 100%;
         }
 
-        img.art {
-          border: 1px solid ${theme.colors.accent};
-          border-radius: 0 15px 0 15px;
-          margin: 15px auto 5px auto;
-          width: 100%;
-          height: 250px;
-          transition: 0.5s;
-          filter: brightness(0.8) saturate(0.7) hue-rotate(-5deg);
-          object-fit: cover;
-          object-position: center 20%;
-          :hover {
-            border: 0px !important;
-            border-radius: 5px;
-            box-shadow: 0px 0px 10px #000 !important;
-            width: 100%;
-            height: 550px;
-          }
-          @media screen and (max-width: 1350px) {
-            height: 200px !important;
-            :hover {
-              height: 450px !important;
-            }
-          }
-          @media screen and (max-width: 1200px) {
-            height: 300px !important;
-            :hover {
-              height: 600px !important;
-            }
-          }
-          @media screen and (max-width: 1100px) {
-            height: 250px !important;
-            :hover {
-              height: 500px !important;
-            }
-          }
-          @media screen and (max-width: 900px) {
-            height: 200px !important;
-            :hover {
-              height: 400px !important;
-            }
-          }
-          @media screen and (max-width: 780px) {
-            height: 250px !important;
-            :hover {
-              height: 500px !important;
-            }
-          }
-          @media screen and (max-width: 600px) {
-            height: 200px !important;
-            :hover {
-              height: 400px !important;
-            }
-          }
-          @media screen and (max-width: 450px) {
-            height: 150px !important;
-            :hover {
-              height: 300px !important;
-            }
-          }
-          :hover {
-            animation: slideImg 20s linear infinite;
-            @keyframes slideImg {
-              0% { object-position: center 20%; }
-              30% { object-position: 25% 20%; }
-              60% { object-position: 75% 20%; }
-              100% { object-position:  center 20%; }
-            }
-          }
-        }
-
         ul,
         ol {
           color: ${theme.colors.text};
@@ -1259,10 +1189,128 @@ export default function GlobalStyle() {
               color: ${theme.colors.turquoise};
             }
 
-            input:checked+label +img.art, img.art:hover {
+            input:checked+label +.trait-art-container, .trait-art-container:hover {
               border: 1px solid ${theme.colors.fuchsia};
               box-shadow: 0 0 5px ${theme.colors.fuchsia}; 
               filter: brightness(1);
+            }
+
+            .trait-art-container {
+              position: relative;
+              margin: 15px auto 5px auto;
+              height: 250px;
+              border: 1px solid ${theme.colors.accent};
+              border-radius: 0 15px 0 15px;
+              overflow: hidden;
+              transition: 0.5s;
+              @media screen and (max-width: 1350px) {
+                height: 200px !important;
+              }
+              @media screen and (max-width: 1200px) {
+                height: 300px !important;
+              }
+              @media screen and (max-width: 1100px) {
+                height: 250px !important;
+              }
+              @media screen and (max-width: 900px) {
+                height: 200px !important;
+              }
+              @media screen and (max-width: 780px) {
+                height: 250px !important;
+              }
+              @media screen and (max-width: 600px) {
+                height: 200px !important;
+              }
+              @media screen and (max-width: 450px) {
+                height: 150px !important;
+              }
+
+              video {
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                object-fit: cover;
+                z-index: 1;
+                mix-blend-mode: screen;
+                opacity: .3;
+              }
+
+              img.art {
+                width: 100%;
+                height: 250px;
+                transition: 0.5s;
+                filter: brightness(0.8) saturate(0.7) hue-rotate(-5deg);
+                object-fit: cover;
+                object-position: center 20%;
+                @media screen and (max-width: 1350px) {
+                  height: 200px !important;
+                }
+                @media screen and (max-width: 1200px) {
+                  height: 300px !important;
+                }
+                @media screen and (max-width: 1100px) {
+                  height: 250px !important;
+                }
+                @media screen and (max-width: 900px) {
+                  height: 200px !important;
+                }
+                @media screen and (max-width: 780px) {
+                  height: 250px !important;
+                }
+                @media screen and (max-width: 600px) {
+                  height: 200px !important;
+                }
+                @media screen and (max-width: 450px) {
+                  height: 150px !important;
+                }
+              }
+            }
+
+            .trait-art-container:hover, .trait-art-container:hover img.art {
+              border: 0px !important;
+              border-radius: 5px;
+              box-shadow: 0px 0px 10px #000 !important;
+              width: 100%;
+              height: 550px;
+
+              @media screen and (max-width: 1350px) {
+                height: 450px !important;
+              }
+              @media screen and (max-width: 1200px) {
+                height: 600px !important;
+              }
+              @media screen and (max-width: 1100px) {
+                height: 500px !important;
+              }
+              @media screen and (max-width: 900px) {
+                height: 400px !important;
+              }
+              @media screen and (max-width: 780px) {
+                height: 500px !important;
+              }
+              @media screen and (max-width: 600px) {
+                height: 400px !important;
+              }
+              @media screen and (max-width: 450px) {
+                height: 300px !important;
+              }
+            }
+
+            .trait-art-container:hover img.art {
+              animation: slideImg 20s linear infinite;
+              @keyframes slideImg {
+                0% { object-position: center 20%; }
+                30% { object-position: 25% 20%; }
+                60% { object-position: 75% 20%; }
+                100% { object-position:  center 20%; }
+              }
+              // @keyframes slideImg {
+              //   0% { object-position: 0% 20%; }
+              //   25% { object-position: 50% 20%; }
+              //   50% { object-position: 100% 20%; }
+              //   75% { object-position: center 20%; }
+              //   100% { object-position:  0% 20%; }
+              // }
             }
 
           }
