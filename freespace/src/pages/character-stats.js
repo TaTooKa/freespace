@@ -8,7 +8,7 @@ function CharacterStats() {
   const theme = useTheme();
   const windowGlobal = typeof window !== 'undefined' && window
   var activeTraits = windowGlobal ? windowGlobal.localStorage.getItem("activeTraits") : "";
-  var characterArcProgress = windowGlobal ? windowGlobal.localStorage.getItem("characterArcProgress") : 0;
+  var characterArcProgress = windowGlobal ? windowGlobal.localStorage.getItem("characterArcProgress") : "0";
 
   const [randHeartbeatPoints, setRandHeartbeatPoints] = useState(0);
 
@@ -351,7 +351,7 @@ function CharacterStats() {
             <div class="character-arc-header">
               <span class="character-arc-title">CHARACTER ARC</span>
               <div class="character-arc-progress-container">
-                <span class="character-arc-progress"> {characterArcProgress}%</span>
+                <span class="character-arc-progress"> {characterArcProgress || "0"}%</span>
                 <span class="character-arc-progress-title">PROGRESS</span>
               </div>
             </div>
