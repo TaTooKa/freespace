@@ -279,55 +279,55 @@ function CharacterStats() {
             <h2 id="items-and-gear">ITEMS AND GEAR</h2>
             
             <Trait type="gear" name="CombatBot" title="COMBAT BOT" art={placeholder_art} inputs={inputs} handleChange={handleChange}>
-                <span></span>
+                <span>This combat robot is equipped with advanced weaponry and combat protocols. Gain a <span class="boost">BOOST</span> whenever you <a href="/prompts/general-prompts#clash">CLASH</a> with enemies using your combat bot, or when it helps you to <a href="/prompts/general-prompts#act-under-pressure">ACT UNDER PRESSURE</a> in battle.</span>
             </Trait>
 
             <Trait type="gear" name="CombatExosuit" title="COMBAT EXOSUIT" art={placeholder_art} inputs={inputs} handleChange={handleChange}>
-                <span></span>
+                <span>Gain a <span class="boost">BOOST</span> whenever you <a href="/prompts/general-prompts#clash">CLASH</a> in combat using your combat exosuit, which enhances strength and endurance, or when you <a href="/prompts/general-prompts#act-under-pressure">ACT UNDER PRESSURE</a> while enduring damage or operating in extreme conditions, as the suit offers protection and increased physical capabilities.</span>
             </Trait>
 
             <Trait type="gear" name="EnergyShield" title="ENERGY SHIELD" art={placeholder_art} inputs={inputs} handleChange={handleChange}>
-                <span></span>
+                <span>Gain a <span class="boost">BOOST</span> whenever you <a href="/prompts/general-prompts#act-under-pressure">ACT UNDER PRESSURE</a> or <a href="/prompts/suffer-prompts#endure-harm">ENDURE HARM</a> to resist or deflect incoming attacks using your personal energy shield. Whenever you would have to <a href="/prompts/suffer-prompts#endure-harm">ENDURE HARM</a>, if you have enough <b>RESOURCES</b>, you can <a href="/prompts/suffer-prompts#sacrifice-resources">SACRIFICE RESOURCES</a> instead, by deviating more energy to your shields.</span>
             </Trait>
 
             <Trait type="gear" name="HeavyWeapon" title="HEAVY WEAPON" art={placeholder_art} inputs={inputs} handleChange={handleChange}>
-                <span></span>
+                <span>Your weapon is stronger than normal. You can make a dent against armored targets (like vehicles or ships), and you gain a <span class="boost">BOOST</span> when you <a href="/prompts/general-prompts#clash">CLASH</a> against regular targets.</span>
             </Trait>
 
             <Trait type="gear" name="HoloDisguise" title="HOLO-DISGUISE" art={placeholder_art} inputs={inputs} handleChange={handleChange}>
-                <span></span>
+                <span>Gain a <span class="boost">BOOST</span> whenever you <a href="/prompts/general-prompts#act-under-pressure">ACT UNDER PRESSURE</a> or <a href="/prompts/general-prompts#compel">COMPEL</a>, by deceiving others or avoiding detection by using your holo-disguise to project a false identity or camouflage.</span>
             </Trait>
 
             <Trait type="gear" name="Jetpack" title="JETPACK" art={placeholder_art} inputs={inputs} handleChange={handleChange}>
-                <span></span>
+                <span>You have the ability to fly a short distance or hover in place for a while. Gain a <span class="boost">BOOST</span> when you <a href="/prompts/general-prompts#act-under-pressure">ACT UNDER PRESSURE</a> or <a href="/prompts/general-prompts#clash">CLASH</a> with <span class="stat">DEXTERITY</span>.</span>
             </Trait>
 
             <Trait type="gear" name="RepairTool" title="REPAIR TOOL" art={placeholder_art} inputs={inputs} handleChange={handleChange}>
-                <span></span>
+                <span>Gain a <span class="boost">BOOST</span> whenever you <a href="/prompts/general-prompts#act-under-pressure">ACT UNDER PRESSURE</a> to quickly repair broken or damaged items, vehicles, or equipment, or when you <a href="/prompts/general-prompts#secure-an-advantage">SECURE AN ADVANTAGE</a> by using it to patch up critical systems or enhance a tech device or other machinery.</span>
             </Trait>
 
             <Trait type="gear" name="NanoMedkit" title="NANO-MEDKIT" art={placeholder_art} inputs={inputs} handleChange={handleChange}>
-                <span></span>
+                <span>Gain a <span class="boost">BOOST</span> whenever you <a href="/prompts/recovery-prompts#heal">HEAL</a> or provide medical care using your advanced nano-medkit, which can rapidly treat injuries and other illnesses.</span>
             </Trait>
 
             <Trait type="gear" name="PersonalAssistant" title="PERSONAL ASSISTANT" art={placeholder_art} inputs={inputs} handleChange={handleChange}>
-                <span></span>
+                <span>This embedded computer or portable device understands your inquiries and gives you detailed data on any topic that might be useful for the current context. Gain a <span class="boost">BOOST</span> whenever you <a href="/prompts/general-prompts#gather-information">GATHER INFORMATION</a>.</span>
             </Trait>
 
             <Trait type="gear" name="PlasmaCutter" title="PLASMA CUTTER" art={placeholder_art} inputs={inputs} handleChange={handleChange}>
-                <span></span>
+                <span>Gain a <span class="boost">BOOST</span> whenever you <a href="/prompts/general-prompts#act-under-pressure">ACT UNDER PRESSURE</a> or <a href="/prompts/general-prompts#secure-an-advantage">SECURE AN ADVANTAGE</a> to cut through barriers, armor, or obstacles with your plasma cutter, especially when breaking into secure locations or dismantling dangerous devices.</span>
             </Trait>
 
             <Trait type="gear" name="ProtocolBot" title="PROTOCOL BOT" art={placeholder_art} inputs={inputs} handleChange={handleChange}>
-                <span></span>
+                <span>This protocol droid is programmed with knowledge of cultures, languages, and customs. Gain a <span class="boost">BOOST</span> whenever you use its help to <a href="/prompts/general-prompts#compel">COMPEL</a> with <span class="stat">RESOLVE</span> or <span class="stat">SUBTERFUGE</span>, or when you <a href="/prompts/general-prompts#gather-information">GATHER INFORMATION</a> by having it ask in a polite and diplomatic way.</span>
             </Trait>
 
             <Trait type="gear" name="ReconDrone" title="RECON DRONE" art={placeholder_art} inputs={inputs} handleChange={handleChange}>
-                <span></span>
+                <span>Gain a <span class="boost">BOOST</span> whenever you <a href="/prompts/general-prompts#secure-an-advantage">SECURE AN ADVANTAGE</a> by deploying your recon drone for stealthy reconnaissance, surveillance, or scouting missions. It can gather information on enemy positions, terrain, or hidden threats, allowing you to make better-informed decisions. You also gain a <span class="boost">BOOST</span> when it helps you <a href="/prompts/recovery-prompts#resupply">RESUPPLY</a> by scavenging with <span class="stat">INTELLECT</span>.</span>
             </Trait>
 
             <Trait type="gear" name="SmartGun" title="SMART GUN" art={placeholder_art} inputs={inputs} handleChange={handleChange}>
-                <span></span>
+                <span>Gain a <span class="boost">BOOST</span> whenever you <a href="/prompts/general-prompts#clash">CLASH</a> or <a href="/prompts/general-prompts#secure-an-advantage">SECURE AN ADVANTAGE</a> by using your smart gun, which automatically adjusts for target distance, movement, and environmental conditions.</span>
             </Trait>
 
         </div>
@@ -341,6 +341,62 @@ function CharacterStats() {
             <h2 id="vehicle-modules">VEHICLE MODULES</h2>
 
             <blockquote><p>If you have a vehicle like a <b>Spaceship</b>, <b>Exocraft</b> or <b>Mecha</b>, you can acquire any of these traits to improve it. If the vehicle is shared by the entire crew, any member can collaborate by purchasing different modules for it with their own XP.</p></blockquote>
+
+            <Trait type="vehicleModule" name="AestheticCustomizations" title="AESTHETIC CUSTOMIZATIONS" art={placeholder_art} inputs={inputs} handleChange={handleChange}>
+                <span>Your vehicle has been inventively customized and decorated to look impressive. Whether it’s awe-inspiring or intimidating, it gives you a <span class="boost">BOOST</span> when you <a href="/prompts/general-prompts#compel">COMPEL</a> from inside it or by leveraging its presence.</span>
+            </Trait>
+
+            <Trait type="vehicleModule" name="Afterburner" title="AFTERBURNER" art={placeholder_art} inputs={inputs} handleChange={handleChange}>
+                <span>Gain a <span class="boost">BOOST</span> whenever you <a href="/prompts/general-prompts#act-under-pressure">ACT UNDER PRESSURE</a> or <a href="/prompts/general-prompts#secure-an-advantage">SECURE AN ADVANTAGE</a> while benefiting from a momentary surge in speed and maneuverability.</span>
+            </Trait>
+
+            <Trait type="vehicleModule" name="EnhancedSensors" title="ENHANCED SENSORS" art={placeholder_art} inputs={inputs} handleChange={handleChange}>
+                <span>Gain a <span class="boost">BOOST</span> when you <a href="/prompts/general-prompts#gather-information">GATHER INFORMATION</a> by scanning your vehicle's surroundings or when you <a href="/prompts/general-prompts#act-under-pressure">ACT UNDER PRESSURE</a> by reacting to something that could be preemptively detected by your vehicle's passive scanners.</span>
+            </Trait>
+
+            <Trait type="vehicleModule" name="ExpandedHold" title="EXPANDED HOLD" art={placeholder_art} inputs={inputs} handleChange={handleChange}>
+                <span>Your vehicle can transport more volume than normal. Also, if you have access to your vehicle cargo hold, whenever you <a href="/prompts/recovery-prompts#resupply">RESUPPLY</a> you can gain an instant <span class="turquoise bold">SUCCESS</span> without rolling. Do this only once, until you have an opportunity to restock your vehicle properly.</span>
+            </Trait>
+
+            <Trait type="vehicleModule" name="Grappler" title="GRAPPLER" art={placeholder_art} inputs={inputs} handleChange={handleChange}>
+                <span>Gain a <span class="boost">BOOST</span> whenever you try to <a href="/prompts/general-prompts#secure-an-advantage">SECURE AN ADVANTAGE</a> against an enemy craft by restraining it with your Grappler. If you <a href="/prompts/general-prompts#clash">CLASH</a> against an enemy vehicle that is grappled by yours, you gain a <span class="boost">BOOST</span> to that roll.</span>
+            </Trait>
+
+            <Trait type="vehicleModule" name="Medbay" title="MEDBAY" art={placeholder_art} inputs={inputs} handleChange={handleChange}>
+                <span>Gain a <span class="boost">BOOST</span> when you <a href="/prompts/recovery-prompts#heal">HEAL</a> by perusing the Medbay in your vehicle.</span>
+            </Trait>
+
+            <Trait type="vehicleModule" name="MissileArray" title="MISSILE ARRAY" art={placeholder_art} inputs={inputs} handleChange={handleChange}>
+                <span>While in vehicle combat, if you <a href="/prompts/suffer-prompts#sacrifice-resources">SACRIFICE RESOURCES (-2)</a> you can ready a missile. First you need to <a href="/prompts/general-prompts#secure-an-advantage">SECURE AN ADVANTAGE</a> to acquire a lock. On a <span class="turquoise bold">SUCCESS</span>, you lock onto your target and maintain it as long as you are <i>IN CONTROL</i>. If you <a href="/prompts/general-prompts#clash">CLASH</a> successfully against that target, you <a href="/prompts/challenge-prompts#make-progress">MAKE PROGRESS</a> twice against it.</span>
+            </Trait>
+
+            <Trait type="vehicleModule" name="ReinforcedHull" title="REINFORCED HULL" art={placeholder_art} inputs={inputs} handleChange={handleChange}>
+                <span>Your vehicle is heavily armored. Whenever you would <a href="/prompts/suffer-prompts#pay-the-consequences">PAY THE CONSEQUENCES</a> by withstanding damage to it, and the most obvious outcome would be to have your vehicle disabled or destroyed, you can ignore that fact by having its armor take the brunt of that damage instead. You can do this only once until you have an opportunity to properly fix or patch its Reinforced Hull.</span>
+            </Trait>
+
+            <Trait type="vehicleModule" name="RelaxingArea" title="RELAXING AREA" art={placeholder_art} inputs={inputs} handleChange={handleChange}>
+                <span>You have customized a corner, a compartment or a whole area of your vehicle to your liking, with cozy decorations and/or comfortable amenities. Gain a <span class="boost">BOOST</span> whenever you <a href="/prompts/recovery-prompts#relax">RELAX</a> by enjoying those conveniences.</span>
+            </Trait>
+
+            <Trait type="vehicleModule" name="ResearchLab" title="RESEARCH LAB" art={placeholder_art} inputs={inputs} handleChange={handleChange}>
+                <span>Gain a <span class="boost">BOOST</span> when you <a href="/prompts/general-prompts#gather-information">GATHER INFORMATION</a> by harnessing the advantages of the Research Lab in your vehicle.</span>
+            </Trait>
+
+            <Trait type="vehicleModule" name="Shields" title="SHIELDS" art={placeholder_art} inputs={inputs} handleChange={handleChange}>
+                <span>While in your vehicle, whenever you would <a href="/prompts/suffer-prompts#pay-the-consequences">PAY THE CONSEQUENCES</a> because it receives damage, if you are <i>IN CONTROL</i> disregard that outcome; instead the Shields flicker and you are put <i>IN A BAD SPOT</i>. If you already were <i>IN A BAD SPOT</i>, disregard that outcome but your vehicle’s shields are completely depleted. With your shields down, the next source of damage could be lethal. You can only bring your shields up again if you <a href="/prompts/general-prompts#secure-an-advantage">SECURE AN ADVANTAGE</a> with <span class="stat">INTELLECT</span> and you succeed.</span>
+            </Trait>
+
+            <Trait type="vehicleModule" name="StealthTech" title="STEALTH TECH" art={placeholder_art} inputs={inputs} handleChange={handleChange}>
+                <span>Your vehicle has been modded for silent running or some other sort of cloaking technology. While in this mode, if you are <i>IN CONTROL</i> you can achieve an automatic <span class="turquoise bold">SUCCESS</span> in any prompt that would benefit from being “invisible”. If you are <i>IN A BAD SPOT</i>, you gain a <span class="boost">BOOST</span> to that prompt instead. Afterwards, your vehicle is revealed to your opponents and you are automatically put <i>IN A BAD SPOT</i>. The only way to regain the stealth mode is to be <i>IN CONTROL</i> and <a href="/prompts/general-prompts#secure-an-advantage">SECURE AN ADVANTAGE</a> with <span class="stat">SUBTERFUGE</span>.</span>
+            </Trait>
+
+            <Trait type="vehicleModule" name="WeaponryOvercharge" title="WEAPONRY OVERCHARGE" art={placeholder_art} inputs={inputs} handleChange={handleChange}>
+                <span>If you are in vehicle combat and you are <i>IN CONTROL</i>, you can overcharge your weapons and gain a <span class="boost">BOOST</span> to <a href="/prompts/general-prompts#clash">CLASH</a>, but the gamble puts you <i>IN A BAD SPOT</i> afterwards.</span>
+            </Trait>
+
+            <Trait type="vehicleModule" name="Workshop" title="WORKSHOP" art={placeholder_art} inputs={inputs} handleChange={handleChange}>
+                <span>Gain a <span class="boost">BOOST</span> if you <a href="/prompts/recovery-prompts#resupply">RESUPPLY</a> with <span class="stat">INTELLECT</span> to craft something in your vehicle’s Workshop. Also, whenever you <a href="/prompts/general-prompts#use-your-gear">USE YOUR GEAR</a> by leveraging whatever spare parts or junk you can find in the Workshop, spend 1 less RESOURCE (minimum of 1). Do this only once, until you have an opportunity to restock your Workshop properly. </span>
+            </Trait>
 
         </div>
 
