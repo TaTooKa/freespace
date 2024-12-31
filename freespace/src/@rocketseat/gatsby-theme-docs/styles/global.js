@@ -1232,7 +1232,7 @@ export default function GlobalStyle() {
                 object-fit: cover;
                 z-index: 1;
                 mix-blend-mode: screen;
-                opacity: .3;
+                opacity: .5;
               }
 
               img.art {
