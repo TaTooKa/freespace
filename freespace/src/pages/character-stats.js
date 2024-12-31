@@ -98,7 +98,11 @@ function CharacterStats() {
 
   function getHighestStatValue(inputs) {
     let stats = [inputs.physique, inputs.dexterity, inputs.subterfuge, inputs.resolve, inputs.intellect].map(Number);
-    return Math.max(...stats);
+    var highestStatValue = Math.max(...stats);
+    if (highestStatValue < 10) { 
+      highestStatValue = 10;
+    }
+    return highestStatValue;
   }
 
   async function handleStatsChart() {
