@@ -30,6 +30,9 @@ import sharpshooter_art from '/src/images/sharpshooter.jpg';
 import shocktrooper_art from '/src/images/shocktrooper.jpg';
 import sniper_art from '/src/images/sniper.jpg';
 import spacemarine_art from '/src/images/spacemarine.jpg';
+import combatbot_art from '/src/images/combatbot.jpg';
+import combatexosuit_art from '/src/images/combatexosuit.jpg';
+import energyshield_art from '/src/images/energyshield.jpg';
 
 function CharacterStats() {
   const windowGlobal = typeof window !== 'undefined' && window
@@ -278,15 +281,15 @@ function CharacterStats() {
 
             <h2 id="items-and-gear">ITEMS AND GEAR</h2>
             
-            <Trait type="gear" name="CombatBot" title="COMBAT BOT" art={placeholder_art} inputs={inputs} handleChange={handleChange}>
+            <Trait type="gear" name="CombatBot" title="COMBAT BOT" art={combatbot_art} inputs={inputs} handleChange={handleChange}>
                 <span>This combat robot is equipped with advanced weaponry and combat protocols. Gain a <span class="boost">BOOST</span> whenever you <a href="/prompts/general-prompts#clash">CLASH</a> with enemies using your combat bot, or when it helps you to <a href="/prompts/general-prompts#act-under-pressure">ACT UNDER PRESSURE</a> in battle.</span>
             </Trait>
 
-            <Trait type="gear" name="CombatExosuit" title="COMBAT EXOSUIT" art={placeholder_art} inputs={inputs} handleChange={handleChange}>
+            <Trait type="gear" name="CombatExosuit" title="COMBAT EXOSUIT" art={combatexosuit_art} inputs={inputs} handleChange={handleChange}>
                 <span>Gain a <span class="boost">BOOST</span> whenever you <a href="/prompts/general-prompts#clash">CLASH</a> in combat using your combat exosuit, which enhances strength and endurance, or when you <a href="/prompts/general-prompts#act-under-pressure">ACT UNDER PRESSURE</a> while enduring damage or operating in extreme conditions, as the suit offers protection and increased physical capabilities.</span>
             </Trait>
 
-            <Trait type="gear" name="EnergyShield" title="ENERGY SHIELD" art={placeholder_art} inputs={inputs} handleChange={handleChange}>
+            <Trait type="gear" name="EnergyShield" title="ENERGY SHIELD" art={energyshield_art} inputs={inputs} handleChange={handleChange}>
                 <span>Gain a <span class="boost">BOOST</span> whenever you <a href="/prompts/general-prompts#act-under-pressure">ACT UNDER PRESSURE</a> or <a href="/prompts/suffer-prompts#endure-harm">ENDURE HARM</a> to resist or deflect incoming attacks using your personal energy shield. Whenever you would have to <a href="/prompts/suffer-prompts#endure-harm">ENDURE HARM</a>, if you have enough <b>RESOURCES</b>, you can <a href="/prompts/suffer-prompts#sacrifice-resources">SACRIFICE RESOURCES</a> instead, by deviating more energy to your shields.</span>
             </Trait>
 

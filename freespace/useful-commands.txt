@@ -1,4 +1,5 @@
 nvm use 18
+cd freespace\
 gatsby.cmd develop
 gatsby.cmd clean 
 npm run deploy
