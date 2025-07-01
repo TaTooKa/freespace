@@ -1102,6 +1102,26 @@ const characterOracleResults = {
      ],
   ],
 
+  "oracle-species-ability-result": [
+    "<i>Adaptive Mimicry</i>. Can alter appearance to resemble other organisms or surroundings.",
+    "<i>Chronoportation</i>. Able to travel backward or forward in time.",
+    "<i>Dimensional Phasing</i>. Able to pass through solid matter by shifting between dimensions.",
+    "<i>Electrical Generation</i>. Can produce and discharge electrical energy.",
+    "<i>Energy Absorption</i>. Able to absorb and redirect various forms of energy.",
+    "<i>Hive Mind</i>. Members are united in a singular, interconnected intelligence.",
+    "<i>Luminescence</i>. Emits light for communication, camouflage, or attraction.",
+    "<i>Magnetic Levitation</i>. Able to levitate and manipulate objects using magnetic fields.",
+    "<i>Natural Armor</i>. Possesses durable and protective natural exoskeletal or dermal plating.",
+    "<i>Natural Weaponry</i>. Built-in offensive appendages like claws, fangs, or spikes.",
+    "<i>Regeneration</i>. Rapid self-healing of injuries and wounds.",
+    "<i>Sonic Resonance</i>. Emits powerful sound waves for communication or defense.",
+    "<i>Subspace Awareness</i>. Able to sense the presence and fluctuations of subspace.",
+    "<i>Symbiotic Fusion</i>. Able to merge and share abilities with compatible organisms.",
+    "<i>Technomancy</i>. Can interface with technology through biological or other means.",
+    "<i>Telepathy</i>. Able to communicate directly by mental means, transcending language.",
+    "<i>Venomous Secretion</i>. Can naturally produce and deliver toxic substances.",
+  ],
+
   "oracle-nemesis-quirk-result": [
     "Cautious",
     "Insightful",

@@ -269,5 +269,24 @@ const miscOracleResults = {
         "A group of rebels/revolutionaries",
     ],
 
+    "oracle-background-story-result": [
+        "<i>Cosmic Cold War</i>. The balance of power between interstellar factions is delicate, setting the stage for political intrigue and espionage. PCs might be diplomats, spies, saboteurs.",
+        "<i>Rebellion!</i> Discontent with interstellar authority has boiled over into uprisings across subjugated worlds. PCs might be resistance fighters, revolutionaries.",
+        "<i>Trade War</i>. Mercantile conglomerates and megacorporations are vying for supremacy. PCs might be free traders, mercenaries hired for protection, or pirates on the hunt.",
+        "<i>Age of Piracy</i>. Freebooters and raiders run rampant across insufficiently protected systems. PCs might be law enforcement, bounty hunters, or pirates themselves.",
+        "<i>Space Plague</i>. A mysterious disease has broken out across multiple worlds, leaving devastation in its wake. PCs might be seeking the source and cure, or merely struggling to survive in the face of its destructive power.",
+        "<i>Wild Frontier</i>. New colonies are being established on outlying worlds. PCs might be pioneers, frontier traders, or explorers using the frontier as a base of operations.",
+        "<i>Unchecked AI</i>. Rogue artificial intelligence has taken control of a key world or installation and is expand its influence outward. PCs might be scientists or hackers tasked with neutralizing the threat.",
+        "<i>Anomaly Swarm</i>. Inexplicable disruptions in the fabric of spacetime are on the rise, disrupting order across multiple systems. PCs might be scientists seeking to understand and solve the problem, or refugees escaping from it.",
+        "<i>Alien Invasion!</i> A previously unknown species from beyond the known worlds has arrived in force. PCs might be soldiers, mercenaries, or people just trying to survive.",
+        "<i>Galactic Conflict</i>. Two interstellar factions are at war. PCs might be soldiers or spies working for one side, or rogues and scoundrels looking to capitalize on the chaos.",
+        "<i>Interstellar Cartel</i>. A coalition of criminal syndicates exerts control over trade routes and governments, forcing various star systems into dependency or opposition. PCs might be criminals themselves, fighting back against the cartel, or just trying to get by.",
+        "<i>Age of Discovery</i>. A wormhole has opened near a populated system, creating a connection to a distant sector or even galaxy. PCs might be explorers or fortune hunters.",
+        "<i>Gold Rush</i>. A huge, rich planet has been discovered at the edge of known space, and people are flocking to it. PCs might be explorers, surveyors, or corporate agents.",
+        "<i>Dark Matter Disruption</i>. The presence of enigmatic dark matter anomalies disrupts space travel and communication, leading to isolated systems. PCs might be couriers, traders, or samaritans seeking to maintain intra-system connections.",
+        "<i>First Contact</i>. Established interstellar factions have met a new culture for the first time, and the galaxy promises to never be the same. PCs might be scientists or diplomats.",
+        "<i>Post-Apocalyptic Fragmentation</i>. Interstellar society has collapsed, resulting in isolated colonies and city-states vying for resources. PCs might be couriers, traders, mercenaries, drifters, or merely struggling to survive in a harsh galaxy.",
+    ],
+
 };
 export default miscOracleResults;

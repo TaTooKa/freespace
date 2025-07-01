@@ -12,6 +12,7 @@ export default function MiscOracles() {
     {depth: 2, value: "TECHNOBABBLE"},
     {depth: 2, value: "RUMORS"},
     {depth: 2, value: "CARGO"},
+    {depth: 2, value: "BACKGROUND STORY"},
   ]
   
   const oracleLogName = "miscOraclesLog";
@@ -55,6 +56,13 @@ export default function MiscOracles() {
 
         <h2 id="cargo">CARGO OF DUBIOUS LEGALITY</h2>
         <Oracle oracleName="illegalcargo" oracleDatatable={miscOracleResults} oracleLogName={oracleLogName}/>
+
+        <br/>
+        <hr/>
+
+        <h2 id="bacground-story">BACKGROUND STORY FRAMING</h2>
+        <Oracle oracleName="background-story" oracleDatatable={miscOracleResults} oracleLogName={oracleLogName}/>
+        <blockquote><p>Use this oracle if you need ideas for the overall happenstances, status-quo, or the big picture of the sector/zone/galaxy that your story will take place in.</p></blockquote>
 
         <br/>
         <br/>

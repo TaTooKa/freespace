@@ -82,6 +82,9 @@ export default function CharacterOracles() {
         <h3 id="species-traits">TRAITS</h3>
         <Oracle oracleName="species-traits" oracleDatatable={characterOracleResults} oracleLogName={oracleLogName} combined joined/>
 
+        <h3 id="species-ability">SPECIAL ABILITY</h3>
+        <Oracle oracleName="species-ability" oracleDatatable={characterOracleResults} oracleLogName={oracleLogName}/>
+
         <br/>
         <hr/>
         <h2 id="creatures">CREATURES</h2>

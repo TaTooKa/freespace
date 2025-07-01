@@ -33,12 +33,17 @@ export default function FactionOracles() {
 
       <div class="oracles-container">
 
+
         <h2 id="faction-type">FACTION TYPE</h2>
         <Oracle oracleName="faction-type" oracleDatatable={factionOracleResults} oracleLogName={oracleLogName}/>
 
+        <h3 id="faction-interstellarsociety">INTERSTELLAR SOCIETY</h3>
+        <Oracle oracleName="faction-interstellarsociety" oracleDatatable={factionOracleResults} oracleLogName={oracleLogName}/>
+        <blockquote><p>A huge culture or commonality spanning multiple star systems.</p></blockquote>
+
         <h3 id="faction-dominion">DOMINION</h3>
         <Oracle oracleName="faction-dominion" oracleDatatable={factionOracleResults} oracleLogName={oracleLogName}/>
-        <blockquote><p>A governing power over a sector, planet or other sphere of influence.</p></blockquote>
+        <blockquote><p>The domain that this organization or power has influence over.</p></blockquote>
 
         <h4 id="faction-dominion-leadership">⤷ DOMINION LEADERSHIP</h4>
         <Oracle oracleName="faction-dominion-leadership" oracleDatatable={factionOracleResults} oracleLogName={oracleLogName}/>

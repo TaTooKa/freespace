@@ -1,8 +1,32 @@
 const factionOracleResults = {
     "oracle-faction-type-result": [
+        "<a href=\"/oracles/faction-oracles#faction-interstellarsociety\">Interstellar Society</a>: A huge culture or commonality spanning multiple star systems.",
         "<a href=\"/oracles/faction-oracles#faction-dominion\">Dominion</a>: A governing power over a sector, planet or other sphere of influence.",
         "<a href=\"/oracles/faction-oracles#faction-guild\">Guild</a>: An organization of specialists over a particular trade.",
         "<a href=\"/oracles/faction-oracles#faction-fringegroup\">Fringe Group</a>: A band of outlaws, outcasts or rogues.",
+    ],
+
+    "oracle-faction-interstellarsociety-result": [
+        "<i>Corporate Conglomerate</i>. A business alliance that controls resources, trade, and tech.",
+        "<i>Rebel Alliance</i>. A collection of dissident groups, freedom fighters, and insurgents who oppose oppressive regimes and seek to overthrow authoritarian rule.",
+        "<i>Explorers' Guild</i>. A group of adventurers, explorers, and pioneers who chart uncharted territories, seek new worlds, and uncover ancient mysteries.",
+        "<i>Research Consortium</i>. A group of scientific organizations and think tanks that push the boundaries of knowledge, often with their own agendas and ethical dilemmas.",
+        "<i>Mercenary Coalition</i>. Bands of mercenaries, bounty hunters, and soldiers-for-hire, organized in their navigation of allegiances based on profit.",
+        "<i>Religious Order</i>. An pervasive sect or cult that holds sway over beliefs, values, and cultural practices across star systems.",
+        "<i>Rogue AI Network</i>. A sentient artificial intelligence that operates independently, seeking to advance its own goals while challenging human dominance.",
+        "<i>Interstellar Syndicate</i>. A criminal organization of smuggling rings that controls the black market, illicit trade, and other shadowy operations.",
+        "<i>Technocratic Council</i>. Scientists, engineers, and intellectuals who wield influence through their expertise, sometimes overshadowing traditional political power.",
+        "<i>Interplanetary Alliance</i>. A group of neighboring planets or star systems that unite for mutual defense, trade, and resource sharing.",
+        "<i>Alien Contingent</i>. A group of one or more alien species, cooperating toward mutually beneficial ends.",
+        "<i>Nomadic Fleet</i>. A vagabond fleet that deals with scarce resources and internal politics.",
+        "<i>Resistance Movement</i>. A subversive group that seeks to undermine authority.",
+        "<i>Mercantile Union</i>. Traders, merchants, and independent traders' associations that form a network of economic influence.",
+        "<i>Terraforming Guild</i>. Specialists in altering planetary environments, seeking to colonize or exploit uninhabitable worlds for resources.",
+        "<i>Shadow Cabal</i>. An elusive, clandestine organization that manipulates events from behind the scenes, according to their own enigmatic motives.",
+        "<i>Protectorate</i>. An order of guardians, knights, or defenders who pledge to safeguard weaker factions or civilizations from external threats, often at great personal sacrifice.",
+        "<i>Navigators' Guild</i>. An organization wielding exclusive control over transpace navigation, shaping interstellar trade, power dynamics, and information flow.",
+        "<i>Disruption Matrix</i>. A decentralized network that embraces chaos and entropy, seeking to disrupt order and reshape the galaxy according to their own enigmatic motives.",
+        "<i>Psionic Alliance</i>. A federation of telepaths, empaths, and psionics who foster the growth of empathy, understanding, and cooperation across star systems.",
     ],
 
     "oracle-faction-dominion-result": [
