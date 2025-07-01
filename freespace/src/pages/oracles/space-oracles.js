@@ -76,7 +76,10 @@ export default function SpaceOracles() {
 
         <h3 id="settlement-name">SETTLEMENT NAME</h3>
         <Oracle oracleName="settlement-name" oracleDatatable={spaceOracleResults} oracleLogName={oracleLogName}/>
-        
+
+        <h3 id="settlement-type">SETTLEMENT TYPE</h3>
+        <Oracle oracleName="settlement-type" oracleDatatable={spaceOracleResults} oracleLogName={oracleLogName}/>
+
         <h3 id="settlement-firstlook">SETTLEMENT FIRST LOOK</h3>
         <Oracle oracleName="settlement-firstlook" oracleDatatable={spaceOracleResults} oracleLogName={oracleLogName}/>
 
