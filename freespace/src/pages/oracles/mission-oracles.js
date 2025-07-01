@@ -12,6 +12,8 @@ export default function MissionOracles() {
     {depth: 3, value: "MISSION TYPE"},
     {depth: 3, value: "MISSION OBJECTIVE"},
     {depth: 3, value: "MISSION CLIENT"},
+    {depth: 2, value: "INCIDENTS"},
+    {depth: 3, value: "INCITING INCIDENT"},
   ]
   
   const oracleLogName = "missionOraclesLog";
@@ -44,6 +46,11 @@ export default function MissionOracles() {
 
         <h3 id="mission-client">MISSION CLIENT OR SPONSOR</h3>
         <Oracle oracleName="mission-client" oracleDatatable={missionOracleResults} oracleLogName={oracleLogName}/>
+
+        <h2 id="incidents">INCIDENTS</h2>
+
+        <h3 id="inciting-incident">INCITING INCIDENT</h3>
+        <Oracle oracleName="inciting-incident" oracleDatatable={missionOracleResults} oracleLogName={oracleLogName}/>
 
         <br/>
         <br/>

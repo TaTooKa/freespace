@@ -82,7 +82,7 @@ const missionOracleResults = {
         "Oppressed Cult", 
         "Scholar or Academy", 
         "Criminal Syndicate", 
-        "It’s Your Idea!", 
+        "It's Your Idea!", 
         "A Community in Need", 
         "Rebel Alliance or Revolutionary faction (local cell)", 
         "Rebel Alliance or Revolutionary faction (Command)", 
@@ -92,6 +92,29 @@ const missionOracleResults = {
         "Desperate Rival or Enemy", 
         "Planetary Governor", 
         "Imperial/Republic/Federation Intelligence", 
+    ],
+
+    "oracle-inciting-incident-result": [
+        "<i>Hostage Situation</i>. Someone is being held by a hostile group, and they're in danger. <i>Who's being held hostage? Why do you need to help them? Who is the hostile group?</i>",
+        "<i>Biohazard Outbreak</i>. A deadly pathogen has escaped containment. <i>Where was it being contained? What allowed it to escape? What does it do to people?</i>",
+        "<i>Diplomatic Sabotage</i>. Peace talks between hostile factions are on the verge of collapse. <i>What factions are involved? Who's the saboteur? Whose side are you on?</i>",
+        "<i>Crash Landing</i>. You've been forced to land your ship on a planet, moon, or asteroid. <i>Why are you being forced to make a crash landing? What dangers await you?</i>",
+        "<i>Planetary Invasion</i>. You're caught in the path of a powerful invading force. <i>Who are the invaders? What is their objective? How can you escape alive?</i>",
+        "<i>Derelict Escape</i>. You discovered something life-threatening aboard an abandoned hulk. <i>What were you looking for aboard the derelict? What threat did you discover?</i>",
+        "<i>Prison Break</i>. You've broken someone out, and the authorities are in pursuit. <i>Who was in jail? Why did you break them out? How close are the authorities?</i>",
+        "<i>Interstellar Ambush</i>. A hostile ship has issued a demand for your surrender. <i>Why are you vulnerable right now? Who among you knows the opposing ship's captain?</i>",
+        "<i>Imminent Impact</i>. A rogue asteroid is on a collision course with your current location. <i>How can you possibly escape? What else will surely be destroyed?</i>",
+        "<i>Navigational Error</i>. You've popped out of jumpspace too close to a stellar body. <i>Where and what is the stellar body? How can you escape its gravitational pull?</i>",
+        "<i>Imminent Annihilation</i>. Your current location is about to be destroyed. <i>What's the source of potential destruction? What are the potential means of escape?</i>",
+        "<i>Alien Ambush</i>. You're pinned down by hostile alien forces. <i>What do you know about the aliens? How have they gotten you in a tight spot?</i>",
+        "<i>Rescue</i>. You're in the middle of saving an individual or group whose well-being is at risk. <i>Who are you rescuing? Who wants to stop you? What's the greatest obstacle you face?</i>",
+        "<i>Boarding Action</i>. A hostile force has just breached your ship's airlock. <i>Who or what is coming on board? What do they want from you?</i>",
+        "<i>Hot Pursuit</i>. You're being chased by a hostile force. <i>Who's chasing you? Why? What's going to happen if they catch up?</i>",
+        "<i>Mutiny</i>. A ship's crew revolts against their commanders. <i>Whose side are you on? What precipitated the revolt? What's at stake?</i>",
+        "<i>Blown Cover</i>. You're deep undercover and hostile forces have discovered your identity. <i>Who were you deceiving? What was your cover? What's the immediate threat?</i>",
+        "<i>Heist Gone Wrong</i>. You got what you came for, but now all hell's broken lose. <i>What are you stealing? What went wrong? Who or what is coming after you?</i>",
+        "<i>Biohazard Outbreak</i>. A deadly virus has been released, and you're at ground zero. <i>What does the virus do? What protective measures can be taken to avoid its effects?</i>",
+
     ],
 
 };
