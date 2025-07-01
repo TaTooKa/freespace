@@ -2,12 +2,14 @@ import React from 'react';
 
 const LOG_MAX_LINES = 40;
 
-const Oracle = ({oracleName, oracleDatatable, oracleLogName, combined=false, joined=false}) => {
+const Oracle = ({oracleName, oracleDatatable, oracleLogName, combined=false, joined=false, template=false}) => {
 
   const textboxId = "oracle-"+oracleName+"-result";
 
   if ( combined ) { 
     var textboxClass = "oracle-result combined";
+  } else if ( template ) {
+    var textboxClass = "oracle-result template";
   } else {
     var textboxClass = "oracle-result";
   }
@@ -32,6 +34,18 @@ const Oracle = ({oracleName, oracleDatatable, oracleLogName, combined=false, joi
         result.push(subTable[Math.floor(Math.random()*subTable.length)]);
       });
       oracleResult = result.join(combineChar);
+
+    } else if ( inputResult.classList.contains("template") ) {
+      // Result is built using templates
+      var template = oracleDatatable[desiredElementId].template[Math.floor(Math.random()*oracleDatatable[desiredElementId].template.length)];
+      var params = {};
+
+      for (const [key, value] of Object.entries(oracleDatatable[desiredElementId].tables)) {
+        params[key] = oracleDatatable[desiredElementId].tables[key][Math.floor(Math.random()*oracleDatatable[desiredElementId].tables[key].length)];
+      }
+      var renderedText = renderTemplate(template, params);
+      oracleResult = renderedText.replace(/(^\w{1})|(\s+\w{1})/g, letter => letter.toUpperCase());
+      
     } else {
       // Result is built from a single table
       oracleResult = oracleDatatable[desiredElementId][Math.floor(Math.random()*oracleDatatable[desiredElementId].length)];
@@ -61,6 +75,14 @@ const Oracle = ({oracleName, oracleDatatable, oracleLogName, combined=false, joi
       // because of <br> elements, log entry limit is half of LOG_MAX_LINES
       oraclesLog.removeChild(oraclesLog.firstChild);
     }
+  }
+
+  const renderTemplate = (string, obj) => {
+    var s = string;
+    for(var prop in obj) {
+      s = s.replace(new RegExp('{'+ prop +'}','g'), obj[prop]);
+    }
+    return s;
   }
 
   return (
