@@ -2,7 +2,7 @@ import React from 'react';
 
 const LOG_MAX_LINES = 40;
 
-const Oracle = ({oracleName, oracleDatatable, oracleLogName, combined=false}) => {
+const Oracle = ({oracleName, oracleDatatable, oracleLogName, combined=false, joined=false}) => {
 
   const textboxId = "oracle-"+oracleName+"-result";
 
@@ -20,13 +20,18 @@ const Oracle = ({oracleName, oracleDatatable, oracleLogName, combined=false}) =>
     const inputResult = document.getElementById(desiredElementId);
     var oracleResult  = "";
 
+    var combineChar = " ";
+    if ( joined ) {
+      combineChar = "";
+    }
+
     if ( inputResult.classList.contains("combined") ) {
       // Result is built from multiple subtables
       var result = [];
       oracleDatatable[desiredElementId].forEach((subTable) => {
         result.push(subTable[Math.floor(Math.random()*subTable.length)]);
       });
-      oracleResult = result.join(" ");
+      oracleResult = result.join(combineChar);
     } else {
       // Result is built from a single table
       oracleResult = oracleDatatable[desiredElementId][Math.floor(Math.random()*oracleDatatable[desiredElementId].length)];
