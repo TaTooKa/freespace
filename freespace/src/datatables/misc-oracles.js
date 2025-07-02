@@ -241,6 +241,10 @@ const miscOracleResults = {
     ],
 
     "oracle-illegalcargo-result": [
+        "Lots of crates of [<a href=\"/oracles/misc-oracles#resources\">Resource</a>].",
+        "Huge shipment of [<a href=\"/oracles/misc-oracles#resources\">Resource</a>].",
+        "Small crate full of [<a href=\"/oracles/misc-oracles#resources\">Resource</a>].",
+        "Hidden stash of stolen [<a href=\"/oracles/misc-oracles#resources\">Resource</a>].",
         "Stimsticks or other nacotics",
         "Proton torpedoes",
         "Tibanna gas",
@@ -262,7 +266,7 @@ const miscOracleResults = {
         "Young of an exotic creature",
         "A dangerous beast",
         "Cattle",
-        "An unknown, still living person frozen in carbonite",
+        "An unknown, still living person frozen/in stasis",
         "Members of enslaved species",
         "A preserved corpse",
         "Artificial organs",
