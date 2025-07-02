@@ -84,6 +84,7 @@ export default function CharacterOracles() {
 
         <h3 id="species-ability">SPECIAL ABILITY</h3>
         <Oracle oracleName="species-ability" oracleDatatable={characterOracleResults} oracleLogName={oracleLogName}/>
+        <blockquote><p>Use this oracle if you want this alien species to have a special ability or inherent power.</p></blockquote>
 
         <br/>
         <hr/>
@@ -104,6 +105,9 @@ export default function CharacterOracles() {
 
         <h3 id="creature-behavior">CREATURE BEHAVIOR</h3>
         <Oracle oracleName="creature-behavior" oracleDatatable={characterOracleResults} oracleLogName={oracleLogName}/>
+
+        <h3 id="creature-adaptation">CREATURE ADAPTATION</h3>
+        <Oracle oracleName="creature-adaptation" oracleDatatable={characterOracleResults} oracleLogName={oracleLogName}/>
 
         <h3 id="creature-revealedaspect">CREATURE REVEALED ASPECT</h3>
         <Oracle oracleName="creature-revealedaspect" oracleDatatable={characterOracleResults} oracleLogName={oracleLogName}/>
