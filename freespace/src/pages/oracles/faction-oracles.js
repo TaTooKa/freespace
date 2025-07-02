@@ -10,6 +10,7 @@ export default function FactionOracles() {
   const headings = [
     {depth: 2, value: "FACTION TYPE"},
     {depth: 2, value: "FACTION CHARACTERISTICS"},
+    {depth: 2, value: "SOCIETY"},
 
   ]
   
@@ -78,6 +79,20 @@ export default function FactionOracles() {
         <h3 id="faction-rumors">FACTION RUMORS</h3>
         <Oracle oracleName="faction-rumors" oracleDatatable={factionOracleResults} oracleLogName={oracleLogName}/>
 
+        <br/>
+        <hr/>
+        <h2 id="society">SOCIETY</h2>
+        <h3 id="society-techlevel">SOCIETY TECH LEVEL</h3>
+        <Oracle oracleName="society-techlevel" oracleDatatable={factionOracleResults} oracleLogName={oracleLogName}/>
+
+        <h3 id="society-condition">SOCIETY CONDITION</h3>
+        <Oracle oracleName="society-condition" oracleDatatable={factionOracleResults} oracleLogName={oracleLogName}/>
+
+        <h3 id="society-politicalsystem">SOCIETY POLITICAL SYSTEM</h3>
+        <Oracle oracleName="society-politicalsystem" oracleDatatable={factionOracleResults} oracleLogName={oracleLogName}/>
+
+        <br/>
+        <br/>
         <br/>
         <br/>
 
