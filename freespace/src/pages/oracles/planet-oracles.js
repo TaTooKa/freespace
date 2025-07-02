@@ -10,6 +10,7 @@ export default function PlanetOracles() {
   const headings = [
     {depth: 2, value: "PLANET"},
     {depth: 2, value: "PLANETSIDE SETTLEMENTS"},
+    {depth: 2, value: "PLANETSIDE VILLAGES, TOWNS, AND CITIES"},
     {depth: 2, value: "PLANETSIDE LOCATIONS"},
 
   ]
@@ -195,6 +196,112 @@ export default function PlanetOracles() {
 
         <h3 id="settlement-trouble">TROUBLE</h3>
         <Oracle oracleName="settlement-trouble" oracleDatatable={planetOracleResults} oracleLogName={oracleLogName}/>
+
+        <br/>
+        <br/>
+        <hr/>
+
+        <h2 id="planetside-villages-towns-and-cities">PLANETSIDE VILLAGES, TOWNS, AND CITIES</h2>
+
+        <h3 id="village-type">VILLAGE TYPE</h3>
+        <Oracle oracleName="village-type" oracleDatatable={planetOracleResults} oracleLogName={oracleLogName}/>
+
+        <h3 id="town-type">TOWN TYPE</h3>
+        <Oracle oracleName="town-type" oracleDatatable={planetOracleResults} oracleLogName={oracleLogName}/>
+
+        <br/>
+        <hr/>
+        <br/>
+        <blockquote><p>Use the following oracles to generate locations and inhabitants of different town or city districts.</p></blockquote>
+
+        <h3 id="residential-district">RESIDENTIAL DISTRICT</h3>
+
+        <h4 id="residential-district-location">⤷ LOCATION</h4>
+        <Oracle oracleName="residential-district-location" oracleDatatable={planetOracleResults} oracleLogName={oracleLogName}/>
+
+        <h4 id="residential-district-inhabitant">⤷ INHABITANT</h4>
+        <Oracle oracleName="residential-district-inhabitant" oracleDatatable={planetOracleResults} oracleLogName={oracleLogName}/>
+
+        <br/>
+        <h3 id="slum-district">SLUMS</h3>
+
+        <h4 id="slum-district-location">⤷ LOCATION</h4>
+        <Oracle oracleName="slum-district-location" oracleDatatable={planetOracleResults} oracleLogName={oracleLogName}/>
+
+        <h4 id="slum-district-inhabitant">⤷ INHABITANT</h4>
+        <Oracle oracleName="slum-district-inhabitant" oracleDatatable={planetOracleResults} oracleLogName={oracleLogName}/>
+
+        <br/>
+        <h3 id="industrial-district">INDUSTRIAL DISTRICT</h3>
+
+        <h4 id="industrial-district-location">⤷ LOCATION</h4>
+        <Oracle oracleName="industrial-district-location" oracleDatatable={planetOracleResults} oracleLogName={oracleLogName}/>
+
+        <h4 id="industrial-district-inhabitant">⤷ INHABITANT</h4>
+        <Oracle oracleName="industrial-district-inhabitant" oracleDatatable={planetOracleResults} oracleLogName={oracleLogName}/>
+
+        <br/>
+        <h3 id="transit-district">TRANSIT DISTRICT</h3>
+
+        <h4 id="transit-district-location">⤷ LOCATION</h4>
+        <Oracle oracleName="transit-district-location" oracleDatatable={planetOracleResults} oracleLogName={oracleLogName}/>
+
+        <h4 id="transit-district-inhabitant">⤷ INHABITANT</h4>
+        <Oracle oracleName="transit-district-inhabitant" oracleDatatable={planetOracleResults} oracleLogName={oracleLogName}/>
+
+        <br/>
+        <h3 id="commercial-district">COMMERCIAL DISTRICT</h3>
+
+        <h4 id="commercial-district-location">⤷ LOCATION</h4>
+        <Oracle oracleName="commercial-district-location" oracleDatatable={planetOracleResults} oracleLogName={oracleLogName}/>
+
+        <h4 id="commercial-district-inhabitant">⤷ INHABITANT</h4>
+        <Oracle oracleName="commercial-district-inhabitant" oracleDatatable={planetOracleResults} oracleLogName={oracleLogName}/>
+
+        <br/>
+        <h3 id="financial-district">FINANCIAL DISTRICT</h3>
+
+        <h4 id="financial-district-location">⤷ LOCATION</h4>
+        <Oracle oracleName="financial-district-location" oracleDatatable={planetOracleResults} oracleLogName={oracleLogName}/>
+
+        <h4 id="financial-district-inhabitant">⤷ INHABITANT</h4>
+        <Oracle oracleName="financial-district-inhabitant" oracleDatatable={planetOracleResults} oracleLogName={oracleLogName}/>
+
+        <br/>
+        <h3 id="religious-district">RELIGIOUS DISTRICT</h3>
+
+        <h4 id="religious-district-location">⤷ LOCATION</h4>
+        <Oracle oracleName="religious-district-location" oracleDatatable={planetOracleResults} oracleLogName={oracleLogName}/>
+
+        <h4 id="religious-district-inhabitant">⤷ INHABITANT</h4>
+        <Oracle oracleName="religious-district-inhabitant" oracleDatatable={planetOracleResults} oracleLogName={oracleLogName}/>
+
+        <br/>
+        <h3 id="academic-district">ACADEMIC DISTRICT</h3>
+
+        <h4 id="academic-district-location">⤷ LOCATION</h4>
+        <Oracle oracleName="academic-district-location" oracleDatatable={planetOracleResults} oracleLogName={oracleLogName}/>
+
+        <h4 id="academic-district-inhabitant">⤷ INHABITANT</h4>
+        <Oracle oracleName="academic-district-inhabitant" oracleDatatable={planetOracleResults} oracleLogName={oracleLogName}/>
+
+        <br/>
+        <h3 id="science-district">SCIENCE DISTRICT</h3>
+
+        <h4 id="science-district-location">⤷ LOCATION</h4>
+        <Oracle oracleName="science-district-location" oracleDatatable={planetOracleResults} oracleLogName={oracleLogName}/>
+
+        <h4 id="science-district-inhabitant">⤷ INHABITANT</h4>
+        <Oracle oracleName="science-district-inhabitant" oracleDatatable={planetOracleResults} oracleLogName={oracleLogName}/>
+
+        <br/>
+        <h3 id="municipal-district">MUNICIPAL DISTRICT</h3>
+
+        <h4 id="municipal-district-location">⤷ LOCATION</h4>
+        <Oracle oracleName="municipal-district-location" oracleDatatable={planetOracleResults} oracleLogName={oracleLogName}/>
+
+        <h4 id="municipal-district-inhabitant">⤷ INHABITANT</h4>
+        <Oracle oracleName="municipal-district-inhabitant" oracleDatatable={planetOracleResults} oracleLogName={oracleLogName}/>
 
         <br/>
         <br/>
