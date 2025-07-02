@@ -13,6 +13,7 @@ export default function MiscOracles() {
     {depth: 2, value: "RUMORS"},
     {depth: 2, value: "CARGO"},
     {depth: 2, value: "BACKGROUND STORY"},
+    {depth: 2, value: "RESOURCES"},
   ]
   
   const oracleLogName = "miscOraclesLog";
@@ -60,12 +61,37 @@ export default function MiscOracles() {
         <br/>
         <hr/>
 
-        <h2 id="bacground-story">BACKGROUND STORY FRAMING</h2>
+        <h2 id="background-story">BACKGROUND STORY FRAMING</h2>
         <Oracle oracleName="background-story" oracleDatatable={miscOracleResults} oracleLogName={oracleLogName}/>
         <blockquote><p>Use this oracle if you need ideas for the overall happenstances, status-quo, or the big picture of the sector/zone/galaxy that your story will take place in.</p></blockquote>
 
         <br/>
+        <hr/>
+
+        <h2 id="resources">RESOURCES</h2>
+        <blockquote><p>Use these oracles to randomly generate materials or commodities that can be mined or extracted from planets, or bought and sold by traders.</p></blockquote>
+        <Oracle oracleName="resources" oracleDatatable={miscOracleResults} oracleLogName={oracleLogName}/>
+
+        <h3 id="resources-mineralore">MINERAL ORE</h3>
+        <Oracle oracleName="resources-mineralore" oracleDatatable={miscOracleResults} oracleLogName={oracleLogName}/>
+
+        <h3 id="resources-preciousmaterial">PRECIOUS MATERIAL</h3>
+        <Oracle oracleName="resources-preciousmaterial" oracleDatatable={miscOracleResults} oracleLogName={oracleLogName}/>
+
+        <h3 id="resources-organiccompound">ORGANIC COMPOUND</h3>
+        <Oracle oracleName="resources-organiccompound" oracleDatatable={miscOracleResults} oracleLogName={oracleLogName}/>
+
+        <h3 id="resources-rareelementsreal">RARE ELEMENTS</h3>
+        <Oracle oracleName="resources-rareelementsreal" oracleDatatable={miscOracleResults} oracleLogName={oracleLogName}/>
+
+        <h3 id="resources-rareelementsscifi">EXTRA-RARE ELEMENTS</h3>
+        <Oracle oracleName="resources-rareelementsscifi" oracleDatatable={miscOracleResults} oracleLogName={oracleLogName}/>
+
         <br/>
+        <br/>
+        <br/>
+        <br/>
+
 
       </div>
     </Layout>
