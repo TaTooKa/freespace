@@ -45,6 +45,7 @@ export default function PlanetOracles() {
 
         <h3 id="planet-atmosphere">PLANET ATMOSPHERE</h3>
         <Oracle oracleName="planet-atmosphere" oracleDatatable={planetOracleResults} oracleLogName={oracleLogName}/>
+        <blockquote><p>Breathability is rated according to human standard; nonhuman species may be able to survive in atmospheres deemed toxic to humans.</p></blockquote>
 
         <h3 id="planet-life">PLANET LIFE</h3>
         <Oracle oracleName="planet-life" oracleDatatable={planetOracleResults} oracleLogName={oracleLogName}/>
