@@ -1109,6 +1109,7 @@ export default function GlobalStyle() {
           }
           .trait {
             border: 1px solid ${theme.colors.accent}66;
+            border-radius: 5px;
             margin: 10px 0 25px 0;
             ${'' /* padding: 10px 0; */}
             padding: 20px;
@@ -1117,6 +1118,7 @@ export default function GlobalStyle() {
             :has(input:checked) {
               opacity: 1;
               border: 1px solid ${theme.colors.accent};
+              border-radius: 5px 25px;
               box-shadow: inset 0 0 50px ${theme.colors.accent};
 
               background: linear-gradient(
