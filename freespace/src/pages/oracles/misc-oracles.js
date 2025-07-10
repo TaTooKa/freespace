@@ -14,6 +14,7 @@ export default function MiscOracles() {
     {depth: 2, value: "CARGO"},
     {depth: 2, value: "RESOURCES"},
     {depth: 2, value: "BACKGROUND STORY"},
+    {depth: 2, value: "EPISODE TITLE"},
   ]
   
   const oracleLogName = "miscOraclesLog";
@@ -86,6 +87,10 @@ export default function MiscOracles() {
         <h2 id="background-story">BACKGROUND STORY FRAMING</h2>
         <Oracle oracleName="background-story" oracleDatatable={miscOracleResults} oracleLogName={oracleLogName}/>
         <blockquote><p>Use this oracle if you need ideas for the overall happenstances, status-quo, or the big picture of the sector/zone/galaxy that your story will take place in.</p></blockquote>
+
+        <h2 id="episode-title">EPISODE TITLE</h2>
+        <Oracle oracleName="episode-title" oracleDatatable={miscOracleResults} oracleLogName={oracleLogName} template/>
+        <blockquote><p>Use this oracle to generate the title of your episode, in a classical, pulpy fashion.</p></blockquote>
 
         <br/>
         <br/>
