@@ -127,7 +127,7 @@ export default function SpaceOracles() {
         <Oracle oracleName="starship-name" oracleDatatable={spaceOracleResults} oracleLogName={oracleLogName}/>
 
         <h4 id="starship-manufacturer">STARSHIP MANUFACTURER OR BRAND</h4>
-        <Oracle oracleName="starship-manufacturer" oracleDatatable={spaceOracleResults} oracleLogName={oracleLogName}/>
+        <Oracle oracleName="starship-manufacturer" oracleDatatable={spaceOracleResults} oracleLogName={oracleLogName} combined/>
 
         <h4 id="starship-initialattitude">INITIAL ATTITUDE OR STATE UPON CONTACT</h4>
         <Oracle oracleName="starship-initialattitude" oracleDatatable={spaceOracleResults} oracleLogName={oracleLogName}/>
