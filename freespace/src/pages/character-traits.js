@@ -183,6 +183,10 @@ function CharacterStats() {
                 <span>Gain a <span class="boost">BOOST</span> whenever you <a href="/prompts/general-prompts#gather-information">GATHER INFORMATION</a>, <a href="/prompts/challenge-prompts#accept-a-challenge">ACCEPT A CHALLENGE</a> or <a href="/prompts/challenge-prompts#fulfill-a-challenge">FULFILL A CHALLENGE</a> related to a bounty or the procurement of a person. When you <a href="/prompts/challenge-prompts#fulfill-a-challenge">FULFILL A CHALLENGE</a> of capturing a bounty, you gain double XP.</span>
             </Trait>
 
+            <Trait type="skill" name="Brawler" title="BRAWLER" inputs={inputs} handleChange={handleChange}>
+                <span>An expert of close combat and melee weaponry. Gain a <span class="boost">BOOST</span> when you <a href="/prompts/general-prompts#clash">CLASH</a> or <a href="/prompts/general-prompts#compel">COMPEL</a> with your <span class="stat">PHYSIQUE</span>. When you <a href="/prompts/challenge-prompts#fulfill-a-challenge">FULFILL A CHALLENGE</a> of melee combat, you gain double XP.</span>
+            </Trait>
+
             <Trait type="skill" name="Colonist" title="COLONIST" inputs={inputs} handleChange={handleChange}>
                 <span>Gain a <span class="boost">BOOST</span> whenever you <a href="/prompts/general-prompts#act-under-pressure">ACT UNDER PRESSURE</a> or <a href="/prompts/general-prompts#gather-information">GATHER INFORMATION</a> in a situation or environment that is new to you or outside of your comfort zone. When you <a href="/prompts/challenge-prompts#fulfill-a-challenge">FULFILL A CHALLENGE</a> that improves the well-being of a remote community or outpost, you gain double XP.</span>
             </Trait>
@@ -217,10 +221,6 @@ function CharacterStats() {
 
             <Trait type="skill" name="LawEnforcement" title="LAW ENFORCEMENT" inputs={inputs} handleChange={handleChange}>
                 <span>Gain a <span class="boost">BOOST</span> whenever you <a href="/prompts/general-prompts#gather-information">GATHER INFORMATION</a> or when you <a href="/prompts/general-prompts#compel">COMPEL</a> by using your privileged status of law officer. When you <a href="/prompts/challenge-prompts#fulfill-a-challenge">FULFILL A CHALLENGE</a> related to delivering justice, you gain double XP.</span>
-            </Trait>
-
-            <Trait type="skill" name="Marauder" title="MARAUDER" inputs={inputs} handleChange={handleChange}>
-                <span>An expert of close combat and melee weaponry. Gain a <span class="boost">BOOST</span> when you <a href="/prompts/general-prompts#clash">CLASH</a> or <a href="/prompts/general-prompts#compel">COMPEL</a> with your <span class="stat">PHYSIQUE</span>. When you <a href="/prompts/challenge-prompts#fulfill-a-challenge">FULFILL A CHALLENGE</a> of melee combat, you gain double XP.</span>
             </Trait>
 
             <Trait type="skill" name="Mechanic" title="MECHANIC" inputs={inputs} handleChange={handleChange}>

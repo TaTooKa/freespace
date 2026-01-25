@@ -10,7 +10,14 @@ const characterOracleResults = {
         "{firstname1} {lastname1}{lastname2}", 
 
         "{regularname} {lastname1}{lastname2}", 
+        "{regularname} {lastname1}{lastname2}", 
         "{firstname1}{firstname2} {regularlastname}", 
+        "{firstname1}{firstname2} {regularlastname}", 
+
+        "{regularname} {regularlastname}", 
+        "{regularname} {regularlastname}", 
+        "{regularname} {regularlastname}", 
+        "{regularname} {regularlastname}", 
       ],
       'tables': {
         'firstname1': [
