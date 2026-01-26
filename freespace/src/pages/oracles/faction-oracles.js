@@ -84,6 +84,19 @@ export default function FactionOracles() {
         <h2 id="society">SOCIETY</h2>
         <h3 id="society-techlevel">SOCIETY TECH LEVEL</h3>
         <Oracle oracleName="society-techlevel" oracleDatatable={factionOracleResults} oracleLogName={oracleLogName}/>
+        <blockquote>
+          <p>Tech Level can be one of:
+            <ul>
+              <li>TL0: Primitive (hunter-gatherer, agriculture)</li>
+              <li>TL1: Pre-Industrial (basic metallurgy, medieval machinery)</li>
+              <li>TL2: Industrial (steam power, manufacturing, electricity)</li>
+              <li>TL3: Space-Faring (computers, nuclear power, home system exploration)</li>
+              <li>TL4: Interstellar (FTL travel, antigravity, Artificial Intelligence)</li>
+              <li>TL5: Trascendent (cosmic scale, galaxy-spanning, extradimensional)</li>
+            </ul>
+          <i>Some isolated societies may have been of a higher TL in the past but have regressed due to catastrophe or scarcity.</i>
+          </p>
+        </blockquote>
 
         <h3 id="society-condition">SOCIETY CONDITION</h3>
         <Oracle oracleName="society-condition" oracleDatatable={factionOracleResults} oracleLogName={oracleLogName}/>
