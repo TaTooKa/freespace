@@ -548,6 +548,22 @@ export default function GlobalStyle() {
             }
           }
         }
+        ${'' /* TABLE OF CONTENTS / NAV */}
+        @media screen and (min-width: 1200px) {
+          main {
+            div:has(> div nav) {
+              overflow: initial !important;
+              padding-top: 0 !important;
+            }
+            div:has(> nav) {
+              position: sticky;
+              top: 36px;
+            }
+            nav {
+            }
+        }
+      }
+
 
         ${'' /* FORMS */}
         form.character-stats {
