@@ -204,6 +204,25 @@ export default function GlobalStyle() {
           color: #578498ff;
         }
 
+        .affecting_traits {
+          border: solid 1px #121212;
+          background-color: #181818;
+          border-radius: 5px;
+          box-shadow: inset -2px -2px 4px #121212;
+          padding: 5px 10px;
+          margin: 10px 0;
+          font-size: 0.8em;
+          color: #969696;
+          opacity: 0.7;
+          transition: 0.5s;
+          :hover {
+            opacity: 1;
+          }
+          .descriptive_text {
+            cursor: help;
+          }
+      }
+
         code.inline-code {
           display: inline-block;
           vertical-align: middle;
