@@ -16,19 +16,19 @@ const Stat = ({name}) => {
 
   switch (name) {
     case 'INTELLECT':
-      statValue = savedCharacter.intellect;
+      statValue = parseInt(savedCharacter.intellect);
       break;
     case 'PHYSIQUE':
-      statValue = savedCharacter.physique;
+      statValue = parseInt(savedCharacter.physique);
       break;
     case 'DEXTERITY':
-      statValue = savedCharacter.dexterity;
+      statValue = parseInt(savedCharacter.dexterity);
       break;
     case 'RESOLVE':
-      statValue = savedCharacter.resolve;
+      statValue = parseInt(savedCharacter.resolve);
       break;
     case 'SUBTERFUGE':
-      statValue = savedCharacter.subterfuge;
+      statValue = parseInt(savedCharacter.subterfuge);
       break;
   }
 
