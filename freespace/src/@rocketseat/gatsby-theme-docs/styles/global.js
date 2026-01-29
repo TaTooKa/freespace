@@ -551,6 +551,39 @@ export default function GlobalStyle() {
           }
         }
 
+        .character-state-container {
+          position: fixed;
+          bottom: 0;
+          right: 0;
+          background-color: #151416CC;
+          padding: 1px 10px;
+          border-radius: 10px;
+          transition: 1s;
+          box-shadow: 0 0 10px #353344;
+          z-index: 1000;
+            margin-bottom: 25px;
+          .character-state {
+            color: ${theme.colors.title};
+            font-size: 0.7em;
+            font-weight: bold;
+            text-transform: uppercase;
+          }
+          .in-control i {
+            color: #ffffff99;
+            text-shadow: 0 0 5px ${theme.colors.turquoise};
+          }
+          .in-a-bad-spot i {
+            color: #ffffff99;
+            text-shadow: 0 0 5px ${theme.colors.fuchsia};
+          }
+          @media screen and (max-width: 1200px) {
+            right: 25%;
+          }
+          @media screen and (min-width: 1201px) {
+            right: 48%;
+          }
+        }
+
         ${'' /* MENU */}
         aside {
           background-color: ${theme.darkcolors.background} !important;
