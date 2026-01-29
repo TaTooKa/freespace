@@ -221,7 +221,37 @@ export default function GlobalStyle() {
           .descriptive_text {
             cursor: help;
           }
-      }
+        }
+
+        hr.gradient-hr-turquoise {
+          background: linear-gradient(to right, #0f172a, #334155);
+          border: none;
+          height: 1px;
+          margin: 15px 0;
+          background: radial-gradient(circle,  ${theme.darkcolors.background} 25%, ${theme.colors.turquoise} 50%,${theme.darkcolors.background} 75%);
+          background-size: 200% 200%;
+          animation: animated-gradient-flow 5s ease-in-out infinite;
+          @keyframes animated-gradient-flow {
+              0% { background-position: 25% 50%; }
+              50% { background-position: -25% 50%; }
+              100% { background-position: 25% 50%; }
+          }
+        }
+
+        hr.gradient-hr-fuchsia {
+          background: linear-gradient(to right, #0f172a, #334155);
+          border: none;
+          height: 1px;
+          margin: 15px 0;
+          background: radial-gradient(circle,  ${theme.darkcolors.background} 25%, ${theme.colors.fuchsia} 50%,${theme.darkcolors.background} 75%);
+          background-size: 200% 200%;
+          animation: animated-gradient-flow 5s ease-in-out infinite;
+          @keyframes animated-gradient-flow {
+              0% { background-position: 25% 50%; }
+              50% { background-position: -25% 50%; }
+              100% { background-position: 25% 50%; }
+          }
+        }
 
         code.inline-code {
           display: inline-block;

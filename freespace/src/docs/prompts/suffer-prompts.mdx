@@ -10,10 +10,13 @@ import AffectingTraits from "../../@rocketseat/gatsby-theme-docs/components/Affe
 Then, **if your HEALTH is 0 or you choose to resist the harm**, test your <Stat name="PHYSIQUE"/>.
 
 <AffectingTraits promptName="EndureHarm"/>
+<hr class="gradient-hr-turquoise"/>
 
 &nbsp;<span class="turquoise bold">⋙ SUCCESS</span>: You shake it off. Gain a <span class="boost">BOOST</span> for your next test. 
 
 > If <span class="turquoise bold">CRITICAL</span>, also gain **+1 HEALTH**.
+
+<hr class="gradient-hr-fuchsia"/>
 
 &nbsp;<span class="fuchsia bold">⋙ FAILURE</span>: You are in pain. Gain a <span class="glitch" data-text="GLITCH">GLITCH</span> for your next test. 
 
@@ -37,9 +40,12 @@ Then, **if your HEALTH is still 0**, roll on the table below (if you are *IN A B
 Then, **if your PSYCHE is 0 or you choose to resist the stress**, test your <Stat name="RESOLVE"/>.
 
 <AffectingTraits promptName="EndureStress"/>
+<hr class="gradient-hr-turquoise"/>
 
 &nbsp;<span class="turquoise bold">⋙ SUCCESS</span>: You shake it off. Gain a <span class="boost">BOOST</span> for your next test. 
 > If <span class="turquoise bold">CRITICAL</span>, also gain **+1 PSYCHE**.
+
+<hr class="gradient-hr-fuchsia"/>
 
 &nbsp;<span class="fuchsia bold">⋙ FAILURE</span>: You are shaken. Gain a <span class="glitch" data-text="GLITCH">GLITCH</span> for your next test. 
 
@@ -59,9 +65,9 @@ Then, **if your PSYCHE is still 0**, roll on the table below (if you are *IN A B
 ## SACRIFICE RESOURCES
 ⋗ **When you lose or consume resources,** suffer <span class="fuchsia bold">-1 RESOURCES</span> for a minor loss, <span class="fuchsia bold">-2 RESOURCES</span> for a serious loss, or <span class="fuchsia bold">-3 RESOURCES</span> for a major loss.
 
-> You cannot **SACRIFICE RESOURCES** with your RESOURCES at 0.
-
 <AffectingTraits promptName="SacrificeResources"/>
+
+> You cannot **SACRIFICE RESOURCES** with your RESOURCES at 0.
 
 <hr/>
 <br/>
@@ -71,9 +77,13 @@ Then, **if your PSYCHE is still 0**, roll on the table below (if you are *IN A B
 
 <AffectingTraits promptName="FaceDeath"/>
 
+<hr class="gradient-hr-turquoise"/>
+
 &nbsp;<span class="turquoise bold">⋙ SUCCESS</span>: You get up, shaking it off. 
 
 > If <span class="turquoise bold">CRITICAL</span>, you are now *IN CONTROL*.
+
+<hr class="gradient-hr-fuchsia"/>
 
 &nbsp;<span class="fuchsia bold">⋙ FAILURE</span>: You die, but not before making a noble sacrifice. Envision your final moments.
 <hr/>
@@ -84,9 +94,13 @@ Then, **if your PSYCHE is still 0**, roll on the table below (if you are *IN A B
 
 <AffectingTraits promptName="FaceDesolation"/>
 
+<hr class="gradient-hr-turquoise"/>
+
 &nbsp;<span class="turquoise bold">⋙ SUCCESS</span>: You resist and press on. 
 
 > If <span class="turquoise bold">CRITICAL</span>, you are now *IN CONTROL*.
+
+<hr class="gradient-hr-fuchsia"/>
 
 &nbsp;<span class="fuchsia bold">⋙ FAILURE</span>: Your spirit breaks, but not before you make a noble sacrifice. Envision your final moments before you succumb to anguish and misery and are definitely lost.
 <hr/>
