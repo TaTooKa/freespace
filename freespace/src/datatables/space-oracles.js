@@ -503,6 +503,15 @@ const spaceOracleResults = {
     "<i>Transport Relay</i>. Facilitates travel with some technological advancement.", 
   ],
 
+  "oracle-settlement-shape-result": [
+    "<i>Stanford Torus</i>: Donut shaped ring / rotating wheel - provides artificial gravity through centrifugal force.",
+    "<i>O'neill Cylinder</i>: Hollow Tube-like structure - rotates along its axis to provide artificial gravity (through centrifugal force) against its inner walls.",
+    "<i>Bernal Sphere</i>: Hollow spherical structure - rotation generates artificial gravity (through centrifugal force), strongest at its inner equator.",
+    "<i>Bishop Ring</i>: Ringworld-like structure; big enough that it can be \"roofless\" (atmosphere held in place via centrifugal forces, against its inner floor and walls).",
+    "<i>Modular</i>: Interconnected modules and diversely shaped habitats; no centrifugal gravity / zero-G or generated gravity (antigravity/superscience).",
+    "<i>Dome</i>: Half-sphere with dome-like ceiling (usually some sort of glass), housing habitable structures on its floor with generated gravity (antigravity/superscience).",
+  ],
+
   "oracle-settlement-firstlook-result": [
     "Beautiful architecture",
     "Built from organic materials",
