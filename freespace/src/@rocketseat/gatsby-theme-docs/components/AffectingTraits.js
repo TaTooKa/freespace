@@ -1,5 +1,5 @@
 import React from 'react';
-import { promptAffectingTraits, traits } from '/src/pages/character-traits.js';
+import { traits } from '/src/pages/character-traits.js';
 
 const AffectingTraits = ({ promptName }) => {
 
@@ -10,10 +10,10 @@ const AffectingTraits = ({ promptName }) => {
 
   var affectingTraits = {};
 
-  if (promptAffectingTraits[promptName] !== undefined) {
-    promptAffectingTraits[promptName].forEach(traitKey => {
-      if (savedTraits[traitKey] !== undefined && savedTraits[traitKey] == true) {
-        affectingTraits[traitKey] = traits[traitKey];
+  for (const [traitTypeKey, traitType] of Object.entries(traits)) {
+    traitType.forEach(trait => {
+      if (trait.affectedPrompts.includes(promptName) && savedTraits[traitTypeKey + trait.name] !== undefined && savedTraits[traitTypeKey + trait.name] === true) {
+        affectingTraits[traitTypeKey + trait.name] = trait.title;
       }
     });
   }
