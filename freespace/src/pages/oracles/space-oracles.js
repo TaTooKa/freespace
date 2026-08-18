@@ -63,7 +63,26 @@ export default function SpaceOracles() {
         <h3 id="sector-details">SECTOR DETAILS</h3>
         <Oracle oracleName="sector-details" oracleDatatable={spaceOracleResults} oracleLogName={oracleLogName} combined/>
 
-        <h3 id="starsystem-details">STAR SYSTEM DETAILS</h3>
+        <h3 id="sector-location">SECTOR LOCATION</h3>
+
+        <h4 id="sector-location-region">SECTOR REGION</h4>
+        <Oracle oracleName="sector-location-region" oracleDatatable={spaceOracleResults} oracleLogName={oracleLogName}/>
+        <blockquote><p>Can be either in the <i>Core Regions</i>, <i>Frontier Regions</i>, or <i>Wild Regions</i>.</p></blockquote>
+
+        <h4 id="sector-location-position">SECTOR POSITION</h4>
+        <Oracle oracleName="sector-location-position" oracleDatatable={spaceOracleResults} oracleLogName={oracleLogName} combined/>
+        <blockquote><p>Approximate position related to the galactic center.</p></blockquote>
+
+        <h3 id="star-systems">STAR SYSTEMS</h3>
+
+        <h4 id="starsystem-name">STAR SYSTEM NAME</h4>
+        <Oracle oracleName="starsystem-name" oracleDatatable={spaceOracleResults} oracleLogName={oracleLogName} combined joined/>
+
+        <h4 id="starsystem-name">STAR SYSTEM COORDINATES</h4>
+        <Oracle oracleName="starsystem-coordinates" oracleDatatable={spaceOracleResults} oracleLogName={oracleLogName} combined/>
+        <blockquote><p>Measured as X,Y,Z in Parsecs, as distance from the center of the Sector (X: Trailing↔Spinward, Y: Rimward↔Coreward, Z: Below↔Above).</p></blockquote>
+
+        <h4 id="starsystem-details">STAR SYSTEM DETAILS</h4>
         <Oracle oracleName="starsystem-details" oracleDatatable={spaceOracleResults} oracleLogName={oracleLogName} combined/>
 
         <br/>
