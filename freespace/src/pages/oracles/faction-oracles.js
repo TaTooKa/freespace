@@ -92,7 +92,7 @@ export default function FactionOracles() {
               <li>TL2: Industrial (steam power, manufacturing, electricity)</li>
               <li>TL3: Space-Faring (computers, nuclear power, home system exploration)</li>
               <li>TL4: Interstellar (FTL travel, antigravity, Artificial Intelligence)</li>
-              <li>TL5: Trascendent (cosmic scale, galaxy-spanning, extradimensional)</li>
+              <li>TL5: Transcendent (cosmic scale, galaxy-spanning, extradimensional)</li>
             </ul>
           <i>Some isolated societies may have been of a higher TL in the past but have regressed due to catastrophe or scarcity.</i>
           </p>
