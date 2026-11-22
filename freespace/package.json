@@ -26,6 +26,9 @@
     "gh-pages": "^5.0.0",
     "react-trigger-change": "^1.0.2"
   },
+  "overrides": {
+    "msgpackr": "1.12.1"
+  },
   "keywords": [
     "gatsby",
     "gatsby-starter"
