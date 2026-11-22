@@ -141,6 +141,16 @@ const miscOracleResults = {
         ]
     ],
 
+    "oracle-tech-vibes-result": [
+        "<b>CORETECH:</b> Efficient, reliable, utilitarian, rugged and worn. <i>Cassette Futurism</i>.",
+        "<b>SLICKTECH:</b> Sufficiently Advanced Technology. Smooth and sleek curves, polished surfaces of silver and chrome, glowing lines of light and energy fields. <i>Star Trek</i>.",
+        "<b>BUGTECH:</b> Organic technology. Insectoid, crustacean, arachnid, or mollusk-like. Exoskeletons, segmented bodies, and chitinous plating. <i>H.R. Giger</i>.",
+        "<b>HARDTECH:</b> Plausible technology based on current science. Spin-gravity, long struts, solar panels and heat radiators.<i>NASA / Soviet Aerospace aesthetics</i>.",
+        "<b>WIZTECH:</b> Magical or psionic technology. Glowing runes, floating crystals, holographic constructs, and unexplained phenomena. <i>Magitech</i>.",
+        "<b>SCRAPTECH:</b> Junkyard technology. Rusty, improvised, and jury-rigged. Regressed or barbaric aesthetics. <i>Post-Apocalyptic or Scavenger Tech</i>.",
+        "<b>RAYTECH:</b> Retro-futuristic. Fins on everything, sleek tail-sitter rockets, jetpacks and rayguns with 50's appliance vibes. <i>Raypunk</i>.",
+    ],
+
     "oracle-rumors-result": [
         "Increased pirate activity",
         "Plague on nearby planet",

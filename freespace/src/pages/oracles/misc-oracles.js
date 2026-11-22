@@ -48,6 +48,11 @@ export default function MiscOracles() {
         <Oracle oracleName="technobabble" oracleDatatable={miscOracleResults} oracleLogName={oracleLogName} combined/>
 
         <br/>
+
+        <h2 id="tech-vibes">TECH VIBES</h2>
+        <Oracle oracleName="tech-vibes" oracleDatatable={miscOracleResults} oracleLogName={oracleLogName}/>
+
+        <br/>
         <hr/>
 
         <h2 id="rumors">RUMORS AT THE CANTINA</h2>
